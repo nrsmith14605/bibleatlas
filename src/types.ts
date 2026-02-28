@@ -6,7 +6,7 @@ export interface City {
   name: string;
   coords: L.LatLngExpression;
   description: string;
-  type: 'major' | 'city' | 'town';
+  location: 'confirmed' | 'probable' | 'unknown';
   books: BookTag[];
 }
 
@@ -21,7 +21,6 @@ export interface Landmark {
   name: string;
   coords: L.LatLngExpression;
   description: string;
-  type: 'mountain' | 'tomb' | 'altar' | 'well' | 'gate' | 'site';
   books: BookTag[];
 }
 

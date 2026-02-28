@@ -497,7 +497,6 @@ export default function App() {
               selected={selLandmarks}
               onToggle={name => toggle(setSelLandmarks, name)}
               searchPlaceholder="Search landmarks…"
-              renderIcon={item => <span className="nat-icon">{landmarkEmoji(item.type)}</span>}
               emptyMessage="No landmarks for this filter"
             />
           </Section>
@@ -638,8 +637,8 @@ export default function App() {
 
           {/* Cities */}
           {cities.filter(c => selCities.includes(c.name)).map(city => (
-            <CircleMarker key={city.name} center={city.coords} radius={cityRadius(city.type)}
-              pathOptions={{ fillColor: cityColor(city.type), fillOpacity: 0.85, color: '#fff', weight: 2 }}>
+            <CircleMarker key={city.name} center={city.coords} radius={cityRadius(city.location)}
+              pathOptions={{ fillColor: cityColor(city.location), fillOpacity: 0.85, color: '#fff', weight: 2 }}>
               <Tooltip permanent direction="right" offset={[8, 0]} className="city-label">{city.name}</Tooltip>
               <Popup>
                 <strong>{city.name}</strong><br />
@@ -655,7 +654,6 @@ export default function App() {
               <Popup>
                 <strong>{lm.name}</strong><br />
                 <span style={{ fontSize: '0.9em' }}>{lm.description}</span><br />
-                <em style={{ fontSize: '0.85em', color: '#666', textTransform: 'capitalize' }}>{lm.type}</em>
               </Popup>
             </Marker>
           ))}
