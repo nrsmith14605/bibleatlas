@@ -116,8 +116,8 @@ function CheckList<T extends { name: string }>({
 }
 
 // ── Timeline ─────────────────────────────────────────────────────────────────
-const YEAR_MIN  = -2000;
-const YEAR_MAX  = 100;
+const YEAR_MIN = -2000;
+const YEAR_MAX = 100;
 const PX_PER_YR = 4;          // pixels per year
 const TOTAL_YEARS = YEAR_MAX - YEAR_MIN;
 const TRACK_W = TOTAL_YEARS * PX_PER_YR;
@@ -136,7 +136,7 @@ function formatYear(y: number): string {
 }
 
 function Timeline() {
-  const barRef  = useRef<HTMLDivElement>(null);
+  const barRef = useRef<HTMLDivElement>(null);
   const [scrollLeft, setScrollLeft] = useState(0);
 
   // After mount, center the view on year 0
@@ -165,7 +165,7 @@ function Timeline() {
 
   const handleMouseDown = useCallback((e: React.MouseEvent) => {
     if ((e.target as HTMLElement).classList.contains('tl-year-label') ||
-        (e.target as HTMLElement).classList.contains('tl-year-input')) return;
+      (e.target as HTMLElement).classList.contains('tl-year-input')) return;
     drag.current = { startX: e.clientX, startScroll: scrollLeft };
     wasDragged.current = false;
     e.preventDefault();
@@ -243,7 +243,7 @@ function Timeline() {
 
         {ticks.map(year => {
           const isCentury = year % 100 === 0;
-          const isFifty   = year % 50 === 0 && !isCentury;
+          const isFifty = year % 50 === 0 && !isCentury;
           const x = yearToX(year);
           const lineH = isCentury ? 30 : isFifty ? 18 : 10;
           const lineClass = isCentury ? 'major' : isFifty ? 'semi' : '';
@@ -266,64 +266,64 @@ function Timeline() {
       {/* Selected year cursor */}
       {selectedYear !== null && cursorScreenX !== null &&
         cursorScreenX > -10 && cursorScreenX < (barRef.current?.clientWidth ?? 9999) + 10 && (
-        <>
-          <div className="tl-cursor" style={{ left: cursorScreenX }} />
-          <div
-            className="tl-year-label"
-            style={{ left: cursorScreenX }}
-            onClick={e => {
-              e.stopPropagation();
-              setEditVal(String(selectedYear));
-              setEditing(true);
-            }}
-          >
-            {editing ? (
-              <input
-                className="tl-year-input"
-                value={editVal}
-                autoFocus
-                onChange={e => setEditVal(e.target.value)}
-                onKeyDown={e => {
-                  if (e.key === 'Enter') commitEdit();
-                  if (e.key === 'Escape') setEditing(false);
-                }}
-                onBlur={commitEdit}
-                onClick={e => e.stopPropagation()}
-              />
-            ) : (
-              formatYear(selectedYear)
-            )}
-          </div>
-        </>
-      )}
+          <>
+            <div className="tl-cursor" style={{ left: cursorScreenX }} />
+            <div
+              className="tl-year-label"
+              style={{ left: cursorScreenX }}
+              onClick={e => {
+                e.stopPropagation();
+                setEditVal(String(selectedYear));
+                setEditing(true);
+              }}
+            >
+              {editing ? (
+                <input
+                  className="tl-year-input"
+                  value={editVal}
+                  autoFocus
+                  onChange={e => setEditVal(e.target.value)}
+                  onKeyDown={e => {
+                    if (e.key === 'Enter') commitEdit();
+                    if (e.key === 'Escape') setEditing(false);
+                  }}
+                  onBlur={commitEdit}
+                  onClick={e => e.stopPropagation()}
+                />
+              ) : (
+                formatYear(selectedYear)
+              )}
+            </div>
+          </>
+        )}
     </div>
   );
 }
 export default function App() {
-  const [sidebarOpen, setSidebarOpen]         = useState(true);
-  const [selectedBook, setSelectedBook]       = useState('');
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [selectedBook, setSelectedBook] = useState('');
 
   // Section expansion state
-  const [citiesExp,    setCitiesExp]    = useState(false);
+  const [citiesExp, setCitiesExp] = useState(false);
   const [landmarksExp, setLandmarksExp] = useState(false);
-  const [natExp,       setNatExp]       = useState(false);
-  const [journeysExp,  setJourneysExp]  = useState(false);
-  const [regionsExp,   setRegionsExp]   = useState(false);
-  const [tribesExp,    setTribesExp]    = useState(false);
-  const [kingdomsExp,  setKingdomsExp]  = useState(false);
+  const [natExp, setNatExp] = useState(false);
+  const [journeysExp, setJourneysExp] = useState(false);
+  const [regionsExp, setRegionsExp] = useState(false);
+  const [tribesExp, setTribesExp] = useState(false);
+  const [kingdomsExp, setKingdomsExp] = useState(false);
 
   // People filter (lives inside Journeys)
-  const [peopleExpanded, setPeopleExpanded]     = useState(false);
-  const [selectedPeople, setSelectedPeople]     = useState<string[]>([]);
+  const [peopleExpanded, setPeopleExpanded] = useState(false);
+  const [selectedPeople, setSelectedPeople] = useState<string[]>([]);
 
   // Selected items per layer
-  const [selCities,    setSelCities]    = useState<string[]>([]);
+  const [selCities, setSelCities] = useState<string[]>([]);
   const [selLandmarks, setSelLandmarks] = useState<string[]>([]);
-  const [selNat,       setSelNat]       = useState<string[]>([]);
-  const [selJourneys,  setSelJourneys]  = useState<string[]>([]);
-  const [selRegions,   setSelRegions]   = useState<string[]>([]);
-  const [selTribes,    setSelTribes]    = useState<string[]>([]);
-  const [selKingdoms,  setSelKingdoms]  = useState<string[]>([]);
+  const [selNat, setSelNat] = useState<string[]>([]);
+  const [selJourneys, setSelJourneys] = useState<string[]>([]);
+  const [selRegions, setSelRegions] = useState<string[]>([]);
+  const [selTribes, setSelTribes] = useState<string[]>([]);
+  const [selKingdoms, setSelKingdoms] = useState<string[]>([]);
 
   const [mapType, setMapType] = useState('physical');
 
@@ -341,18 +341,18 @@ export default function App() {
   };
 
   // ── Filtered by book ───────────────────────────────────────────────────────
-  const avCities    = useMemo(() => cities.filter(c => matchesBook(c.books, selectedBook)),          [selectedBook]);
-  const avLandmarks = useMemo(() => landmarks.filter(l => matchesBook(l.books, selectedBook)),       [selectedBook]);
-  const avNat       = useMemo(() => naturalFeatures.filter(n => matchesBook(n.books, selectedBook)), [selectedBook]);
-  const avPeople    = useMemo(() => people.filter(p => matchesBook(p.books, selectedBook)),          [selectedBook]);
-  const avJourneys  = useMemo(() => {
+  const avCities = useMemo(() => cities.filter(c => matchesBook(c.books, selectedBook)), [selectedBook]);
+  const avLandmarks = useMemo(() => landmarks.filter(l => matchesBook(l.books, selectedBook)), [selectedBook]);
+  const avNat = useMemo(() => naturalFeatures.filter(n => matchesBook(n.books, selectedBook)), [selectedBook]);
+  const avPeople = useMemo(() => people.filter(p => matchesBook(p.books, selectedBook)), [selectedBook]);
+  const avJourneys = useMemo(() => {
     const byBook = journeys.filter(j => matchesBook(j.books, selectedBook));
     if (selectedPeople.length === 0) return byBook;
     return byBook.filter(j => j.people.some(p => selectedPeople.includes(p)));
   }, [selectedBook, selectedPeople]);
-  const avRegions   = useMemo(() => regions.filter(r => matchesBook(r.books, selectedBook)),         [selectedBook]);
-  const avTribes    = useMemo(() => tribes.filter(t => matchesBook(t.books, selectedBook)),          [selectedBook]);
-  const avKingdoms  = useMemo(() => kingdomsEmpires.filter(k => matchesBook(k.books, selectedBook)), [selectedBook]);
+  const avRegions = useMemo(() => regions.filter(r => matchesBook(r.books, selectedBook)), [selectedBook]);
+  const avTribes = useMemo(() => tribes.filter(t => matchesBook(t.books, selectedBook)), [selectedBook]);
+  const avKingdoms = useMemo(() => kingdomsEmpires.filter(k => matchesBook(k.books, selectedBook)), [selectedBook]);
 
   // ── Toggle helpers ─────────────────────────────────────────────────────────
   const toggle = (set: React.Dispatch<React.SetStateAction<string[]>>, name: string) =>
@@ -381,21 +381,42 @@ export default function App() {
   // ── Tile URL ───────────────────────────────────────────────────────────────
   const tileUrl = (() => {
     switch (mapType) {
-      case 'terrain':   return 'https://services.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}';
-      case 'natgeo':    return 'https://services.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}';
-      case 'topo':      return 'https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}';
-      case 'street':    return 'https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}';
-      case 'osm':       return 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+      case 'terrain': return 'https://services.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}';
+      case 'natgeo': return 'https://services.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}';
+      case 'topo': return 'https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}';
+      case 'street': return 'https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}';
+      case 'osm': return 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
       case 'satellite': return 'https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
-      case 'ocean':     return 'https://services.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Base/MapServer/tile/{z}/{y}/{x}';
-      default:          return 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}';
+      case 'ocean': return 'https://services.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Base/MapServer/tile/{z}/{y}/{x}';
+      default: return 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}';
     }
   })();
+  const CITY_COLOR = '#2c1810';  // dark ink — uniform for all cities
+  const CITY_RADIUS = 3;
 
-  const cityRadius = (type: string) => type === 'major' ? 6 : type === 'city' ? 4 : 3;
-  const cityColor  = (type: string) => type === 'major' ? '#c0392b' : type === 'city' ? '#e67e22' : '#f39c12';
   const natEmoji = (type: string) =>
     ({ river: '〰️', sea: '🌊', desert: '🏜️', valley: '🏞️' }[type] ?? '🌍');
+
+  const landmarkEmoji = (name: string): string => {
+    const n = name.toLowerCase();
+    if (n.includes('mount') || n.includes('sinai') || n.includes('horeb') || n.includes('ararat') || n.includes('carmel') || n.includes('hermon') || n.includes('nebo') || n.includes('olives')) return '⛰️';
+    if (n.includes('well') || n.includes('lahai') || n.includes('spring')) return '💧';
+    if (n.includes('cave') || n.includes('tomb') || n.includes('coffin') || n.includes('kever')) return '🪦';
+    if (n.includes('tower') || n.includes('babel') || n.includes('eder') || n.includes('migdal')) return '🗼';
+    if (n.includes('altar') || n.includes('tabernacle')) return '🔥';
+    if (n.includes('oak') || n.includes('tree') || n.includes('allon') || n.includes('grove')) return '🌳';
+    if (n.includes('tent')) return '⛺';
+    if (n.includes('gate')) return '🚪';
+    if (n.includes('field') || n.includes('floor') || n.includes('threshing')) return '🌾';
+    if (n.includes('galeed') || n.includes('el-bethel') || n.includes('pillar')) return '🪨';
+    return '📍';
+  };
+
+  const locationCertainty = (loc: 'confirmed' | 'probable' | 'unknown') => ({
+    confirmed: { label: 'Confirmed location', color: '#27ae60' },
+    probable:  { label: 'Probable location',  color: '#e67e22' },
+    unknown:   { label: 'Uncertain location', color: '#c0392b' },
+  }[loc]);
 
   // ── People filter sub-panel ────────────────────────────────────────────────
   const peopleFilter = avPeople.length > 0 ? (
@@ -495,6 +516,7 @@ export default function App() {
               selected={selLandmarks}
               onToggle={name => toggle(setSelLandmarks, name)}
               searchPlaceholder="Search landmarks…"
+              renderIcon={item => <span className="nat-icon">{landmarkEmoji(item.name)}</span>}
               emptyMessage="No landmarks for this filter"
             />
           </Section>
@@ -566,97 +588,103 @@ export default function App() {
       {/* ── Map ────────────────────────────────────────────────────────────── */}
       <main className="map-container">
         <div className="map-leaflet-wrap">
-        <button
-          className="sidebar-toggle"
-          onClick={() => setSidebarOpen(o => !o)}
-          title={sidebarOpen ? 'Collapse sidebar' : 'Expand sidebar'}
-        >
-          <span className="sidebar-toggle-icon">◀</span>
-        </button>
-        <MapContainer
-          center={[31.5, 35.0] as L.LatLngExpression}
-          zoom={6} minZoom={3} maxZoom={8}
-          style={{ height: '100%', width: '100%' }}
-        >
-          <TileLayer attribution='&copy; <a href="https://www.esri.com">Esri</a>' url={tileUrl} maxZoom={18} />
-          <MapResizer trigger={sidebarOpen} />
+          <button
+            className="sidebar-toggle"
+            onClick={() => setSidebarOpen(o => !o)}
+            title={sidebarOpen ? 'Collapse sidebar' : 'Expand sidebar'}
+          >
+            <span className="sidebar-toggle-icon">◀</span>
+          </button>
+          <MapContainer
+            center={[31.5, 35.0] as L.LatLngExpression}
+            zoom={6} minZoom={3} maxZoom={8}
+            style={{ height: '100%', width: '100%' }}
+          >
+            <TileLayer attribution='&copy; <a href="https://www.esri.com">Esri</a>' url={tileUrl} maxZoom={18} />
+            <MapResizer trigger={sidebarOpen} />
 
-          {/* Regions — dashed */}
-          {regions.filter(r => selRegions.includes(r.name)).map(r => (
-            <GeoJSON key={r.name} data={r.geometry as any}
-              pathOptions={{ color: r.color, weight: 1, fillColor: r.color, fillOpacity: r.fillOpacity, dashArray: '6 4' }} />
-          ))}
+            {/* Regions — dashed */}
+            {regions.filter(r => selRegions.includes(r.name)).map(r => (
+              <GeoJSON key={r.name} data={r.geometry as any}
+                pathOptions={{ color: r.color, weight: 1, fillColor: r.color, fillOpacity: r.fillOpacity, dashArray: '6 4' }} />
+            ))}
 
-          {/* Tribes — dotted */}
-          {tribes.filter(t => selTribes.includes(t.name)).map(t => (
-            <GeoJSON key={t.name} data={t.geometry as any}
-              pathOptions={{ color: t.color, weight: 1.5, fillColor: t.color, fillOpacity: t.fillOpacity, dashArray: '3 5' }} />
-          ))}
+            {/* Tribes — dotted */}
+            {tribes.filter(t => selTribes.includes(t.name)).map(t => (
+              <GeoJSON key={t.name} data={t.geometry as any}
+                pathOptions={{ color: t.color, weight: 1.5, fillColor: t.color, fillOpacity: t.fillOpacity, dashArray: '3 5' }} />
+            ))}
 
-          {/* Kingdoms — solid */}
-          {kingdomsEmpires.filter(k => selKingdoms.includes(k.name)).map(k => (
-            <GeoJSON key={k.name} data={k.geometry as any}
-              pathOptions={{ color: k.color, weight: 2, fillColor: k.color, fillOpacity: k.fillOpacity }} />
-          ))}
+            {/* Kingdoms — solid */}
+            {kingdomsEmpires.filter(k => selKingdoms.includes(k.name)).map(k => (
+              <GeoJSON key={k.name} data={k.geometry as any}
+                pathOptions={{ color: k.color, weight: 2, fillColor: k.color, fillOpacity: k.fillOpacity }} />
+            ))}
 
-          {/* Natural Features */}
-          {naturalFeatures.filter(n => selNat.includes(n.name)).map(n => (
-            <React.Fragment key={n.name}>
-              {n.path && (
-                <Polyline positions={n.path} pathOptions={{ color: n.color, weight: n.type === 'river' ? 3 : 2, opacity: 0.75 }}>
-                  <Popup><strong>{n.name}</strong><br /><span style={{ fontSize: '0.9em' }}>{n.description}</span></Popup>
-                </Polyline>
-              )}
-              {n.geometry && (
-                <GeoJSON data={n.geometry as any}
-                  pathOptions={{ color: n.color, weight: 1, fillColor: n.color, fillOpacity: n.fillOpacity ?? 0.3 }}>
-                  <Popup><strong>{n.name}</strong><br /><span style={{ fontSize: '0.9em' }}>{n.description}</span></Popup>
-                </GeoJSON>
-              )}
-            </React.Fragment>
-          ))}
+            {/* Natural Features */}
+            {naturalFeatures.filter(n => selNat.includes(n.name)).map(n => (
+              <React.Fragment key={n.name}>
+                {n.path && (
+                  <Polyline positions={n.path} pathOptions={{ color: n.color, weight: n.type === 'river' ? 3 : 2, opacity: 0.75 }}>
+                    <Popup><strong>{n.name}</strong><br /><span style={{ fontSize: '0.9em' }}>{n.description}</span></Popup>
+                  </Polyline>
+                )}
+                {n.geometry && (
+                  <GeoJSON data={n.geometry as any}
+                    pathOptions={{ color: n.color, weight: 1, fillColor: n.color, fillOpacity: n.fillOpacity ?? 0.3 }}>
+                    <Popup><strong>{n.name}</strong><br /><span style={{ fontSize: '0.9em' }}>{n.description}</span></Popup>
+                  </GeoJSON>
+                )}
+              </React.Fragment>
+            ))}
 
-          {/* Journeys */}
-          {journeys.filter(j => selJourneys.includes(j.name)).map(journey => (
-            <React.Fragment key={journey.name}>
-              <Polyline positions={journey.path} pathOptions={{ color: journey.color, weight: 3, opacity: 0.85 }} />
-              {journey.locations.map((loc, idx) => (
-                <CircleMarker key={idx} center={loc.coords} radius={5}
-                  pathOptions={{ fillColor: journey.color, fillOpacity: 0.9, color: '#fff', weight: 2 }}>
-                  <Popup>
-                    <strong>{loc.name}</strong>
-                    {loc.description && <><br /><span style={{ fontSize: '0.9em' }}>{loc.description}</span></>}
-                    <br /><em style={{ fontSize: '0.85em', color: '#666' }}>{journey.name}</em>
-                  </Popup>
-                </CircleMarker>
-              ))}
-            </React.Fragment>
-          ))}
+            {/* Journeys */}
+            {journeys.filter(j => selJourneys.includes(j.name)).map(journey => (
+              <React.Fragment key={journey.name}>
+                <Polyline positions={journey.path} pathOptions={{ color: journey.color, weight: 3, opacity: 0.85 }} />
+                {journey.locations.map((loc, idx) => (
+                  <CircleMarker key={idx} center={loc.coords} radius={5}
+                    pathOptions={{ fillColor: journey.color, fillOpacity: 0.9, color: '#fff', weight: 2 }}>
+                    <Popup>
+                      <strong>{loc.name}</strong>
+                      {loc.description && <><br /><span style={{ fontSize: '0.9em' }}>{loc.description}</span></>}
+                      <br /><em style={{ fontSize: '0.85em', color: '#666' }}>{journey.name}</em>
+                    </Popup>
+                  </CircleMarker>
+                ))}
+              </React.Fragment>
+            ))}
 
-          {/* Cities */}
-          {cities.filter(c => selCities.includes(c.name)).map(city => (
-            <CircleMarker key={city.name} center={city.coords} radius={cityRadius(city.location)}
-              pathOptions={{ fillColor: cityColor(city.location), fillOpacity: 0.85, color: '#fff', weight: 2 }}>
-              <Tooltip permanent direction="right" offset={[8, 0]} className="city-label">{city.name}</Tooltip>
-              <Popup>
-                <strong>{city.name}</strong><br />
-                <span style={{ fontSize: '0.9em' }}>{city.description}</span>
-              </Popup>
-            </CircleMarker>
-          ))}
+            {/* Cities */}
+            {cities.filter(c => selCities.includes(c.name)).map(city => (
+              <CircleMarker key={city.name} center={city.coords} radius={CITY_RADIUS}
+                pathOptions={{ fillColor: CITY_COLOR, fillOpacity: 1, color: CITY_COLOR, weight: 1 }}>
+                <Tooltip permanent direction="right" offset={[8, 0]} className="city-label">{city.name}</Tooltip>
+                <Popup>
+                  <strong>{city.name}</strong><br />
+                  <span style={{ fontSize: '0.9em' }}>{city.description}</span><br />
+                  <span style={{ fontSize: '0.8em', color: locationCertainty(city.location).color, fontWeight: 600 }}>
+                    📌 {locationCertainty(city.location).label}
+                  </span>
+                </Popup>
+              </CircleMarker>
+            ))}
 
-          {/* Landmarks */}
-          {landmarks.filter(l => selLandmarks.includes(l.name)).map(lm => (
-            <Marker key={lm.name} position={lm.coords}>
-              <Tooltip permanent direction="right" offset={[12, 0]} className="city-label">{lm.name}</Tooltip>
-              <Popup>
-                <strong>{lm.name}</strong><br />
-                <span style={{ fontSize: '0.9em' }}>{lm.description}</span><br />
-              </Popup>
-            </Marker>
-          ))}
+            {/* Landmarks */}
+            {landmarks.filter(l => selLandmarks.includes(l.name)).map(lm => (
+              <Marker key={lm.name} position={lm.coords}>
+                <Tooltip permanent direction="right" offset={[12, 0]} className="city-label"> {lm.name}</Tooltip>
+                <Popup>
+                  <strong>{landmarkEmoji(lm.name)} {lm.name}</strong><br />
+                  <span style={{ fontSize: '0.9em' }}>{lm.description}</span><br />
+                  <span style={{ fontSize: '0.8em', color: locationCertainty(lm.location).color, fontWeight: 600 }}>
+                    📌 {locationCertainty(lm.location).label}
+                  </span>
+                </Popup>
+              </Marker>
+            ))}
 
-        </MapContainer>
+          </MapContainer>
         </div>
 
         <Timeline />

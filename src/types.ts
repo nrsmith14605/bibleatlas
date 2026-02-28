@@ -21,6 +21,7 @@ export interface Landmark {
   name: string;
   coords: L.LatLngExpression;
   description: string;
+  location: 'confirmed' | 'probable' | 'unknown';
   books: BookTag[];
 }
 
