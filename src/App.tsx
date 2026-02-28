@@ -394,8 +394,6 @@ export default function App() {
 
   const cityRadius = (type: string) => type === 'major' ? 6 : type === 'city' ? 4 : 3;
   const cityColor  = (type: string) => type === 'major' ? '#c0392b' : type === 'city' ? '#e67e22' : '#f39c12';
-  const landmarkEmoji = (type: string) =>
-    ({ mountain: '⛰️', tomb: '🪦', altar: '🔥', well: '🪣', gate: '🏛️', site: '📍' }[type] ?? '📍');
   const natEmoji = (type: string) =>
     ({ river: '〰️', sea: '🌊', desert: '🏜️', valley: '🏞️' }[type] ?? '🌍');
 
