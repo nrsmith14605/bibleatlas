@@ -528,33 +528,4 @@ export const regions: Region[] = [
       ]],
     },
   },
-
-  {
-    name: "Egypt",
-    description:
-      "Land of Israel's slavery and the Exodus; also a refuge for Abraham, Joseph, and the young Jesus",
-    color: '#c9a961',
-    fillOpacity: 0.18,
-    books: ['Genesis', 'Exodus', 'Matthew', 'Isaiah', 'Jeremiah'],
-    geometry: {
-      type: 'Polygon',
-      coordinates: [[
-        // Northeast: Suez / Sinai border
-        [32.35, 30.55],
-        // North coast east to west
-        [31.00, 31.50],
-        [29.00, 31.10],
-        [25.00, 31.50],
-        // Northwest: Libyan border
-        [24.70, 31.40],
-        // West and south borders
-        [24.70, 22.00],
-        // South: first cataract / Aswan
-        [32.90, 22.00],
-        // East: Red Sea / Gulf of Suez coast
-        [32.50, 27.00],
-        [32.35, 30.55],
-      ]],
-    },
-  },
 ];
