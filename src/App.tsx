@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import { MapContainer, TileLayer, GeoJSON, Polyline, Marker, Popup, CircleMarker, Tooltip, useMap } from 'react-leaflet';
+import type { GeoJsonObject, FeatureCollection } from 'geojson';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import './App.css';
@@ -78,7 +79,7 @@ function CheckList<T extends { name: string }>({
   searchPlaceholder?: string;
   renderIcon?: (item: T) => React.ReactNode;
   emptyMessage?: string;
-  extra?: React.ReactNode; // rendered above the list (e.g. people filter)
+  extra?: React.ReactNode;
 }) {
   const [search, setSearch] = useState('');
   const filtered = items.filter(i => i.name.toLowerCase().includes(search.toLowerCase()));
@@ -118,7 +119,7 @@ function CheckList<T extends { name: string }>({
 // ── Timeline ─────────────────────────────────────────────────────────────────
 const YEAR_MIN = -2000;
 const YEAR_MAX = 100;
-const PX_PER_YR = 4;          // pixels per year
+const PX_PER_YR = 4;
 const TOTAL_YEARS = YEAR_MAX - YEAR_MIN;
 const TRACK_W = TOTAL_YEARS * PX_PER_YR;
 
@@ -139,22 +140,20 @@ function Timeline() {
   const barRef = useRef<HTMLDivElement>(null);
   const [scrollLeft, setScrollLeft] = useState(0);
 
-  // After mount, center the view on year 0
   useEffect(() => {
     const bar = barRef.current;
     if (!bar) return;
     const centered = yearToX(0) - bar.clientWidth / 2;
     setScrollLeft(Math.max(0, Math.min(TRACK_W - bar.clientWidth, centered)));
   }, []);
+
   const [selectedYear, setSelectedYear] = useState<number | null>(null);
   const [editing, setEditing] = useState(false);
   const [editVal, setEditVal] = useState('');
 
-  // Dragging state (for panning the track)
   const drag = useRef<{ startX: number; startScroll: number } | null>(null);
   const wasDragged = useRef(false);
 
-  // Build tick array once — every 25 years
   const ticks = useMemo(() => {
     const result = [];
     for (let y = YEAR_MIN; y <= YEAR_MAX; y += 25) {
@@ -192,7 +191,6 @@ function Timeline() {
   }, []);
 
   const handleClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    // wasDragged persists after drag.current is cleared, so we can check it here
     if (wasDragged.current) {
       wasDragged.current = false;
       return;
@@ -215,7 +213,6 @@ function Timeline() {
     if (!isNaN(parsed)) {
       const clamped = Math.max(YEAR_MIN, Math.min(YEAR_MAX, parsed));
       setSelectedYear(clamped);
-      // scroll so cursor is visible
       const bar = barRef.current;
       if (bar) {
         const targetScroll = yearToX(clamped) - bar.clientWidth / 2;
@@ -232,12 +229,10 @@ function Timeline() {
       onMouseDown={handleMouseDown}
       onClick={handleClick}
     >
-      {/* Scrollable track */}
       <div
         className="timeline-track"
         style={{ width: TRACK_W, left: -scrollLeft }}
       >
-        {/* Era labels */}
         <span className="tl-era-label" style={{ left: yearToX(-5) - 30 }}>◀ BC</span>
         <span className="tl-era-label" style={{ left: yearToX(5) }}>AD ▶</span>
 
@@ -263,7 +258,6 @@ function Timeline() {
         })}
       </div>
 
-      {/* Selected year cursor */}
       {selectedYear !== null && cursorScreenX !== null &&
         cursorScreenX > -10 && cursorScreenX < (barRef.current?.clientWidth ?? 9999) + 10 && (
           <>
@@ -299,9 +293,123 @@ function Timeline() {
     </div>
   );
 }
+
+// ── Natural Earth data ────────────────────────────────────────────────────────
+const RIVER_CDN_URL =
+  'https://cdn.jsdelivr.net/gh/martynafford/natural-earth-geojson@master/50m/physical/ne_50m_rivers_lake_centerlines.json';
+const LAKE_CDN_URL =
+  'https://cdn.jsdelivr.net/gh/martynafford/natural-earth-geojson@master/50m/physical/ne_50m_lakes.json';
+
+function useRiverGeoJson() {
+  const [data, setData] = useState<FeatureCollection | null>(null);
+  useEffect(() => {
+    fetch(RIVER_CDN_URL)
+      .then(r => r.json())
+      .then(setData)
+      .catch(err => console.warn('Failed to load river GeoJSON:', err));
+  }, []);
+  return data;
+}
+
+function useLakeGeoJson() {
+  const [data, setData] = useState<FeatureCollection | null>(null);
+  useEffect(() => {
+    fetch(LAKE_CDN_URL)
+      .then(r => r.json())
+      .then((fc: FeatureCollection) => {
+        // DEV HELPER — log all lake names in the Middle East region so
+        // you can confirm the exact strings for Dead Sea / Sea of Galilee.
+        // Remove this block once you've confirmed the names.
+        fc.features.forEach(f => {
+          const [lng, lat] = (f.geometry as any).coordinates?.[0]?.[0] ?? [];
+          if (lng > 30 && lng < 40 && lat > 28 && lat < 36) {
+            console.log('Lake near Israel:', f.properties?.name, f.properties);
+          }
+        });
+        setData(fc);
+      })
+      .catch(err => console.warn('Failed to load lake GeoJSON:', err));
+  }, []);
+  return data;
+}
+
+// Renders a single river matched by `name` from the Natural Earth rivers dataset.
+function RiverLayer({
+  geoJsonName,
+  color,
+  name,
+  description,
+  allRiverData,
+}: {
+  geoJsonName: string;
+  color: string;
+  name: string;
+  description: string;
+  allRiverData: FeatureCollection;
+}) {
+  const filtered = useMemo<FeatureCollection>(() => ({
+    type: 'FeatureCollection',
+    features: allRiverData.features.filter(
+      f => f.properties?.name === geoJsonName
+    ),
+  }), [allRiverData, geoJsonName]);
+
+  if (filtered.features.length === 0) return null;
+
+  return (
+    <GeoJSON
+      key={`${name}-${geoJsonName}`}
+      data={filtered as GeoJsonObject}
+      pathOptions={{ color, weight: 2, opacity: 0.85 }}
+      onEachFeature={(_feature, layer) => {
+        layer.bindPopup(`<strong>${name}</strong><br/><span style="font-size:0.9em">${description}</span>`);
+      }}
+    />
+  );
+}
+
+// Renders a single lake/sea polygon matched by `name` from the Natural Earth lakes dataset.
+function LakeLayer({
+  lakeGeoJsonName,
+  color,
+  fillOpacity,
+  name,
+  description,
+  allLakeData,
+}: {
+  lakeGeoJsonName: string;
+  color: string;
+  fillOpacity: number;
+  name: string;
+  description: string;
+  allLakeData: FeatureCollection;
+}) {
+  const filtered = useMemo<FeatureCollection>(() => ({
+    type: 'FeatureCollection',
+    features: allLakeData.features.filter(
+      f => f.properties?.name === lakeGeoJsonName
+    ),
+  }), [allLakeData, lakeGeoJsonName]);
+
+  if (filtered.features.length === 0) return null;
+
+  return (
+    <GeoJSON
+      key={`lake-${name}-${lakeGeoJsonName}`}
+      data={filtered as GeoJsonObject}
+      pathOptions={{ color, weight: 1, fillColor: color, fillOpacity }}
+      onEachFeature={(_feature, layer) => {
+        layer.bindPopup(`<strong>${name}</strong><br/><span style="font-size:0.9em">${description}</span>`);
+      }}
+    />
+  );
+}
+
 export default function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [selectedBook, setSelectedBook] = useState('');
+  const riverGeoJson = useRiverGeoJson();
+  const lakeGeoJson = useLakeGeoJson();
 
   // Section expansion state
   const [citiesExp, setCitiesExp] = useState(false);
@@ -391,7 +499,8 @@ export default function App() {
       default: return 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}';
     }
   })();
-  const CITY_COLOR = '#2c1810';  // dark ink — uniform for all cities
+
+  const CITY_COLOR = '#2c1810';
   const CITY_RADIUS = 3;
 
   const natEmoji = (type: string) =>
@@ -414,8 +523,8 @@ export default function App() {
 
   const locationCertainty = (loc: 'confirmed' | 'probable' | 'unknown') => ({
     confirmed: { label: 'Confirmed location', color: '#27ae60' },
-    probable:  { label: 'Probable location',  color: '#e67e22' },
-    unknown:   { label: 'Uncertain location', color: '#c0392b' },
+    probable: { label: 'Probable location', color: '#e67e22' },
+    unknown: { label: 'Uncertain location', color: '#c0392b' },
   }[loc]);
 
   // ── People filter sub-panel ────────────────────────────────────────────────
@@ -516,7 +625,11 @@ export default function App() {
               selected={selLandmarks}
               onToggle={name => toggle(setSelLandmarks, name)}
               searchPlaceholder="Search landmarks…"
-              renderIcon={item => <span className="nat-icon">{landmarkEmoji(item.name)}</span>}
+              renderIcon={item => (
+                <span className="landmark-icon">
+                  {landmarkEmoji(item.name)}
+                </span>
+              )}
               emptyMessage="No landmarks for this filter"
             />
           </Section>
@@ -546,7 +659,7 @@ export default function App() {
             />
           </Section>
 
-          {/* Regions  */}
+          {/* Regions */}
           <Section title="Regions" expanded={regionsExp} onToggle={() => setRegionsExp(e => !e)} badge={selRegions.length}>
             <CheckList
               items={avRegions}
@@ -624,17 +737,45 @@ export default function App() {
             {/* Natural Features */}
             {naturalFeatures.filter(n => selNat.includes(n.name)).map(n => (
               <React.Fragment key={n.name}>
+
+                {/* River from Natural Earth CDN */}
+                {n.geoJsonName && riverGeoJson && (
+                  <RiverLayer
+                    geoJsonName={n.geoJsonName}
+                    color={n.color}
+                    name={n.name}
+                    description={n.description}
+                    allRiverData={riverGeoJson}
+                  />
+                )}
+
+                {/* Lake / sea from Natural Earth CDN */}
+                {n.lakeGeoJsonName && lakeGeoJson && (
+                  <LakeLayer
+                    lakeGeoJsonName={n.lakeGeoJsonName}
+                    color={n.color}
+                    fillOpacity={n.fillOpacity ?? 0.45}
+                    name={n.name}
+                    description={n.description}
+                    allLakeData={lakeGeoJson}
+                  />
+                )}
+
+                {/* Fallback hand-coded polyline (small rivers not in Natural Earth) */}
                 {n.path && (
-                  <Polyline positions={n.path} pathOptions={{ color: n.color, weight: n.type === 'river' ? 3 : 2, opacity: 0.75 }}>
+                  <Polyline positions={n.path} pathOptions={{ color: n.color, weight: 2, opacity: 0.85 }}>
                     <Popup><strong>{n.name}</strong><br /><span style={{ fontSize: '0.9em' }}>{n.description}</span></Popup>
                   </Polyline>
                 )}
+
+                {/* Hand-coded polygons for seas, deserts, valleys */}
                 {n.geometry && (
                   <GeoJSON data={n.geometry as any}
                     pathOptions={{ color: n.color, weight: 1, fillColor: n.color, fillOpacity: n.fillOpacity ?? 0.3 }}>
                     <Popup><strong>{n.name}</strong><br /><span style={{ fontSize: '0.9em' }}>{n.description}</span></Popup>
                   </GeoJSON>
                 )}
+
               </React.Fragment>
             ))}
 
