@@ -35,28 +35,28 @@ function MapResizer({ trigger }: { trigger: boolean }) {
   return null;
 }
 
-  /** Haversine distance between two [lat,lng] points in kilometres */
-  function haversineKm(a: L.LatLngExpression, b: L.LatLngExpression): number {
-    const toRad = (deg: number) => (deg * Math.PI) / 180;
-    const [lat1, lng1] = a as [number, number];
-    const [lat2, lng2] = b as [number, number];
-    const R = 6371;
-    const dLat = toRad(lat2 - lat1);
-    const dLng = toRad(lng2 - lng1);
-    const sinLat = Math.sin(dLat / 2);
-    const sinLng = Math.sin(dLng / 2);
-    const c = 2 * Math.asin(
-      Math.sqrt(sinLat * sinLat + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * sinLng * sinLng)
-    );
-    return R * c;
-  }
+/** Haversine distance between two [lat,lng] points in kilometres */
+function haversineKm(a: L.LatLngExpression, b: L.LatLngExpression): number {
+  const toRad = (deg: number) => (deg * Math.PI) / 180;
+  const [lat1, lng1] = a as [number, number];
+  const [lat2, lng2] = b as [number, number];
+  const R = 6371;
+  const dLat = toRad(lat2 - lat1);
+  const dLng = toRad(lng2 - lng1);
+  const sinLat = Math.sin(dLat / 2);
+  const sinLng = Math.sin(dLng / 2);
+  const c = 2 * Math.asin(
+    Math.sqrt(sinLat * sinLat + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * sinLng * sinLng)
+  );
+  return R * c;
+}
 
-  /** Total distance of an array of [lat,lng] points in kilometres */
-  function totalDistanceKm(path: L.LatLngExpression[]): number {
-    let total = 0;
-    for (let i = 0; i + 1 < path.length; i++) total += haversineKm(path[i], path[i + 1]);
-    return total;
-  }
+/** Total distance of an array of [lat,lng] points in kilometres */
+function totalDistanceKm(path: L.LatLngExpression[]): number {
+  let total = 0;
+  for (let i = 0; i + 1 < path.length; i++) total += haversineKm(path[i], path[i + 1]);
+  return total;
+}
 
 // ── Sidebar section wrapper ──────────────────────────────────────────────────
 function Section({
@@ -745,10 +745,33 @@ export default function App() {
                 pathOptions={{ color: r.color, weight: 1, fillColor: r.color, fillOpacity: r.fillOpacity, dashArray: '6 4' }} />
             ))}
 
-            {/* Tribes — dotted */}
+
+            {/* Tribes / Ethnic Peoples — dotted outline with popup */}
             {tribes.filter(t => selTribes.includes(t.name)).map(t => (
-              <GeoJSON key={t.name} data={t.geometry as any}
-                pathOptions={{ color: t.color, weight: 1.5, fillColor: t.color, fillOpacity: t.fillOpacity, dashArray: '3 5' }} />
+              <GeoJSON
+                key={t.name}
+                data={t.geometry as any}
+                pathOptions={{
+                  color: t.color,
+                  weight: 1.5,
+                  fillColor: t.color,
+                  fillOpacity: t.fillOpacity,
+                  dashArray: '3 5',
+                }}
+                onEachFeature={(_feature, layer) => {
+                  layer.bindPopup(
+                    `<div style="min-width:220px;max-width:300px;font-family:inherit">
+          <strong style="font-size:1em;color:${t.color}">${t.name}</strong>
+          <div style="border-top:1px solid #ddd;margin:5px 0 4px"></div>
+          <p style="font-size:0.87em;color:#333;margin:0 0 6px;line-height:1.5">${t.description ?? ''}</p>
+          ${t.books && t.books.length > 0
+                      ? `<div style="font-size:0.78em;color:#777">📖 ${t.books.join(', ')}</div>`
+                      : ''
+                    }
+        </div>`
+                  );
+                }}
+              />
             ))}
 
             {/* Kingdoms — solid */}
