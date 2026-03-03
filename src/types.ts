@@ -55,6 +55,7 @@ export interface Region {
   color: string;
   fillOpacity: number;
   description?: string;
+  location?: 'confirmed' | 'probable' | 'unknown';
   books: BookTag[];
 }
 

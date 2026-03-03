@@ -742,9 +742,17 @@ export default function App() {
             {/* Regions — dashed */}
             {regions.filter(r => selRegions.includes(r.name)).map(r => (
               <GeoJSON key={r.name} data={r.geometry as any}
-                pathOptions={{ color: r.color, weight: 1, fillColor: r.color, fillOpacity: r.fillOpacity, dashArray: '6 4' }} />
+                pathOptions={{ color: r.color, weight: 1, fillColor: r.color, fillOpacity: r.fillOpacity, dashArray: '6 4' }}
+                onEachFeature={(_feature, layer) => {
+                  const locInfo = r.location ? locationCertainty(r.location) : null;
+                  layer.bindPopup(
+                    `<strong style="font-size:1.05em">${r.name}</strong>` +
+                    (r.description ? `<br/><span style="font-size:0.88em;line-height:1.4;display:block;margin-top:4px">${r.description}</span>` : '') +
+                    (locInfo ? `<br/><span style="font-size:0.8em;color:${locInfo.color};font-weight:600;margin-top:4px;display:block">📍 ${locInfo.label}</span>` : '')
+                  );
+                }}
+              />
             ))}
-
 
             {/* Tribes / Ethnic Peoples — dotted outline with popup */}
             {tribes.filter(t => selTribes.includes(t.name)).map(t => (

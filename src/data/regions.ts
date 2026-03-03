@@ -28,6 +28,7 @@ export const regions: Region[] = [
       "The garden God planted in the east; the source of four rivers including the Tigris and Euphrates; traditionally, yet not certain, placed in upper Mesopotamia near the great rivers' headwaters (Genesis 2:8–14)",
     color: '#27ae60',
     fillOpacity: 0.20,
+    location: 'unknown',
     books: ['Genesis'],
     geometry: {
       type: 'Polygon',
@@ -55,6 +56,7 @@ export const regions: Region[] = [
       "The 'plain of Aram' around Haran in northwest Mesopotamia; Abraham came from here; Jacob served Laban here 20 years and married Leah and Rachel (Genesis 25:20; 28:2–7; 31:18)",
     color: '#2e86c1',
     fillOpacity: 0.22,
+    location: 'confirmed',
     books: ['Genesis'],
     geometry: {
       type: 'Polygon',
@@ -86,6 +88,7 @@ export const regions: Region[] = [
       "The rugged highland east of the Jordan between the Jabbok and Yarmouk rivers; Laban pursued Jacob here; famous for its balm (Genesis 31:21–25; 37:25)",
     color: '#7d9b4e',
     fillOpacity: 0.24,
+    location: 'confirmed',
     books: ['Genesis'],
     geometry: {
       type: 'Polygon',
@@ -119,6 +122,7 @@ export const regions: Region[] = [
       "The land encompassed by the Pishon River, rich in gold; Ishmael's descendants settled from Havilah to Shur; identified with the Hejaz highlands of northwestern Arabia (Genesis 2:11–12; 25:18)",
     color: '#f0c040',
     fillOpacity: 0.22,
+    location: 'probable',
     books: ['Genesis'],
     geometry: {
       type: 'Polygon',
@@ -147,6 +151,7 @@ export const regions: Region[] = [
       "The dry semi-arid southern wilderness of Canaan; Abraham and Isaac both settled and dug wells here; stretching toward Kadesh Barnea (Genesis 12:9; 13:1; 20:1)",
     color: '#c9a030',
     fillOpacity: 0.25,
+    location: 'confirmed',
     books: ['Genesis'],
     geometry: {
       type: 'Polygon',
@@ -178,6 +183,7 @@ export const regions: Region[] = [
       "The large desert south of Canaan and north of Sinai; Ishmael settled here; Israel camped here during their wilderness wandering (Genesis 21:21; Numbers 10:12)",
     color: '#e8c165',
     fillOpacity: 0.24,
+    location: 'probable',
     books: ['Genesis'],
     geometry: {
       type: 'Polygon',
@@ -211,6 +217,7 @@ export const regions: Region[] = [
       "The wilderness east of Egypt along the northern Sinai coast road; Hagar fled here from Sarai; Israel entered it after crossing the Red Sea (Genesis 16:7; Exodus 15:22)",
     color: '#d4b483',
     fillOpacity: 0.25,
+    location: 'probable',
     books: ['Genesis'],
     geometry: {
       type: 'Polygon',
@@ -238,6 +245,7 @@ export const regions: Region[] = [
       "Desert on the southwestern edge of Canaan; Kadesh Barnea lay within its bounds; the southernmost boundary of the Promised Land (Numbers 13:21; 20:1)",
     color: '#d4a56a',
     fillOpacity: 0.26,
+    location: 'probable',
     books: ['Genesis'],
     geometry: {
       type: 'Polygon',
@@ -268,6 +276,7 @@ export const regions: Region[] = [
       "The well-watered Jordan valley which Lot chose for its resemblance to the garden of the LORD; Sodom and Gomorrah stood on its southern plain (Genesis 13:10–12)",
     color: '#5dade2',
     fillOpacity: 0.25,
+    location: 'probable',
     books: ['Genesis'],
     geometry: {
       type: 'Polygon',
@@ -305,6 +314,7 @@ export const regions: Region[] = [
       "The southern extremity of Paran at the head of the Gulf of Aqaba near Eilat; the four kings swept as far as El-Paran on their campaign before attacking Sodom (Genesis 14:6)",
     color: '#b8860b',
     fillOpacity: 0.28,
+    location: 'unknown',
     books: ['Genesis'],
     geometry: {
       type: 'Polygon',
@@ -336,6 +346,7 @@ export const regions: Region[] = [
       "The fertile eastern Nile Delta where Pharaoh settled Jacob's family; rich pastureland where Israel multiplied greatly during 430 years in Egypt; also called the Land of Rameses (Genesis 45:10; 46:28–34; 47:6, 11)",
     color: '#1e8449',
     fillOpacity: 0.26,
+    location: 'probable',
     books: ['Genesis', 'Exodus'],
     geometry: {
       type: 'Polygon',
@@ -377,6 +388,7 @@ export const regions: Region[] = [
       "Southern Mesopotamia; site of the Tower of Babel; the alluvial plain between Babylon and the Persian Gulf; later the core of the Babylonian Empire",
     color: '#d68910',
     fillOpacity: 0.25,
+    location: 'confirmed',
     books: ['Genesis'],
     geometry: {
       type: 'Polygon',
@@ -399,6 +411,7 @@ export const regions: Region[] = [
       "The desert peninsula between Egypt and Canaan; the Israelites wandered here for 40 years; Moses received the Law at Mount Sinai",
     color: '#f39c12',
     fillOpacity: 0.2,
+    location: 'probable',
     books: ['Exodus', 'Leviticus', 'Numbers', 'Deuteronomy'],
     geometry: {
       type: 'Polygon',
@@ -423,6 +436,7 @@ export const regions: Region[] = [
       "Northern region of the Promised Land; Jesus conducted most of his earthly ministry here",
     color: '#2980b9',
     fillOpacity: 0.2,
+    location: 'confirmed',
     books: ['Joshua', 'Judges', 'Matthew', 'Mark', 'Luke', 'John'],
     geometry: {
       type: 'Polygon',
@@ -451,6 +465,7 @@ export const regions: Region[] = [
       "Central region between Galilee and Judea; capital of the Northern Kingdom; inhabited by Samaritans after the Assyrian conquest",
     color: '#c0392b',
     fillOpacity: 0.18,
+    location: 'confirmed',
     books: ['1 Kings', '2 Kings', 'Luke', 'John', 'Acts'],
     geometry: {
       type: 'Polygon',
@@ -478,6 +493,7 @@ export const regions: Region[] = [
       "Southern region around Jerusalem; heartland of the tribe of Judah and later the Southern Kingdom",
     color: '#7d3c98',
     fillOpacity: 0.2,
+    location: 'confirmed',
     books: ['Joshua', '1 Kings', '2 Kings', 'Matthew', 'Mark', 'Luke', 'John', 'Acts'],
     geometry: {
       type: 'Polygon',
@@ -506,6 +522,7 @@ export const regions: Region[] = [
       "The territories east of the Jordan River: Bashan, Gilead, Ammon, Moab and Edom",
     color: '#7f8c8d',
     fillOpacity: 0.18,
+    location: 'confirmed',
     books: ['Numbers', 'Deuteronomy', 'Joshua', 'Judges', 'Ruth', '2 Samuel'],
     geometry: {
       type: 'Polygon',
