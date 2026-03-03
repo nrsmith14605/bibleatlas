@@ -164,42 +164,63 @@ export const naturalFeatures: NaturalFeature[] = [
   books: ['Genesis'],
   color: '#6e2fa0',
   path: [
-      // Karun River: source at Zard-Kuh in the Zagros highlands (Bakhtiari Mountains)
-      // flowing southwest through the mountains, across Khuzestan plain to the Persian Gulf.
-      // Coordinates: [lat, lng]  (Leaflet order)
-      //
-      // Source — Zard-Kuh / Kuhrang headwaters (~32.5°N, 50.0°E)
-      [32.48, 50.02],
-      // Upper course — Karun-4 Dam area, Bakhtiari highlands
-      [32.22, 49.80],
-      [32.05, 49.62],
-      // Karun-3 Dam reservoir — river bends northwest
-      [31.88, 49.42],
-      [31.75, 49.22],
-      // Karun-1 (Shahid Abbaspour) Dam — river loops north
-      [31.62, 49.08],
-      [31.72, 48.90],
-      // Masjed Soleyman area — river turns west
-      [31.92, 49.30],
-      [32.02, 49.12],
-      // Leaves the foothills — Gotvand / Shushtar area
-      [32.08, 48.88],
-      [32.05, 48.85],
-      // Shushtar — confluence with Dez, enters Khuzestan plain
-      [32.05, 48.85],
-      [31.88, 48.78],
-      [31.70, 48.72],
-      // Bends southwest toward Ahvaz
-      [31.50, 48.70],
-      [31.32, 48.67],
-      // Ahvaz — largest city on the river
-      [31.32, 48.67],
-      [31.12, 48.52],
-      [30.88, 48.38],
-      [30.68, 48.28],
-      // Khorramshahr — confluence with Shatt al-Arab (Arvand Roud)
-      [30.43, 48.17],
-    ],
+    // Karun River — source to mouth, ~950 km
+    // Coordinates: [lat, lng]  (Leaflet order)
+    //
+    // ── UPPER COURSE: Zard-Kuh source → Izeh → Karun-1 Dam ──────────────────
+    //
+    // Source — Zard-Kuh / Kuhrang headwaters, Bakhtiari Zagros
+    [32.48, 50.02],
+    [32.38, 49.90],
+    [32.22, 49.72],
+    [32.08, 49.58],
+    // River swings west through steep canyon country
+    [31.95, 49.50],
+    // Izeh — town on left bank, river bends northwest here
+    [31.85, 49.45],
+    [31.75, 49.32],
+    [31.68, 49.18],
+    // Karun-1 (Shahid Abbaspour) Dam reservoir — river turns north
+    [31.62, 49.08],
+    [31.70, 48.97],
+    [31.82, 48.90],
+    //
+    // ── MIDDLE COURSE: Masjed Soleyman → Gotvand → Shushtar → Dez confluence ─
+    //
+    // Masjed Soleyman — river swings west-southwest past the dam town
+    [31.93, 49.10],
+    [31.98, 48.98],
+    [32.10, 48.90],
+    // Gotvand — river exits the mountains and turns south onto the plain
+    [32.25, 48.79],
+    [32.18, 48.82],
+    [32.10, 48.84],
+    // Shushtar — ancient city, Band-e Kaisar (Caesar's Dam)
+    [32.04, 48.86],
+    [31.92, 48.82],
+    [31.78, 48.78],
+    // Band-e Qir — confluence with Ab-e Dez; river nearly doubles in size
+    [31.62, 48.75],
+    // River flows ~20 km due south, then meanders southwest to Ahvaz
+    [31.52, 48.73],
+    [31.45, 48.72],
+    [31.38, 48.70],
+    //
+    // ── LOWER COURSE: Ahvaz → Khorramshahr → Shatt al-Arab ──────────────────
+    //
+    // Ahvaz — Karun bisects the city; famous bridges cross here
+    [31.32, 48.67],
+    [31.22, 48.62],
+    [31.10, 48.54],
+    [30.95, 48.44],
+    [30.80, 48.34],
+    [30.65, 48.25],
+    // Delta begins ~5 km above Khorramshahr; river splits into Haffar & Bahmanshir branches
+    [30.52, 48.20],
+    // Khorramshahr — Haffar branch meets the Shatt al-Arab (Arvand Rud)
+    // (Abadan island lies between the two delta branches to the southeast)
+    [30.43, 48.17],
+  ],
 },
 
   {
