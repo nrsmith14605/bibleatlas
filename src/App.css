@@ -1061,5 +1061,48 @@ body {
   box-shadow: 0 4px 12px rgba(160, 82, 45, 0.4);
 }
 
+/* Modern Borders toggle in top bar */
+.countries-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ddd;
+  cursor: pointer;
+  user-select: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  white-space: nowrap;
+}
+.countries-toggle:hover {
+  background: rgba(255,255,255,0.13);
+}
+.countries-toggle input {
+  accent-color: #7ec8e3;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
+/* Country name tooltip labels */
+.country-label {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #444;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.country-label::before {
+  display: none !important;
+}
+
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Alegreya:ital,wght@0,400;0,500;0,700;1,400&family=Lato:wght@400;700&display=swap');
