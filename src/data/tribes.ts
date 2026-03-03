@@ -2212,21 +2212,4 @@ export const tribes: Tribe[] = [
       ]],
     },
   },
-  {
-    name: 'Canaan',
-    description: "Son of Ham, grandson of Noah (Gen 10:6). Noah cursed Canaan after Ham saw his father's nakedness: 'Cursed be Canaan; a servant of servants shall he be to his brothers' (Gen 9:25). Canaan became the ancestor of the great family of Canaanite peoples: Sidon, Heth, Jebusites, Amorites, Girgashites, Hivites, Arkites, Sinites, Arvadites, Zemarites, and Hamathites. (Gen 10:15–18)",
-    color: '#e67e22',
-    fillOpacity: 0.18,
-    books: ['Genesis'],
-    geometry: {
-      type: 'Polygon',
-      coordinates: [[
-        [34.00, 34.00],
-        [36.50, 34.00],
-        [36.50, 29.50],
-        [34.00, 29.50],
-        [34.00, 34.00],
-      ]],
-    },
-  },
 ];
