@@ -35,6 +35,29 @@ function MapResizer({ trigger }: { trigger: boolean }) {
   return null;
 }
 
+  /** Haversine distance between two [lat,lng] points in kilometres */
+  function haversineKm(a: L.LatLngExpression, b: L.LatLngExpression): number {
+    const toRad = (deg: number) => (deg * Math.PI) / 180;
+    const [lat1, lng1] = a as [number, number];
+    const [lat2, lng2] = b as [number, number];
+    const R = 6371;
+    const dLat = toRad(lat2 - lat1);
+    const dLng = toRad(lng2 - lng1);
+    const sinLat = Math.sin(dLat / 2);
+    const sinLng = Math.sin(dLng / 2);
+    const c = 2 * Math.asin(
+      Math.sqrt(sinLat * sinLat + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * sinLng * sinLng)
+    );
+    return R * c;
+  }
+
+  /** Total distance of an array of [lat,lng] points in kilometres */
+  function totalDistanceKm(path: L.LatLngExpression[]): number {
+    let total = 0;
+    for (let i = 0; i + 1 < path.length; i++) total += haversineKm(path[i], path[i + 1]);
+    return total;
+  }
+
 // ── Sidebar section wrapper ──────────────────────────────────────────────────
 function Section({
   title,
@@ -779,22 +802,90 @@ export default function App() {
               </React.Fragment>
             ))}
 
+
             {/* Journeys */}
-            {journeys.filter(j => selJourneys.includes(j.name)).map(journey => (
-              <React.Fragment key={journey.name}>
-                <Polyline positions={journey.path} pathOptions={{ color: journey.color, weight: 3, opacity: 0.85 }} />
-                {journey.locations.map((loc, idx) => (
-                  <CircleMarker key={idx} center={loc.coords} radius={5}
-                    pathOptions={{ fillColor: journey.color, fillOpacity: 0.9, color: '#fff', weight: 2 }}>
-                    <Popup>
-                      <strong>{loc.name}</strong>
-                      {loc.description && <><br /><span style={{ fontSize: '0.9em' }}>{loc.description}</span></>}
-                      <br /><em style={{ fontSize: '0.85em', color: '#666' }}>{journey.name}</em>
-                    </Popup>
-                  </CircleMarker>
-                ))}
-              </React.Fragment>
-            ))}
+            {journeys.filter(j => selJourneys.includes(j.name)).map(journey => {
+              const totalKm = totalDistanceKm(journey.path);
+              const totalMi = totalKm * 0.621371;
+              return (
+                <React.Fragment key={journey.name}>
+                  {/* Render each path segment as its own clickable Polyline */}
+                  {journey.path.slice(0, -1).map((_, segIdx) => {
+                    const segPath = [journey.path[segIdx], journey.path[segIdx + 1]] as L.LatLngExpression[];
+                    const segKm = haversineKm(journey.path[segIdx], journey.path[segIdx + 1]);
+                    const segMi = segKm * 0.621371;
+                    const fromLoc = journey.locations[segIdx];
+                    const toLoc = journey.locations[segIdx + 1];
+                    return (
+                      <Polyline
+                        key={`seg-${segIdx}`}
+                        positions={segPath}
+                        pathOptions={{ color: journey.color, weight: 4, opacity: 0.85 }}
+                        eventHandlers={{
+                          mouseover: (e) => { e.target.setStyle({ weight: 6, opacity: 1 }); },
+                          mouseout: (e) => { e.target.setStyle({ weight: 4, opacity: 0.85 }); },
+                        }}
+                      >
+                        <Popup>
+                          <div style={{ minWidth: 200 }}>
+                            <strong style={{ fontSize: '0.95em', color: journey.color }}>
+                              {journey.name}
+                            </strong>
+                            <div style={{ margin: '6px 0 4px', borderTop: '1px solid #ddd' }} />
+                            <div style={{ fontSize: '0.88em', color: '#444' }}>
+                              <strong>Segment:</strong>{' '}
+                              {fromLoc?.name ?? `Point ${segIdx + 1}`}
+                              {' → '}
+                              {toLoc?.name ?? `Point ${segIdx + 2}`}
+                            </div>
+                            <div style={{ fontSize: '0.88em', margin: '3px 0' }}>
+                              📏 <strong>{segKm.toFixed(0)} km</strong>
+                              {' '}({segMi.toFixed(0)} mi) for this segment
+                            </div>
+                            <div style={{ margin: '4px 0', borderTop: '1px solid #ddd' }} />
+                            <div style={{ fontSize: '0.82em', color: '#666' }}>
+                              🗺️ Total journey: {totalKm.toFixed(0)} km ({totalMi.toFixed(0)} mi)
+                            </div>
+                            {journey.people.length > 0 && (
+                              <div style={{ fontSize: '0.82em', color: '#666', marginTop: 3 }}>
+                                👤 {journey.people.join(', ')}
+                              </div>
+                            )}
+                          </div>
+                        </Popup>
+                      </Polyline>
+                    );
+                  })}
+
+                  {/* Location markers */}
+                  {journey.locations.map((loc, idx) => (
+                    <CircleMarker key={idx} center={loc.coords} radius={5}
+                      pathOptions={{ fillColor: journey.color, fillOpacity: 0.9, color: '#fff', weight: 2 }}>
+                      <Popup>
+                        <div style={{ minWidth: 200 }}>
+                          <strong style={{ fontSize: '1em' }}>{loc.name}</strong>
+                          {loc.description && (
+                            <p style={{ fontSize: '0.88em', margin: '4px 0 0', color: '#444' }}>{loc.description}</p>
+                          )}
+                          <div style={{ margin: '6px 0 4px', borderTop: '1px solid #ddd' }} />
+                          <div style={{ fontSize: '0.82em', color: '#666' }}>
+                            🗺️ <em>{journey.name}</em>
+                          </div>
+                          <div style={{ fontSize: '0.82em', color: '#666' }}>
+                            📏 Total: {totalKm.toFixed(0)} km ({totalMi.toFixed(0)} mi)
+                          </div>
+                          {journey.people.length > 0 && (
+                            <div style={{ fontSize: '0.82em', color: '#666', marginTop: 2 }}>
+                              👤 {journey.people.join(', ')}
+                            </div>
+                          )}
+                        </div>
+                      </Popup>
+                    </CircleMarker>
+                  ))}
+                </React.Fragment>
+              );
+            })}
 
             {/* Cities */}
             {cities.filter(c => selCities.includes(c.name)).map(city => (
