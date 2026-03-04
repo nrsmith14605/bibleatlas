@@ -16,6 +16,7 @@ export const landmarks: Landmark[] = [
   },
   {
     name: 'Mount Moriah',
+    speakAs: 'Mount moh-RY-ah',
     coords: [31.778, 35.235],
     description: "God commanded Abraham to sacrifice Isaac here; at the last moment God provided a ram; later the site of Solomon's Temple",
     location: 'confirmed',
@@ -25,6 +26,7 @@ export const landmarks: Landmark[] = [
   // ── Sacred Trees / Groves ─────────────────────────────────────────────────
   {
     name: 'Oak of Moreh (Shechem)',
+    speakAs: 'Oak of MOH-reh SHEH-kem',
     coords: [32.214, 35.284],
     description: "The great tree of Moreh at Shechem; God appeared to Abraham here and promised Canaan to his offspring; Abraham built his first altar in the land",
     location: 'probable',
@@ -32,6 +34,7 @@ export const landmarks: Landmark[] = [
   },
   {
     name: 'Oaks of Mamre (Hebron)',
+    speakAs: 'Oaks of MAM-reh HEE-bron',
     coords: [31.535, 35.098],
     description: "Abraham pitched his tent under these great trees near Hebron; three visitors appeared here and announced the birth of Isaac; Abraham interceded for Sodom",
     location: 'probable',
@@ -41,6 +44,7 @@ export const landmarks: Landmark[] = [
   // ── Wells & Springs ───────────────────────────────────────────────────────
   {
     name: 'Beer-lahai-roi',
+    speakAs: 'BEH-air lah-HAI roy',
     coords: [30.82, 34.62],
     description: "The well where the angel found Hagar fleeing from Sarai; God promised to multiply her descendants; she named it 'Well of the Living One who sees me'",
     location: 'unknown',
@@ -57,6 +61,7 @@ export const landmarks: Landmark[] = [
   // ── Tombs & Burial Sites ──────────────────────────────────────────────────
   {
     name: 'Cave of Machpelah',
+    speakAs: 'Cave of mak-PEE-lah',
     coords: [31.524, 35.110],
     description: "Abraham purchased this cave from Ephron the Hittite as a burial ground; tomb of Abraham, Sarah, Isaac, Rebekah, Leah, and Jacob",
     location: 'confirmed',
@@ -71,6 +76,7 @@ export const landmarks: Landmark[] = [
   },
   {
     name: "Rachel's Tomb (Kever Rachel)",
+    speakAs: "Rachel's Tomb KEH-ver RAY-khel",
     coords: [31.703, 35.203],
     description: "Rachel died here giving birth to Benjamin on the road to Ephrath; Jacob set up a pillar over her grave; venerated burial site near Bethlehem",
     location: 'confirmed',
@@ -87,6 +93,7 @@ export const landmarks: Landmark[] = [
   },
   {
     name: 'Galeed (Jegar-sahadutha)',
+    speakAs: 'GAY-leed YEH-gar sah-hah-DOO-thah',
     coords: [32.32, 36.15],
     description: "The stone heap and pillar Jacob and Laban set up in Gilead as a witness covenant between them; Laban called it Jegar-sahadutha, Jacob called it Galeed",
     location: 'unknown',
@@ -101,6 +108,7 @@ export const landmarks: Landmark[] = [
   },
   {
     name: 'Allon-bacuth',
+    speakAs: 'AL-on BAH-kooth',
     coords: [31.928, 35.220],
     description: "The oak tree below Bethel where Rebekah's nurse Deborah was buried; named 'oak of weeping'",
     location: 'probable',
@@ -108,6 +116,7 @@ export const landmarks: Landmark[] = [
   },
   {
     name: 'Tower of Eder (Migdal-eder)',
+    speakAs: 'Tower of EE-der MIG-dal EE-der',
     coords: [31.695, 35.208],
     description: "The watchtower beyond which Jacob pitched his tent after Rachel's death near Bethlehem; a shepherd's tower between Bethlehem and Hebron",
     location: 'unknown',
@@ -138,6 +147,7 @@ export const landmarks: Landmark[] = [
   },
   {
     name: 'Threshing Floor of Atad (Abel-mizraim)',
+    speakAs: 'Threshing Floor of AY-tad AY-bel MIZ-ray-im',
     coords: [31.78, 35.55],
     description: "East of the Jordan; the great mourning for Jacob here caused the Canaanites to rename it Abel-mizraim, 'mourning of Egypt'",
     location: 'unknown',
@@ -165,6 +175,7 @@ export const landmarks: Landmark[] = [
   // ── Mountains ─────────────────────────────────────────────────────────────
   {
     name: 'Mount Sinai / Horeb',
+    speakAs: 'Mount SY-ny HOR-eb',
     coords: [28.56, 33.97],
     description: 'God gave the Ten Commandments to Moses here; Elijah fled here and heard the still small voice',
     location: 'probable',
@@ -225,6 +236,7 @@ export const landmarks: Landmark[] = [
   },
   {
     name: 'Tabernacle at Shiloh',
+    speakAs: 'Tabernacle at SHY-loh',
     coords: [32.058, 35.292],
     description: 'The Tabernacle rested at Shiloh for many years during the period of the Judges; Samuel ministered here as a boy',
     location: 'confirmed',

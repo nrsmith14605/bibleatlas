@@ -4,6 +4,7 @@ export type BookTag = string;
 
 export interface City {
   name: string;
+  speakAs?: string;
   coords: L.LatLngExpression;
   description: string;
   location: 'confirmed' | 'probable' | 'unknown';
@@ -12,6 +13,7 @@ export interface City {
 
 export interface Person {
   name: string;
+  speakAs?: string;
   description?: string;
   journeys: string[];
   books: BookTag[];
@@ -19,6 +21,7 @@ export interface Person {
 
 export interface Landmark {
   name: string;
+  speakAs?: string;
   coords: L.LatLngExpression;
   description: string;
   location: 'confirmed' | 'probable' | 'unknown';
@@ -27,12 +30,14 @@ export interface Landmark {
 
 export interface JourneyLocation {
   name: string;
+  speakAs?: string;
   coords: L.LatLngExpression;
   description?: string;
 }
 
 export interface Journey {
   name: string;
+  speakAs?: string;
   path: L.LatLngExpression[];
   color: string;
   locations: JourneyLocation[];
@@ -42,6 +47,7 @@ export interface Journey {
 
 export interface KingdomEmpire {
   name: string;
+  speakAs?: string;
   geometry: GeoJSON.Geometry;
   color: string;
   fillOpacity: number;
@@ -51,16 +57,18 @@ export interface KingdomEmpire {
 
 export interface Region {
   name: string;
+  speakAs?: string;
   geometry: GeoJSON.Geometry;
   color: string;
   fillOpacity: number;
   description?: string;
-  location?: 'confirmed' | 'probable' | 'unknown';
+  location: 'confirmed' | 'probable' | 'unknown';
   books: BookTag[];
 }
 
 export interface Tribe {
   name: string;
+  speakAs?: string;
   geometry: GeoJSON.Geometry;
   color: string;
   fillOpacity: number;
@@ -72,6 +80,7 @@ export interface Tribe {
 // Seas, deserts, and valleys use `geometry` (polygon).
 export interface NaturalFeature {
   name: string;
+  speakAs?: string;
   description: string;
   type: 'river' | 'sea' | 'desert' | 'valley';
   books: BookTag[];

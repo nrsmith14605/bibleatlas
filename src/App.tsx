@@ -121,6 +121,35 @@ function getBooksForYear(year: number) {
   return bibleBooks.filter(b => !b.prophetic && year >= b.yearStart && year <= b.yearEnd);
 }
 
+// ── Text-to-speech ─────────────────────────────────────────────────────────
+function speakName(name: string, speakAs?: string) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(speakAs ?? name);
+  utt.lang = 'en-US';
+  utt.rate = 0.85;
+  window.speechSynthesis.speak(utt);
+}
+
+// HTML snippet for bindPopup() string-based popups
+function speakBtn(name: string, speakAs?: string): string {
+  const text = (speakAs ?? name).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+  return `<button onclick="window.speechSynthesis.cancel();var u=new SpeechSynthesisUtterance('${text}');u.lang='en-US';u.rate=0.85;window.speechSynthesis.speak(u);" title="Pronounce" style="background:none;border:none;cursor:pointer;font-size:0.95rem;padding:0 0 0 5px;vertical-align:middle;opacity:0.6;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.6">🔊</button>`;
+}
+
+// React component for JSX <Popup> instances
+function SpeakButton({ name, speakAs }: { name: string; speakAs?: string }) {
+  return (
+    <button
+      onClick={() => speakName(name, speakAs)}
+      title="Pronounce"
+      style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '0.95rem', padding: '0 0 0 5px', verticalAlign: 'middle', opacity: 0.6 }}
+      onMouseOver={e => (e.currentTarget.style.opacity = '1')}
+      onMouseOut={e => (e.currentTarget.style.opacity = '0.6')}
+    >🔊</button>
+  );
+}
+
 function Timeline({ selectedYear, setSelectedYear }: {
   selectedYear: number | null;
   setSelectedYear: (y: number | null) => void;
@@ -304,8 +333,8 @@ function useLakeGeoJson() {
   return data;
 }
 
-function RiverLayer({ geoJsonName, color, name, description, allRiverData }: {
-  geoJsonName: string; color: string; name: string; description: string; allRiverData: FeatureCollection;
+function RiverLayer({ geoJsonName, color, name, speakAs, description, allRiverData }: {
+  geoJsonName: string; color: string; name: string; speakAs?: string; description: string; allRiverData: FeatureCollection;
 }) {
   const filtered = useMemo<FeatureCollection>(() => ({
     type: 'FeatureCollection',
@@ -317,12 +346,11 @@ function RiverLayer({ geoJsonName, color, name, description, allRiverData }: {
     <GeoJSON key={`${name}-${geoJsonName}`} data={filtered as GeoJsonObject}
       pathOptions={{ color, weight: 2, opacity: 0.85 }}
       onEachFeature={(_feature, layer) => {
-        layer.bindPopup(`<strong>${name}</strong><br/><span style="font-size:0.9em">${description}</span>`);
+        layer.bindPopup(`<strong>${name}</strong>${speakBtn(name, speakAs)}<br/><span style="font-size:0.9em">${description}</span>`);
       }} />
   );
 }
 
-// ── FIX: CountriesLayer now uses bindTooltip in onEachFeature ─────────────────
 function CountriesLayer({ data }: { data: FeatureCollection }) {
   return (
     <GeoJSON
@@ -345,7 +373,6 @@ function CountriesLayer({ data }: { data: FeatureCollection }) {
         const geom = feature.geometry as any;
         if (!geom?.coordinates) return;
 
-        // Manual overrides for labels that are commonly misplaced
         const LABEL_OVERRIDES: Record<string, [number, number]> = {
           'Israel':    [31.5, 34.9],
           'Palestine': [31.9, 35.25],
@@ -360,8 +387,6 @@ function CountriesLayer({ data }: { data: FeatureCollection }) {
         if (LABEL_OVERRIDES[name]) {
           [avgLat, avgLng] = LABEL_OVERRIDES[name];
         } else {
-          // Use only the largest polygon ring to compute centroid,
-          // so fragmented/multipolygon countries don't get pulled off-centre
           const getRings = (coords: any): number[][][] => {
             if (typeof coords[0][0] === 'number') return [coords as number[][]];
             if (typeof coords[0][0][0] === 'number') return coords as number[][][];
@@ -389,9 +414,9 @@ function CountriesLayer({ data }: { data: FeatureCollection }) {
   );
 }
 
-function LakeLayer({ lakeGeoJsonName, color, fillOpacity, name, description, allLakeData }: {
+function LakeLayer({ lakeGeoJsonName, color, fillOpacity, name, speakAs, description, allLakeData }: {
   lakeGeoJsonName: string; color: string; fillOpacity: number;
-  name: string; description: string; allLakeData: FeatureCollection;
+  name: string; speakAs?: string; description: string; allLakeData: FeatureCollection;
 }) {
   const filtered = useMemo<FeatureCollection>(() => ({
     type: 'FeatureCollection',
@@ -403,7 +428,7 @@ function LakeLayer({ lakeGeoJsonName, color, fillOpacity, name, description, all
     <GeoJSON key={`lake-${name}-${lakeGeoJsonName}`} data={filtered as GeoJsonObject}
       pathOptions={{ color, weight: 1, fillColor: color, fillOpacity }}
       onEachFeature={(_feature, layer) => {
-        layer.bindPopup(`<strong>${name}</strong><br/><span style="font-size:0.9em">${description}</span>`);
+        layer.bindPopup(`<strong>${name}</strong>${speakBtn(name, speakAs)}<br/><span style="font-size:0.9em">${description}</span>`);
       }} />
   );
 }
@@ -663,7 +688,6 @@ export default function App() {
             <h1 className="title">BibleAtlas</h1>
             <p className="subtitle">Journey through Biblical history</p>
           </div>
-          {/* ── FIX: Modern Borders toggle moved inside header-controls ───── */}
           <div className="header-controls">
             <button className="cities-toggle" onClick={clearAll}>Clear All</button>
             <div className="map-type-selector">
@@ -841,7 +865,7 @@ export default function App() {
                 onEachFeature={(_feature, layer) => {
                   const locInfo = (r as any).location ? locationCertainty((r as any).location) : null;
                   layer.bindPopup(
-                    `<strong style="font-size:1.05em">${r.name}</strong>` +
+                    `<strong style="font-size:1.05em">${r.name}</strong>${speakBtn(r.name, (r as any).speakAs)}` +
                     (r.description ? `<br/><span style="font-size:0.88em;line-height:1.4;display:block;margin-top:4px">${r.description}</span>` : '') +
                     (locInfo ? `<br/><span style="font-size:0.8em;color:${locInfo.color};font-weight:600;margin-top:4px;display:block">📍 ${locInfo.label}</span>` : '')
                   );
@@ -854,7 +878,7 @@ export default function App() {
                 onEachFeature={(_feature, layer) => {
                   layer.bindPopup(
                     `<div style="min-width:220px;max-width:300px;font-family:inherit">
-                      <strong style="font-size:1em;color:${t.color}">${t.name}</strong>
+                      <strong style="font-size:1em;color:${t.color}">${t.name}</strong>${speakBtn(t.name, (t as any).speakAs)}
                       <div style="border-top:1px solid #ddd;margin:5px 0 4px"></div>
                       <p style="font-size:0.87em;color:#333;margin:0 0 6px;line-height:1.5">${t.description ?? ''}</p>
                       ${t.books?.length > 0 ? `<div style="font-size:0.78em;color:#777">📖 ${t.books.join(', ')}</div>` : ''}
@@ -865,29 +889,41 @@ export default function App() {
 
             {kingdomsEmpires.filter(k => selKingdoms.includes(k.name)).map(k => (
               <GeoJSON key={k.name} data={k.geometry as any}
-                pathOptions={{ color: k.color, weight: 2, fillColor: k.color, fillOpacity: k.fillOpacity }} />
+                pathOptions={{ color: k.color, weight: 2, fillColor: k.color, fillOpacity: k.fillOpacity }}
+                onEachFeature={(_feature, layer) => {
+                  layer.bindPopup(
+                    `<strong style="font-size:1.05em;color:${k.color}">${k.name}</strong>${speakBtn(k.name, (k as any).speakAs)}` +
+                    ((k as any).description ? `<br/><span style="font-size:0.88em;line-height:1.4;display:block;margin-top:4px">${(k as any).description}</span>` : '')
+                  );
+                }} />
             ))}
 
             {naturalFeatures.filter(n => selNat.includes(n.name)).map(n => (
               <React.Fragment key={n.name}>
                 {n.geoJsonName && riverGeoJson && (
                   <RiverLayer geoJsonName={n.geoJsonName} color={n.color} name={n.name}
-                    description={n.description} allRiverData={riverGeoJson} />
+                    speakAs={n.speakAs} description={n.description} allRiverData={riverGeoJson} />
                 )}
                 {n.lakeGeoJsonName && lakeGeoJson && (
                   <LakeLayer lakeGeoJsonName={n.lakeGeoJsonName} color={n.color}
                     fillOpacity={n.fillOpacity ?? 0.45} name={n.name}
-                    description={n.description} allLakeData={lakeGeoJson} />
+                    speakAs={n.speakAs} description={n.description} allLakeData={lakeGeoJson} />
                 )}
                 {n.path && (
                   <Polyline positions={n.path} pathOptions={{ color: n.color, weight: 2, opacity: 0.85 }}>
-                    <Popup><strong>{n.name}</strong><br /><span style={{ fontSize: '0.9em' }}>{n.description}</span></Popup>
+                    <Popup>
+                      <strong>{n.name}</strong><SpeakButton name={n.name} speakAs={n.speakAs} /><br />
+                      <span style={{ fontSize: '0.9em' }}>{n.description}</span>
+                    </Popup>
                   </Polyline>
                 )}
                 {n.geometry && (
                   <GeoJSON data={n.geometry as any}
                     pathOptions={{ color: n.color, weight: 1, fillColor: n.color, fillOpacity: n.fillOpacity ?? 0.3 }}>
-                    <Popup><strong>{n.name}</strong><br /><span style={{ fontSize: '0.9em' }}>{n.description}</span></Popup>
+                    <Popup>
+                      <strong>{n.name}</strong><SpeakButton name={n.name} speakAs={n.speakAs} /><br />
+                      <span style={{ fontSize: '0.9em' }}>{n.description}</span>
+                    </Popup>
                   </GeoJSON>
                 )}
               </React.Fragment>
@@ -942,6 +978,7 @@ export default function App() {
                       <Popup>
                         <div style={{ minWidth: 200 }}>
                           <strong style={{ fontSize: '1em' }}>{loc.name}</strong>
+                          <SpeakButton name={loc.name} speakAs={loc.speakAs} />
                           {loc.description && (
                             <p style={{ fontSize: '0.88em', margin: '4px 0 0', color: '#444' }}>{loc.description}</p>
                           )}
@@ -968,7 +1005,7 @@ export default function App() {
                 pathOptions={{ fillColor: CITY_COLOR, fillOpacity: 1, color: CITY_COLOR, weight: 1 }}>
                 <Tooltip permanent direction="right" offset={[8, 0]} className="city-label">{city.name}</Tooltip>
                 <Popup>
-                  <strong>{city.name}</strong><br />
+                  <strong>{city.name}</strong><SpeakButton name={city.name} speakAs={city.speakAs} /><br />
                   <span style={{ fontSize: '0.9em' }}>{city.description}</span><br />
                   <span style={{ fontSize: '0.8em', color: locationCertainty(city.location).color, fontWeight: 600 }}>
                     📌 {locationCertainty(city.location).label}
@@ -981,7 +1018,7 @@ export default function App() {
               <Marker key={lm.name} position={lm.coords}>
                 <Tooltip permanent direction="right" offset={[12, 0]} className="city-label">{lm.name}</Tooltip>
                 <Popup>
-                  <strong>{landmarkEmoji(lm.name)} {lm.name}</strong><br />
+                  <strong>{landmarkEmoji(lm.name)} {lm.name}</strong><SpeakButton name={lm.name} speakAs={lm.speakAs} /><br />
                   <span style={{ fontSize: '0.9em' }}>{lm.description}</span><br />
                   <span style={{ fontSize: '0.8em', color: locationCertainty(lm.location).color, fontWeight: 600 }}>
                     📌 {locationCertainty(lm.location).label}

@@ -11,6 +11,7 @@ export const cities: City[] = [
   },
   {
     name: 'Erech (Uruk)',
+    speakAs: 'EH-rek O-rook',
     coords: [31.32, 45.64],
     description: 'One of the first great cities built by Nimrod in Shinar after the flood',
     location: 'confirmed',
@@ -39,6 +40,7 @@ export const cities: City[] = [
   },
   {
     name: 'Calah (Nimrud)',
+    speakAs: 'KAY-lah NIM-rood',
     coords: [36.10, 43.33],
     description: 'Built by Nimrod or Asshur; major Assyrian city between Nineveh and Resen',
     location: 'confirmed',
@@ -53,6 +55,7 @@ export const cities: City[] = [
   },
   {
     name: 'Rehoboth-Ir',
+    speakAs: 'reh ho both Ear',
     coords: [36.40, 43.10],
     description: 'City built by Nimrod or Asshur near Nineveh; meaning "city squares"',
     location: 'unknown',
@@ -81,6 +84,7 @@ export const cities: City[] = [
   },
   {
     name: 'Rehoboth on the Euphrates',
+    speakAs: 'reh ho both on the Euphrates',
     coords: [36.85, 38.50],
     description: 'City in the Euphrates region; hometown of Shaul, a king of Edom',
     location: 'unknown',
@@ -111,6 +115,7 @@ export const cities: City[] = [
   },
   {
     name: 'Hebron (Kiriath-arba)',
+    speakAs: 'HEE-bron KEER-ee-ath AR-bah',
     coords: [31.53, 35.09],
     description: "Abraham's main home; he bought the Cave of Machpelah here to bury Sarah",
     location: 'confirmed',
@@ -118,6 +123,7 @@ export const cities: City[] = [
   },
   {
     name: 'Beersheba',
+    speakAs: 'beer-SHEE-bah',
     coords: [31.25, 34.80],
     description: "Abraham dug a well and made a covenant with Abimelech; God called to Hagar nearby",
     location: 'confirmed',
@@ -167,6 +173,7 @@ export const cities: City[] = [
   },
   {
     name: 'Penuel (Peniel)',
+    speakAs: 'peh-NYOO-el PEH-nee-el',
     coords: [32.25, 35.70],
     description: "Jacob wrestled with God through the night and was renamed Israel; he limped away at dawn",
     location: 'probable',
@@ -174,6 +181,7 @@ export const cities: City[] = [
   },
   {
     name: 'Mahanaim',
+    speakAs: 'mah-hah-NAY-im',
     coords: [32.30, 35.75],
     description: "Angels of God met Jacob here on his return to Canaan; he named the place 'two camps'",
     location: 'probable',
@@ -188,6 +196,7 @@ export const cities: City[] = [
   },
   {
     name: 'Adullam',
+    speakAs: 'ah-DUL-am',
     coords: [31.57, 34.98],
     description: 'Judah went down from his brothers and stayed with Hirah the Adullamite here',
     location: 'confirmed',
@@ -234,6 +243,7 @@ export const cities: City[] = [
   // ── Genesis — Battle of the Kings sites ──────────────────────────────────
   {
     name: 'Ashteroth Karnaim',
+    speakAs: 'ASH-teh-roth kar-NAY-im',
     coords: [32.98, 35.98],
     description: 'City of the Rephaites; defeated by the four kings in the battle before Sodom',
     location: 'probable',
@@ -241,6 +251,7 @@ export const cities: City[] = [
   },
   {
     name: 'Shaveh Kiriathaim',
+    speakAs: 'SHAH-veh keer-ee-ah-THAY-im',
     coords: [31.68, 35.72],
     description: 'Plain where the Emites were defeated by the four kings in the battle that led to Lot\'s capture',
     location: 'unknown',
@@ -248,6 +259,7 @@ export const cities: City[] = [
   },
   {
     name: 'Kadesh (En-Mishpat)',
+    speakAs: 'KAY-desh en MISH-pat',
     coords: [30.65, 34.77],
     description: 'The four kings struck the Amalekites here; later Kadesh Barnea, site of Israel\'s wilderness rebellion',
     location: 'probable',
@@ -255,6 +267,7 @@ export const cities: City[] = [
   },
   {
     name: 'Hazazon Tamar (En Gedi)',
+    speakAs: 'HAZ-ah-zon TAY-mar en GEH-dee',
     coords: [31.46, 35.39],
     description: 'Amorites here were defeated by the four kings during the war; later known as En Gedi',
     location: 'probable',
@@ -264,6 +277,7 @@ export const cities: City[] = [
   // ── Genesis — Edom ────────────────────────────────────────────────────────
   {
     name: 'Dinhabah',
+    speakAs: 'DIN-hah-bah',
     coords: [30.55, 35.75],
     description: 'Capital city of Bela son of Beor, the first king listed in the kings of Edom',
     location: 'unknown',
@@ -271,6 +285,7 @@ export const cities: City[] = [
   },
   {
     name: 'Avith',
+    speakAs: 'AY-vith',
     coords: [30.60, 35.60],
     description: 'Home city of Hadad son of Bedad, an early king of Edom',
     location: 'unknown',
@@ -301,6 +316,7 @@ export const cities: City[] = [
   },
   {
     name: 'Heliopolis (On)',
+    speakAs: 'hee-lee-OP-oh-lis On',
     coords: [30.13, 31.32],
     description: "Joseph married Asenath, daughter of the priest of On; centre of Egyptian sun worship",
     location: 'confirmed',
@@ -308,6 +324,7 @@ export const cities: City[] = [
   },
   {
     name: 'Zoan (Tanis)',
+    speakAs: 'ZOH-an TAY-nis',
     coords: [30.97, 31.88],
     description: 'Major Delta City & Later Royal Capital',
     location: 'confirmed',
@@ -400,6 +417,7 @@ export const cities: City[] = [
   },
   {
     name: 'Gibeah',
+    speakAs: 'GIB-ee-ah',
     coords: [31.84, 35.22],
     description: "Saul's hometown and capital; the Levite's concubine was brutally assaulted here",
     location: 'confirmed',
@@ -423,6 +441,7 @@ export const cities: City[] = [
   },
   {
     name: 'Capernaum',
+    speakAs: 'kah-PER-nay-um',
     coords: [32.88, 35.57],
     description: "Jesus' ministry headquarters on the Sea of Galilee; he performed many miracles here",
     location: 'confirmed',
@@ -437,6 +456,7 @@ export const cities: City[] = [
   },
   {
     name: 'Megiddo',
+    speakAs: 'meh-GID-oh',
     coords: [32.58, 35.18],
     description: 'Strategic fortress city controlling the Jezreel Valley; site of many decisive battles',
     location: 'confirmed',
@@ -462,6 +482,7 @@ export const cities: City[] = [
   },
   {
     name: 'Kadesh Barnea',
+    speakAs: 'KAY-desh BAR-nee-ah',
     coords: [30.65, 34.77],
     description: "Israel camped here; the twelve spies were sent out; the people's unbelief led to 40 years of wandering",
     location: 'probable',
