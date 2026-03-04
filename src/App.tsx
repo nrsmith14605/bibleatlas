@@ -4,7 +4,7 @@ import type { GeoJsonObject, FeatureCollection } from 'geojson';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import './App.css';
-import { books } from './data/books';
+import { books, bibleBooks } from './data/books';
 import { cities } from './data/Cities';
 import { people } from './data/people';
 import { landmarks } from './data/landmarks';
@@ -117,7 +117,14 @@ function formatYear(y: number): string {
   return y < 0 ? `${Math.abs(y)} BC` : `${y} AD`;
 }
 
-function Timeline() {
+function getBooksForYear(year: number) {
+  return bibleBooks.filter(b => !b.prophetic && year >= b.yearStart && year <= b.yearEnd);
+}
+
+function Timeline({ selectedYear, setSelectedYear }: {
+  selectedYear: number | null;
+  setSelectedYear: (y: number | null) => void;
+}) {
   const barRef = useRef<HTMLDivElement>(null);
   const [scrollLeft, setScrollLeft] = useState(0);
 
@@ -128,7 +135,26 @@ function Timeline() {
     setScrollLeft(Math.max(0, Math.min(TRACK_W - bar.clientWidth, centered)));
   }, []);
 
-  const [selectedYear, setSelectedYear] = useState<number | null>(null);
+  // Scroll to centre on selectedYear whenever it changes (e.g. from sidebar search)
+  useEffect(() => {
+    if (selectedYear === null) return;
+    const bar = barRef.current;
+    if (!bar) return;
+    const targetScroll = yearToX(selectedYear) - bar.clientWidth / 2;
+    setScrollLeft(Math.max(0, Math.min(TRACK_W - bar.clientWidth, targetScroll)));
+  }, [selectedYear]);
+
+  // Re-clamp scrollLeft whenever the bar resizes (e.g. sidebar open/close)
+  useEffect(() => {
+    const bar = barRef.current;
+    if (!bar) return;
+    const ro = new ResizeObserver(() => {
+      setScrollLeft(prev => Math.max(0, Math.min(TRACK_W - bar.clientWidth, prev)));
+    });
+    ro.observe(bar);
+    return () => ro.disconnect();
+  }, []);
+
   const [editing, setEditing] = useState(false);
   const [editVal, setEditVal] = useState('');
   const drag = useRef<{ startX: number; startScroll: number } | null>(null);
@@ -172,7 +198,7 @@ function Timeline() {
     const year = Math.max(YEAR_MIN, Math.min(YEAR_MAX, xToYear(clickX)));
     setSelectedYear(year);
     setEditing(false);
-  }, [scrollLeft]);
+  }, [scrollLeft, setSelectedYear]);
 
   const cursorScreenX = selectedYear !== null ? yearToX(selectedYear) - scrollLeft : null;
 
@@ -382,9 +408,97 @@ function LakeLayer({ lakeGeoJsonName, color, fillOpacity, name, description, all
   );
 }
 
+function YearInput({ selectedYear, setSelectedYear }: {
+  selectedYear: number | null;
+  setSelectedYear: (y: number | null) => void;
+}) {
+  const [val, setVal] = useState('');
+  const [error, setError] = useState(false);
+
+  const commit = () => {
+    const parsed = parseInt(val, 10);
+    if (!isNaN(parsed)) {
+      const clamped = Math.max(YEAR_MIN, Math.min(YEAR_MAX, parsed));
+      setSelectedYear(clamped);
+      setError(false);
+      setVal('');
+    } else if (val.trim() !== '') {
+      setError(true);
+    }
+  };
+
+  return (
+    <div className="year-jump-wrap">
+      <input
+        className={`year-jump-input${error ? ' error' : ''}`}
+        type="number"
+        placeholder={selectedYear !== null ? String(selectedYear) : 'e.g. -1000'}
+        value={val}
+        onChange={e => { setVal(e.target.value); setError(false); }}
+        onKeyDown={e => { if (e.key === 'Enter') commit(); }}
+      />
+      <button className="year-jump-btn" onClick={commit}>Go</button>
+      {error && <span className="year-jump-error">Invalid year</span>}
+    </div>
+  );
+}
+
+function BookSearch({ setSelectedYear }: {
+  setSelectedYear: (y: number | null) => void;
+}) {
+  const [query, setQuery] = useState('');
+  const [focused, setFocused] = useState(false);
+
+  const results = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return [];
+    return bibleBooks
+      .filter(b => b.name.toLowerCase().includes(q))
+      .slice(0, 8);
+  }, [query]);
+
+  const select = (book: typeof bibleBooks[0]) => {
+    setSelectedYear(book.yearStart);
+    setQuery('');
+    setFocused(false);
+  };
+
+  return (
+    <div className="book-search-wrap">
+      <div className="book-search-input-row">
+        <span className="book-search-icon">🔍</span>
+        <input
+          className="book-search-input"
+          type="text"
+          placeholder="Search a book…"
+          value={query}
+          onChange={e => setQuery(e.target.value)}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setTimeout(() => setFocused(false), 150)}
+        />
+        {query && (
+          <button className="book-search-clear" onClick={() => setQuery('')}>✕</button>
+        )}
+      </div>
+      {focused && results.length > 0 && (
+        <ul className="book-search-results">
+          {results.map(b => (
+            <li key={b.name} className="book-search-result" onMouseDown={() => select(b)}>
+              <span className="book-search-result-name">{b.name}</span>
+              <span className="book-search-result-year">{b.prophetic ? 'Prophetic' : b.dateLabel}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
 export default function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarTab, setSidebarTab] = useState<'map' | 'timeline'>('map');
   const [selectedBook, setSelectedBook] = useState('');
+  const [selectedYear, setSelectedYear] = useState<number | null>(null);
   const riverGeoJson = useRiverGeoJson();
   const lakeGeoJson = useLakeGeoJson();
   const [showCountries, setShowCountries] = useState(false);
@@ -555,68 +669,127 @@ export default function App() {
 
       {/* ── Sidebar ────────────────────────────────────────────────────────── */}
       <aside className="sidebar">
+        <div className="sidebar-tabs">
+          <button
+            className={`sidebar-tab-btn${sidebarTab === 'map' ? ' active' : ''}`}
+            onClick={() => setSidebarTab('map')}
+          >🗺️ Map</button>
+          <button
+            className={`sidebar-tab-btn${sidebarTab === 'timeline' ? ' active' : ''}`}
+            onClick={() => setSidebarTab('timeline')}
+          >📅 Timeline</button>
+        </div>
+
         <div className="sidebar-content">
 
-          <section className="control-section">
-            <h2 className="section-title">Bible Books</h2>
-            <select className="book-select" value={selectedBook} onChange={e => handleBookChange(e.target.value)}>
-              <option value="">All Books</option>
-              {books.map(b => <option key={b} value={b}>{b}</option>)}
-            </select>
-          </section>
+          {/* ── TAB 1: Map ─────────────────────────────────────────────────── */}
+          {sidebarTab === 'map' && <>
+            <section className="control-section">
+              <h2 className="section-title">Bible Books</h2>
+              <select className="book-select" value={selectedBook} onChange={e => handleBookChange(e.target.value)}>
+                <option value="">All Books</option>
+                {books.map(b => <option key={b} value={b}>{b}</option>)}
+              </select>
+            </section>
 
-          <Section title="Cities / Settlements" expanded={citiesExp} onToggle={() => setCitiesExp(e => !e)}>
-            <div className="cities-controls">
-              <button className="select-all-btn" onClick={toggleAllCities}>
-                {allCitiesSelected ? 'Deselect All' : 'Select All'}
-              </button>
-            </div>
-            <CheckList items={avCities} selected={selCities} onToggle={name => toggle(setSelCities, name)}
-              searchPlaceholder="Search cities…" renderIcon={_ => <span className="city-marker" />}
-              emptyMessage="No cities for this filter" />
-          </Section>
+            <Section title="Cities / Settlements" expanded={citiesExp} onToggle={() => setCitiesExp(e => !e)}>
+              <div className="cities-controls">
+                <button className="select-all-btn" onClick={toggleAllCities}>
+                  {allCitiesSelected ? 'Deselect All' : 'Select All'}
+                </button>
+              </div>
+              <CheckList items={avCities} selected={selCities} onToggle={name => toggle(setSelCities, name)}
+                searchPlaceholder="Search cities…" renderIcon={_ => <span className="city-marker" />}
+                emptyMessage="No cities for this filter" />
+            </Section>
 
-          <Section title="Landmarks" expanded={landmarksExp} onToggle={() => setLandmarksExp(e => !e)} badge={selLandmarks.length}>
-            <CheckList items={avLandmarks} selected={selLandmarks} onToggle={name => toggle(setSelLandmarks, name)}
-              searchPlaceholder="Search landmarks…"
-              renderIcon={item => <span className="landmark-icon">{landmarkEmoji(item.name)}</span>}
-              emptyMessage="No landmarks for this filter" />
-          </Section>
+            <Section title="Landmarks" expanded={landmarksExp} onToggle={() => setLandmarksExp(e => !e)} badge={selLandmarks.length}>
+              <CheckList items={avLandmarks} selected={selLandmarks} onToggle={name => toggle(setSelLandmarks, name)}
+                searchPlaceholder="Search landmarks…"
+                renderIcon={item => <span className="landmark-icon">{landmarkEmoji(item.name)}</span>}
+                emptyMessage="No landmarks for this filter" />
+            </Section>
 
-          <Section title="Natural Features" expanded={natExp} onToggle={() => setNatExp(e => !e)} badge={selNat.length}>
-            <CheckList items={avNat} selected={selNat} onToggle={name => toggle(setSelNat, name)}
-              searchPlaceholder="Search features…"
-              renderIcon={item => <span className="nat-icon">{natEmoji(item.type)}</span>}
-              emptyMessage="No features for this filter" />
-          </Section>
+            <Section title="Natural Features" expanded={natExp} onToggle={() => setNatExp(e => !e)} badge={selNat.length}>
+              <CheckList items={avNat} selected={selNat} onToggle={name => toggle(setSelNat, name)}
+                searchPlaceholder="Search features…"
+                renderIcon={item => <span className="nat-icon">{natEmoji(item.type)}</span>}
+                emptyMessage="No features for this filter" />
+            </Section>
 
-          <Section title="Journeys" expanded={journeysExp} onToggle={() => setJourneysExp(e => !e)} badge={selJourneys.length}>
-            <CheckList items={avJourneys} selected={selJourneys} onToggle={name => toggle(setSelJourneys, name)}
-              searchPlaceholder="Search journeys…"
-              renderIcon={item => <span className="journey-marker" style={{ backgroundColor: (item as any).color }} />}
-              emptyMessage="No journeys match filters" extra={peopleFilter} />
-          </Section>
+            <Section title="Journeys" expanded={journeysExp} onToggle={() => setJourneysExp(e => !e)} badge={selJourneys.length}>
+              <CheckList items={avJourneys} selected={selJourneys} onToggle={name => toggle(setSelJourneys, name)}
+                searchPlaceholder="Search journeys…"
+                renderIcon={item => <span className="journey-marker" style={{ backgroundColor: (item as any).color }} />}
+                emptyMessage="No journeys match filters" extra={peopleFilter} />
+            </Section>
 
-          <Section title="Regions" expanded={regionsExp} onToggle={() => setRegionsExp(e => !e)} badge={selRegions.length}>
-            <CheckList items={avRegions} selected={selRegions} onToggle={name => toggle(setSelRegions, name)}
-              searchPlaceholder="Search regions…"
-              renderIcon={item => <span className="kingdom-marker" style={{ backgroundColor: (item as any).color, borderRadius: 2 }} />}
-              emptyMessage="No regions for this filter" />
-          </Section>
+            <Section title="Regions" expanded={regionsExp} onToggle={() => setRegionsExp(e => !e)} badge={selRegions.length}>
+              <CheckList items={avRegions} selected={selRegions} onToggle={name => toggle(setSelRegions, name)}
+                searchPlaceholder="Search regions…"
+                renderIcon={item => <span className="kingdom-marker" style={{ backgroundColor: (item as any).color, borderRadius: 2 }} />}
+                emptyMessage="No regions for this filter" />
+            </Section>
 
-          <Section title="Ethnic / Tribal Peoples" expanded={tribesExp} onToggle={() => setTribesExp(e => !e)} badge={selTribes.length}>
-            <CheckList items={avTribes} selected={selTribes} onToggle={name => toggle(setSelTribes, name)}
-              searchPlaceholder="Search peoples…"
-              renderIcon={item => <span className="kingdom-marker" style={{ backgroundColor: (item as any).color, borderRadius: '50%' }} />}
-              emptyMessage="No peoples for this filter" />
-          </Section>
+            <Section title="Ethnic / Tribal Peoples" expanded={tribesExp} onToggle={() => setTribesExp(e => !e)} badge={selTribes.length}>
+              <CheckList items={avTribes} selected={selTribes} onToggle={name => toggle(setSelTribes, name)}
+                searchPlaceholder="Search peoples…"
+                renderIcon={item => <span className="kingdom-marker" style={{ backgroundColor: (item as any).color, borderRadius: '50%' }} />}
+                emptyMessage="No peoples for this filter" />
+            </Section>
+          </>}
 
-          <Section title="Kingdoms / Empires" expanded={kingdomsExp} onToggle={() => setKingdomsExp(e => !e)} badge={selKingdoms.length}>
-            <CheckList items={avKingdoms} selected={selKingdoms} onToggle={name => toggle(setSelKingdoms, name)}
-              searchPlaceholder="Search kingdoms…"
-              renderIcon={item => <span className="kingdom-marker" style={{ backgroundColor: (item as any).color }} />}
-              emptyMessage="No kingdoms for this filter" />
-          </Section>
+          {/* ── TAB 2: Timeline ────────────────────────────────────────────── */}
+          {sidebarTab === 'timeline' && <>
+            <section className="control-section">
+              <h2 className="section-title">Search by Book</h2>
+              <BookSearch setSelectedYear={setSelectedYear} />
+            </section>
+
+            <section className="control-section">
+              <h2 className="section-title">Selected Year</h2>
+              <div className="timeline-tab-year-display">
+                {selectedYear !== null
+                  ? <span className="timeline-tab-year-value">{formatYear(selectedYear)}</span>
+                  : <span className="timeline-tab-year-empty">No year selected — click on the timeline below</span>
+                }
+              </div>
+              <div className="timeline-tab-year-input-wrap">
+                <label className="timeline-tab-year-input-label">Jump to year:</label>
+                <YearInput selectedYear={selectedYear} setSelectedYear={setSelectedYear} />
+              </div>
+            </section>
+
+            <section className="control-section">
+              <h2 className="section-title">Books This Period</h2>
+              {selectedYear !== null ? (() => {
+                const matchedBooks = getBooksForYear(selectedYear);
+                return (
+                  <div className="timeline-tab-book-list">
+                    {matchedBooks.length === 0
+                      ? <p className="timeline-tab-no-book">No books correspond to {formatYear(selectedYear)}</p>
+                      : matchedBooks.map(b => (
+                          <div key={b.name} className="timeline-tab-book-card">
+                            <div className="timeline-tab-book-name">📖 {b.name}</div>
+                            <div className="timeline-tab-book-range">⏱ Events: {b.dateLabel}</div>
+                            <div className="timeline-tab-book-range">✍️ Written: {b.writtenLabel}</div>
+                          </div>
+                        ))
+                    }
+                  </div>
+                );
+              })() : (
+                <p className="timeline-tab-no-book">Select a year to see which books it falls in</p>
+              )}
+            </section>
+
+            <Section title="Kingdoms / Empires" expanded={kingdomsExp} onToggle={() => setKingdomsExp(e => !e)} badge={selKingdoms.length}>
+              <CheckList items={avKingdoms} selected={selKingdoms} onToggle={name => toggle(setSelKingdoms, name)}
+                searchPlaceholder="Search kingdoms…"
+                renderIcon={item => <span className="kingdom-marker" style={{ backgroundColor: (item as any).color }} />}
+                emptyMessage="No kingdoms for this filter" />
+            </Section>
+          </>}
 
         </div>
       </aside>
@@ -794,7 +967,7 @@ export default function App() {
 
           </MapContainer>
         </div>
-        <Timeline />
+        <Timeline selectedYear={selectedYear} setSelectedYear={setSelectedYear} />
       </main>
     </div>
   );
