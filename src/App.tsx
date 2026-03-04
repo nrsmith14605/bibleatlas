@@ -742,11 +742,6 @@ export default function App() {
           {/* ── TAB 2: Timeline ────────────────────────────────────────────── */}
           {sidebarTab === 'timeline' && <>
             <section className="control-section">
-              <h2 className="section-title">Search by Book</h2>
-              <BookSearch setSelectedYear={setSelectedYear} />
-            </section>
-
-            <section className="control-section">
               <h2 className="section-title">Selected Year</h2>
               <div className="timeline-tab-year-display">
                 {selectedYear !== null
@@ -758,6 +753,11 @@ export default function App() {
                 <label className="timeline-tab-year-input-label">Jump to year:</label>
                 <YearInput selectedYear={selectedYear} setSelectedYear={setSelectedYear} />
               </div>
+            </section>
+
+            <section className="control-section">
+              <h2 className="section-title">Search by Book</h2>
+              <BookSearch setSelectedYear={setSelectedYear} />
             </section>
 
             <section className="control-section">
