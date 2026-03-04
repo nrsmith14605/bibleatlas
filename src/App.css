@@ -1399,3 +1399,162 @@ body {
   margin-top: 0.4rem;
   line-height: 1.5;
 }
+/* ── Wayfinder Tab ───────────────────────────────────────────────────────── */
+.wayfinder-mode-btns {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.wayfinder-mode-btn {
+  flex: 1;
+  padding: 0.45rem 0.5rem;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  background: var(--parchment);
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--ink-medium);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.wayfinder-mode-btn:hover {
+  border-color: var(--accent-rust);
+  color: var(--accent-rust);
+}
+
+.wayfinder-mode-btn.active {
+  background: var(--accent-rust);
+  border-color: var(--accent-rust);
+  color: #fff;
+  font-weight: 600;
+}
+
+.wayfinder-hint {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: #999;
+  font-style: italic;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+.wayfinder-point-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.4rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.wayfinder-point-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  background: var(--parchment);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+}
+
+.wayfinder-point-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background: #e67e22;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.wayfinder-point-label {
+  flex: 1;
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wayfinder-point-remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #aaa;
+  font-size: 0.75rem;
+  padding: 0;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.wayfinder-point-remove:hover { color: #c0392b; }
+
+.wayfinder-distance {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-top: 0.4rem;
+  padding: 0.6rem 0.75rem;
+  background: var(--parchment);
+  border: 1.5px solid #e67e22;
+  border-radius: 8px;
+}
+
+.wayfinder-distance-km {
+  font-family: var(--font-body);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #e67e22;
+}
+
+.wayfinder-distance-mi {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--ink-medium);
+}
+
+.wayfinder-clear-btn {
+  margin-top: 0.75rem;
+  width: 100%;
+  padding: 0.45rem;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  background: var(--parchment);
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--ink-medium);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.wayfinder-clear-btn:hover {
+  border-color: #c0392b;
+  color: #c0392b;
+}
+
+.wayfinder-activate-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--ink);
+  cursor: pointer;
+  user-select: none;
+}
+
+.wayfinder-activate-label input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  accent-color: #e67e22;
+}

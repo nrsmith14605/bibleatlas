@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
-import { MapContainer, TileLayer, GeoJSON, Polyline, Marker, Popup, CircleMarker, Tooltip, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, GeoJSON, Polyline, Marker, Popup, CircleMarker, Tooltip, useMap, useMapEvents } from 'react-leaflet';
 import type { GeoJsonObject, FeatureCollection } from 'geojson';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
@@ -519,15 +519,108 @@ function BookSearch({ setSelectedYear }: {
   );
 }
 
+function WayfinderMapHandler({
+  active, mode, waypointCount, maxWaypoints, onMapClick, onDrawPoint,
+}: {
+  active: boolean;
+  mode: 'points' | 'draw';
+  waypointCount: number;
+  maxWaypoints: number;
+  onMapClick: (coords: L.LatLngExpression) => void;
+  onDrawPoint: (coords: L.LatLngExpression) => void;
+}) {
+  const map = useMap();
+  const isDrawing = useRef(false);
+  const lastDrawPoint = useRef<L.LatLng | null>(null);
+  const DRAW_INTERVAL_PX = 8;
+
+  useEffect(() => {
+    if (!active) return;
+
+    const container = map.getContainer();
+
+    if (mode === 'points') {
+      container.style.cursor = waypointCount >= maxWaypoints ? 'not-allowed' : 'crosshair';
+    } else {
+      container.style.cursor = 'crosshair';
+    }
+
+    const onMouseDown = (e: MouseEvent) => {
+      if (!active || mode !== 'draw') return;
+      isDrawing.current = true;
+      lastDrawPoint.current = null;
+      const rect = container.getBoundingClientRect();
+      const point = L.point(e.clientX - rect.left, e.clientY - rect.top);
+      const latlng = map.containerPointToLatLng(point);
+      onDrawPoint([latlng.lat, latlng.lng]);
+      lastDrawPoint.current = latlng;
+    };
+
+    const onMouseMove = (e: MouseEvent) => {
+      if (!isDrawing.current || mode !== 'draw') return;
+      const rect = container.getBoundingClientRect();
+      const point = L.point(e.clientX - rect.left, e.clientY - rect.top);
+      const latlng = map.containerPointToLatLng(point);
+      if (lastDrawPoint.current) {
+        const prev = map.latLngToContainerPoint(lastDrawPoint.current);
+        const curr = map.latLngToContainerPoint(latlng);
+        const dx = curr.x - prev.x;
+        const dy = curr.y - prev.y;
+        if (Math.sqrt(dx * dx + dy * dy) >= DRAW_INTERVAL_PX) {
+          onDrawPoint([latlng.lat, latlng.lng]);
+          lastDrawPoint.current = latlng;
+        }
+      }
+    };
+
+    const onMouseUp = () => { isDrawing.current = false; };
+
+    if (mode === 'draw') {
+      map.dragging.disable();
+      container.addEventListener('mousedown', onMouseDown);
+      window.addEventListener('mousemove', onMouseMove);
+      window.addEventListener('mouseup', onMouseUp);
+    }
+
+    return () => {
+      container.style.cursor = '';
+      map.dragging.enable();
+      container.removeEventListener('mousedown', onMouseDown);
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('mouseup', onMouseUp);
+    };
+  }, [active, mode, waypointCount, maxWaypoints, map]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useMapEvents({
+    click(e) {
+      if (!active || mode !== 'points') return;
+      if (waypointCount >= maxWaypoints) return;
+      onMapClick([e.latlng.lat, e.latlng.lng]);
+    },
+  });
+
+  return null;
+}
+
 function MapZoomController({ mapType }: { mapType: string }) {
   return null;
 }
 
 export default function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
-  const [sidebarTab, setSidebarTab] = useState<'map' | 'timeline'>('map');
+  const [sidebarTab, setSidebarTab] = useState<'map' | 'timeline' | 'wayfinder'>('map');
   const [selectedBook, setSelectedBook] = useState('');
   const [selectedYear, setSelectedYear] = useState<number | null>(null);
+
+  // ── Wayfinder state ───────────────────────────────────────────────────────
+  const MAX_WAYPOINTS = 5;
+  type WayfinderMode = 'cursor' | 'points' | 'draw';
+  const [wayfinderMode, setWayfinderMode] = useState<WayfinderMode>('cursor');
+  const [waypoints, setWaypoints] = useState<{ id: number; label: string; coords: L.LatLngExpression }[]>([]);
+  const [drawnPath, setDrawnPath] = useState<L.LatLngExpression[]>([]);
+  const [wpSearch, setWpSearch] = useState('');
+  const [wpSearchFocused, setWpSearchFocused] = useState(false);
+  const nextWpId = useRef(0);
   const riverGeoJson = useRiverGeoJson();
   const lakeGeoJson = useLakeGeoJson();
   const [showCountries, setShowCountries] = useState(false);
@@ -591,6 +684,7 @@ export default function App() {
   const clearAll = () => {
     setSelCities([]); setSelLandmarks([]); setSelNat([]); setSelJourneys([]);
     setSelRegions([]); setSelTribes([]); setSelKingdoms([]); setSelectedPeople([]);
+    setWaypoints([]); setDrawnPath([]); setWayfinderMode('cursor');
   };
 
   const MAP_MAX_ZOOM: Record<string, number> = {
@@ -645,6 +739,51 @@ export default function App() {
     probable:  { label: 'Probable location',  color: '#e67e22' },
     unknown:   { label: 'Uncertain location', color: '#c0392b' },
   }[loc]);
+
+  // ── Wayfinder computed ────────────────────────────────────────────────────
+  const wpSearchResults = useMemo(() => {
+    const q = wpSearch.trim().toLowerCase();
+    if (!q) return [];
+    const cityMatches = cities
+      .filter(c => c.name.toLowerCase().includes(q))
+      .map(c => ({ name: c.name, coords: c.coords as L.LatLngExpression, type: 'city' as const }));
+    const landmarkMatches = landmarks
+      .filter(l => l.name.toLowerCase().includes(q))
+      .map(l => ({ name: l.name, coords: l.coords as L.LatLngExpression, type: 'landmark' as const }));
+    return [...cityMatches, ...landmarkMatches].slice(0, 8);
+  }, [wpSearch]);
+
+  const waypointDistanceKm = useMemo(() => {
+    if (waypoints.length < 2) return 0;
+    let total = 0;
+    for (let i = 0; i < waypoints.length - 1; i++) {
+      total += haversineKm(waypoints[i].coords, waypoints[i + 1].coords);
+    }
+    return total;
+  }, [waypoints]);
+
+  const drawnDistanceKm = useMemo(() => {
+    if (drawnPath.length < 2) return 0;
+    let total = 0;
+    for (let i = 0; i < drawnPath.length - 1; i++) {
+      total += haversineKm(drawnPath[i], drawnPath[i + 1]);
+    }
+    return total;
+  }, [drawnPath]);
+
+  const addWaypoint = (label: string, coords: L.LatLngExpression) => {
+    if (waypoints.length >= MAX_WAYPOINTS) return;
+    setWaypoints(prev => [...prev, { id: nextWpId.current++, label, coords }]);
+  };
+
+  const removeWaypoint = (id: number) => setWaypoints(prev => prev.filter(w => w.id !== id));
+
+  const clearWayfinder = () => {
+    setWaypoints([]);
+    setDrawnPath([]);
+    setWpSearch('');
+    setWayfinderMode('cursor');
+  };
 
   const peopleFilter = avPeople.length > 0 ? (
     <div className="people-filter-wrap">
@@ -719,6 +858,10 @@ export default function App() {
             className={`sidebar-tab-btn${sidebarTab === 'timeline' ? ' active' : ''}`}
             onClick={() => setSidebarTab('timeline')}
           >📅 Timeline</button>
+          <button
+            className={`sidebar-tab-btn${sidebarTab === 'wayfinder' ? ' active' : ''}`}
+            onClick={() => setSidebarTab('wayfinder')}
+          >📏 Wayfinder</button>
         </div>
 
         <div className="sidebar-content">
@@ -832,6 +975,105 @@ export default function App() {
             </Section>
           </>}
 
+          {/* ── TAB 3: Wayfinder ───────────────────────────────────────────── */}
+          {sidebarTab === 'wayfinder' && <>
+            <section className="control-section">
+              <h2 className="section-title">Mode</h2>
+              <div className="wayfinder-mode-btns">
+                <button
+                  className={`wayfinder-mode-btn${wayfinderMode === 'cursor' ? ' active' : ''}`}
+                  onClick={() => setWayfinderMode('cursor')}
+                >🖱️ Cursor</button>
+                <button
+                  className={`wayfinder-mode-btn${wayfinderMode === 'points' ? ' active' : ''}`}
+                  onClick={() => setWayfinderMode('points')}
+                >📍 Place Points</button>
+                <button
+                  className={`wayfinder-mode-btn${wayfinderMode === 'draw' ? ' active' : ''}`}
+                  onClick={() => setWayfinderMode('draw')}
+                >✏️ Draw Line</button>
+              </div>
+              <p className="wayfinder-hint">
+                {wayfinderMode === 'cursor' && 'Pan and zoom the map normally.'}
+                {wayfinderMode === 'points' && 'Click the map or search below to place up to 5 points.'}
+                {wayfinderMode === 'draw' && 'Hold and drag on the map to draw a freehand path.'}
+              </p>
+            </section>
+
+            {wayfinderMode !== 'cursor' && <>
+              <section className="control-section">
+                <h2 className="section-title">Search Location</h2>
+                <div className="book-search-wrap">
+                  <div className="book-search-input-row">
+                    <span className="book-search-icon">🔍</span>
+                    <input
+                      className="book-search-input"
+                      type="text"
+                      placeholder="Search cities or landmarks…"
+                      value={wpSearch}
+                      onChange={e => setWpSearch(e.target.value)}
+                      onFocus={() => setWpSearchFocused(true)}
+                      onBlur={() => setTimeout(() => setWpSearchFocused(false), 150)}
+                      disabled={waypoints.length >= MAX_WAYPOINTS}
+                    />
+                    {wpSearch && <button className="book-search-clear" onClick={() => setWpSearch('')}>✕</button>}
+                  </div>
+                  {wpSearchFocused && wpSearchResults.length > 0 && (
+                    <ul className="book-search-results">
+                      {wpSearchResults.map(r => (
+                        <li key={r.name} className="book-search-result" onMouseDown={() => {
+                          addWaypoint(r.name, r.coords);
+                          setWpSearch('');
+                        }}>
+                          <span className="book-search-result-name">{r.type === 'city' ? '🏛️' : '📍'} {r.name}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </section>
+
+              <section className="control-section">
+                <h2 className="section-title">Waypoints {waypoints.length > 0 && <span className="section-badge">{waypoints.length}/{MAX_WAYPOINTS}</span>}</h2>
+                {waypoints.length === 0
+                  ? <p className="wayfinder-hint">No points placed yet.</p>
+                  : <ol className="wayfinder-point-list">
+                      {waypoints.map((wp, i) => (
+                        <li key={wp.id} className="wayfinder-point-item">
+                          <span className="wayfinder-point-num">{i + 1}</span>
+                          <span className="wayfinder-point-label">{wp.label}</span>
+                          <button className="wayfinder-point-remove" onClick={() => removeWaypoint(wp.id)}>✕</button>
+                        </li>
+                      ))}
+                    </ol>
+                }
+              </section>
+            </>}
+
+            <section className="control-section">
+              <h2 className="section-title">Distance</h2>
+              {wayfinderMode === 'cursor' && waypoints.length === 0 && drawnPath.length === 0
+                ? <p className="wayfinder-hint">Switch to Place Points or Draw Line to start measuring.</p>
+                : wayfinderMode === 'draw'
+                  ? drawnPath.length < 2
+                    ? <p className="wayfinder-hint">Draw a path to measure distance.</p>
+                    : <div className="wayfinder-distance">
+                        <span className="wayfinder-distance-km">{drawnDistanceKm.toFixed(1)} km</span>
+                        <span className="wayfinder-distance-mi">{(drawnDistanceKm * 0.621371).toFixed(1)} mi</span>
+                      </div>
+                  : waypoints.length < 2
+                    ? <p className="wayfinder-hint">Add at least 2 points to measure distance.</p>
+                    : <div className="wayfinder-distance">
+                        <span className="wayfinder-distance-km">{waypointDistanceKm.toFixed(1)} km</span>
+                        <span className="wayfinder-distance-mi">{(waypointDistanceKm * 0.621371).toFixed(1)} mi</span>
+                      </div>
+              }
+              {(waypoints.length > 0 || drawnPath.length > 0) && (
+                <button className="wayfinder-clear-btn" onClick={clearWayfinder}>Clear All</button>
+              )}
+            </section>
+          </>}
+
         </div>
       </aside>
 
@@ -847,6 +1089,28 @@ export default function App() {
             <TileLayer key={mapType} attribution='&copy; <a href="https://www.esri.com">Esri</a>' url={tileUrl} maxZoom={18} {...(currentMaxZoom < 18 ? { maxNativeZoom: currentMaxZoom } : {})} />
             <MapZoomController mapType={mapType} />
             <MapResizer trigger={sidebarOpen} />
+            <WayfinderMapHandler
+              active={sidebarTab === 'wayfinder' && wayfinderMode !== 'cursor'}
+              mode={wayfinderMode === 'draw' ? 'draw' : 'points'}
+              waypointCount={waypoints.length}
+              maxWaypoints={MAX_WAYPOINTS}
+              onMapClick={(coords) => addWaypoint(`Point ${waypoints.length + 1}`, coords)}
+              onDrawPoint={(coords) => setDrawnPath(prev => [...prev, coords])}
+            />
+
+            {/* Wayfinder overlays */}
+            {sidebarTab === 'wayfinder' && wayfinderMode === 'points' && waypoints.length >= 2 && (
+              <Polyline positions={waypoints.map(w => w.coords)} pathOptions={{ color: '#e67e22', weight: 2.5, dashArray: '6 4', opacity: 0.9 }} />
+            )}
+            {sidebarTab === 'wayfinder' && waypoints.map((wp, i) => (
+              <CircleMarker key={wp.id} center={wp.coords} radius={7}
+                pathOptions={{ fillColor: '#e67e22', fillOpacity: 1, color: '#fff', weight: 2 }}>
+                <Tooltip permanent direction="top" offset={[0, -8]} className="city-label">{i + 1}. {wp.label}</Tooltip>
+              </CircleMarker>
+            ))}
+            {sidebarTab === 'wayfinder' && wayfinderMode === 'draw' && drawnPath.length >= 2 && (
+              <Polyline positions={drawnPath} pathOptions={{ color: '#e67e22', weight: 3, opacity: 0.9 }} />
+            )}
 
             {showCountries && countriesGeoJson && (
               <CountriesLayer data={countriesGeoJson} />
