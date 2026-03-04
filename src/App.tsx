@@ -494,6 +494,17 @@ function BookSearch({ setSelectedYear }: {
   );
 }
 
+function MapZoomController({ mapType, maxZoom }: { mapType: string; maxZoom: number }) {
+  const map = useMap();
+  const isFirst = useRef(true);
+  useEffect(() => {
+    map.setMaxZoom(maxZoom);
+    if (isFirst.current) { isFirst.current = false; return; }
+    map.setZoom(Math.min(map.getZoom(), maxZoom));
+  }, [mapType]); // eslint-disable-line react-hooks/exhaustive-deps
+  return null;
+}
+
 export default function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [sidebarTab, setSidebarTab] = useState<'map' | 'timeline'>('map');
@@ -564,6 +575,17 @@ export default function App() {
     setSelRegions([]); setSelTribes([]); setSelKingdoms([]); setSelectedPeople([]);
   };
 
+  const MAP_MAX_ZOOM: Record<string, number> = {
+    physical:  8,
+    terrain:   9,
+    natgeo:    12,
+    topo:      18,
+    street:    18,
+    osm:       18,
+    satellite: 18,
+    ocean:     10,
+  };
+
   const tileUrl = (() => {
     switch (mapType) {
       case 'terrain':   return 'https://services.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}';
@@ -576,6 +598,8 @@ export default function App() {
       default:          return 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}';
     }
   })();
+
+  const currentMaxZoom = MAP_MAX_ZOOM[mapType] ?? 8;
 
   const CITY_COLOR = '#2c1810';
   const CITY_RADIUS = 3;
@@ -804,6 +828,7 @@ export default function App() {
           <MapContainer center={[31.5, 35.0] as L.LatLngExpression}
             zoom={6} minZoom={3} maxZoom={8} style={{ height: '100%', width: '100%' }}>
             <TileLayer attribution='&copy; <a href="https://www.esri.com">Esri</a>' url={tileUrl} maxZoom={18} />
+            <MapZoomController mapType={mapType} maxZoom={currentMaxZoom} />
             <MapResizer trigger={sidebarOpen} />
 
             {showCountries && countriesGeoJson && (
