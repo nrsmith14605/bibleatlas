@@ -519,14 +519,7 @@ function BookSearch({ setSelectedYear }: {
   );
 }
 
-function MapZoomController({ mapType, maxZoom }: { mapType: string; maxZoom: number }) {
-  const map = useMap();
-  const isFirst = useRef(true);
-  useEffect(() => {
-    map.setMaxZoom(maxZoom);
-    if (isFirst.current) { isFirst.current = false; return; }
-    map.setZoom(Math.min(map.getZoom(), maxZoom));
-  }, [mapType]); // eslint-disable-line react-hooks/exhaustive-deps
+function MapZoomController({ mapType }: { mapType: string }) {
   return null;
 }
 
@@ -850,9 +843,9 @@ export default function App() {
             <span className="sidebar-toggle-icon">◀</span>
           </button>
           <MapContainer center={[31.5, 35.0] as L.LatLngExpression}
-            zoom={6} minZoom={3} maxZoom={8} style={{ height: '100%', width: '100%' }}>
-            <TileLayer attribution='&copy; <a href="https://www.esri.com">Esri</a>' url={tileUrl} maxZoom={18} />
-            <MapZoomController mapType={mapType} maxZoom={currentMaxZoom} />
+            zoom={6} minZoom={3} maxZoom={18} style={{ height: '100%', width: '100%' }}>
+            <TileLayer key={mapType} attribution='&copy; <a href="https://www.esri.com">Esri</a>' url={tileUrl} maxZoom={18} {...(currentMaxZoom < 18 ? { maxNativeZoom: currentMaxZoom } : {})} />
+            <MapZoomController mapType={mapType} />
             <MapResizer trigger={sidebarOpen} />
 
             {showCountries && countriesGeoJson && (
