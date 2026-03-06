@@ -45,7 +45,15 @@ body {
 /* Header */
 .header {
   grid-column: 1 / -1;
-  background: linear-gradient(135deg, var(--ink) 0%, var(--ink-medium) 100%);
+  background: linear-gradient(135deg, var(--ink) 0%, var(--ink-medium) 100%); 
+  /* background: url('images/leather.png') center center / cover; */
+  /* background: url('images/blackleather.jpeg') center center / cover; */
+  /* background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url('images/paper.jpeg') center center / cover no-repeat; */
+  /* background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url('images/blackleather.jpeg') center center / cover no-repeat; */
+  /* background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+            url('images/darkermap.jpeg') center center / cover no-repeat; */
   color: var(--parchment);
   padding: 0.75rem 2rem;
   box-shadow: 0 4px 12px var(--shadow);

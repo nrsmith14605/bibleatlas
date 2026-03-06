@@ -164,14 +164,19 @@ function Timeline({ selectedYear, setSelectedYear }: {
     setScrollLeft(Math.max(0, Math.min(TRACK_W - bar.clientWidth, centered)));
   }, []);
 
-  // Scroll to centre on selectedYear whenever it changes (e.g. from sidebar search)
+  // Scroll to centre on selectedYear only if the marker is off-screen
   useEffect(() => {
     if (selectedYear === null) return;
     const bar = barRef.current;
     if (!bar) return;
-    const targetScroll = yearToX(selectedYear) - bar.clientWidth / 2;
-    setScrollLeft(Math.max(0, Math.min(TRACK_W - bar.clientWidth, targetScroll)));
-  }, [selectedYear]);
+    const markerX = yearToX(selectedYear);
+    const screenX = markerX - scrollLeft;
+    const isVisible = screenX >= 0 && screenX <= bar.clientWidth;
+    if (!isVisible) {
+      const targetScroll = markerX - bar.clientWidth / 2;
+      setScrollLeft(Math.max(0, Math.min(TRACK_W - bar.clientWidth, targetScroll)));
+    }
+  }, [selectedYear]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Re-clamp scrollLeft whenever the bar resizes (e.g. sidebar open/close)
   useEffect(() => {
@@ -238,8 +243,13 @@ function Timeline({ selectedYear, setSelectedYear }: {
       setSelectedYear(clamped);
       const bar = barRef.current;
       if (bar) {
-        const targetScroll = yearToX(clamped) - bar.clientWidth / 2;
-        setScrollLeft(Math.max(0, Math.min(TRACK_W - bar.clientWidth, targetScroll)));
+        const markerX = yearToX(clamped);
+        const screenX = markerX - scrollLeft;
+        const isVisible = screenX >= 0 && screenX <= bar.clientWidth;
+        if (!isVisible) {
+          const targetScroll = markerX - bar.clientWidth / 2;
+          setScrollLeft(Math.max(0, Math.min(TRACK_W - bar.clientWidth, targetScroll)));
+        }
       }
     }
     setEditing(false);
