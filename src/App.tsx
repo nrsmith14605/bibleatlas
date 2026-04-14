@@ -734,7 +734,7 @@ export default function App() {
     else setSelCities(prev => Array.from(new Set([...prev, ...avCities.map(c => c.name)])));
   };
 
-  const allKingdomsSelected = avKingdoms.length > 0 && avKingdoms.every(k => selKingdoms.includes(k.name));
+  // const allKingdomsSelected = avKingdoms.length > 0 && avKingdoms.every(k => selKingdoms.includes(k.name));
   // const toggleAllKingdoms = () => {
   //   if (allKingdomsSelected) setSelKingdoms(prev => prev.filter(n => !avKingdoms.some(k => k.name === n)));
   //   else setSelKingdoms(prev => Array.from(new Set([...prev, ...avKingdoms.map(k => k.name)])));
