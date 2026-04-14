@@ -735,10 +735,10 @@ export default function App() {
   };
 
   const allKingdomsSelected = avKingdoms.length > 0 && avKingdoms.every(k => selKingdoms.includes(k.name));
-  const toggleAllKingdoms = () => {
-    if (allKingdomsSelected) setSelKingdoms(prev => prev.filter(n => !avKingdoms.some(k => k.name === n)));
-    else setSelKingdoms(prev => Array.from(new Set([...prev, ...avKingdoms.map(k => k.name)])));
-  };
+  // const toggleAllKingdoms = () => {
+  //   if (allKingdomsSelected) setSelKingdoms(prev => prev.filter(n => !avKingdoms.some(k => k.name === n)));
+  //   else setSelKingdoms(prev => Array.from(new Set([...prev, ...avKingdoms.map(k => k.name)])));
+  // };
 
   const clearAll = () => {
     setSelCities([]); setSelLandmarks([]); setSelNat([]); setSelJourneys([]);
