@@ -218,7 +218,7 @@ export const regions: Region[] = [
     color: '#d4b483',
     fillOpacity: 0.25,
     location: 'probable',
-    books: ['Genesis'],
+    books: ['Genesis', 'Exodus'],
     geometry: {
       type: 'Polygon',
       coordinates: [[

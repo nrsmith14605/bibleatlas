@@ -654,6 +654,7 @@ export default function App() {
   const [selRegions, setSelRegions] = useState<string[]>([]);
   const [selTribes, setSelTribes] = useState<string[]>([]);
   const [selKingdoms, setSelKingdoms] = useState<string[]>([]);
+  const [showAllKingdoms, setShowAllKingdoms] = useState(false);
 
   const [mapType, setMapType] = useState('physical');
 
@@ -667,6 +668,7 @@ export default function App() {
     setSelTribes([]);
     setSelCities([]);
     setSelKingdoms([]);
+    setShowAllKingdoms(false);
   };
 
   const avCities = useMemo(() => cities.filter(c => matchesBook(c.books, selectedBook)), [selectedBook]);
@@ -680,10 +682,51 @@ export default function App() {
   }, [selectedBook, selectedPeople]);
   const avRegions = useMemo(() => regions.filter(r => matchesBook(r.books, selectedBook)), [selectedBook]);
   const avTribes = useMemo(() => tribes.filter(t => matchesBook(t.books, selectedBook)), [selectedBook]);
-  const avKingdoms = useMemo(() => kingdomsEmpires.filter(k => matchesBook(k.books, selectedBook)), [selectedBook]);
+  const avKingdoms = useMemo(() => {
+    return kingdomsEmpires.filter(k => {
+      if (!matchesBook(k.books, selectedBook)) return false;
+      if (selectedYear === null) return true;
+      const start = k.yearStart ?? -99999;
+      const end   = k.yearEnd   ??  99999;
+      return selectedYear >= start && selectedYear <= end;
+    });
+  }, [selectedBook, selectedYear]);
+
+  /** Pick the territory snapshot closest to (and not after) the selected year */
+  function getKingdomGeometry(k: typeof kingdomsEmpires[0], year: number | null): GeoJSON.Geometry | null {
+    if (!k.snapshots?.length) return null;
+    const candidates = k.snapshots.filter(s => year === null || s.year <= year);
+    if (!candidates.length) return null;
+    return candidates[candidates.length - 1].geometry;
+  }
+
+  function getKingdomSnapshotNote(k: typeof kingdomsEmpires[0], year: number | null): string {
+    if (!k.snapshots?.length) return '';
+    const candidates = k.snapshots.filter(s => year === null || s.year <= year);
+    if (!candidates.length) return '';
+    return candidates[candidates.length - 1].note ?? '';
+  }
 
   const toggle = (set: React.Dispatch<React.SetStateAction<string[]>>, name: string) =>
     set(prev => prev.includes(name) ? prev.filter(x => x !== name) : [...prev, name]);
+
+  // When showAllKingdoms is on, keep selKingdoms in sync with avKingdoms as year changes.
+  // When off, just prune any kingdoms that have expired.
+  useEffect(() => {
+    if (showAllKingdoms) {
+      setSelKingdoms(avKingdoms.map(k => k.name));
+    } else {
+      if (selectedYear === null) return;
+      setSelKingdoms(prev => prev.filter(name => {
+        const k = kingdomsEmpires.find(k => k.name === name);
+        if (!k) return false;
+        const start = k.yearStart ?? -99999;
+        const end   = k.yearEnd   ??  99999;
+        return selectedYear >= start && selectedYear <= end;
+      }));
+    }
+  }, [selectedYear, showAllKingdoms, avKingdoms]);
+
 
   const allCitiesSelected = avCities.length > 0 && avCities.every(c => selCities.includes(c.name));
   const toggleAllCities = () => {
@@ -691,9 +734,16 @@ export default function App() {
     else setSelCities(prev => Array.from(new Set([...prev, ...avCities.map(c => c.name)])));
   };
 
+  const allKingdomsSelected = avKingdoms.length > 0 && avKingdoms.every(k => selKingdoms.includes(k.name));
+  const toggleAllKingdoms = () => {
+    if (allKingdomsSelected) setSelKingdoms(prev => prev.filter(n => !avKingdoms.some(k => k.name === n)));
+    else setSelKingdoms(prev => Array.from(new Set([...prev, ...avKingdoms.map(k => k.name)])));
+  };
+
   const clearAll = () => {
     setSelCities([]); setSelLandmarks([]); setSelNat([]); setSelJourneys([]);
     setSelRegions([]); setSelTribes([]); setSelKingdoms([]); setSelectedPeople([]);
+    setShowAllKingdoms(false);
     setWaypoints([]); setDrawnPath([]); setWayfinderMode('cursor');
   };
 
@@ -978,10 +1028,29 @@ export default function App() {
             </section>
 
             <Section title="Kingdoms / Empires" expanded={kingdomsExp} onToggle={() => setKingdomsExp(e => !e)} badge={selKingdoms.length}>
-              <CheckList items={avKingdoms} selected={selKingdoms} onToggle={name => toggle(setSelKingdoms, name)}
+              {selectedYear === null && (
+                <p style={{ fontSize: '0.82em', color: '#888', margin: '0 0 8px', lineHeight: 1.4 }}>
+                  📅 Select a year on the timeline to filter kingdoms by era.
+                </p>
+              )}
+              <label className="checkbox-label" style={{ marginBottom: 8, fontWeight: 600, borderBottom: '1px solid #e0e0e0', paddingBottom: 6 }}>
+                <input
+                  type="checkbox"
+                  checked={showAllKingdoms}
+                  onChange={e => {
+                    setShowAllKingdoms(e.target.checked);
+                    if (!e.target.checked) setSelKingdoms([]);
+                  }}
+                />
+                <span>Show all active kingdoms</span>
+              </label>
+              <CheckList items={avKingdoms} selected={selKingdoms} onToggle={name => {
+                setShowAllKingdoms(false);
+                toggle(setSelKingdoms, name);
+              }}
                 searchPlaceholder="Search kingdoms…"
                 renderIcon={item => <span className="kingdom-marker" style={{ backgroundColor: (item as any).color }} />}
-                emptyMessage="No kingdoms for this filter" />
+                emptyMessage={selectedYear !== null ? `No kingdoms active in ${formatYear(selectedYear)}` : 'No kingdoms for this filter'} />
             </Section>
           </>}
 
@@ -1154,16 +1223,30 @@ export default function App() {
                 }} />
             ))}
 
-            {kingdomsEmpires.filter(k => selKingdoms.includes(k.name)).map(k => (
-              <GeoJSON key={k.name} data={k.geometry as any}
-                pathOptions={{ color: k.color, weight: 2, fillColor: k.color, fillOpacity: k.fillOpacity }}
-                onEachFeature={(_feature, layer) => {
-                  layer.bindPopup(
-                    `<strong style="font-size:1.05em;color:${k.color}">${k.name}</strong>${speakBtn(k.name, (k as any).speakAs)}` +
-                    ((k as any).description ? `<br/><span style="font-size:0.88em;line-height:1.4;display:block;margin-top:4px">${(k as any).description}</span>` : '')
-                  );
-                }} />
-            ))}
+            {kingdomsEmpires.filter(k => selKingdoms.includes(k.name)).map(k => {
+              const geo = getKingdomGeometry(k, selectedYear);
+              if (!geo) return null;
+              const snapNote = getKingdomSnapshotNote(k, selectedYear);
+              const kStart = formatYear(k.yearStart);
+              const kEnd   = formatYear(k.yearEnd);
+              return (
+                <GeoJSON key={`${k.name}-${selectedYear}`} data={geo as any}
+                  pathOptions={{ color: k.color, weight: 2, fillColor: k.color, fillOpacity: k.fillOpacity }}
+                  onEachFeature={(_feature, layer) => {
+                    layer.bindPopup(
+                      '<div style="min-width:220px;max-width:300px;font-family:inherit">' +
+                      `<strong style="font-size:1.05em;color:${k.color}">${k.name}</strong>${speakBtn(k.name, k.speakAs)}` +
+                      `<div style="font-size:0.78em;color:#888;margin:2px 0 4px">&#128197; ${kStart} – ${kEnd}</div>` +
+                      '<div style="border-top:1px solid #ddd;margin:4px 0"></div>' +
+                      (k.description ? `<p style="font-size:0.87em;color:#333;margin:0 0 6px;line-height:1.5">${k.description}</p>` : '') +
+                      (snapNote ? `<div style="font-size:0.8em;color:#555;font-style:italic;margin-bottom:5px;padding:4px 6px;background:#f5f5f5;border-radius:3px">&#128204; ${snapNote}</div>` : '') +
+                      (k.books?.length > 0 ? `<div style="font-size:0.78em;color:#777">&#128218; ${k.books.join(', ')}</div>` : '') +
+                      '</div>'
+                    );
+                  }} />
+              );
+            })}
+
 
             {naturalFeatures.filter(n => selNat.includes(n.name)).map(n => (
               <React.Fragment key={n.name}>

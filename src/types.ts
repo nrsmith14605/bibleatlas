@@ -45,14 +45,31 @@ export interface Journey {
   books: BookTag[];
 }
 
+/** A polygon snapshot of a kingdom/empire's territory at a specific year. */
+export interface TerritorySnapshot {
+  year: number;
+  geometry: GeoJSON.Geometry;
+  /** Optional note shown in popup for this specific snapshot, e.g. "At peak under Sargon II" */
+  note?: string;
+}
+
 export interface KingdomEmpire {
   name: string;
   speakAs?: string;
-  geometry: GeoJSON.Geometry;
   color: string;
   fillOpacity: number;
   description?: string;
   books: BookTag[];
+  /** First year this kingdom/empire existed (BC = negative) */
+  yearStart: number;
+  /** Last year this kingdom/empire existed (BC = negative) */
+  yearEnd: number;
+  /**
+   * Ordered list of territory snapshots.
+   * At render time the app picks the snapshot whose year is closest to (and <=) the selected year.
+   * If no snapshot is <= selectedYear, nothing is rendered.
+   */
+  snapshots: TerritorySnapshot[];
 }
 
 export interface Region {
@@ -85,12 +102,9 @@ export interface NaturalFeature {
   type: 'river' | 'sea' | 'desert' | 'valley';
   books: BookTag[];
   color: string;
-  // For rivers: the feature name to match in the Natural Earth GeoJSON dataset
   geoJsonName?: string;
   lakeGeoJsonName?: string;
-  // Fallback polyline path if CDN data is unavailable
   path?: L.LatLngExpression[];
-  // For seas, deserts, valleys
   geometry?: GeoJSON.Geometry;
   fillOpacity?: number;
 }

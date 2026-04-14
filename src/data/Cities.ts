@@ -137,7 +137,7 @@ export const cities: City[] = [
     books: ['Genesis'],
   },
   {
-    name: 'Salem (Jerusalem)',
+    name: 'Jerusalem (Salem)',
     coords: [31.78, 35.23],
     description: "Melchizedek, king and priest, met Abraham here and blessed him after the battle of the kings",
     location: 'confirmed',
@@ -488,6 +488,11 @@ export const cities: City[] = [
     location: 'probable',
     books: ['Numbers', 'Deuteronomy'],
   },
+
+  // ── EXODUS ────────────────────────────────────────────────────────────────
+
+
+
 
   // ── New Testament ─────────────────────────────────────────────────────────
   {
