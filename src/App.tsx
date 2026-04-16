@@ -929,7 +929,7 @@ export default function App() {
           {/* ── TAB 1: Map ─────────────────────────────────────────────────── */}
           {sidebarTab === 'map' && <>
             <section className="control-section">
-              <h2 className="section-title">Bible Books</h2>
+              <h2 className="section-title">Filter by Book</h2>
               <select className="book-select" value={selectedBook} onChange={e => handleBookChange(e.target.value)}>
                 <option value="">All Books</option>
                 {books.map(b => <option key={b} value={b}>{b}</option>)}
