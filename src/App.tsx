@@ -164,7 +164,7 @@ function Timeline({ selectedYear, setSelectedYear }: {
     setScrollLeft(Math.max(0, Math.min(TRACK_W - bar.clientWidth, centered)));
   }, []);
 
-  // Scroll to centre on selectedYear only if the marker is off-screen
+  // Scroll to center on selectedYear only if the marker is off-screen
   useEffect(() => {
     if (selectedYear === null) return;
     const bar = barRef.current;

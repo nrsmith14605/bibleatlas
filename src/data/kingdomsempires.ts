@@ -17,26 +17,39 @@ import { KingdomEmpire } from '../types';
 //   Hadrian Wall   -2.00E  55.00N      Danube mouth   29.70E  45.20N
 //   Carthage       10.32E  36.85N      Nile 1st cat.  32.90E  24.09N
 // ─────────────────────────────────────────────────────────────────────────────
+//
+// HOW THE TIME SYSTEM WORKS:
+//   - yearStart / yearEnd control when a kingdom appears in the sidebar list
+//     (avKingdoms filter in App.tsx uses these).
+//   - snapshots[] are sorted by ascending year. The app picks the snapshot
+//     whose year is <= selectedYear (the latest one that has "happened").
+//   - To shrink a kingdom when conquered, add a snapshot at the conquest year
+//     with reduced or null geometry. A kingdom "disappears" from the map when
+//     the app finds no qualifying snapshot (none with year <= selectedYear),
+//     OR when yearEnd < selectedYear (pruned from avKingdoms).
+//   - yearEnd should be set to the year the kingdom ceased to exist as an
+//     independent entity; after that year it won't appear in the sidebar.
+//
+// ─────────────────────────────────────────────────────────────────────────────
 
 export const kingdomsEmpires: KingdomEmpire[] = [
 
   // ══════════════════════════════════════════════════════════════════════════
   // 1. EGYPT (Kingdom of Ancient Egypt)
-  //    Exists as an independent entity only when NOT under Assyrian/Persian/Roman rule.
-  //    -3100  Unification under Narmer — core Nile valley + Delta
-  //    -1550  New Kingdom peak — extends into Canaan, Nubia, Libya
-  //    -1070  Third Intermediate — contracted, fragmented
-  //    -664   Saite recovery (Assyrians expelled) — reunified
-  //    ENDS -525 (Persian conquest by Cambyses). Persia shows Egypt's land after that.
+  //    Independent until -525 (Persian conquest).
+  //    Re-emerges as independent under Alexander (-332) and Ptolemies (-305).
+  //    Roman from -30 onward.
+  //    For simplicity we track the "independent Egypt" entity -3100 → -30,
+  //    with gaps implied by being absorbed into Persian / Macedonian polygons.
   // ══════════════════════════════════════════════════════════════════════════
   {
     name: 'Egypt',
-    description: 'One of the great ancient civilizations of the Nile. Enslaved Israel, then became a refuge. At its New Kingdom peak Egypt controlled Canaan and deep Nubia. Independent Egypt ends when Persia conquers it in 525 BC.',
+    description: 'One of the great ancient civilizations of the Nile. Enslaved Israel, then became a refuge. At its New Kingdom peak Egypt controlled Canaan and deep Nubia. Conquered by Persia 525 BC, then Alexander 332 BC, then Rome 30 BC.',
     color: '#c9a84c',
     fillOpacity: 0.35,
     books: ['Genesis', 'Exodus', 'Numbers', 'Isaiah', 'Jeremiah', 'Ezekiel', 'Hosea', 'Matthew'],
     yearStart: -3100,
-    yearEnd: -525,
+    yearEnd: -30,
     snapshots: [
       {
         year: -3100,
@@ -44,13 +57,9 @@ export const kingdomsEmpires: KingdomEmpire[] = [
         geometry: {
           type: 'Polygon',
           coordinates: [[
-            // Delta coast west to east
             [29.5, 31.1], [30.5, 31.5], [32.0, 31.4], [32.5, 31.1],
-            // Sinai border (Wadi el-Arish)
             [33.5, 30.9],
-            // Nile valley south to Aswan (1st cataract)
             [32.9, 29.5], [32.6, 27.0], [32.5, 25.5], [32.9, 24.1],
-            // Western desert edge
             [30.0, 24.0], [28.0, 26.0], [27.0, 28.0], [27.5, 30.0],
             [28.5, 31.0], [29.5, 31.1],
           ]],
@@ -62,15 +71,10 @@ export const kingdomsEmpires: KingdomEmpire[] = [
         geometry: {
           type: 'Polygon',
           coordinates: [[
-            // Levantine coast — reaches Byblos / Kadesh (~34.5E 33.5N)
             [34.5, 33.5], [35.0, 32.5],
-            // Gaza, Sinai, Delta
             [34.5, 31.5], [33.5, 30.9], [32.5, 31.1], [30.5, 31.5], [29.5, 31.1],
-            // Western Libya border
             [25.0, 31.0], [24.5, 30.5], [25.0, 29.0], [26.0, 27.5],
-            // Deep Nubia — past 4th cataract (~32.7E 19.7N)
             [30.0, 23.0], [32.7, 19.7], [33.5, 19.5],
-            // Back north along Nile
             [33.5, 22.5], [33.0, 24.5], [32.9, 26.0],
             [32.8, 28.0], [33.2, 30.5], [34.0, 31.0],
             [34.5, 32.5], [34.5, 33.5],
@@ -103,15 +107,77 @@ export const kingdomsEmpires: KingdomEmpire[] = [
           ]],
         },
       },
+      // -525: Persia conquers Egypt. Egypt ceases to be independent.
+      // We add a near-empty snapshot so it effectively vanishes from the map.
+      // The sidebar will still show it (yearEnd = -30) but no territory renders.
+      {
+        year: -525,
+        note: 'Conquered by Cambyses II of Persia — Egypt absorbed into the Achaemenid Empire',
+        geometry: {
+          // A tiny point-like polygon — effectively invisible
+          type: 'Polygon',
+          coordinates: [[[31.2, 30.1], [31.3, 30.1], [31.3, 30.0], [31.2, 30.0], [31.2, 30.1]]],
+        },
+      },
+      // -332: Alexander liberates Egypt. Brief Macedonian/Ptolemaic era.
+      {
+        year: -332,
+        note: 'Alexander the Great liberates Egypt from Persia; Alexandria founded',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[
+            [29.5, 31.1], [30.5, 31.5], [32.0, 31.4], [32.5, 31.1], [33.5, 30.9],
+            [33.0, 29.0], [32.8, 27.0], [32.8, 25.0], [32.9, 24.1],
+            [30.0, 23.8], [28.0, 25.5], [27.5, 28.0], [27.5, 30.0],
+            [28.5, 31.0], [29.5, 31.1],
+          ]],
+        },
+      },
+      // -305: Ptolemaic Kingdom; controls Levant coast
+      {
+        year: -305,
+        note: 'Ptolemaic Kingdom — Egypt under the Greek dynasty; controls Libya and parts of the Levant',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[
+            [29.5, 31.1], [30.5, 31.5], [32.0, 31.4], [32.5, 31.1], [33.5, 30.9],
+            [34.5, 31.5], [35.0, 32.5], [35.2, 33.3],
+            [35.0, 31.8], [34.0, 31.1],
+            [33.0, 29.0], [32.8, 27.0], [32.8, 25.0], [32.9, 24.1],
+            [30.0, 23.8], [27.5, 25.5], [26.0, 28.5],
+            [24.5, 31.0], [27.5, 31.5],
+            [29.5, 31.1],
+          ]],
+        },
+      },
+      // -168: After Antiochus IV, Ptolemaic Egypt shrinks to core
+      {
+        year: -168,
+        note: 'Late Ptolemaic Egypt — reduced to core Nile valley after Roman intervention prevented Seleucid conquest',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[
+            [29.5, 31.1], [30.5, 31.5], [32.0, 31.4], [32.5, 31.1], [33.5, 30.9],
+            [33.0, 29.0], [32.8, 27.0], [32.8, 25.0], [32.9, 24.1],
+            [30.0, 23.8], [28.0, 25.5], [27.0, 28.0], [27.5, 30.5],
+            [28.5, 31.0], [29.5, 31.1],
+          ]],
+        },
+      },
+      // -30: Rome conquers Egypt (Actium). Egypt effectively ends as independent.
+      {
+        year: -30,
+        note: 'Conquered by Augustus after Battle of Actium — Egypt becomes a Roman province',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[[31.2, 30.1], [31.3, 30.1], [31.3, 30.0], [31.2, 30.0], [31.2, 30.1]]],
+        },
+      },
     ],
   },
 
   // ══════════════════════════════════════════════════════════════════════════
-  // 2. UNITED KINGDOM OF ISRAEL
-  //    -1050  Saul — core hill country
-  //    -1010  David — greatly expanded (Edom, Moab, Aram subjugated)
-  //    -970   Solomon peak — from Euphrates border to Egypt's brook
-  //    Ends -930 on split
+  // 2. UNITED KINGDOM OF ISRAEL  (-1050 → -930)
   // ══════════════════════════════════════════════════════════════════════════
   {
     name: 'United Kingdom of Israel',
@@ -128,21 +194,13 @@ export const kingdomsEmpires: KingdomEmpire[] = [
         geometry: {
           type: 'Polygon',
           coordinates: [[
-            // Dan in the north (~35.65E 33.25N)
             [35.65, 33.25],
-            // Mediterranean coast near Acco
             [35.1, 32.9],
-            // Jaffa area
             [34.75, 32.05],
-            // Philistine border — Gezer / Ekron
             [34.9, 31.85],
-            // Beersheba in the south
             [34.8, 31.25],
-            // Dead Sea eastern side / Jordan valley
             [35.5, 31.3], [35.55, 31.75],
-            // Gilead / east of Jordan
             [35.75, 32.2], [35.85, 32.7],
-            // Back to Dan
             [35.65, 33.25],
           ]],
         },
@@ -153,25 +211,15 @@ export const kingdomsEmpires: KingdomEmpire[] = [
         geometry: {
           type: 'Polygon',
           coordinates: [[
-            // Northern reach — near Damascus (36.3E 33.5N controlled)
             [35.7, 33.5], [36.5, 33.2],
-            // Hamath border (Lebo-Hamath ~36.4E 34.0N)
             [36.4, 34.0],
-            // Back west to Mediterranean
             [35.5, 33.8], [35.1, 33.0],
-            // Coast south
             [34.75, 32.05], [34.5, 31.7],
-            // Wadi el-Arish (Brook of Egypt) ~34.0E 31.1N
             [34.0, 31.1],
-            // South through Negev to Gulf of Aqaba (Ezion-Geber ~35.0E 29.5N)
             [34.5, 30.5], [35.0, 29.55],
-            // Edom controlled — Petra area ~35.5E 30.3N
             [35.5, 30.3], [35.8, 30.8],
-            // Moab east of Dead Sea
             [36.0, 31.0], [36.3, 31.5],
-            // Ammon — Rabbah ~35.9E 32.0N
             [35.9, 32.0], [36.4, 32.5],
-            // Gilead and back north
             [36.6, 32.8], [36.7, 33.0],
             [36.5, 33.2], [35.7, 33.5],
           ]],
@@ -183,42 +231,35 @@ export const kingdomsEmpires: KingdomEmpire[] = [
         geometry: {
           type: 'Polygon',
           coordinates: [[
-            // Lebo-Hamath in the north
             [36.0, 34.5], [37.0, 34.0],
-            // Tadmor / Palmyra area (~38.3E 34.5N — Solomon built Tadmor per 2 Chr 8:4)
             [38.5, 34.5],
-            // Euphrates bend near Tiphsah (~38.2E 36.0N per 1 Kings 4:24)
             [38.0, 36.0],
-            // Back down Euphrates valley
             [37.5, 35.0], [37.0, 34.5],
-            // Aram/Damascus area
             [36.3, 33.5], [35.7, 33.8],
-            // Mediterranean coast
             [35.1, 33.0], [34.75, 32.0],
-            // Brook of Egypt (Wadi el-Arish)
             [34.0, 31.1],
-            // Negev to Ezion-Geber
             [34.5, 30.5], [35.0, 29.55],
-            // Edom / Petra
             [35.5, 30.3], [35.9, 30.8],
-            // Moab
             [36.0, 31.0], [36.3, 31.5],
-            // Ammon
             [36.5, 32.0], [36.7, 32.7],
-            // Gilead, back north
             [36.8, 33.3], [37.0, 34.0], [36.0, 34.5],
           ]],
+        },
+      },
+      // -930: Kingdom splits — entity effectively ends
+      {
+        year: -930,
+        note: 'Kingdom splits into Northern Israel and Southern Judah on the death of Solomon',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[[35.2, 31.9], [35.3, 31.9], [35.3, 31.8], [35.2, 31.8], [35.2, 31.9]]],
         },
       },
     ],
   },
 
   // ══════════════════════════════════════════════════════════════════════════
-  // 3. NORTHERN KINGDOM OF ISRAEL
-  //    -930  Jeroboam I — 10 tribes, Samaria capital
-  //    -885  Omri dynasty — slight expansion, Transjordan
-  //    -793  Jeroboam II peak — full border restoration per 2 Kings 14:25
-  //    Ends -722 (Assyrian conquest)
+  // 3. NORTHERN KINGDOM OF ISRAEL  (-930 → -722)
   // ══════════════════════════════════════════════════════════════════════════
   {
     name: 'Northern Kingdom of Israel',
@@ -231,19 +272,15 @@ export const kingdomsEmpires: KingdomEmpire[] = [
     snapshots: [
       {
         year: -930,
-        note: "Jeroboam I — northern tribes secede; Dan to the Jezreel valley; capital at Tirzah then Samaria",
+        note: "Jeroboam I — northern tribes secede; Dan to the Jezreel valley",
         geometry: {
           type: 'Polygon',
           coordinates: [[
             [35.65, 33.25], [36.0, 33.1],
             [36.2, 32.7], [36.0, 32.3],
-            // Samaria ~35.2E 32.27N
             [35.7, 32.1], [35.5, 31.9],
-            // Western slopes to coast near Acco
             [35.0, 32.1], [34.9, 32.4],
-            // Acco / Haifa bay
             [35.1, 32.9],
-            // Back to Dan
             [35.65, 33.25],
           ]],
         },
@@ -256,7 +293,6 @@ export const kingdomsEmpires: KingdomEmpire[] = [
           coordinates: [[
             [35.65, 33.25], [36.2, 33.0],
             [36.5, 32.5], [36.3, 32.0],
-            // Transjordan — Gilead
             [36.0, 31.8],
             [35.7, 31.9], [35.5, 31.9],
             [35.0, 32.0], [34.9, 32.4],
@@ -270,32 +306,45 @@ export const kingdomsEmpires: KingdomEmpire[] = [
         geometry: {
           type: 'Polygon',
           coordinates: [[
-            // Lebo-Hamath ~36.5E 34.0N
             [35.8, 34.2], [36.5, 34.0],
             [36.8, 33.5], [36.5, 33.0],
-            // Gilead / Transjordan
             [36.6, 32.5], [36.4, 32.0],
-            // Dead Sea northern tip ~35.55E 31.75N
             [35.7, 31.75], [35.5, 31.75],
-            // West back to coast
             [35.0, 32.0], [34.9, 32.4],
             [35.1, 32.9],
-            // Tyre border
             [35.4, 33.3], [35.8, 33.5], [35.8, 34.2],
           ]],
+        },
+      },
+      // -733: Tiglath-Pileser III strips Galilee and Transjordan
+      {
+        year: -733,
+        note: 'Tiglath-Pileser III annexes Galilee and Gilead — Israel reduced to Samaria and hill country',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[
+            [35.0, 32.5], [35.5, 32.5],
+            [35.7, 32.2], [35.6, 32.0],
+            [35.5, 31.9],
+            [35.0, 32.0], [34.9, 32.2],
+            [35.0, 32.5],
+          ]],
+        },
+      },
+      // -722: Assyria destroys Samaria — kingdom ends
+      {
+        year: -722,
+        note: 'Sargon II destroys Samaria — Northern Kingdom ceases to exist; population deported',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[[35.2, 32.3], [35.3, 32.3], [35.3, 32.2], [35.2, 32.2], [35.2, 32.3]]],
         },
       },
     ],
   },
 
   // ══════════════════════════════════════════════════════════════════════════
-  // 4. SOUTHERN KINGDOM OF JUDAH
-  //    -930  Rehoboam — Judah + Benjamin
-  //    -848  Jehoshaphat — controls Edom
-  //    -760  Uzziah peak — Elath rebuilt, Philistine towns taken
-  //    -701  Sennacherib strips Shephelah — rump around Jerusalem
-  //    -640  Josiah recovery — into old Northern territory
-  //    Ends -586 (Babylon destroys Jerusalem)
+  // 4. SOUTHERN KINGDOM OF JUDAH  (-930 → -586)
   // ══════════════════════════════════════════════════════════════════════════
   {
     name: 'Southern Kingdom of Judah',
@@ -308,20 +357,14 @@ export const kingdomsEmpires: KingdomEmpire[] = [
     snapshots: [
       {
         year: -930,
-        note: 'Rehoboam — Judah and Benjamin; Jerusalem the capital; Philistines border to the west',
+        note: 'Rehoboam — Judah and Benjamin; Jerusalem the capital',
         geometry: {
           type: 'Polygon',
           coordinates: [[
-            // Jerusalem ~35.22E 31.78N
-            // Northern border — Bethel ~35.22E 31.93N; Beth-horon area
             [34.85, 32.0], [35.22, 31.93], [35.55, 31.9],
-            // Dead Sea east side
             [35.6, 31.55], [35.55, 31.1],
-            // Beersheba south
             [34.8, 31.25],
-            // Western Negev / Philistine border
             [34.5, 31.5], [34.6, 31.7],
-            // Shephelah coast
             [34.7, 31.9], [34.85, 32.0],
           ]],
         },
@@ -334,11 +377,8 @@ export const kingdomsEmpires: KingdomEmpire[] = [
           coordinates: [[
             [34.85, 32.0], [35.22, 31.93], [35.55, 31.9],
             [35.6, 31.55],
-            // Edom — south to Ezion-Geber / Gulf of Aqaba
             [35.6, 30.5], [35.5, 30.3], [35.0, 29.55],
-            // Negev
             [34.6, 30.0], [34.3, 30.5],
-            // Beersheba
             [34.8, 31.25],
             [34.5, 31.5], [34.6, 31.7], [34.7, 31.9], [34.85, 32.0],
           ]],
@@ -346,21 +386,16 @@ export const kingdomsEmpires: KingdomEmpire[] = [
       },
       {
         year: -760,
-        note: "Uzziah (Azariah) — Elath rebuilt; Philistine cities Gath/Ashdod taken; greatest Judahite extent",
+        note: "Uzziah (Azariah) — Elath rebuilt; Philistine cities taken; greatest Judahite extent",
         geometry: {
           type: 'Polygon',
           coordinates: [[
             [34.85, 32.05], [35.3, 31.93], [35.6, 31.9],
             [35.65, 31.55],
-            // Edom to Ezion-Geber
             [35.6, 30.5], [35.5, 30.3], [35.0, 29.55],
-            // Negev / Arava
             [34.6, 30.0], [34.2, 30.5],
-            // Beersheba
             [34.8, 31.25],
-            // Philistine coastal plain — Ashdod 34.65E 31.82N; Gath area
             [34.45, 31.5], [34.55, 31.8],
-            // Ekron 34.85E 31.87N
             [34.85, 31.87], [34.85, 32.05],
           ]],
         },
@@ -371,7 +406,6 @@ export const kingdomsEmpires: KingdomEmpire[] = [
         geometry: {
           type: 'Polygon',
           coordinates: [[
-            // Jerusalem and a tight ring — roughly 15km radius
             [35.1, 32.05], [35.4, 31.95], [35.5, 31.75],
             [35.35, 31.55], [35.1, 31.55],
             [34.9, 31.65], [34.85, 31.85], [35.1, 32.05],
@@ -380,14 +414,12 @@ export const kingdomsEmpires: KingdomEmpire[] = [
       },
       {
         year: -640,
-        note: "Josiah's reform and expansion — Judah pushes into old Northern territory; Bethel and Samaria area",
+        note: "Josiah's reform and expansion — Judah pushes into old Northern territory",
         geometry: {
           type: 'Polygon',
           coordinates: [[
-            // North — Bethel and into Samaria
             [35.0, 32.3], [35.3, 32.2], [35.5, 32.1],
             [35.6, 31.9], [35.65, 31.55],
-            // Edom / Negev
             [35.5, 30.5], [35.0, 29.55],
             [34.6, 30.0], [34.2, 30.5],
             [34.8, 31.25],
@@ -396,22 +428,38 @@ export const kingdomsEmpires: KingdomEmpire[] = [
           ]],
         },
       },
+      // -597: First Babylonian deportation — territory shrinks again
+      {
+        year: -597,
+        note: 'First Babylonian deportation under Nebuchadnezzar — royal family and elites exiled to Babylon',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[
+            [35.0, 32.0], [35.4, 31.95], [35.5, 31.75],
+            [35.35, 31.55], [35.1, 31.55],
+            [34.9, 31.65], [34.85, 31.85], [35.0, 32.0],
+          ]],
+        },
+      },
+      // -586: Babylon destroys Jerusalem — kingdom ends
+      {
+        year: -586,
+        note: 'Nebuchadnezzar destroys Jerusalem and the Temple — Southern Kingdom ceases to exist',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[[35.2, 31.8], [35.3, 31.8], [35.3, 31.7], [35.2, 31.7], [35.2, 31.8]]],
+        },
+      },
     ],
   },
 
   // ══════════════════════════════════════════════════════════════════════════
-  // 5. NEO-ASSYRIAN EMPIRE (Assyria)
-  //    -911  Adad-nirari II — core Assyria around Nineveh/Asshur
-  //    -745  Tiglath-Pileser III — rapid expansion into Syria, Levant
-  //    -722  Sargon II — Northern Israel absorbed; peak Near East control
-  //    -671  Esarhaddon — Egypt conquered; maximum extent
-  //    -640  Ashurbanipal — Egypt lost but still dominant
-  //    Ends -609 (fall of Harran, last remnant destroyed)
+  // 5. NEO-ASSYRIAN EMPIRE  (-911 → -609)
   // ══════════════════════════════════════════════════════════════════════════
   {
     name: 'Assyria (Neo-Assyrian Empire)',
     speakAs: 'Assyria',
-    description: "The first world empire. Centered on Nineveh and Asshur in northern Mesopotamia. Conquered Israel in 722 BC, besieged Jerusalem, briefly occupied Egypt. The prophet Jonah preached here; Nahum celebrated its fall. Destroyed by Babylon and the Medes in 609 BC.",
+    description: "The first world empire. Centered on Nineveh and Asshur in northern Mesopotamia. Conquered Israel in 722 BC, besieged Jerusalem, briefly occupied Egypt. Destroyed by Babylon and the Medes in 609 BC.",
     color: '#c0392b',
     fillOpacity: 0.25,
     books: ['2 Kings', 'Isaiah', 'Jonah', 'Nahum', 'Micah', 'Zephaniah'],
@@ -424,96 +472,64 @@ export const kingdomsEmpires: KingdomEmpire[] = [
         geometry: {
           type: 'Polygon',
           coordinates: [[
-            // Taurus Mountains foothills north ~37.0E 37.5N
             [37.0, 37.5], [40.5, 37.8],
-            // East to Zagros ~46.0E 36.5N
             [44.5, 37.0], [46.0, 36.5],
-            // South — Asshur ~43.3E 35.5N; Nineveh ~43.2E 36.4N
             [46.0, 34.5], [44.5, 33.0],
-            // Babylon border ~44.4E 32.5N (not yet controlled)
             [43.0, 33.5], [41.0, 34.5],
-            // Euphrates crossing back west
             [40.0, 36.0], [38.5, 36.5], [37.0, 37.5],
           ]],
         },
       },
       {
         year: -745,
-        note: 'Tiglath-Pileser III — Syria, Phoenician coast, and northern Transjordan brought under Assyrian control',
+        note: 'Tiglath-Pileser III — Syria, Phoenician coast, and northern Transjordan brought under control',
         geometry: {
           type: 'Polygon',
           coordinates: [[
-            // Anatolia border / Taurus ~36.0E 38.0N
             [36.0, 38.0], [40.0, 38.5], [44.0, 38.0],
-            // Zagros / Media border
             [46.5, 37.0], [48.0, 36.0], [48.0, 33.0],
-            // Babylonian border (vassal)
             [46.0, 30.5], [43.0, 29.5],
-            // Arabian fringe
             [40.0, 30.0], [38.0, 31.0],
-            // Levant — Damascus ~36.3E 33.5N under Tiglath-Pileser
             [36.5, 33.5], [36.0, 33.0],
-            // Galilee / northern Israel annexed in 733 BC
             [35.8, 33.3], [35.5, 32.7],
-            // Coast up through Phoenicia — Tyre ~35.2E 33.3N
             [35.2, 33.3], [35.8, 34.5],
-            // Orontes valley and back to Taurus
             [36.5, 36.0], [36.0, 38.0],
           ]],
         },
       },
       {
         year: -722,
-        note: 'Sargon II — Northern Israel (Samaria) destroyed; Levant fully controlled; empire at Near East height',
+        note: 'Sargon II — Northern Israel (Samaria) destroyed; Levant fully controlled',
         geometry: {
           type: 'Polygon',
           coordinates: [[
-            // Taurus / eastern Anatolia
             [35.5, 38.5], [38.0, 39.0], [42.0, 39.0],
-            // Urartu border / Lake Van ~43.5E 38.5N
             [44.5, 38.5], [46.0, 38.0],
-            // Zagros / Media
             [48.0, 37.0], [49.0, 35.0], [48.5, 33.0],
-            // Babylonia (controlled)
             [47.0, 30.0], [44.0, 29.5],
-            // Northern Arabia border
             [41.0, 29.5], [39.0, 30.5],
-            // Philistine coast — Gaza ~34.5E 31.5N
             [35.0, 31.8], [34.5, 31.5],
-            // Sinai border — Raphia ~34.2E 31.4N
             [34.2, 31.4],
-            // Levant coast north
             [35.0, 32.5], [35.2, 33.3], [35.8, 34.5],
-            // Orontes, back through Syria
             [36.0, 36.5], [35.5, 38.5],
           ]],
         },
       },
       {
         year: -671,
-        note: 'Esarhaddon conquers Egypt — maximum extent; Memphis captured; Egypt reduced to a vassal',
+        note: 'Esarhaddon conquers Egypt — maximum extent; Memphis captured',
         geometry: {
           type: 'Polygon',
           coordinates: [[
-            // Taurus / eastern Anatolia  
             [35.5, 38.5], [38.0, 39.5], [42.5, 39.5],
-            // Caucasus border
             [44.5, 39.0], [46.5, 38.5],
-            // Zagros / Media
             [48.5, 37.5], [50.0, 35.0], [49.0, 33.0],
-            // Babylonia
             [47.5, 30.0], [44.5, 29.0],
-            // Arabia fringe
             [41.0, 29.0], [38.5, 30.5],
-            // Levant + Sinai into Egypt
             [35.0, 31.8], [34.2, 31.2],
-            // Nile Delta — Memphis ~31.25E 29.84N
             [33.0, 31.0], [31.5, 30.8], [31.25, 29.84],
-            // Upper Egypt limit ~Thebes 32.6E 25.7N (briefly)
             [32.0, 28.0], [32.5, 26.0],
-            // Back along western Egypt limit
             [30.0, 26.0], [28.5, 29.0], [28.0, 31.0],
-            // Mediterranean coast back to Levant
             [30.0, 31.5], [32.5, 31.1], [33.5, 30.9],
             [34.2, 31.2], [34.5, 31.5],
             [35.2, 33.3], [35.8, 34.5],
@@ -523,7 +539,7 @@ export const kingdomsEmpires: KingdomEmpire[] = [
       },
       {
         year: -640,
-        note: 'Ashurbanipal — Egypt lost (expelled 664 BC); Assyria still dominant but beginning to fragment',
+        note: 'Ashurbanipal — Egypt lost (664 BC); empire still dominant but fragmenting',
         geometry: {
           type: 'Polygon',
           coordinates: [[
@@ -532,28 +548,45 @@ export const kingdomsEmpires: KingdomEmpire[] = [
             [48.5, 37.5], [50.0, 35.0], [49.0, 33.0],
             [47.5, 30.0], [44.5, 29.0],
             [41.0, 29.0], [38.5, 30.5],
-            // Levant to Sinai border — no longer controls Egypt
             [35.5, 31.5], [34.5, 31.5], [34.2, 31.4],
             [35.0, 32.5], [35.2, 33.3], [35.8, 34.5],
             [36.0, 36.5], [35.5, 38.5],
           ]],
         },
       },
+      // -612: Nineveh falls — empire collapsing
+      {
+        year: -612,
+        note: 'Nineveh falls to Babylon and the Medes — empire collapses to a remnant at Harran',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[
+            [37.5, 37.5], [40.0, 38.0], [43.0, 37.5],
+            [45.0, 36.5],
+            [44.5, 34.5], [42.0, 34.0],
+            [39.5, 35.0], [37.5, 37.5],
+          ]],
+        },
+      },
+      // -609: Last Assyrian remnant destroyed at Harran
+      {
+        year: -609,
+        note: 'Last Assyrian forces destroyed at Harran — Neo-Assyrian Empire ceases to exist',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[[38.9, 36.9], [39.1, 36.9], [39.1, 36.7], [38.9, 36.7], [38.9, 36.9]]],
+        },
+      },
     ],
   },
 
   // ══════════════════════════════════════════════════════════════════════════
-  // 6. BABYLON (Neo-Babylonian Empire)
-  //    -626  Nabopolassar — independent from Assyria; core Babylonia
-  //    -612  Nineveh falls — inherits Assyrian heartland
-  //    -605  Carchemish victory — controls Levant; Judah under threat
-  //    -586  Jerusalem destroyed — maximum extent; Judah absorbed
-  //    Ends -539 (Cyrus conquers Babylon)
+  // 6. BABYLON (Neo-Babylonian Empire)  (-626 → -539)
   // ══════════════════════════════════════════════════════════════════════════
   {
     name: 'Babylon (Neo-Babylonian Empire)',
     speakAs: 'Babylon',
-    description: "Neo-Babylonian Empire. Destroyed Jerusalem in 586 BC and carried Israel into the Babylonian captivity. Nebuchadnezzar II was its greatest king. The prophet Daniel served in Babylon. Fell to Cyrus the Great in 539 BC.",
+    description: "Neo-Babylonian Empire. Destroyed Jerusalem in 586 BC. Nebuchadnezzar II was its greatest king. Daniel served in Babylon. Fell to Cyrus the Great in 539 BC.",
     color: '#d68910',
     fillOpacity: 0.25,
     books: ['2 Kings', 'Isaiah', 'Jeremiah', 'Ezekiel', 'Daniel', '2 Chronicles'],
@@ -566,34 +599,24 @@ export const kingdomsEmpires: KingdomEmpire[] = [
         geometry: {
           type: 'Polygon',
           coordinates: [[
-            // Northern boundary just below Nineveh — Assyria still controls the north
             [39.5, 35.0], [43.0, 35.5], [45.5, 35.0],
-            // Zagros foothills east
             [47.0, 34.0], [48.0, 32.5],
-            // Persian Gulf coast — Ur ~46.1E 30.96N
             [47.5, 30.5], [47.0, 29.5], [46.0, 29.5],
-            // Arabian desert fringe
             [43.0, 29.0], [40.5, 30.5],
-            // Euphrates west bank back north
             [40.0, 32.0], [39.5, 34.0], [39.5, 35.0],
           ]],
         },
       },
       {
         year: -612,
-        note: 'Nineveh falls — Babylon absorbs the former Assyrian heartland along with the Medes',
+        note: 'Nineveh falls — Babylon inherits former Assyrian heartland (jointly with Medes)',
         geometry: {
           type: 'Polygon',
           coordinates: [[
-            // Taurus / upper Euphrates — shared with Medes
             [37.5, 37.5], [40.0, 38.0], [43.0, 37.5],
-            // Media border ~46E
             [46.0, 37.0], [48.0, 36.0], [48.5, 33.5],
-            // Persian Gulf
             [48.0, 30.5], [46.5, 29.5],
-            // Arabian desert fringe
             [43.0, 29.0], [40.0, 30.5], [38.0, 32.0],
-            // Back up Euphrates
             [37.5, 35.0], [37.5, 37.5],
           ]],
         },
@@ -608,7 +631,6 @@ export const kingdomsEmpires: KingdomEmpire[] = [
             [46.5, 37.5], [48.5, 35.0], [49.0, 33.0],
             [48.0, 30.5], [46.5, 29.5],
             [43.0, 29.0], [40.0, 30.5],
-            // Levant — controls Syria, Phoenicia, approaches to Egypt
             [37.0, 31.5], [36.0, 32.0],
             [35.5, 33.0], [35.5, 34.5],
             [36.0, 36.5], [37.0, 37.5],
@@ -625,32 +647,33 @@ export const kingdomsEmpires: KingdomEmpire[] = [
             [46.5, 37.5], [48.5, 35.0], [49.5, 32.5],
             [48.5, 30.0], [46.5, 29.0],
             [43.0, 28.5], [40.0, 30.0],
-            // Levant to Egypt's border (Wadi el-Arish ~34.0E 31.1N)
             [36.5, 31.0], [35.5, 31.0], [34.8, 31.25],
             [34.0, 31.1],
-            // Coast back north
             [34.5, 31.7], [35.0, 32.5],
             [35.2, 33.3], [35.5, 34.5],
             [36.0, 36.5], [37.0, 37.5],
           ]],
         },
       },
+      // -539: Cyrus takes Babylon
+      {
+        year: -539,
+        note: 'Cyrus the Great takes Babylon without a battle — Neo-Babylonian Empire absorbed into Persia',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[[44.3, 32.6], [44.5, 32.6], [44.5, 32.4], [44.3, 32.4], [44.3, 32.6]]],
+        },
+      },
     ],
   },
 
   // ══════════════════════════════════════════════════════════════════════════
-  // 7. PERSIA (Achaemenid Empire)
-  //    -550  Cyrus defeats Medes — Persia + Media combined; Lydia falls
-  //    -539  Babylon falls — Mesopotamia and Levant added; Jews freed
-  //    -525  Cambyses conquers Egypt — added to empire
-  //    -500  Darius I near-maximum extent (west to Thrace, east to Indus)
-  //    Ends -330 (Alexander the Great)
-  //    NOTE: Egypt is INCLUDED in the Persian polygon from -525 onward
+  // 7. PERSIA (Achaemenid Empire)  (-550 → -330)
   // ══════════════════════════════════════════════════════════════════════════
   {
     name: 'Persia (Achaemenid Empire)',
     speakAs: 'Persia',
-    description: "The Achaemenid Empire founded by Cyrus the Great. He freed the Jewish exiles from Babylon (fulfilling Isaiah 44–45). Esther, Ezra, and Nehemiah are set here. At its height under Darius I it was the largest empire the world had seen, spanning Egypt to India.",
+    description: "The Achaemenid Empire founded by Cyrus the Great. He freed the Jewish exiles from Babylon. Esther, Ezra, and Nehemiah are set here. At its height the largest empire the world had seen. Destroyed by Alexander the Great 330 BC.",
     color: '#1a5276',
     fillOpacity: 0.2,
     books: ['Ezra', 'Nehemiah', 'Esther', 'Daniel', 'Isaiah'],
@@ -663,25 +686,15 @@ export const kingdomsEmpires: KingdomEmpire[] = [
         geometry: {
           type: 'Polygon',
           coordinates: [[
-            // Western Anatolia — Sardis ~28.0E 38.5N (Lydia falls -547)
             [26.5, 39.0], [28.0, 38.5], [30.0, 39.0],
-            // Anatolia north coast
             [33.0, 41.5], [36.0, 41.5],
-            // Caucasus
             [40.0, 41.5], [44.0, 42.0], [47.0, 41.0],
-            // Caspian east ~53.0E
             [53.0, 38.0], [56.0, 37.0],
-            // Eastern limit — before India; Bactria ~66.0E 37.0N
             [60.0, 35.0], [62.0, 32.0],
-            // Persis core — Persepolis ~52.9E 29.9N
             [60.0, 28.0], [55.0, 25.5],
-            // Arabian Sea coast
             [50.0, 24.5], [47.0, 24.5],
-            // Persian Gulf back west
             [47.5, 26.0], [46.5, 29.0],
-            // Mesopotamia border (not yet; Babylon not yet taken)
             [44.0, 29.5], [42.0, 32.0],
-            // Upper Euphrates back to Anatolia
             [40.0, 35.0], [38.0, 37.0],
             [36.0, 39.5], [32.0, 40.0],
             [28.0, 39.0], [26.5, 39.0],
@@ -694,27 +707,17 @@ export const kingdomsEmpires: KingdomEmpire[] = [
         geometry: {
           type: 'Polygon',
           coordinates: [[
-            // Western Anatolia coast
             [26.0, 38.5], [28.0, 38.5], [30.0, 39.0],
             [33.0, 41.5], [36.0, 41.5], [40.0, 41.5],
-            // Caucasus
             [44.0, 42.0], [47.0, 41.0],
-            // Caspian, Central Asia
             [53.0, 38.5], [58.0, 37.5],
-            // Bactria / eastern frontier
             [62.0, 36.0], [65.0, 33.0], [63.0, 30.0],
-            // Persepolis, Arabian Sea
             [58.0, 25.0], [52.0, 24.0], [47.5, 24.0],
-            // Persian Gulf
             [47.0, 26.0], [46.5, 29.0],
-            // Now includes Mesopotamia — down to Persian Gulf
             [48.0, 30.0], [47.0, 29.0], [44.0, 28.5],
-            // Arabia fringe
             [40.5, 29.5], [38.0, 30.5],
-            // Levant — Cyrus's edict; Jews return to Jerusalem
             [36.0, 32.0], [35.5, 31.5],
             [34.8, 31.25], [34.0, 31.1],
-            // Syrian coast north
             [35.2, 33.3], [35.8, 35.0],
             [36.5, 37.0], [36.0, 39.5],
             [32.0, 40.5], [28.0, 39.0], [26.0, 38.5],
@@ -723,40 +726,27 @@ export const kingdomsEmpires: KingdomEmpire[] = [
       },
       {
         year: -525,
-        note: 'Cambyses II conquers Egypt — empire now spans Egypt to Persia; Egypt absorbed (no longer independent)',
+        note: 'Cambyses II conquers Egypt — empire now spans Egypt to Persia',
         geometry: {
           type: 'Polygon',
           coordinates: [[
-            // Western extent — Egypt's western border (Libya fringe ~25.0E)
             [24.5, 31.5],
-            // Egypt Delta coast
             [29.5, 31.5], [30.5, 31.5], [32.0, 31.4], [32.5, 31.1],
-            // Sinai
             [33.5, 30.9], [34.0, 31.1],
-            // Levant coast north
             [34.5, 31.7], [35.2, 33.3], [35.8, 35.0],
-            // Anatolia — now extended; Cyprus taken ~33.3E 35.0N
             [36.5, 37.0], [36.0, 39.5],
             [32.0, 40.5], [30.0, 39.5],
-            // Western Anatolia coast; Ionian cities
             [26.5, 38.5],
-            // Thrace fringe
             [26.0, 41.0], [28.0, 42.0],
-            // Caucasus
             [35.0, 43.0], [40.0, 42.0], [44.0, 42.5], [47.0, 41.0],
-            // Caspian, Central Asia, Bactria
             [53.0, 39.0], [58.5, 37.5], [63.0, 36.0],
             [66.0, 33.0], [64.0, 30.0],
-            // Arabian Sea / Indus frontier
             [61.0, 25.5], [57.0, 24.0], [52.0, 23.5], [47.5, 24.0],
-            // Persian Gulf
             [47.0, 26.0], [46.5, 29.0], [48.0, 30.0],
-            // Mesopotamia, Arabia fringe
-            [44.0, 28.5], [40.5, 29.5], [38.0, 30.5],
-            // Back into Levant, south along Nile valley
+            [44.0, 28.5],
+            [40.5, 29.5], [38.0, 30.5],
             [35.5, 31.5], [34.8, 31.25], [33.5, 30.9],
             [32.5, 28.0], [32.5, 25.5], [32.9, 24.1],
-            // 1st Cataract (Aswan) — southern Egypt limit
             [30.0, 24.0], [28.0, 26.0], [26.5, 29.0],
             [25.0, 31.0], [24.5, 31.5],
           ]],
@@ -768,58 +758,266 @@ export const kingdomsEmpires: KingdomEmpire[] = [
         geometry: {
           type: 'Polygon',
           coordinates: [[
-            // Thrace / Bulgaria ~26.0E 42.5N
             [23.0, 42.5], [26.0, 42.5], [29.0, 43.5],
-            // Danube fringe
             [29.0, 44.5],
-            // Caucasus range
             [35.0, 43.5], [40.5, 42.5], [44.5, 43.0], [47.5, 41.5],
-            // Caspian east coast
             [52.0, 40.5], [55.0, 39.0], [58.0, 38.0],
-            // Sogdiana / Aral Sea area
             [60.0, 40.0], [63.5, 39.5],
-            // Bactria / Hindu Kush ~66E 36N
             [67.0, 36.5], [68.0, 34.0],
-            // Indus Valley — western frontier ~72E 28N
             [72.5, 28.0], [70.0, 24.5],
-            // Arabian Sea coast
             [63.0, 25.0], [57.5, 23.5], [52.0, 23.0], [47.5, 24.0],
-            // Persian Gulf coast
             [47.0, 25.5], [46.5, 28.5],
-            // Mesopotamia, Arabia border
             [48.0, 30.0], [44.5, 28.5],
             [40.5, 29.5], [38.0, 30.5],
-            // Levant — Jerusalem, Sinai
             [36.0, 32.0], [35.5, 31.0],
             [34.2, 31.1], [33.5, 30.9],
-            // Egypt Nile valley to 1st cataract; Libya border
             [32.8, 28.0], [32.7, 24.5], [32.9, 24.1],
             [30.0, 23.8], [28.0, 25.5], [26.0, 28.5],
-            // Cyrenaica / Libya coast
             [24.5, 31.0], [22.0, 32.5], [20.0, 32.5],
-            // Mediterranean coast back west
             [20.0, 33.5], [23.0, 34.0],
-            // Ionian coast, Aegean islands, Thrace
             [26.0, 38.5], [26.5, 40.0], [26.0, 42.5], [23.0, 42.5],
           ]],
+        },
+      },
+      // -480: After Xerxes' Greek failures, empire stable but not expanding
+      {
+        year: -480,
+        note: "Xerxes — Persian Wars with Greece; empire stable after defeat at Salamis and Plataea",
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[
+            [26.0, 42.0], [29.0, 43.0], [35.0, 43.0],
+            [40.0, 42.0], [44.5, 42.5], [47.5, 41.0],
+            [52.0, 40.0], [58.0, 37.5], [63.0, 36.0],
+            [67.0, 36.0], [68.0, 34.0],
+            [72.0, 28.0], [70.0, 24.5],
+            [63.0, 25.0], [57.0, 23.5], [52.0, 23.0], [47.5, 24.0],
+            [46.5, 28.0], [48.0, 30.0],
+            [44.0, 28.5], [40.0, 29.5], [38.0, 30.5],
+            [36.0, 32.0], [35.5, 31.0], [34.2, 31.1], [33.5, 30.9],
+            [32.8, 27.0], [32.9, 24.1],
+            [30.0, 23.8], [28.0, 26.0], [26.0, 28.5],
+            [24.5, 31.0], [22.0, 32.5], [20.0, 32.5],
+            [22.0, 34.0], [26.0, 38.5], [26.0, 42.0],
+          ]],
+        },
+      },
+      // -330: Alexander conquers Persepolis — Achaemenid Empire ends
+      {
+        year: -330,
+        note: 'Alexander the Great burns Persepolis — Achaemenid Empire ceases to exist',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[[52.8, 29.9], [52.9, 29.9], [52.9, 29.8], [52.8, 29.8], [52.8, 29.9]]],
         },
       },
     ],
   },
 
   // ══════════════════════════════════════════════════════════════════════════
-  // 8. ROME (Roman Empire)
-  //    -63   Pompey takes Jerusalem — Judea as client kingdom
-  //    -30   Augustus — Egypt absorbed after Actium; early empire western core
-  //    14    Augustus dies — stable empire; Britain not yet
-  //    50    Claudius conquers Britain; mature empire
-  //    100   Trajan — maximum extent (Britain to Mesopotamia)
-  //    NOTE: Rome includes Egypt from -30 onward
+  // 8. MACEDONIAN EMPIRE (Alexander the Great)  (-336 → -323)
+  //    After -323: Diadochi wars split it. We show the unified empire only.
+  //    The Seleucid and Ptolemaic successor kingdoms are separate entries
+  //    (Egypt above covers Ptolemaic; Seleucids could be added later).
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    name: 'Macedonian Empire (Alexander)',
+    speakAs: 'Macedonian Empire',
+    description: "Alexander the Great's empire, the largest in the ancient world at its time. In just 13 years Alexander conquered Persia, Egypt, Babylon, and reached India. He liberated Judea from Persia in 332 BC. After his death in 323 BC the empire fragmented among his generals (the Diadochi).",
+    color: '#2471a6',
+    fillOpacity: 0.25,
+    books: ['Daniel'],
+    yearStart: -336,
+    yearEnd: -310,
+    snapshots: [
+      {
+        year: -336,
+        note: 'Alexander becomes king of Macedon — Macedon and Greece under his control',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[
+            // Macedonia and northern Greece
+            [21.0, 42.0], [26.0, 42.5], [26.5, 41.0],
+            [23.0, 40.5], [22.0, 40.0],
+            // Thessaly and central Greece
+            [22.5, 39.5], [23.0, 38.5],
+            // Athens/Peloponnese
+            [22.5, 38.0], [21.5, 37.5], [22.0, 37.0],
+            [23.0, 37.5], [24.0, 37.0],
+            // Back north
+            [22.5, 38.5], [22.0, 39.5],
+            [21.5, 41.5], [21.0, 42.0],
+          ]],
+        },
+      },
+      {
+        year: -334,
+        note: 'Alexander crosses into Asia — conquers western Anatolia at Granicus; Ionian cities liberated',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[
+            // Greece + western Anatolia
+            [21.0, 42.0], [26.0, 42.5], [28.0, 42.0],
+            [32.0, 41.5], [36.0, 41.5],
+            // Western Anatolia (Ionian coast)
+            [38.0, 40.5], [38.5, 37.5],
+            [28.0, 37.5], [27.0, 38.0], [26.5, 39.5],
+            // Greece south
+            [23.0, 37.0], [21.5, 37.5], [22.0, 39.5],
+            [21.0, 42.0],
+          ]],
+        },
+      },
+      {
+        year: -333,
+        note: 'Battle of Issus — Darius III defeated; Anatolia and Cilicia under Alexander; heading south to Levant',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[
+            [21.0, 42.0], [26.0, 42.5], [28.5, 42.0],
+            [33.0, 41.5], [37.0, 41.5], [40.0, 41.0],
+            // Anatolia fully
+            [42.0, 39.5], [38.0, 37.5], [36.5, 37.0],
+            // Cilicia / Issus area
+            [36.5, 36.5], [36.0, 36.8],
+            // Levant — beginning conquest
+            [36.5, 35.5],
+            [28.0, 37.0], [26.5, 39.5],
+            [23.0, 37.0], [21.5, 37.5], [22.0, 39.5],
+            [21.0, 42.0],
+          ]],
+        },
+      },
+      {
+        year: -332,
+        note: 'Siege of Tyre and Gaza; Egypt liberated from Persia; Alexandria founded; Oracle of Siwa',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[
+            // Greece
+            [21.0, 42.0], [26.0, 42.5], [29.0, 43.0],
+            // Thrace / Black Sea coast
+            [32.0, 42.0], [36.0, 42.0], [40.0, 41.5], [42.5, 40.0],
+            // All Anatolia
+            [38.0, 37.5], [36.5, 37.0], [36.5, 36.5],
+            // Levant — Syria, Phoenicia, Judea, Gaza
+            [36.5, 35.5], [36.0, 34.5], [35.5, 33.3],
+            [35.0, 31.8], [34.2, 31.1], [33.5, 30.9],
+            // Egypt
+            [32.5, 31.1], [30.5, 31.5], [29.5, 31.0],
+            [32.8, 27.0], [32.9, 24.1],
+            // Libya (Siwa)
+            [28.5, 25.0], [26.0, 28.5], [24.5, 31.0],
+            // Back north
+            [22.0, 32.5], [20.0, 32.5],
+            [22.0, 34.0], [26.0, 38.5], [26.5, 40.5],
+            [23.0, 37.0], [21.5, 38.5],
+            [21.0, 42.0],
+          ]],
+        },
+      },
+      {
+        year: -331,
+        note: 'Battle of Gaugamela — Darius III defeated decisively; Babylon, Susa, and Persepolis taken',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[
+            // Greece + Thrace
+            [21.0, 42.5], [26.0, 43.0], [29.5, 44.0], [32.0, 43.0],
+            // Anatolia
+            [36.0, 42.5], [40.0, 42.0], [43.0, 40.0],
+            // Into Persia — Mesopotamia, Persis
+            [46.0, 38.0], [48.0, 36.0], [49.0, 33.5],
+            [48.0, 30.5], [46.5, 29.0],
+            // Arabia fringe
+            [44.0, 28.5], [41.0, 29.5], [38.5, 30.5],
+            // Levant
+            [36.5, 32.0], [35.5, 33.3], [35.0, 31.8],
+            [34.2, 31.1], [33.5, 30.9],
+            // Egypt
+            [32.5, 31.1], [29.5, 31.0], [32.8, 27.0], [32.9, 24.1],
+            [28.5, 25.0], [26.0, 28.5],
+            [24.5, 31.0], [22.0, 32.5], [20.0, 32.5],
+            [22.0, 34.0], [26.0, 38.5], [26.5, 41.0],
+            [23.0, 37.5], [21.0, 42.5],
+          ]],
+        },
+      },
+      {
+        year: -326,
+        note: 'Maximum extent — from Greece to the Indus River; India campaign (Punjab) before army mutinies',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[
+            // Greece, Thrace, Danube fringe
+            [21.0, 42.5], [26.0, 43.0], [30.0, 44.5],
+            // Caucasus
+            [35.0, 43.5], [40.0, 43.0], [44.5, 43.0], [47.5, 41.5],
+            // Central Asia — Sogdiana, Bactria
+            [52.0, 40.5], [60.0, 40.0], [63.5, 39.5],
+            // Hindu Kush / Indus
+            [67.0, 36.5], [68.0, 34.0],
+            [72.5, 28.0], [70.0, 24.5],
+            // Arabian Sea coast
+            [63.0, 25.0], [57.5, 23.5], [52.0, 23.0], [47.5, 24.0],
+            // Persian Gulf / Persia
+            [47.0, 25.5], [46.5, 28.5], [48.0, 30.0],
+            // Mesopotamia / Arabia fringe
+            [44.0, 28.5], [40.5, 29.5], [38.0, 30.5],
+            // Levant + Egypt
+            [36.0, 32.0], [35.5, 31.0], [34.2, 31.1], [33.5, 30.9],
+            [32.5, 28.0], [32.9, 24.1],
+            [28.5, 25.0], [26.0, 28.5],
+            [24.5, 31.0], [22.0, 32.5], [20.0, 32.5],
+            [22.0, 34.0], [26.0, 38.5], [26.5, 41.0],
+            [23.0, 38.5], [21.0, 42.5],
+          ]],
+        },
+      },
+      // -323: Alexander dies at Babylon. Empire begins fragmenting.
+      {
+        year: -323,
+        note: "Alexander dies in Babylon aged 32 — empire immediately begins fragmenting among his generals (the Diadochi)",
+        geometry: {
+          // Same as -326 but note signals the end
+          type: 'Polygon',
+          coordinates: [[
+            [21.0, 42.5], [26.0, 43.0], [30.0, 44.5],
+            [35.0, 43.5], [40.0, 43.0], [44.5, 43.0], [47.5, 41.5],
+            [52.0, 40.5], [60.0, 40.0], [63.5, 39.5],
+            [67.0, 36.5], [68.0, 34.0],
+            [72.5, 28.0], [70.0, 24.5],
+            [63.0, 25.0], [57.5, 23.5], [52.0, 23.0], [47.5, 24.0],
+            [47.0, 25.5], [46.5, 28.5], [48.0, 30.0],
+            [44.0, 28.5], [40.5, 29.5], [38.0, 30.5],
+            [36.0, 32.0], [35.5, 31.0], [34.2, 31.1], [33.5, 30.9],
+            [32.5, 28.0], [32.9, 24.1],
+            [28.5, 25.0], [26.0, 28.5],
+            [24.5, 31.0], [22.0, 32.5], [20.0, 32.5],
+            [22.0, 34.0], [26.0, 38.5], [26.5, 41.0],
+            [23.0, 38.5], [21.0, 42.5],
+          ]],
+        },
+      },
+      // -310: By this point the empire has fully split
+      {
+        year: -310,
+        note: 'Diadochi Wars complete — unified Macedonian Empire no longer exists',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[[22.0, 41.0], [22.1, 41.0], [22.1, 40.9], [22.0, 40.9], [22.0, 41.0]]],
+        },
+      },
+    ],
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // 9. ROME (Roman Empire)  (-63 → 100)
   // ══════════════════════════════════════════════════════════════════════════
   {
     name: 'Rome (Roman Empire)',
     speakAs: 'Rome',
-    description: "The Roman Empire controlled Judea from 63 BC. Jesus was born, ministered, crucified, and rose under Roman rule. Paul traveled Roman roads and sea lanes to spread the gospel. At its peak under Trajan it stretched from Britain to Mesopotamia.",
+    description: "The Roman Empire controlled Judea from 63 BC. Jesus was born, ministered, crucified, and rose under Roman rule. Paul traveled Roman roads to spread the gospel. At its peak under Trajan it stretched from Britain to Mesopotamia.",
     color: '#7f8c8d',
     fillOpacity: 0.2,
     books: ['Matthew', 'Mark', 'Luke', 'John', 'Acts', 'Romans', 'Revelation'],
@@ -832,30 +1030,18 @@ export const kingdomsEmpires: KingdomEmpire[] = [
         geometry: {
           type: 'Polygon',
           coordinates: [[
-            // Iberian Peninsula west coast ~-9.0E 38.0N
             [-9.5, 38.0], [-9.5, 42.0],
-            // Atlantic coast of Gaul
             [-4.5, 48.5], [-2.0, 51.5],
-            // Rhine mouth — northern limit without Britain yet ~4.0E 52.0N
             [4.0, 52.0], [8.0, 52.0],
-            // Rhine / Alps border into Italy
             [10.0, 48.0], [15.0, 47.5],
-            // Danube / Balkans — partial control
             [18.0, 46.0], [22.0, 44.5], [26.0, 43.0],
-            // Black Sea coast / Pontus
             [32.0, 42.0], [36.0, 42.5], [38.0, 41.0],
-            // Anatolia — Pontus and Cilicia
             [40.0, 40.0], [42.0, 38.0],
-            // Levant — Pompey's conquest; Tyre, Jerusalem
             [36.5, 36.5], [36.0, 34.5],
             [35.5, 33.3], [35.2, 32.5],
             [35.0, 31.8], [34.8, 31.25],
-            // Egypt NOT yet Roman (Ptolemaic)
-            // North Africa coast — Cyrenaica (Libya) Roman
             [20.0, 32.5], [13.0, 33.5],
-            // Carthage / N Africa
             [10.3, 36.8], [8.0, 37.0], [5.0, 36.5],
-            // Iberian south coast
             [-5.5, 36.0], [-9.5, 37.0], [-9.5, 38.0],
           ]],
         },
@@ -868,29 +1054,43 @@ export const kingdomsEmpires: KingdomEmpire[] = [
           coordinates: [[
             [-9.5, 37.0], [-9.5, 44.0],
             [-4.5, 48.5], [-2.0, 51.5],
-            // Rhine frontier
             [4.0, 52.0], [8.5, 52.5],
             [10.0, 48.5], [15.0, 48.0],
-            // Danube
             [18.0, 47.0], [22.0, 45.5], [26.0, 44.0],
-            // Black Sea / Anatolia
             [29.7, 45.2], [32.0, 42.5], [36.5, 42.5], [40.0, 40.5],
-            // Cappadocia, Cilicia, Syria
             [42.5, 38.5], [37.0, 37.0], [36.5, 36.5],
-            // Levant — Syria, Judea
             [36.0, 34.5], [35.5, 33.3], [35.0, 31.8],
             [34.8, 31.25], [34.2, 31.1],
-            // Now includes Egypt — Nile Delta
             [33.5, 30.9], [32.5, 31.1], [30.5, 31.5], [29.5, 31.0],
-            // Egypt Nile valley south to Aswan
             [32.9, 29.0], [32.5, 26.0], [32.9, 24.1],
-            // Western Egypt / Libya
             [28.5, 25.0], [26.0, 28.5],
-            // Cyrenaica
             [23.0, 32.5], [20.0, 32.5], [13.0, 33.5],
-            // North Africa coast
             [10.3, 36.8], [5.0, 36.5],
             [-5.5, 36.0], [-9.5, 36.5], [-9.5, 37.0],
+          ]],
+        },
+      },
+      {
+        year: 14,
+        note: "Augustus dies — stable empire at its territorial core; Britain not yet conquered",
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[
+            [-9.5, 37.0], [-9.5, 44.0],
+            [-4.5, 48.5], [-2.0, 51.5],
+            [4.0, 52.0], [8.5, 52.5],
+            [10.0, 48.5], [15.0, 48.5],
+            [18.5, 47.5], [22.5, 46.0], [26.5, 44.5],
+            [29.7, 45.2], [32.5, 43.5], [36.5, 43.0], [40.5, 41.5],
+            [43.5, 39.0], [37.5, 37.5], [36.5, 36.5],
+            [36.0, 34.5], [35.5, 33.3], [35.0, 31.8],
+            [34.2, 31.1], [33.5, 30.9],
+            [32.0, 31.4], [29.5, 31.0],
+            [32.8, 27.0], [32.9, 24.1],
+            [28.5, 25.0], [26.0, 28.5],
+            [23.0, 32.5], [20.0, 32.5], [13.0, 33.5],
+            [10.3, 36.8], [5.0, 36.5],
+            [-5.5, 36.0], [-9.5, 37.0],
           ]],
         },
       },
@@ -901,18 +1101,12 @@ export const kingdomsEmpires: KingdomEmpire[] = [
           type: 'Polygon',
           coordinates: [[
             [-9.5, 37.0], [-9.5, 44.0],
-            // Britain — southern and central England
             [-5.0, 50.0], [-2.0, 55.0], [0.0, 55.0],
-            // Back to Rhine mouth
             [1.5, 52.5], [4.0, 52.0], [8.5, 52.5],
             [10.0, 48.5], [15.0, 48.0],
-            // Danube — Pannonia, Moesia
             [18.0, 47.0], [22.0, 45.5], [28.0, 44.5],
-            // Black Sea
             [29.7, 45.2], [32.0, 43.0], [36.5, 43.0], [40.0, 41.0],
-            // Anatolia, Syria
             [43.0, 38.5], [37.0, 37.5], [36.5, 36.5],
-            // Levant, Egypt
             [36.0, 34.5], [35.5, 33.3], [35.0, 31.8],
             [34.2, 31.1], [33.5, 30.9], [32.0, 31.4],
             [29.5, 31.0], [32.8, 27.0], [32.9, 24.1],
@@ -925,39 +1119,27 @@ export const kingdomsEmpires: KingdomEmpire[] = [
       },
       {
         year: 100,
-        note: "Trajan — maximum extent; Dacia (Romania), Armenia, and Mesopotamia added; largest Rome ever reached",
+        note: "Trajan — maximum extent; Dacia (Romania), Armenia, and Mesopotamia added",
         geometry: {
           type: 'Polygon',
           coordinates: [[
             [-9.5, 37.0], [-9.5, 44.5],
-            // Britain — Hadrian Wall area ~55N
             [-5.0, 50.0], [-3.0, 55.5], [0.0, 56.0],
             [1.5, 53.0], [4.0, 52.5], [8.5, 53.0],
-            // Rhine east bank briefly; Alps
             [10.0, 48.5], [15.0, 48.0],
-            // Dacia / Romania — Trajan's conquest
             [18.0, 47.5], [22.0, 46.5], [25.0, 46.0], [26.0, 45.5],
-            // Danube mouth, Black Sea
             [29.7, 45.2], [32.0, 43.5],
-            // Anatolia — Pontus, Armenia briefly
             [36.5, 43.5], [40.0, 42.0], [42.5, 40.0],
-            // Armenia / Mesopotamia — Trajan 114–117 AD
             [44.5, 40.0], [44.0, 38.0],
-            // Mesopotamia — Ctesiphon ~44.6E 33.1N reached
             [48.0, 35.5], [47.5, 33.0], [44.6, 33.1],
-            // Tigris south toward Persian Gulf
             [47.0, 30.5],
-            // Arabia fringe / Nabatea
             [44.0, 29.0], [38.5, 30.5],
-            // Levant, Judea, Sinai
             [37.0, 32.0], [36.5, 32.5],
             [35.5, 33.3], [35.0, 31.8],
             [34.2, 31.1], [33.5, 30.9],
-            // Egypt — Nile valley
             [32.0, 31.4], [29.5, 31.0],
             [32.8, 27.0], [32.9, 24.1],
             [28.5, 25.0], [26.0, 28.5],
-            // Cyrenaica, N Africa
             [23.0, 32.5], [20.0, 32.5], [13.5, 33.5],
             [10.3, 36.8], [5.0, 36.5],
             [-5.5, 36.0], [-9.5, 37.0],
