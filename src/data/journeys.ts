@@ -1611,4 +1611,158 @@ export const journeys: Journey[] = [
       },
     ],
   },
+  // ══════════════════════════════════════════════════════════════════════════
+  // JUDGES JOURNEYS
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: "Deborah's Campaign — Mount Tabor to the Kishon",
+    color: '#8e44ad',
+    people: ['Deborah', 'Barak'],
+    books: ['Judges'],
+    path: [
+      [31.92, 35.22],  // Deborah's palm tree — Ramah/Bethel
+      [32.55, 35.38],  // Mount Tabor / Spring of Harod
+      [32.62, 35.20],  // River Kishon — the battle
+    ],
+    locations: [
+      {
+        name: "Deborah's Palm Tree — Hill Country",
+        coords: [31.92, 35.22],
+        description: "Deborah summoned Barak son of Abinoam from Kedesh in Naphtali and gave him the LORD's command: assemble 10,000 men on Mount Tabor. Barak refused to go unless Deborah went with him; she agreed but warned the honor would go to a woman (Judges 4:4–9)",
+      },
+      {
+        name: 'Mount Tabor — The Muster',
+        coords: [32.55, 35.38],
+        description: "Barak led 10,000 men down from Mount Tabor; the LORD threw Sisera and all his chariots into a panic before Barak. Sisera abandoned his chariot and fled on foot (Judges 4:14–15)",
+      },
+      {
+        name: 'River Kishon — The Rout',
+        coords: [32.62, 35.20],
+        description: "The LORD routed Sisera's army at the River Kishon; the torrent swept them away. Sisera fled north to the tent of Jael, where she killed him with a tent peg while he slept. Deborah and Barak sang: 'The stars fought from heaven; the stars in their courses fought against Sisera' (Judges 4:15–23; 5:1–31)",
+      },
+    ],
+  },
+
+  {
+    name: "Gideon's Pursuit of the Midianites",
+    color: '#e67e22',
+    people: ['Gideon'],
+    books: ['Judges'],
+    path: [
+      [32.55, 35.38],  // Spring of Harod — the muster
+      [32.10, 35.62],  // Rock of Oreb / ford of Jordan
+      [32.22, 35.60],  // Succoth
+      [32.01, 35.73],  // Penuel
+      [31.90, 36.80],  // Karkor — deep in the desert
+    ],
+    locations: [
+      {
+        name: 'Spring of Harod — 300 Selected',
+        coords: [32.55, 35.38],
+        description: "God reduced Gideon's army from 32,000 to 300 who lapped water with their hands; at night the 300 blew trumpets and smashed jars, crying 'A sword for the LORD and for Gideon!' — panic swept through the Midianite camp (Judges 7:1–22)",
+      },
+      {
+        name: 'Ford of the Jordan — Oreb and Zeeb Killed',
+        coords: [32.10, 35.62],
+        description: "Gideon sent messengers to Ephraim to seize the water crossings; the Ephraimites captured and killed the two Midianite princes — Oreb at the Rock of Oreb and Zeeb at the Winepress of Zeeb (Judges 7:24–25)",
+      },
+      {
+        name: 'Succoth — Refused Bread',
+        coords: [32.22, 35.60],
+        description: "The officials of Succoth refused to give bread to Gideon's exhausted 300; 'Are Zebah and Zalmunna already in your hand?' Gideon promised to return and tear their flesh with desert thorns — which he did (Judges 8:5–7, 16)",
+      },
+      {
+        name: 'Penuel — Tower Torn Down',
+        coords: [32.01, 35.73],
+        description: "The men of Penuel also refused bread and were answered with the same threat; after the victory Gideon returned, tore down their tower, and killed the men of the city (Judges 8:8–9, 17)",
+      },
+      {
+        name: 'Karkor — Final Victory',
+        coords: [31.90, 36.80],
+        description: "Deep in the desert, Gideon captured Zebah and Zalmunna, the two Midianite kings; he brought them back through the Ascent of Heres; he executed them himself because they had killed his brothers at Tabor (Judges 8:10–21)",
+      },
+    ],
+  },
+
+  {
+    name: "Jephthah's Return from Tob to Mizpah",
+    color: '#2e86c1',
+    people: ['Jephthah'],
+    books: ['Judges'],
+    path: [
+      [36.50, 32.50],  // Land of Tob
+      [32.18, 35.72],  // Mizpah in Gilead
+    ],
+    locations: [
+      {
+        name: 'Land of Tob',
+        coords: [36.50, 32.50],
+        description: "Jephthah had fled to Tob after his half-brothers drove him out of his inheritance; he became leader of a band of outlaws. When Ammon threatened Gilead, the elders came to recall him (Judges 11:3–5)",
+      },
+      {
+        name: 'Mizpah — Gilead',
+        coords: [32.18, 35.72],
+        description: "Jephthah was made head and commander of Gilead; before the battle he made his vow: if the LORD gave Ammon into his hand, whatever came out of his house first would be sacrificed. He won — and his daughter came out first (Judges 11:11, 30–34)",
+      },
+    ],
+  },
+
+  {
+    name: "The Danite Migration",
+    color: '#16a085',
+    people: [],
+    books: ['Judges'],
+    path: [
+      [31.78, 35.00],  // Zorah and Eshtaol
+      [31.92, 35.22],  // Hill Country of Ephraim — Micah's house
+      [33.25, 35.65],  // Laish — renamed Dan
+    ],
+    locations: [
+      {
+        name: 'Zorah and Eshtaol — The Departure',
+        coords: [31.78, 35.00],
+        description: "600 armed Danites set out from Zorah and Eshtaol to find new territory because Dan had failed to secure its allotment from the Philistines and Amorites (Judges 18:11)",
+      },
+      {
+        name: "Hill Country of Ephraim — Micah's House",
+        coords: [31.92, 35.22],
+        description: "The Danites stopped at Micah's house and persuaded his Levite priest to come with them; they took Micah's idols and ephod; when Micah pursued them they threatened violence and he turned back (Judges 18:2–26)",
+      },
+      {
+        name: 'Laish — Renamed Dan',
+        coords: [33.25, 35.65],
+        description: "The Danites attacked the peaceful, unsuspecting city of Laish, burned it, and rebuilt it; they named it Dan after their ancestor; they set up Micah's carved image and Jonathan son of Gershom served as their priest. Dan became a center of idolatry in Israel (Judges 18:27–31)",
+      },
+    ],
+  },
+
+  {
+    name: "The Levite's Journey and the Outrage at Gibeah",
+    color: '#c0392b',
+    people: [],
+    books: ['Judges'],
+    path: [
+      [31.70, 35.21],  // Bethlehem — collecting his concubine
+      [31.78, 35.23],  // Jebus (Jerusalem) — rejected
+      [31.84, 35.22],  // Gibeah — the outrage
+    ],
+    locations: [
+      {
+        name: 'Bethlehem — Collecting the Concubine',
+        coords: [31.70, 35.21],
+        description: "A Levite from the hill country of Ephraim went to Bethlehem in Judah to persuade his concubine to return; her father detained him for several days with hospitality; they finally departed in the late afternoon (Judges 19:1–10)",
+      },
+      {
+        name: 'Jebus — Rejected',
+        coords: [31.78, 35.23],
+        description: "The servant suggested stopping at Jebus (Jerusalem) for the night; the Levite refused because it was a city of foreigners not belonging to Israel; he pressed on to Gibeah of Benjamin (Judges 19:10–12)",
+      },
+      {
+        name: 'Gibeah — The Outrage',
+        coords: [31.84, 35.22],
+        description: "In Gibeah, worthless men surrounded the house demanding to abuse the Levite; his concubine was thrown out and abused all night; she died on the doorstep. The Levite cut her body into twelve pieces and sent them throughout Israel; all Israel said: 'Such a thing has never happened or been seen' (Judges 19:22–30)",
+      },
+    ],
+  },
 ];

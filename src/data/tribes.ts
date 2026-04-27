@@ -2430,4 +2430,73 @@ export const tribes: Tribe[] = [
       ]],
     },
   },
+  // ══════════════════════════════════════════════════════════════════════════
+  // JUDGES — Peoples
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Midianites (Judges Era)',
+    speakAs: 'MID-ee-an-ites',
+    description: "Desert raiders who oppressed Israel for seven years during the judges period; with the Amalekites and the people of the East they swarmed into Canaan like locusts with camels beyond counting, devouring crops and livestock; God raised up Gideon to defeat them with 300 men using trumpets and torches (Judges 6:1–8:28)",
+    color: '#d68910',
+    fillOpacity: 0.25,
+    books: ['Judges'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Midianite raiding range — desert east and south of Canaan
+        [35.60, 32.60],
+        [37.50, 32.60],
+        [38.50, 30.00],
+        [36.00, 29.00],
+        [34.80, 29.55],
+        [35.00, 31.00],
+        [35.60, 32.60],
+      ]],
+    },
+  },
+  {
+    name: 'Moabites (Judges Era)',
+    speakAs: 'MOH-ab-ites',
+    description: "Under King Eglon, Moab allied with Ammon and Amalek and subjugated Israel for 18 years; Eglon occupied the City of Palms (Jericho); the left-handed judge Ehud assassinated Eglon with a hidden double-edged sword and then rallied Israel to defeat 10,000 Moabites at the Jordan fords (Judges 3:12–30)",
+    color: '#8e44ad',
+    fillOpacity: 0.25,
+    books: ['Judges'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [35.55, 31.70],
+        [36.10, 31.68],
+        [36.40, 31.45],
+        [36.45, 31.10],
+        [36.10, 30.95],
+        [35.70, 30.92],
+        [35.45, 31.05],
+        [35.48, 31.42],
+        [35.55, 31.70],
+      ]],
+    },
+  },
+  {
+    name: 'Ammonites (Judges Era)',
+    speakAs: 'AM-on-ites',
+    description: "The Ammonites crossed the Jordan and oppressed Israel in Judah, Benjamin, and Ephraim; they also threatened Gilead — the trigger for Jephthah's rise. Jephthah defeated them and struck down twenty cities. They had oppressed Israel for 18 years east of the Jordan (Judges 10:7–11:33)",
+    color: '#d35400',
+    fillOpacity: 0.25,
+    books: ['Judges'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [35.65, 32.20],
+        [36.15, 32.28],
+        [36.65, 32.12],
+        [36.72, 31.78],
+        [36.42, 31.60],
+        [36.02, 31.68],
+        [35.65, 31.70],
+        [35.58, 32.00],
+        [35.65, 32.20],
+      ]],
+    },
+  },
 ];

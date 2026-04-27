@@ -201,4 +201,49 @@ export const people: Person[] = [
     ],
     books: ['Acts', 'Romans', '1 Corinthians', '2 Corinthians', 'Galatians', 'Ephesians', 'Philippians'],
   },
+  // ── Judges ────────────────────────────────────────────────────────────────
+
+  {
+    name: 'Deborah',
+    speakAs: 'DEB-oh-rah',
+    description: "Prophetess and the only female judge of Israel; held court under the Palm of Deborah between Ramah and Bethel; summoned Barak to lead Israel's army against Sisera; marched with the army to Mount Tabor; composed one of the oldest songs in Scripture after the victory at the Kishon",
+    journeys: [
+      "Deborah's Campaign — Mount Tabor to the Kishon",
+    ],
+    books: ['Judges'],
+  },
+  {
+    name: 'Barak',
+    speakAs: 'BAR-ak',
+    description: "Son of Abinoam from Kedesh in Naphtali; summoned by Deborah to command Israel's army; refused to go without Deborah, so the honor of the victory went to Jael a woman; led 10,000 men down from Mount Tabor to rout Sisera's iron chariots at the River Kishon",
+    journeys: [
+      "Deborah's Campaign — Mount Tabor to the Kishon",
+    ],
+    books: ['Judges'],
+  },
+  {
+    name: 'Gideon',
+    speakAs: 'GID-ee-on',
+    description: "Son of Joash the Abiezrite from Ophrah; called by the angel of the LORD at the winepress; tore down Baal's altar; reduced his army from 32,000 to 300 by God's command; routed the Midianites with trumpets and torches; refused the kingship; his son Abimelech later seized power through violence",
+    journeys: [
+      "Gideon's Pursuit of the Midianites",
+    ],
+    books: ['Judges'],
+  },
+  {
+    name: 'Jephthah',
+    speakAs: 'JEF-thah',
+    description: "Son of Gilead by a prostitute; driven out by his half-brothers; became leader of outlaws in Tob; recalled by Gilead's elders to fight Ammon; made a rash vow that cost his daughter her life; later fought a civil war against Ephraim at the Jordan fords where 42,000 Ephraimites were killed at the Shibboleth test",
+    journeys: [
+      "Jephthah's Return from Tob to Mizpah",
+    ],
+    books: ['Judges'],
+  },
+  {
+    name: 'Samson',
+    speakAs: 'SAM-son',
+    description: "A Nazirite from birth from the tribe of Dan; possessed supernatural strength; killed a lion with his bare hands; slew 1,000 Philistines with a donkey's jawbone; carried Gaza's gate to a hilltop; was betrayed by Delilah who discovered his strength lay in his uncut hair; blinded and imprisoned; died destroying the Temple of Dagon, killing more at his death than in his life",
+    journeys: [],
+    books: ['Judges'],
+  },
 ];

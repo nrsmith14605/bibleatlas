@@ -935,4 +935,121 @@ export const regions: Region[] = [
       ]],
     },
   },
+  // ── JUDGES ────────────────────────────────────────────────────────────────
+
+  {
+    name: 'Valley of Sorek',
+    speakAs: 'SOH-rek',
+    description: "The broad valley running from the Judean highlands down to the Mediterranean coast; the home of Delilah, whom Samson loved; the Philistines bribed her to discover the secret of his strength; she discovered it was his uncut hair and betrayed him (Judges 16:4–20)",
+    color: '#8e44ad',
+    fillOpacity: 0.22,
+    location: 'confirmed',
+    books: ['Judges'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Sorek Valley — runs NW from Jerusalem highlands to coast
+        [34.72, 31.80],
+        [34.88, 31.82],
+        [35.05, 31.75],
+        [35.12, 31.68],
+        [35.05, 31.60],
+        [34.88, 31.60],
+        [34.72, 31.68],
+        [34.62, 31.74],
+        [34.72, 31.80],
+      ]],
+    },
+  },
+  {
+    name: 'Valley of Jezreel',
+    speakAs: 'JEZ-ree-el',
+    description: "The great plain of northern Israel between the Carmel ridge and the hills of lower Galilee; the Midianite coalition with the people of the east camped here — as numerous as locusts with camels too many to count; Gideon's 300 routed them here by night (Judges 6:33; 7:1–22)",
+    color: '#c9a030',
+    fillOpacity: 0.22,
+    location: 'confirmed',
+    books: ['Judges', '1 Samuel', '2 Kings', 'Hosea', 'Revelation'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // The Jezreel Plain — running NW to SE
+        [35.10, 32.62],
+        [35.42, 32.68],
+        [35.60, 32.60],
+        [35.72, 32.52],
+        [35.68, 32.38],
+        [35.52, 32.32],
+        [35.25, 32.38],
+        [35.08, 32.48],
+        [35.10, 32.62],
+      ]],
+    },
+  },
+  {
+    name: 'Land of Tob',
+    speakAs: 'Land of TOBE',
+    description: "The frontier region east of Gilead where Jephthah fled after his half-brothers drove him away from his inheritance; he became a leader of outlaws there; the elders of Gilead recalled him when Ammon threatened war (Judges 11:3–11)",
+    color: '#7f8c8d',
+    fillOpacity: 0.22,
+    location: 'probable',
+    books: ['Judges', '2 Samuel'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Land of Tob — east of Gilead, Syrian frontier
+        [36.20, 32.80],
+        [36.80, 32.80],
+        [37.00, 32.50],
+        [36.80, 32.10],
+        [36.20, 32.20],
+        [35.98, 32.48],
+        [36.20, 32.80],
+      ]],
+    },
+  },
+  {
+    name: 'District of the Philistines',
+    description: "The coastal plain and five major cities — Gaza, Ashkelon, Ashdod, Ekron, and Gath — controlled by the five Philistine lords; the primary geopolitical threat during the period of the judges; Samson's entire adult life was lived on this contested border (Judges 3:3; 13:1; 14–16)",
+    color: '#2c3e50',
+    fillOpacity: 0.18,
+    location: 'confirmed',
+    books: ['Judges', '1 Samuel'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Philistine coastal plain — five cities territory
+        [34.20, 31.80],
+        [34.58, 31.82],
+        [34.80, 31.60],
+        [34.85, 31.35],
+        [34.75, 31.08],
+        [34.42, 31.00],
+        [34.18, 31.20],
+        [34.18, 31.58],
+        [34.20, 31.80],
+      ]],
+    },
+  },
+  {
+    name: 'Land of the People of the East',
+    description: "The broad desert and steppe regions east of the Jordan from which the Midianites, Amalekites, and other eastern peoples launched devastating annual raids into Canaan; they came like locusts in number, with camels beyond counting, and ravaged the land for seven years until Gideon defeated them (Judges 6:3–5, 33)",
+    color: '#e8c165',
+    fillOpacity: 0.18,
+    location: 'probable',
+    books: ['Judges'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // The eastern desert — Syrian / Arabian steppe
+        [36.50, 33.50],
+        [38.50, 33.50],
+        [39.50, 31.50],
+        [38.50, 29.50],
+        [36.50, 30.00],
+        [35.80, 31.00],
+        [35.80, 32.50],
+        [36.50, 33.50],
+      ]],
+    },
+  },
 ];
