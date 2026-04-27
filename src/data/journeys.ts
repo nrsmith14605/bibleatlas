@@ -1338,4 +1338,100 @@ export const journeys: Journey[] = [
       },
     ],
   },
+  // ══════════════════════════════════════════════════════════════════════════
+  // DEUTERONOMY JOURNEYS
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: "The 11-Day Route: Horeb to Kadesh-barnea",
+    color: '#d35400',
+    people: ['Moses'],
+    books: ['Deuteronomy'],
+    path: [
+      [28.56, 33.97],  // Horeb / Mount Sinai
+      [30.00, 35.00],  // Mount Seir / Edom highlands
+      [30.65, 34.77],  // Kadesh-barnea
+    ],
+    locations: [
+      {
+        name: 'Horeb — Mount Sinai',
+        coords: [28.56, 33.97],
+        description: "Moses recalled that the route from Horeb through the hill country of the Amorites to Kadesh-barnea was eleven days — a journey that took Israel forty years because of their faithlessness. 'It is eleven days' journey from Horeb by the way of Mount Seir to Kadesh-barnea' (Deuteronomy 1:2)",
+      },
+      {
+        name: 'Mount Seir — Seir Highlands',
+        coords: [30.00, 35.00],
+        description: "The route passed through or alongside the highland territory of Esau's descendants; a reference point on the direct road from Sinai to Canaan (Deuteronomy 1:2; 2:1–8)",
+      },
+      {
+        name: 'Kadesh-barnea',
+        coords: [30.65, 34.77],
+        description: "The destination that should have taken eleven days took forty years. Here the people failed to trust God and enter the land. 'You have stayed long enough at this mountain. Turn and take your journey' — but they refused (Deuteronomy 1:6–8, 19–33)",
+      },
+    ],
+  },
+
+  {
+    name: "Skirting Edom: The Long Way Around",
+    color: '#922b21',
+    people: ['Moses'],
+    books: ['Deuteronomy'],
+    path: [
+      [30.65, 34.77],  // Kadesh-barnea
+      [29.55, 34.95],  // Gulf of Aqaba / Red Sea road
+      [29.80, 35.20],  // Skirting Mount Seir
+      [30.55, 35.60],  // Skirting Moab / Zered crossing
+      [31.47, 35.82],  // Into Amorite territory
+    ],
+    locations: [
+      {
+        name: 'Kadesh-barnea',
+        coords: [30.65, 34.77],
+        description: "After the failure of the spy mission God told Israel to turn back toward the wilderness by the way of the Red Sea. 'You have been traveling around this mountain long enough. Turn northward' — only after 38 years (Deuteronomy 1:40; 2:1–3)",
+      },
+      {
+        name: 'Red Sea Road — Gulf of Aqaba',
+        coords: [29.55, 34.95],
+        description: "Israel traveled the road of the Red Sea, going around Edom for many days. God reminded them: 'You have been traveling around this mountain long enough.' The generation of warriors who had been condemned at Kadesh died during these wandering years (Deuteronomy 2:1–3; 2:14–15)",
+      },
+      {
+        name: 'Skirting Edom and Moab',
+        coords: [29.80, 35.20],
+        description: "God told Israel: 'Do not contend with them' — not with Edom (Esau's descendants), not with Moab (Lot's descendants). God had given each their land. Israel passed by their borders and bought food and water, not taking any land from them (Deuteronomy 2:4–9)",
+      },
+      {
+        name: 'Wadi Zered — Crossing into Moab',
+        coords: [30.55, 35.60],
+        description: "When Israel crossed the Wadi Zered 38 years had passed since Kadesh-barnea; all the generation of fighting men had perished from the camp as the LORD had sworn. 'The hand of the LORD was against them, to destroy them from the camp' (Deuteronomy 2:13–16)",
+      },
+      {
+        name: 'Arnon — Into Amorite Territory',
+        coords: [31.47, 35.82],
+        description: "God said: 'Now arise and go over the Arnon. See, I have given into your hand Sihon the Amorite, king of Heshbon, and his land.' The era of wandering was over; the conquest had begun (Deuteronomy 2:24)",
+      },
+    ],
+  },
+
+  {
+    name: "Moses's Final Ascent: Plains of Moab to Mount Nebo",
+    color: '#2c3e50',
+    people: ['Moses'],
+    books: ['Deuteronomy'],
+    path: [
+      [31.85, 35.62],  // Abel-shittim / Plains of Moab
+      [31.76, 35.73],  // Mount Nebo / Pisgah
+    ],
+    locations: [
+      {
+        name: 'Plains of Moab — Abel-shittim',
+        coords: [31.85, 35.62],
+        description: "Moses finished writing the words of the Law in a book and gave it to the Levitical priests. He spoke the Song of Moses to all Israel. He blessed the tribes one by one. Then God said: 'Go up to Mount Nebo and view the land of Canaan. You shall die on the mountain because you broke faith with me at Meribah-kadesh' (Deuteronomy 31–33; 32:48–52)",
+      },
+      {
+        name: "Mount Nebo — Pisgah — Moses's Death",
+        coords: [31.76, 35.73],
+        description: "Moses climbed from the plains of Moab to the top of Pisgah on Mount Nebo. The LORD showed him the entire Promised Land from Gilead to Dan, all Naphtali, Ephraim and Manasseh, all Judah as far as the Great Sea, the Negev and the plain from Jericho to Zoar. Moses died there at 120 years old — his eyes undimmed, his strength unabated. God buried him in the valley opposite Beth-peor; no one knows his grave to this day. Israel wept thirty days (Deuteronomy 34:1–8)",
+      },
+    ],
+  },
 ];

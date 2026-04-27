@@ -706,4 +706,128 @@ export const regions: Region[] = [
       ]],
     },
   },
+  // ── DEUTERONOMY ───────────────────────────────────────────────────────────
+
+  {
+    name: 'Hill Country of the Amorites',
+    description:
+      "The central highlands of Canaan which the Amorites occupied before Israel's conquest; Moses recalled how God commanded: 'Go in and take possession of the hill country of the Amorites and all the neighboring peoples in the Arabah, the hill country, the lowland, the Negev, and the seacoast.' Israel's failure of nerve at Kadesh delayed this by forty years (Deuteronomy 1:7, 19–21, 44)",
+    color: '#c0392b',
+    fillOpacity: 0.18,
+    location: 'confirmed',
+    books: ['Deuteronomy'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Central hill country — Hebron to Shechem
+        [34.88, 31.55],
+        [35.10, 31.55],
+        [35.38, 31.78],
+        [35.38, 32.20],
+        [35.25, 32.35],
+        [35.08, 32.30],
+        [34.90, 32.10],
+        [34.82, 31.85],
+        [34.88, 31.55],
+      ]],
+    },
+  },
+  {
+    name: 'Shephelah',
+    speakAs: 'sheh-FEH-lah',
+    description:
+      "The 'lowland' — the rolling limestone foothills between the coastal plain and the central highlands; one of the five geographic zones Moses enumerated as comprising the Promised Land: 'the hill country, the Shephelah, the Negev, the seacoast, Lebanon as far as the Euphrates' (Deuteronomy 1:7; Joshua 9:1; 15:33)",
+    color: '#7d9b4e',
+    fillOpacity: 0.20,
+    location: 'confirmed',
+    books: ['Deuteronomy', 'Joshua'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [34.55, 31.70],
+        [34.70, 31.72],
+        [34.92, 31.88],
+        [35.05, 32.10],
+        [34.95, 32.30],
+        [34.82, 32.28],
+        [34.65, 32.10],
+        [34.52, 31.90],
+        [34.55, 31.70],
+      ]],
+    },
+  },
+  {
+    name: 'Land of Gilead',
+    description:
+      "The fertile highland region east of the Jordan between the Jabbok and Yarmuk rivers; Moses allotted it to Reuben, Gad, and the half-tribe of Manasseh: 'from Aroer on the edge of the Arnon Valley, half the hill country of Gilead with its cities, to Reuben and Gad; the rest of Gilead and all Bashan to the half-tribe of Manasseh.' Moses saw it from Mount Nebo before his death (Deuteronomy 3:12–13; 34:1)",
+    color: '#27ae60',
+    fillOpacity: 0.20,
+    location: 'confirmed',
+    books: ['Deuteronomy', 'Numbers', 'Joshua', 'Judges'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [35.60, 32.60],
+        [36.00, 32.55],
+        [36.50, 32.45],
+        [36.90, 32.20],
+        [37.00, 31.90],
+        [36.80, 31.55],
+        [36.30, 31.42],
+        [35.85, 31.40],
+        [35.60, 31.55],
+        [35.55, 31.90],
+        [35.58, 32.25],
+        [35.60, 32.60],
+      ]],
+    },
+  },
+  {
+    name: 'Argob',
+    speakAs: 'AR-gob',
+    description:
+      "A specific district within Bashan containing sixty great fortified cities with high walls, gates, and bars, plus a great many rural towns; Moses took the whole region from Og; Jair son of Manasseh called the towns Havvoth-jair after himself (Deuteronomy 3:4–5, 13–14)",
+    color: '#1a5276',
+    fillOpacity: 0.22,
+    location: 'probable',
+    books: ['Deuteronomy'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Northeastern Bashan / Hauran plateau
+        [36.00, 32.80],
+        [36.60, 32.90],
+        [37.10, 32.70],
+        [37.20, 32.35],
+        [36.80, 32.10],
+        [36.20, 32.20],
+        [35.88, 32.45],
+        [36.00, 32.80],
+      ]],
+    },
+  },
+  {
+    name: 'Plains of Moab',
+    description:
+      "The flat lowlands east of the Jordan opposite Jericho; the primary setting of Deuteronomy — Moses delivered all his farewell speeches here; Joshua was commissioned here; the book of the Law was written and entrusted to the Levites here; Moses died on Mount Nebo overlooking this plain (Deuteronomy 1:1; 29:1; 31:1; Numbers 22:1; 33:48–50)",
+    color: '#8e44ad',
+    fillOpacity: 0.20,
+    location: 'confirmed',
+    books: ['Deuteronomy', 'Numbers'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [35.60, 32.00],
+        [35.70, 31.95],
+        [35.90, 31.88],
+        [36.00, 31.75],
+        [35.90, 31.55],
+        [35.70, 31.42],
+        [35.58, 31.50],
+        [35.55, 31.75],
+        [35.58, 31.90],
+        [35.60, 32.00],
+      ]],
+    },
+  },
 ];

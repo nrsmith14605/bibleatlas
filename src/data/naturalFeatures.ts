@@ -33,7 +33,7 @@ export const naturalFeatures: NaturalFeature[] = [
     name: 'Jordan River',
     description: 'Central river of Canaan; Israel crossed here entering the Promised Land; Jesus baptized here',
     type: 'river',
-    books: ['Genesis', 'Numbers', 'Joshua', 'Judges', '2 Kings', 'Matthew', 'Mark', 'Luke'],
+    books: ['Genesis', 'Numbers', 'Deuteronomy', 'Joshua', 'Judges', '2 Kings', 'Matthew', 'Mark', 'Luke'],
     color: '#1e8449',
     geoJsonName: 'Jordan',
   },
@@ -691,6 +691,47 @@ export const naturalFeatures: NaturalFeature[] = [
         [35.45, 31.30],
         [35.50, 31.55],
         [35.55, 31.70],
+      ]],
+    },
+  },
+  // ══════════════════════════════════════════════════════════════════════════
+  // DEUTERONOMY — Natural Features
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'The Arabah',
+    speakAs: 'AR-ah-bah',
+    description: "The deep rift valley running from the Sea of Galilee south through the Dead Sea to the Gulf of Aqaba; Moses used it repeatedly as a geographic reference in his farewell addresses; Israel traveled along it skirting Edom on the way to Moab (Deuteronomy 1:1, 7; 2:8; 3:17; 4:49)",
+    type: 'valley',
+    books: ['Deuteronomy', 'Joshua'],
+    color: '#b7950b',
+    fillOpacity: 0.22,
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // North end — south of Sea of Galilee
+        [35.55, 32.55],
+        [35.62, 32.55],
+        // Along the Jordan valley east bank
+        [35.65, 32.20],
+        [35.62, 31.80],
+        // Dead Sea east shore
+        [35.62, 31.50],
+        [35.58, 31.10],
+        // Southern Arabah toward Gulf of Aqaba
+        [35.50, 30.70],
+        [35.28, 30.10],
+        [35.00, 29.56],
+        // West side back north
+        [34.95, 29.56],
+        [35.22, 30.10],
+        [35.40, 30.70],
+        [35.48, 31.10],
+        [35.45, 31.50],
+        [35.48, 31.80],
+        [35.50, 32.20],
+        [35.48, 32.55],
+        [35.55, 32.55],
       ]],
     },
   },

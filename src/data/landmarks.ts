@@ -373,4 +373,46 @@ export const landmarks: Landmark[] = [
     location: 'probable',
     books: ['Numbers'],
   },
+  // ══════════════════════════════════════════════════════════════════════════
+  // DEUTERONOMY
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Mount Ebal',
+    speakAs: 'Mount EE-bal',
+    coords: [32.22, 35.28],
+    description: "The mountain north of Shechem where Moses commanded the curses to be pronounced after crossing the Jordan; Joshua later built an altar here of uncut stones and read the entire Law to all Israel (Deuteronomy 11:29; 27:4–13; Joshua 8:30–35)",
+    location: 'confirmed',
+    books: ['Deuteronomy', 'Joshua'],
+  },
+  {
+    name: 'Mount Gerizim',
+    speakAs: 'Mount GEH-ree-zim',
+    coords: [32.20, 35.27],
+    description: "The mountain south of Shechem where Moses commanded the blessings to be proclaimed; the six tribes of Simeon, Levi, Judah, Issachar, Joseph, and Benjamin stood here; later became the sacred mountain of the Samaritans (Deuteronomy 11:29; 27:12; Judges 9:7; John 4:20)",
+    location: 'confirmed',
+    books: ['Deuteronomy', 'Judges', 'John'],
+  },
+  {
+    name: "Moses's Viewpoint on Mount Nebo",
+    speakAs: "Moses's Viewpoint on Mount NEE-bo",
+    coords: [31.767, 35.726],
+    description: "From the summit of Pisgah on Mount Nebo, God showed Moses the entire Promised Land — Gilead to Dan, all Naphtali, Ephraim and Manasseh, Judah to the Great Sea, the Negev, and the plain of Jericho as far as Zoar. Moses died there at 120 years old; his eyes were not dim nor his strength gone. God buried him and no one knows his grave to this day (Deuteronomy 34:1–7)",
+    location: 'probable',
+    books: ['Deuteronomy'],
+  },
+  {
+    name: "Moses's Burial Place",
+    coords: [31.76, 35.72],
+    description: "Moses died and was buried by the LORD in a valley in the land of Moab opposite Beth-peor; 'but to this day no one knows where his grave is.' Israel mourned for thirty days. Joshua son of Nun was filled with the spirit of wisdom (Deuteronomy 34:5–9)",
+    location: 'unknown',
+    books: ['Deuteronomy'],
+  },
+  {
+    name: 'Altar on Mount Ebal',
+    coords: [32.222, 35.282],
+    description: "Moses commanded that after crossing the Jordan, Israel was to build an altar of uncut stones on Mount Ebal, coat it with plaster, write the law on it, and offer burnt offerings and fellowship offerings; Joshua carried this out exactly (Deuteronomy 27:4–8; Joshua 8:30–32)",
+    location: 'confirmed',
+    books: ['Deuteronomy', 'Joshua'],
+  },
 ];

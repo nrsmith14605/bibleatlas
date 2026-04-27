@@ -17,7 +17,7 @@ export const tribes: Tribe[] = [
     description: "Descendants of Canaan, son of Ham (Gen 10:6). They occupied the Promised Land before Israel's conquest and included sub-groups such as Hittites, Jebusites, Amorites, Hivites, Girgashites, Perizzites, and Arkites. God promised their land to Abraham's descendants. (Gen 15:18–21; Josh 3:10)",
     color: '#e67e22',
     fillOpacity: 0.3,
-    books: ['Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Joshua', 'Judges'],
+    books: ['Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy', 'Joshua', 'Judges'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -210,7 +210,7 @@ export const tribes: Tribe[] = [
     description: "Sons of Heth, son of Canaan (Gen 10:15). As a local Canaanite people they dwelt in the Hebron area — Abraham bought the cave of Machpelah from Ephron the Hittite (Gen 23). As a great empire (Neo-Hittites) they dominated central Asia Minor. Uriah the Hittite was one of David's warriors.",
     color: '#2c3e50',
     fillOpacity: 0.25,
-    books: ['Genesis', 'Exodus', 'Numbers', 'Joshua', '2 Samuel', '1 Kings'],
+    books: ['Genesis', 'Exodus', 'Numbers', 'Deuteronomy', 'Joshua', '2 Samuel', '1 Kings'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -599,7 +599,7 @@ export const tribes: Tribe[] = [
     description: "A nomadic metalworking people associated with the Sinai and Negev. Listed among the peoples whose land God promised to Abraham (Gen 15:19). Moses' father-in-law Jethro was a Kenite priest. Some Kenites later lived among Israel. ⚠ Approximate location — exact territory uncertain.",
     color: '#873600',
     fillOpacity: 0.28,
-    books: ['Genesis', 'Exodus', 'Numbers', 'Judges', '1 Samuel'],
+    books: ['Genesis', 'Exodus', 'Numbers', 'Deuteronomy', 'Judges', '1 Samuel'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -617,7 +617,7 @@ export const tribes: Tribe[] = [
     description: "Listed among the ten peoples whose land God promised to Abraham (Gen 15:19). Likely related to Kenaz of Edom (Gen 36:11). Caleb the spy was called a Kenizzite (Num 32:12), suggesting some were absorbed into Judah. ⚠ Approximate location — exact territory uncertain; placed in southern Canaan/Negev.",
     color: '#784212',
     fillOpacity: 0.25,
-    books: ['Genesis', 'Numbers'],
+    books: ['Genesis', 'Numbers', 'Deuteronomy'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -634,7 +634,7 @@ export const tribes: Tribe[] = [
     description: "Listed among the ten peoples whose land God promised to Abraham (Gen 15:19). The name means 'Easterners' or 'people of the east.' Likely a semi-nomadic people of the Syrian-Arabian desert east of Canaan. ⚠ Approximate location — placement is tentative; located east of the Jordan.",
     color: '#6e2f1a',
     fillOpacity: 0.22,
-    books: ['Genesis'],
+    books: ['Genesis', 'Deuteronomy'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -652,7 +652,7 @@ export const tribes: Tribe[] = [
     description: "A Canaanite people living in the open/unwalled regions of Canaan ('perizzite' may mean 'village dweller'). Listed repeatedly among pre-Israelite inhabitants (Gen 13:7; 15:20; 34:30). Abraham and Lot sojourned in land the Canaanites and Perizzites inhabited. ⚠ Approximate location — spread through central Canaan.",
     color: '#7d6608',
     fillOpacity: 0.22,
-    books: ['Genesis', 'Exodus', 'Joshua', 'Judges'],
+    books: ['Genesis', 'Exodus', 'Deuteronomy', 'Joshua', 'Judges'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -688,7 +688,7 @@ export const tribes: Tribe[] = [
     description: "Descendants of Jebus, son of Canaan (Gen 10:16). They inhabited the city of Jebus (Jerusalem) and held it until David captured it around 1000 BC. The Jebusite Araunah's threshing floor became the site of Solomon's Temple. (Gen 10:16; 2 Sam 5:6–7)",
     color: '#1f618d',
     fillOpacity: 0.3,
-    books: ['Genesis', 'Exodus', 'Joshua', 'Judges', '2 Samuel'],
+    books: ['Genesis', 'Exodus', 'Deuteronomy', 'Joshua', 'Judges', '2 Samuel'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -722,7 +722,7 @@ export const tribes: Tribe[] = [
     description: "A Canaanite people (Gen 10:17). They inhabited Shechem — Hamor and his son Shechem who assaulted Dinah were Hivites (Gen 34:2). They also lived at Gibeon (Josh 9:7) and around Hermon and Lebanon (Josh 11:3). ⚠ Approximate location — shown in central and northern Canaan.",
     color: '#145a32',
     fillOpacity: 0.25,
-    books: ['Genesis', 'Exodus', 'Joshua', 'Judges', '2 Samuel'],
+    books: ['Genesis', 'Exodus', 'Deuteronomy', 'Joshua', 'Judges', '2 Samuel'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -2306,6 +2306,79 @@ export const tribes: Tribe[] = [
         [35.55, 31.90],
         [35.60, 32.10],
         [35.62, 32.18],
+      ]],
+    },
+  },
+  // ══════════════════════════════════════════════════════════════════════════
+  // DEUTERONOMY — Pre-conquest peoples of the Promised Land
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Emim',
+    speakAs: 'EE-mim',
+    description: "A race of giants who formerly lived in the territory of Moab; 'a people great and many, and tall as the Anakim'; the Moabites called them Emim ('terrible ones'). Like the Anakim they were considered Rephaim. God had dispossessed them so the descendants of Lot could settle there (Deuteronomy 2:10–11)",
+    color: '#4a235a',
+    fillOpacity: 0.25,
+    books: ['Deuteronomy'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Moab plateau — former Emim territory
+        [35.52, 31.70],
+        [36.10, 31.68],
+        [36.38, 31.48],
+        [36.42, 31.15],
+        [36.12, 30.98],
+        [35.72, 30.95],
+        [35.48, 31.05],
+        [35.50, 31.42],
+        [35.52, 31.70],
+      ]],
+    },
+  },
+  {
+    name: 'Zamzummim',
+    speakAs: 'zam-ZUM-im',
+    description: "A people great, many, and tall as the Anakim who formerly inhabited the land of Ammon east of the Jordan; the Ammonites called them Zamzummim. God destroyed them before the Ammonites so that Lot's descendants could possess their land; the same people are called Zuzim in Genesis 14:5 (Deuteronomy 2:20–21)",
+    color: '#2e4057',
+    fillOpacity: 0.25,
+    books: ['Deuteronomy'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Former Ammonite / Zamzummim territory
+        [35.65, 32.20],
+        [36.12, 32.28],
+        [36.62, 32.12],
+        [36.72, 31.78],
+        [36.42, 31.60],
+        [36.02, 31.68],
+        [35.65, 31.70],
+        [35.58, 32.00],
+        [35.65, 32.20],
+      ]],
+    },
+  },
+  {
+    name: 'Caphtorim (Philistine Ancestors)',
+    speakAs: 'KAF-toh-rim',
+    description: "The Caphtorim came from Caphtor (Crete/Aegean) and destroyed the Avvim who had lived in the villages as far as Gaza, settling in their place; they are the ancestors of the Philistines (Deuteronomy 2:23; Jeremiah 47:4; Amos 9:7). This entry highlights their occupation of the southwestern coastal plain.",
+    color: '#148f77',
+    fillOpacity: 0.25,
+    books: ['Deuteronomy', 'Jeremiah', 'Amos'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Southwest coastal plain — area taken from Avvim
+        [34.10, 31.80],
+        [34.55, 31.82],
+        [34.75, 31.55],
+        [34.72, 31.25],
+        [34.55, 31.08],
+        [34.28, 31.08],
+        [34.10, 31.28],
+        [34.08, 31.58],
+        [34.10, 31.80],
       ]],
     },
   },
