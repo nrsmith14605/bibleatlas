@@ -126,10 +126,10 @@ export const people: Person[] = [
     books: ['Genesis'],
   },
 
-  // ── Exodus / Numbers ──────────────────────────────────────────────────────
+  // ── Exodus / Numbers / Deuteronomy ──────────────────────────────────────────────────────
   {
     name: 'Moses',
-    description: 'Led Israel out of Egypt; received the Law at Mount Sinai; prophet who spoke with God face to face; died on Mount Nebo in sight of the Promised Land',
+    description: 'Led Israel out of Egypt; received the Law at Mount Sinai; gave his farewell speeches on the Plains of Moab; died on Mount Nebo in sight of the Promised Land at age 120',
     journeys: [
       "Moses Flees to Midian",
       "Moses at Horeb — The Burning Bush",
@@ -138,6 +138,9 @@ export const people: Person[] = [
       "Sinai to Kadesh — The 42 Wilderness Stages",
       "The Twelve Spies Mission",
       "Detour Around Edom and Final Approach to Canaan",
+      "The 11-Day Route: Horeb to Kadesh-barnea",
+      "Skirting Edom: The Long Way Around",
+      "Moses's Final Ascent: Plains of Moab to Mount Nebo",
     ],
     books: ['Exodus', 'Leviticus', 'Numbers', 'Deuteronomy'],
   },
@@ -155,13 +158,23 @@ export const people: Person[] = [
   },
 
   // ── Joshua ────────────────────────────────────────────────────────────────
+  // ── Joshua ────────────────────────────────────────────────────────────────
   {
     name: 'Joshua',
-    description: "Moses' successor; led Israel into Canaan; conquered Jericho and the land",
+    speakAs: 'JAH-shoo-ah',
+    description: "Son of Nun from the tribe of Ephraim; Moses's aide from youth; one of the two faithful spies; commissioned by Moses and confirmed by God as his successor; led Israel across the Jordan, conquered Canaan, and divided the land; died at age 110 and was buried at Timnath-serah",
     journeys: [
-      "Conquest of Canaan",
+      "The Exodus from Egypt",
+      "Sinai to Kadesh — The 42 Wilderness Stages",
+      "The Twelve Spies Mission",
+      "Detour Around Edom and Final Approach to Canaan",
+      "Israel Crosses the Jordan",
+      "The Southern Campaign",
+      "The Northern Campaign",
+      "Gilgal to Shiloh — Moving the Tabernacle",
+      "The Gathering at Shechem — Joshua's Farewell",
     ],
-    books: ['Joshua'],
+    books: ['Exodus', 'Numbers', 'Deuteronomy', 'Joshua'],
   },
 
   // ── New Testament ─────────────────────────────────────────────────────────

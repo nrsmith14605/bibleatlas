@@ -735,4 +735,102 @@ export const naturalFeatures: NaturalFeature[] = [
       ]],
     },
   },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // JOSHUA — Natural Features
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Waters of Merom',
+    speakAs: 'Waters of MEH-rom',
+    description: "The lake or marsh in upper Galilee where Joshua launched a surprise attack on the great northern coalition assembled by Jabin of Hazor; Joshua hamstrung their horses and burned their chariots; he then turned and took Hazor (Joshua 11:5–9)",
+    type: 'sea',
+    books: ['Joshua'],
+    color: '#5dade2',
+    fillOpacity: 0.45,
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Lake Huleh / Merom area — northern Jordan Valley
+        [35.58, 33.12],
+        [35.65, 33.10],
+        [35.70, 33.05],
+        [35.68, 32.98],
+        [35.60, 32.95],
+        [35.53, 32.98],
+        [35.50, 33.05],
+        [35.52, 33.10],
+        [35.58, 33.12],
+      ]],
+    },
+  },
+  {
+    name: 'Valley of Achor',
+    speakAs: 'Valley of AY-kor',
+    description: "The valley where Achan son of Carmi was stoned with his family and all his possessions after he secretly took devoted things from Jericho; Joshua named it the Valley of Achor ('trouble') because Achan had brought trouble on Israel; later cited as a door of hope by Hosea (Joshua 7:24–26; Hosea 2:15)",
+    type: 'valley',
+    books: ['Joshua', 'Hosea'],
+    color: '#922b21',
+    fillOpacity: 0.30,
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Valley of Achor — northwest of Jericho, approaching the hill country
+        [35.38, 31.90],
+        [35.48, 31.90],
+        [35.52, 31.84],
+        [35.50, 31.78],
+        [35.42, 31.76],
+        [35.35, 31.80],
+        [35.35, 31.86],
+        [35.38, 31.90],
+      ]],
+    },
+  },
+  {
+    name: 'Valley of Aijalon',
+    speakAs: 'Valley of AY-jah-lon',
+    description: "The broad valley where Joshua commanded: 'Sun, stand still over Gibeon, and moon, over the Valley of Aijalon.' The sun stopped and the moon halted until Israel had taken vengeance on its enemies. 'There has been no day like it before or since' (Joshua 10:12–14)",
+    type: 'valley',
+    books: ['Joshua'],
+    color: '#d4ac0d',
+    fillOpacity: 0.30,
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Aijalon Valley — northwest of Jerusalem, the descent from the highlands
+        [34.98, 31.88],
+        [35.08, 31.88],
+        [35.18, 31.82],
+        [35.18, 31.74],
+        [35.08, 31.70],
+        [34.98, 31.72],
+        [34.92, 31.80],
+        [34.98, 31.88],
+      ]],
+    },
+  },
+  {
+    name: 'Mount Halak',
+    speakAs: 'Mount HAY-lak',
+    description: "The southern limit of Joshua's conquest; 'Joshua took the entire land, from Mount Halak, which rises toward Seir, to Baal-gad in the Valley of Lebanon below Mount Hermon' — the full extent from south to north (Joshua 11:17; 12:7)",
+    type: 'valley',
+    books: ['Joshua'],
+    color: '#7d6b4f',
+    fillOpacity: 0.28,
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Mount Halak — southern Negev highlands rising toward Edom
+        [34.88, 30.52],
+        [35.00, 30.52],
+        [35.10, 30.44],
+        [35.08, 30.36],
+        [34.98, 30.32],
+        [34.88, 30.36],
+        [34.82, 30.44],
+        [34.88, 30.52],
+      ]],
+    },
+  },
 ];

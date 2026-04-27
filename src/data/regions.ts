@@ -152,7 +152,7 @@ export const regions: Region[] = [
     color: '#c9a030',
     fillOpacity: 0.25,
     location: 'confirmed',
-    books: ['Genesis'],
+    books: ['Genesis', 'Joshua'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -827,6 +827,111 @@ export const regions: Region[] = [
         [35.55, 31.75],
         [35.58, 31.90],
         [35.60, 32.00],
+      ]],
+    },
+  },
+  // ── JOSHUA ────────────────────────────────────────────────────────────────
+
+  {
+    name: 'Hill Country of Ephraim',
+    description:
+      "The central highland region allotted to the tribe of Ephraim; Joshua's own territory; Shiloh where the Tabernacle rested was located here; Joshua challenged the tribes of Joseph to clear the forested hill country for themselves (Joshua 17:14–18; 19:50; 24:30)",
+    color: '#1e8449',
+    fillOpacity: 0.20,
+    location: 'confirmed',
+    books: ['Joshua', 'Judges', '1 Samuel'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Central hill country — Shechem south to Benjamin border
+        [34.90, 32.10],
+        [35.10, 32.10],
+        [35.45, 32.28],
+        [35.58, 32.18],
+        [35.55, 31.90],
+        [35.22, 31.88],
+        [34.95, 31.92],
+        [34.90, 32.10],
+      ]],
+    },
+  },
+  {
+    name: 'Geshur and Maakath',
+    speakAs: 'GEH-shur and MAH-ah-kath',
+    description:
+      "Two small Aramean kingdoms in the northern Transjordan at the foot of Mount Hermon which Israel did not drive out; 'the Geshurites and the Maakathites live among Israel to this day' — land the LORD had said belonged to Israel but was never conquered (Joshua 13:11–13)",
+    color: '#7f8c8d',
+    fillOpacity: 0.22,
+    location: 'confirmed',
+    books: ['Joshua', '2 Samuel'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Geshur and Maakath — northeast of Sea of Galilee, Hermon foothills
+        [35.68, 33.25],
+        [36.10, 33.40],
+        [36.50, 33.20],
+        [36.40, 32.90],
+        [36.00, 32.78],
+        [35.68, 32.88],
+        [35.60, 33.00],
+        [35.68, 33.25],
+      ]],
+    },
+  },
+  {
+    name: 'Mount Lebanon',
+    description:
+      "The northern boundary of the land God gave to Israel; 'from the wilderness and this Lebanon as far as the great river, the Euphrates'; Joshua's conquest extended toward it but the Sidonians remained in the northern coast regions (Joshua 1:4; 13:5–6)",
+    color: '#27ae60',
+    fillOpacity: 0.18,
+    location: 'confirmed',
+    books: ['Joshua', 'Judges', '1 Kings'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Lebanon mountain range
+        [35.48, 33.60],
+        [35.65, 33.88],
+        [35.82, 34.20],
+        [36.00, 34.50],
+        [36.20, 34.55],
+        [36.60, 34.30],
+        [36.55, 33.90],
+        [36.20, 33.60],
+        [35.90, 33.40],
+        [35.60, 33.38],
+        [35.48, 33.60],
+      ]],
+    },
+  },
+  {
+    name: 'Land Yet to be Taken',
+    description:
+      "When Joshua was old the LORD listed the land that remained: all the regions of the Philistines, the Geshurites, the Sidonians from Baal-gad to Lebo-hamath — 'all the inhabitants of the hill country from Lebanon to Misrephoth-maim.' God promised to drive them out but commanded Joshua to allot the land as an inheritance (Joshua 13:1–7)",
+    color: '#e74c3c',
+    fillOpacity: 0.14,
+    location: 'confirmed',
+    books: ['Joshua'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Coastal strip from Gaza to Sidon — Philistine and Phoenician territory
+        [34.30, 31.30],
+        [34.48, 31.55],
+        [34.55, 31.80],
+        [34.75, 32.05],
+        [35.08, 32.93],
+        [35.12, 33.30],
+        [35.38, 33.55],
+        [35.55, 33.55],
+        [35.55, 33.30],
+        [35.35, 33.00],
+        [35.05, 32.72],
+        [34.88, 32.05],
+        [34.68, 31.75],
+        [34.48, 31.48],
+        [34.30, 31.30],
       ]],
     },
   },

@@ -2382,4 +2382,52 @@ export const tribes: Tribe[] = [
       ]],
     },
   },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // JOSHUA — Peoples of the Conquest
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Gibeonites',
+    speakAs: 'GIB-ee-on-ites',
+    description: "Hivites from Gibeon who deceived Joshua into a peace treaty by pretending to be from a distant country; when the deception was discovered Israel honored the oath and protected them; Joshua cursed them to be woodcutters and water carriers for the assembly and altar of God forever (Joshua 9:3–27)",
+    color: '#7d6608',
+    fillOpacity: 0.28,
+    books: ['Joshua', '2 Samuel'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Gibeon and the four allied Hivite cities — central Benjamin plateau
+        [35.05, 31.95],
+        [35.25, 31.98],
+        [35.38, 31.90],
+        [35.30, 31.78],
+        [35.12, 31.76],
+        [34.98, 31.82],
+        [35.05, 31.95],
+      ]],
+    },
+  },
+  {
+    name: 'Sidonians',
+    speakAs: 'sy-DOH-nee-ans',
+    description: "The Phoenician inhabitants of Sidon and the northern coast; they called Mount Hermon 'Sirion'; the LORD listed them among the peoples still to be driven out from the northern territories when Joshua was old; they were never fully conquered (Joshua 13:4–6)",
+    color: '#9b59b6',
+    fillOpacity: 0.25,
+    books: ['Joshua', 'Judges', '1 Kings'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Sidonian coastal territory — northern Phoenicia
+        [35.30, 33.35],
+        [35.55, 33.62],
+        [35.72, 33.55],
+        [35.88, 33.32],
+        [35.80, 33.10],
+        [35.52, 33.10],
+        [35.35, 33.18],
+        [35.30, 33.35],
+      ]],
+    },
+  },
 ];

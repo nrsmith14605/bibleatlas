@@ -415,4 +415,55 @@ export const landmarks: Landmark[] = [
     location: 'confirmed',
     books: ['Deuteronomy', 'Joshua'],
   },
+  // ══════════════════════════════════════════════════════════════════════════
+  // JOSHUA
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Twelve Memorial Stones at Gilgal',
+    coords: [31.88, 35.50],
+    description: "Joshua commanded one man from each tribe to take a stone from the dry riverbed of the Jordan; he set up the twelve stones at Gilgal as a permanent memorial. 'When your children ask, what do these stones mean? tell them Israel crossed the Jordan on dry ground' (Joshua 4:1–9, 19–24)",
+    location: 'probable',
+    books: ['Joshua'],
+  },
+  {
+    name: 'The Cave at Makkedah',
+    speakAs: 'Cave at mak-KEE-dah',
+    coords: [31.67, 34.92],
+    description: "The cave where the five Amorite kings — of Jerusalem, Hebron, Jarmuth, Lachish, and Eglon — hid after their army fled from Gibeon; Joshua sealed it with large rocks until the battle was over, then had his commanders place their feet on the kings' necks before executing them (Joshua 10:16–27)",
+    location: 'probable',
+    books: ['Joshua'],
+  },
+  {
+    name: 'The Great Oak at Shechem',
+    speakAs: 'Great Oak at SHEH-kem',
+    coords: [32.21, 35.28],
+    description: "Where Joshua assembled all Israel for the covenant renewal ceremony at the end of the conquest; he read the blessings and curses, presented the choice between the LORD and other gods, and set up a large stone under the oak as a witness to the covenant. 'As for me and my household, we will serve the LORD' (Joshua 24:1–27)",
+    location: 'probable',
+    books: ['Joshua'],
+  },
+  {
+    name: 'Witness Altar "Ed"',
+    speakAs: 'Witness Altar Ed',
+    coords: [32.00, 35.58],
+    description: "The large altar built by the eastern tribes (Reuben, Gad, half-tribe of Manasseh) by the Jordan as they returned to their territory; the western tribes nearly went to war over it, fearing it was for rival worship; the eastern tribes explained it was a witness altar — not for burnt offerings but to testify to future generations that they share in the LORD (Joshua 22:10–34)",
+    location: 'unknown',
+    books: ['Joshua'],
+  },
+  {
+    name: "Joshua's Tomb at Timnath-serah",
+    speakAs: "Joshua's Tomb at TIM-nath SEH-rah",
+    coords: [31.97, 35.04],
+    description: "Joshua son of Nun died at the age of 110 and was buried in the territory of his inheritance at Timnath-serah in the hill country of Ephraim, north of Mount Gaash. Israel served the LORD throughout the lifetime of Joshua and the elders who outlived him (Joshua 24:29–31)",
+    location: 'probable',
+    books: ['Joshua'],
+  },
+  {
+    name: "Caleb's Portion — Hebron",
+    speakAs: "Caleb's Portion HEE-bron",
+    coords: [31.53, 35.10],
+    description: "Caleb son of Jephunneh the Kenizzite came to Joshua at Gilgal and claimed Hebron as his inheritance, recalling Moses's promise made 45 years earlier. At 85 years old he declared: 'I am still as strong today as the day Moses sent me.' He drove out the three sons of Anak and took possession of the mountain (Joshua 14:6–15; 15:13–14)",
+    location: 'confirmed',
+    books: ['Joshua'],
+  },
 ];

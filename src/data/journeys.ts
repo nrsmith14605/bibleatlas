@@ -1434,4 +1434,181 @@ export const journeys: Journey[] = [
       },
     ],
   },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // JOSHUA JOURNEYS
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: "Israel Crosses the Jordan",
+    color: '#1e8449',
+    people: ['Joshua'],
+    books: ['Joshua'],
+    path: [
+      [31.85, 35.62],  // Abel-shittim / Shittim
+      [31.88, 35.50],  // Gilgal — first camp in Canaan
+    ],
+    locations: [
+      {
+        name: 'Shittim — Final Camp in Moab',
+        coords: [31.85, 35.62],
+        description: "Joshua sent two spies to Jericho from Shittim; Rahab hid them on her roof; they returned with the report: 'The LORD has surely given the whole land into our hands.' Israel set out from Shittim and came to the Jordan (Joshua 2:1; 3:1)",
+      },
+      {
+        name: 'Gilgal — First Camp in Canaan',
+        coords: [31.88, 35.50],
+        description: "The priests carrying the Ark stepped into the Jordan and the water upstream stopped flowing in a wall; all Israel crossed on dry ground. Joshua set up twelve memorial stones. The people were circumcised. The first Passover in Canaan was celebrated. The manna stopped the day after they ate from the produce of the land (Joshua 3:14–5:12)",
+      },
+    ],
+  },
+
+  {
+    name: "The Southern Campaign",
+    color: '#c0392b',
+    people: ['Joshua'],
+    books: ['Joshua'],
+    path: [
+      [31.88, 35.50],  // Gilgal
+      [31.87, 35.46],  // Jericho
+      [31.92, 35.27],  // Ai
+      [31.84, 35.17],  // Gibeon (overnight march)
+      [31.88, 35.10],  // Beth-horon descent
+      [31.70, 34.93],  // Azekah
+      [31.67, 34.92],  // Makkedah
+      [31.62, 34.86],  // Libnah
+      [31.56, 34.85],  // Lachish
+      [31.57, 34.72],  // Eglon
+      [31.53, 35.10],  // Hebron
+      [31.40, 34.95],  // Debir
+      [31.88, 35.50],  // Return to Gilgal
+    ],
+    locations: [
+      {
+        name: 'Gilgal — Base Camp',
+        coords: [31.88, 35.50],
+        description: "Gilgal served as the base for the entire southern campaign; Joshua received the desperate plea from Gibeon here: 'Do not abandon your servants. Come up to us quickly and save us!' He marched all night (Joshua 10:6–9)",
+      },
+      {
+        name: 'Jericho — First Conquest',
+        coords: [31.87, 35.46],
+        description: "Israel marched around Jericho once a day for six days; on the seventh day they marched seven times and the priests blew the trumpets; when the people shouted, the walls collapsed. Every living thing in the city was devoted to destruction except Rahab and her household (Joshua 6:1–27)",
+      },
+      {
+        name: 'Ai — Defeat then Victory',
+        coords: [31.92, 35.27],
+        description: "Israel was first routed at Ai because Achan had taken devoted things from Jericho. After Achan was found and executed in the Valley of Achor, Joshua set an ambush and destroyed Ai completely — 12,000 men and women; he hung the king on a tree until evening (Joshua 7–8)",
+      },
+      {
+        name: 'Gibeon — The Night March',
+        coords: [31.84, 35.17],
+        description: "Joshua marched all night from Gilgal to surprise the five Amorite kings attacking Gibeon. The LORD threw them into confusion. He hurled great hailstones — more died from the hailstones than from Israel's swords. Then Joshua commanded: 'Sun, stand still over Gibeon!' (Joshua 10:6–14)",
+      },
+      {
+        name: 'Makkedah — The Five Kings',
+        coords: [31.67, 34.92],
+        description: "The five Amorite kings hid in the cave at Makkedah; Joshua sealed it with large rocks during the battle, then had his commanders put their feet on the kings' necks and executed them, hanging them on five trees until evening (Joshua 10:16–28)",
+      },
+      {
+        name: 'Libnah → Lachish → Eglon',
+        coords: [31.56, 34.85],
+        description: "Joshua moved systematically through the southern cities: Libnah fell, then Lachish in two days (Gezer came to help Lachish and was also destroyed), then Eglon in a single day. Each city was devoted to complete destruction (Joshua 10:29–35)",
+      },
+      {
+        name: 'Hebron',
+        coords: [31.53, 35.10],
+        description: "Joshua struck Hebron and its villages and its king; he devoted to destruction every person in it, leaving no survivor (Joshua 10:36–37)",
+      },
+      {
+        name: 'Debir — Final Southern City',
+        coords: [31.40, 34.95],
+        description: "Joshua turned back to Debir and struck it; every person was devoted to destruction as he had done to Hebron. 'So Joshua conquered the whole region — the hill country, the Negev, the western foothills, and the mountain slopes' (Joshua 10:38–41)",
+      },
+      {
+        name: 'Gilgal — Return',
+        coords: [31.88, 35.50],
+        description: "'Then Joshua and all Israel with him returned to the camp at Gilgal.' The entire southern campaign from Gibeon to Debir was completed before returning to base (Joshua 10:43)",
+      },
+    ],
+  },
+
+  {
+    name: "The Northern Campaign",
+    color: '#2874a6',
+    people: ['Joshua'],
+    books: ['Joshua'],
+    path: [
+      [31.88, 35.50],  // Gilgal
+      [33.02, 35.57],  // Waters of Merom area
+      [33.07, 35.52],  // Hazor
+      [31.88, 35.50],  // Return to Gilgal
+    ],
+    locations: [
+      {
+        name: 'Gilgal — Departure',
+        coords: [31.88, 35.50],
+        description: "Jabin king of Hazor assembled the great northern coalition — as many troops as the sand on the seashore, with horses and chariots. The LORD told Joshua: 'Do not be afraid of them.' (Joshua 11:1–6)",
+      },
+      {
+        name: 'Waters of Merom — The Surprise Attack',
+        coords: [33.02, 35.55],
+        description: "Joshua fell on the coalition suddenly at the Waters of Merom; the LORD gave them into Israel's hand. Joshua hamstrung their horses and burned all their chariots as the LORD had commanded (Joshua 11:7–9)",
+      },
+      {
+        name: 'Hazor — Burned',
+        coords: [33.02, 35.57],
+        description: "Joshua turned back and took Hazor and struck its king with the sword; he burned Hazor. 'Hazor was formerly the head of all those kingdoms.' He struck all the cities of those kings, devoting them to destruction — but he burned only Hazor (Joshua 11:10–13)",
+      },
+      {
+        name: 'Gilgal — Return',
+        coords: [31.88, 35.50],
+        description: "'So Joshua took the entire land, just as the LORD had directed Moses, and he gave it as an inheritance to Israel according to their tribal divisions. Then the land had rest from war' (Joshua 11:23)",
+      },
+    ],
+  },
+
+  {
+    name: "Gilgal to Shiloh — Moving the Tabernacle",
+    color: '#8e44ad',
+    people: ['Joshua'],
+    books: ['Joshua'],
+    path: [
+      [31.88, 35.50],  // Gilgal
+      [32.06, 35.29],  // Shiloh
+    ],
+    locations: [
+      {
+        name: 'Gilgal',
+        coords: [31.88, 35.50],
+        description: "The base camp throughout the conquest; seven tribes had still not received their inheritance; Joshua rebuked them: 'How long will you wait before you begin to take possession of the land?' He sent men to survey it (Joshua 18:1–3)",
+      },
+      {
+        name: 'Shiloh — The Tabernacle Established',
+        coords: [32.06, 35.29],
+        description: "The whole assembly gathered at Shiloh and set up the Tent of Meeting; the land was brought under Israel's control. Joshua cast lots at Shiloh before the LORD to divide the land for the seven remaining tribes (Joshua 18:1, 10)",
+      },
+    ],
+  },
+
+  {
+    name: "The Gathering at Shechem — Joshua's Farewell",
+    color: '#d35400',
+    people: ['Joshua'],
+    books: ['Joshua'],
+    path: [
+      [32.06, 35.29],  // Shiloh
+      [32.21, 35.29],  // Shechem
+    ],
+    locations: [
+      {
+        name: 'Shiloh',
+        coords: [32.06, 35.29],
+        description: "Joshua had grown old. He summoned all Israel, their elders, heads, judges, and officers, and addressed them at Shiloh before giving the final assembly at Shechem (Joshua 23:1–2)",
+      },
+      {
+        name: 'Shechem — The Covenant Renewed',
+        coords: [32.21, 35.29],
+        description: "Joshua assembled all the tribes of Israel at Shechem; he recited all of Israel's history from Abraham to the conquest. He placed before them the choice: serve the LORD or serve other gods. The people chose the LORD. Joshua made a covenant, wrote it in the Book of the Law, and set up a large stone under the oak as a witness (Joshua 24:1–27)",
+      },
+    ],
+  },
 ];
