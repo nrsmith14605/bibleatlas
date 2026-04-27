@@ -169,8 +169,53 @@ export const landmarks: Landmark[] = [
   },
 
   // ══════════════════════════════════════════════════════════════════════════
-  // OTHER BOOKS
+  // EXODUS
   // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'The Burning Bush',
+    coords: [28.54, 33.97],
+    description: 'At Horeb, the mountain of God, God appeared to Moses in a flame of fire from within a bush that burned but was not consumed. God revealed His name: "I AM WHO I AM" and commissioned Moses to lead Israel out of Egypt (Exodus 3:2–15)',
+    location: 'probable',
+    books: ['Exodus'],
+  },
+  {
+    name: 'Rock at Horeb (Massah and Meribah)',
+    speakAs: 'Rock at Horeb, Massah and Meribah',
+    coords: [28.57, 33.98],
+    description: 'At Rephidim the people quarreled for water; God told Moses to strike the rock at Horeb with his staff. Water gushed out. Moses named the place Massah ("Testing") and Meribah ("Quarreling") because the people tested the LORD (Exodus 17:6–7)',
+    location: 'probable',
+    books: ['Exodus'],
+  },
+  {
+    name: 'The Cleft of the Rock',
+    coords: [28.55, 33.96],
+    description: 'God placed Moses in the cleft of the rock and covered him with His hand while His glory passed by; Moses saw God\'s back but not His face (Exodus 33:22–23)',
+    location: 'unknown',
+    books: ['Exodus'],
+  },
+  {
+    name: 'Yahweh-nissi (The LORD is My Banner)',
+    speakAs: 'Yah-weh NIS-ee',
+    coords: [28.68, 33.63],
+    description: 'The altar Moses built after Israel defeated Amalek at Rephidim while Aaron and Hur held up his hands; he named it "The LORD is My Banner" (Exodus 17:15)',
+    location: 'unknown',
+    books: ['Exodus'],
+  },
+  {
+    name: 'Lodging Place on the Way to Egypt',
+    coords: [29.40, 34.10],
+    description: 'At an unnamed lodging place on the road back to Egypt, the LORD met Moses and sought to kill him; Zipporah circumcised their son and touched Moses\'s feet with the foreskin, and God relented (Exodus 4:24–26)',
+    location: 'unknown',
+    books: ['Exodus'],
+  },
+  {
+    name: 'Nile Riverbank (Baby Moses)',
+    coords: [30.10, 31.30],
+    description: 'Moses\'s mother placed him in a papyrus basket coated with tar and pitch and set it among the reeds at the bank of the Nile. Pharaoh\'s daughter found him, took pity, and raised him as her own son (Exodus 2:3–10)',
+    location: 'probable',
+    books: ['Exodus'],
+  },
 
   // ── Mountains ─────────────────────────────────────────────────────────────
   {

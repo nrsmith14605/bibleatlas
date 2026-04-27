@@ -545,4 +545,59 @@ export const regions: Region[] = [
       ]],
     },
   },
+
+  // ── EXODUS ────────────────────────────────────────────────────────────────
+
+  {
+    name: 'Wilderness of Sin (Region)',
+    speakAs: 'Wilderness of Sin',
+    description:
+      "The desert between Elim and Sinai; Israel grumbled for food here and God sent manna and quail for the first time. The Sabbath was revealed through the double portion of manna on the sixth day (Exodus 16:1–36)",
+    color: '#e8c165',
+    fillOpacity: 0.24,
+    location: 'probable',
+    books: ['Exodus', 'Numbers'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [32.80, 29.50],
+        [33.50, 29.50],
+        [33.80, 29.00],
+        [33.50, 28.50],
+        [32.80, 28.50],
+        [32.40, 28.80],
+        [32.40, 29.20],
+        [32.80, 29.50],
+      ]],
+    },
+  },
+  {
+    name: 'The Promised Land',
+    description:
+      "The land God swore to give to Abraham, Isaac, and Jacob and their descendants — 'a land flowing with milk and honey.' The twelve spies were sent to scout it from the Wilderness of Paran; the people's unbelief at its borders condemned the generation to 40 years of wandering (Exodus 3:8; Numbers 13–14)",
+    color: '#27ae60',
+    fillOpacity: 0.15,
+    location: 'confirmed',
+    books: ['Exodus', 'Leviticus', 'Numbers', 'Deuteronomy', 'Joshua'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // West: Mediterranean coast
+        [34.25, 31.22],
+        [34.75, 32.05],
+        [35.10, 33.10],
+        // North: Lebanon foothills to Dan
+        [35.65, 33.25],
+        // Northeast: upper Jordan / Golan
+        [35.85, 32.80],
+        // East: Jordan River and Dead Sea east shore
+        [35.75, 32.20],
+        [35.60, 31.80],
+        [35.50, 31.10],
+        // South: Negev / Brook of Egypt
+        [34.80, 31.25],
+        [34.25, 31.22],
+      ]],
+    },
+  },
 ];

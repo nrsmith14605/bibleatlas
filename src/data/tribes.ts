@@ -17,7 +17,7 @@ export const tribes: Tribe[] = [
     description: "Descendants of Canaan, son of Ham (Gen 10:6). They occupied the Promised Land before Israel's conquest and included sub-groups such as Hittites, Jebusites, Amorites, Hivites, Girgashites, Perizzites, and Arkites. God promised their land to Abraham's descendants. (Gen 15:18–21; Josh 3:10)",
     color: '#e67e22',
     fillOpacity: 0.3,
-    books: ['Genesis', 'Exodus', 'Numbers', 'Joshua', 'Judges'],
+    books: ['Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Joshua', 'Judges'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -136,7 +136,7 @@ export const tribes: Tribe[] = [
     description: "Widespread Semitic people; one of the most powerful Canaanite groups (Gen 10:16). They controlled large territories both east and west of the Jordan. Sihon and Og were Amorite kings defeated by Moses. Abraham received God's covenant partly because the iniquity of the Amorites had not yet reached its full measure. (Gen 15:16)",
     color: '#c0392b',
     fillOpacity: 0.25,
-    books: ['Genesis', 'Numbers', 'Deuteronomy', 'Joshua', 'Judges', 'Amos'],
+    books: ['Genesis', 'Exodus', 'Numbers', 'Deuteronomy', 'Joshua', 'Judges', 'Amos'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -688,7 +688,7 @@ export const tribes: Tribe[] = [
     description: "Descendants of Jebus, son of Canaan (Gen 10:16). They inhabited the city of Jebus (Jerusalem) and held it until David captured it around 1000 BC. The Jebusite Araunah's threshing floor became the site of Solomon's Temple. (Gen 10:16; 2 Sam 5:6–7)",
     color: '#1f618d',
     fillOpacity: 0.3,
-    books: ['Genesis', 'Joshua', 'Judges', '2 Samuel'],
+    books: ['Genesis', 'Exodus', 'Joshua', 'Judges', '2 Samuel'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -2209,6 +2209,27 @@ export const tribes: Tribe[] = [
         [35.50, 31.30],
         [34.80, 31.30],
         [34.80, 31.90],
+      ]],
+    },
+  },
+  {
+    name: 'Philistines',
+    description: "Sea peoples who settled the southwestern coastal plain of Canaan; descended from Caphtorim (Crete region). God deliberately led Israel away from the Philistine road so they wouldn't face war too soon (Exodus 13:17). Frequent enemies of Israel through the period of the Judges and the monarchy.",
+    color: '#2c3e50',
+    fillOpacity: 0.28,
+    books: ['Exodus', 'Joshua', 'Judges', '1 Samuel', '2 Samuel', 'Amos', 'Zephaniah'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [34.25, 31.80],
+        [34.55, 31.80],
+        [34.75, 31.55],
+        [34.70, 31.25],
+        [34.55, 31.10],
+        [34.30, 31.10],
+        [34.10, 31.30],
+        [34.10, 31.60],
+        [34.25, 31.80],
       ]],
     },
   },

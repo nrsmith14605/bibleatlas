@@ -131,9 +131,10 @@ export const people: Person[] = [
     name: 'Moses',
     description: 'Led Israel out of Egypt; received the Law at Mount Sinai; prophet who spoke with God face to face',
     journeys: [
-      "The Exodus from Egypt",
       "Moses Flees to Midian",
-      "Israel in the Wilderness",
+      "Moses at Horeb — The Burning Bush",
+      "Moses Returns to Egypt",
+      "The Exodus from Egypt",
     ],
     books: ['Exodus', 'Leviticus', 'Numbers', 'Deuteronomy'],
   },

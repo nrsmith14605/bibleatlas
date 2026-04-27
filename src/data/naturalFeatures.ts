@@ -81,147 +81,147 @@ export const naturalFeatures: NaturalFeature[] = [
     ],
   },
   {
-  name: 'Pishon River',
-  description:
-    'One of the four rivers of Eden; it wound through the land of Havilah, where there is gold; widely identified with a now-dry ancient river channel in the Arabian Peninsula (Genesis 2:11)',
-  type: 'river',
-  books: ['Genesis'],
-  color: '#d4ac0d',
-  path: [
-    // === HEADWATERS ===
-    // Jibāl al-Abyad (White Mountains) / Harrat Khaybar, NE of Medina (~24.9°N, 39.9°E)
-    // Medina itself is at 24.52°N, 39.57°E — headwaters are on volcanic plateau to the NE
-    [24.90, 39.92],
-    [24.98, 40.10],
-    [25.05, 40.35],
+    name: 'Pishon River',
+    description:
+      'One of the four rivers of Eden; it wound through the land of Havilah, where there is gold; widely identified with a now-dry ancient river channel in the Arabian Peninsula (Genesis 2:11)',
+    type: 'river',
+    books: ['Genesis'],
+    color: '#d4ac0d',
+    path: [
+      // === HEADWATERS ===
+      // Jibāl al-Abyad (White Mountains) / Harrat Khaybar, NE of Medina (~24.9°N, 39.9°E)
+      // Medina itself is at 24.52°N, 39.57°E — headwaters are on volcanic plateau to the NE
+      [24.90, 39.92],
+      [24.98, 40.10],
+      [25.05, 40.35],
 
-    // === UPPER WADI AL-RUMMAH ===
-    // Exits Hejaz highlands trending northeast across central Saudi Arabia
-    // Passes through Hail Province lowlands
-    [25.18, 40.68],
-    [25.30, 41.05],
-    [25.42, 41.42],
-    [25.55, 41.80],
+      // === UPPER WADI AL-RUMMAH ===
+      // Exits Hejaz highlands trending northeast across central Saudi Arabia
+      // Passes through Hail Province lowlands
+      [25.18, 40.68],
+      [25.30, 41.05],
+      [25.42, 41.42],
+      [25.55, 41.80],
 
-    // === MIDDLE WADI AL-RUMMAH ===
-    // Broad valley across Al-Qassim, curving ENE
-    // Central coordinate of wadi: ~25.81°N, 42.87°E
-    [25.68, 42.18],
-    [25.78, 42.55],
-    [25.82, 42.88],
-    [25.88, 43.20],
+      // === MIDDLE WADI AL-RUMMAH ===
+      // Broad valley across Al-Qassim, curving ENE
+      // Central coordinate of wadi: ~25.81°N, 42.87°E
+      [25.68, 42.18],
+      [25.78, 42.55],
+      [25.82, 42.88],
+      [25.88, 43.20],
 
-    // === LOWER WADI AL-RUMMAH (approaching Buraidah / Qassim) ===
-    // Buraidah is at ~26.33°N, 43.97°E — wadi sinks into Thuayrat/ad-Dahna dunes here
-    [25.98, 43.52],
-    [26.12, 43.72],
-    [26.28, 43.90],
-    [26.38, 44.02],  // sinks beneath sand dunes near Buraidah
+      // === LOWER WADI AL-RUMMAH (approaching Buraidah / Qassim) ===
+      // Buraidah is at ~26.33°N, 43.97°E — wadi sinks into Thuayrat/ad-Dahna dunes here
+      [25.98, 43.52],
+      [26.12, 43.72],
+      [26.28, 43.90],
+      [26.38, 44.02],  // sinks beneath sand dunes near Buraidah
 
-    // === GAP: beneath the ad-Dahna desert dunes ===
-    // The channel runs beneath the sand for ~45 km and re-emerges as Wadi al-Batin
+      // === GAP: beneath the ad-Dahna desert dunes ===
+      // The channel runs beneath the sand for ~45 km and re-emerges as Wadi al-Batin
 
-    // === WADI AL-BATIN (re-emerges from dunes) ===
-    // Hafar al-Batin: 28.45°N, 45.95°E — city sits in the active wadi valley
-    // The re-emergence is SW of Hafar al-Batin, approximately:
-    [26.88, 44.60],
-    [27.18, 44.92],
-    [27.48, 45.22],
+      // === WADI AL-BATIN (re-emerges from dunes) ===
+      // Hafar al-Batin: 28.45°N, 45.95°E — city sits in the active wadi valley
+      // The re-emergence is SW of Hafar al-Batin, approximately:
+      [26.88, 44.60],
+      [27.18, 44.92],
+      [27.48, 45.22],
 
-    // === WADI AL-BATIN MAIN COURSE ===
-    // Runs NE-SW through Al-Dibdibah plain, forming Kuwait-Iraq border
-    // 72 km NE from Hafar al-Batin toward the tripoint
-    [27.75, 45.52],
-    [28.05, 45.72],
-    [28.28, 45.88],
-    [28.45, 45.97],  // Hafar al-Batin city
+      // === WADI AL-BATIN MAIN COURSE ===
+      // Runs NE-SW through Al-Dibdibah plain, forming Kuwait-Iraq border
+      // 72 km NE from Hafar al-Batin toward the tripoint
+      [27.75, 45.52],
+      [28.05, 45.72],
+      [28.28, 45.88],
+      [28.45, 45.97],  // Hafar al-Batin city
 
-    // === LOWER WADI AL-BATIN / KUWAIT RIVER (ancient course) ===
-    // Continues NE across Kuwait toward the Persian Gulf
-    // Saudi-Kuwait-Iraq tripoint ~29.10°N, 46.55°E
-    [28.68, 46.18],
-    [28.90, 46.38],
-    [29.10, 46.55],
+      // === LOWER WADI AL-BATIN / KUWAIT RIVER (ancient course) ===
+      // Continues NE across Kuwait toward the Persian Gulf
+      // Saudi-Kuwait-Iraq tripoint ~29.10°N, 46.55°E
+      [28.68, 46.18],
+      [28.90, 46.38],
+      [29.10, 46.55],
 
-    // === ACROSS KUWAIT ===
-    // Ancient course traced by satellite imagery heading toward northern Kuwait coast
-    [29.25, 46.80],
-    [29.35, 47.10],
-    [29.42, 47.45],
+      // === ACROSS KUWAIT ===
+      // Ancient course traced by satellite imagery heading toward northern Kuwait coast
+      [29.25, 46.80],
+      [29.35, 47.10],
+      [29.42, 47.45],
 
-    // === MOUTH: Persian Gulf, northern Kuwait coast ===
-    // El-Baz's "Kuwait River" emptied near Kuwait Bay / northern Gulf
-    [29.48, 47.72],
-    [29.52, 47.90],
-  ],
-},
+      // === MOUTH: Persian Gulf, northern Kuwait coast ===
+      // El-Baz's "Kuwait River" emptied near Kuwait Bay / northern Gulf
+      [29.48, 47.72],
+      [29.52, 47.90],
+    ],
+  },
 
-{
-  name: 'Gihon River',
-  description:
-    'One of the four rivers of Eden; it wound through the entire land of Cush; identified by Zarins with the Karun River in Iran (Khuzestan), which joins the Tigris-Euphrates system at the head of the Persian Gulf (Genesis 2:13). Note: traditionally also identified with the Nile by early translators.',
-  type: 'river',
-  books: ['Genesis'],
-  color: '#6e2fa0',
-  path: [
-    // Karun River — source to mouth, ~950 km
-    // Coordinates: [lat, lng]  (Leaflet order)
-    //
-    // ── UPPER COURSE: Zard-Kuh source → Izeh → Karun-1 Dam ──────────────────
-    //
-    // Source — Zard-Kuh / Kuhrang headwaters, Bakhtiari Zagros
-    [32.48, 50.02],
-    [32.38, 49.90],
-    [32.22, 49.72],
-    [32.08, 49.58],
-    // River swings west through steep canyon country
-    [31.95, 49.50],
-    // Izeh — town on left bank, river bends northwest here
-    [31.85, 49.45],
-    [31.75, 49.32],
-    [31.68, 49.18],
-    // Karun-1 (Shahid Abbaspour) Dam reservoir — river turns north
-    [31.62, 49.08],
-    [31.70, 48.97],
-    [31.82, 48.90],
-    //
-    // ── MIDDLE COURSE: Masjed Soleyman → Gotvand → Shushtar → Dez confluence ─
-    //
-    // Masjed Soleyman — river swings west-southwest past the dam town
-    [31.93, 49.10],
-    [31.98, 48.98],
-    [32.10, 48.90],
-    // Gotvand — river exits the mountains and turns south onto the plain
-    [32.25, 48.79],
-    [32.18, 48.82],
-    [32.10, 48.84],
-    // Shushtar — ancient city, Band-e Kaisar (Caesar's Dam)
-    [32.04, 48.86],
-    [31.92, 48.82],
-    [31.78, 48.78],
-    // Band-e Qir — confluence with Ab-e Dez; river nearly doubles in size
-    [31.62, 48.75],
-    // River flows ~20 km due south, then meanders southwest to Ahvaz
-    [31.52, 48.73],
-    [31.45, 48.72],
-    [31.38, 48.70],
-    //
-    // ── LOWER COURSE: Ahvaz → Khorramshahr → Shatt al-Arab ──────────────────
-    //
-    // Ahvaz — Karun bisects the city; famous bridges cross here
-    [31.32, 48.67],
-    [31.22, 48.62],
-    [31.10, 48.54],
-    [30.95, 48.44],
-    [30.80, 48.34],
-    [30.65, 48.25],
-    // Delta begins ~5 km above Khorramshahr; river splits into Haffar & Bahmanshir branches
-    [30.52, 48.20],
-    // Khorramshahr — Haffar branch meets the Shatt al-Arab (Arvand Rud)
-    // (Abadan island lies between the two delta branches to the southeast)
-    [30.43, 48.17],
-  ],
-},
+  {
+    name: 'Gihon River',
+    description:
+      'One of the four rivers of Eden; it wound through the entire land of Cush; identified by Zarins with the Karun River in Iran (Khuzestan), which joins the Tigris-Euphrates system at the head of the Persian Gulf (Genesis 2:13). Note: traditionally also identified with the Nile by early translators.',
+    type: 'river',
+    books: ['Genesis'],
+    color: '#6e2fa0',
+    path: [
+      // Karun River — source to mouth, ~950 km
+      // Coordinates: [lat, lng]  (Leaflet order)
+      //
+      // ── UPPER COURSE: Zard-Kuh source → Izeh → Karun-1 Dam ──────────────────
+      //
+      // Source — Zard-Kuh / Kuhrang headwaters, Bakhtiari Zagros
+      [32.48, 50.02],
+      [32.38, 49.90],
+      [32.22, 49.72],
+      [32.08, 49.58],
+      // River swings west through steep canyon country
+      [31.95, 49.50],
+      // Izeh — town on left bank, river bends northwest here
+      [31.85, 49.45],
+      [31.75, 49.32],
+      [31.68, 49.18],
+      // Karun-1 (Shahid Abbaspour) Dam reservoir — river turns north
+      [31.62, 49.08],
+      [31.70, 48.97],
+      [31.82, 48.90],
+      //
+      // ── MIDDLE COURSE: Masjed Soleyman → Gotvand → Shushtar → Dez confluence ─
+      //
+      // Masjed Soleyman — river swings west-southwest past the dam town
+      [31.93, 49.10],
+      [31.98, 48.98],
+      [32.10, 48.90],
+      // Gotvand — river exits the mountains and turns south onto the plain
+      [32.25, 48.79],
+      [32.18, 48.82],
+      [32.10, 48.84],
+      // Shushtar — ancient city, Band-e Kaisar (Caesar's Dam)
+      [32.04, 48.86],
+      [31.92, 48.82],
+      [31.78, 48.78],
+      // Band-e Qir — confluence with Ab-e Dez; river nearly doubles in size
+      [31.62, 48.75],
+      // River flows ~20 km due south, then meanders southwest to Ahvaz
+      [31.52, 48.73],
+      [31.45, 48.72],
+      [31.38, 48.70],
+      //
+      // ── LOWER COURSE: Ahvaz → Khorramshahr → Shatt al-Arab ──────────────────
+      //
+      // Ahvaz — Karun bisects the city; famous bridges cross here
+      [31.32, 48.67],
+      [31.22, 48.62],
+      [31.10, 48.54],
+      [30.95, 48.44],
+      [30.80, 48.34],
+      [30.65, 48.25],
+      // Delta begins ~5 km above Khorramshahr; river splits into Haffar & Bahmanshir branches
+      [30.52, 48.20],
+      // Khorramshahr — Haffar branch meets the Shatt al-Arab (Arvand Rud)
+      // (Abadan island lies between the two delta branches to the southeast)
+      [30.43, 48.17],
+    ],
+  },
 
   {
     name: 'Wadi el-Arish (Brook of Egypt)',
@@ -308,123 +308,123 @@ export const naturalFeatures: NaturalFeature[] = [
   // ══════════════════════════════════════════════════════════════════════════
 
   {
-  name: 'Mountains of Ararat',
-  description:
-    "The mountain range in eastern Anatolia where Noah's ark came to rest after the floodwaters receded; the region includes Greater Ararat (5,137m) and Lesser Ararat; the starting point of post-flood civilization (Genesis 8:4)",
-  type: 'valley',
-  books: ['Genesis'],
-  color: '#7d6b4f',
-  fillOpacity: 0.35,
-  geometry: {
-    type: 'Polygon',
-    coordinates: [[
-      // === WESTERN FOOTHILLS ===
-      // West base near Doğubayazıt approach (~44.08°E)
-      [44.08, 39.54],
-      [44.12, 39.60],
-      [44.15, 39.66],
-      [44.18, 39.71],
+    name: 'Mountains of Ararat',
+    description:
+      "The mountain range in eastern Anatolia where Noah's ark came to rest after the floodwaters receded; the region includes Greater Ararat (5,137m) and Lesser Ararat; the starting point of post-flood civilization (Genesis 8:4)",
+    type: 'valley',
+    books: ['Genesis'],
+    color: '#7d6b4f',
+    fillOpacity: 0.35,
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // === WESTERN FOOTHILLS ===
+        // West base near Doğubayazıt approach (~44.08°E)
+        [44.08, 39.54],
+        [44.12, 39.60],
+        [44.15, 39.66],
+        [44.18, 39.71],
 
-      // === NORTHERN SLOPES ===
-      // North flank rises toward Aras River plain — Armenian border ~40.0°N
-      [44.22, 39.76],
-      [44.28, 39.80],
-      [44.35, 39.83],   // Ahora Gorge area on north flank
-      [44.42, 39.84],
-      [44.48, 39.83],
+        // === NORTHERN SLOPES ===
+        // North flank rises toward Aras River plain — Armenian border ~40.0°N
+        [44.22, 39.76],
+        [44.28, 39.80],
+        [44.35, 39.83],   // Ahora Gorge area on north flank
+        [44.42, 39.84],
+        [44.48, 39.83],
 
-      // === NORTHEAST (toward Iğdır plain) ===
-      [44.54, 39.80],
-      [44.60, 39.76],
-      [44.65, 39.72],
+        // === NORTHEAST (toward Iğdır plain) ===
+        [44.54, 39.80],
+        [44.60, 39.76],
+        [44.65, 39.72],
 
-      // === EASTERN FLANK — LESSER ARARAT ===
-      // Lesser Ararat summit ~39.69°N, 44.52°E; eastern base grades toward Iran border (~44.78°E)
-      [44.70, 39.68],
-      [44.74, 39.64],
-      [44.76, 39.59],   // southeastern edge near Iran border
-      [44.75, 39.54],
-      [44.72, 39.49],
+        // === EASTERN FLANK — LESSER ARARAT ===
+        // Lesser Ararat summit ~39.69°N, 44.52°E; eastern base grades toward Iran border (~44.78°E)
+        [44.70, 39.68],
+        [44.74, 39.64],
+        [44.76, 39.59],   // southeastern edge near Iran border
+        [44.75, 39.54],
+        [44.72, 39.49],
 
-      // === SOUTHERN BASE ===
-      // South slope descends to ~39.50°N plateau near Doğubayazıt (~44.1°E)
-      [44.66, 39.47],
-      [44.58, 39.46],
-      [44.50, 39.46],
-      [44.40, 39.47],
-      [44.30, 39.48],
-      [44.20, 39.49],
-      [44.12, 39.50],
-      [44.08, 39.54],  // close polygon
-    ]],
+        // === SOUTHERN BASE ===
+        // South slope descends to ~39.50°N plateau near Doğubayazıt (~44.1°E)
+        [44.66, 39.47],
+        [44.58, 39.46],
+        [44.50, 39.46],
+        [44.40, 39.47],
+        [44.30, 39.48],
+        [44.20, 39.49],
+        [44.12, 39.50],
+        [44.08, 39.54],  // close polygon
+      ]],
+    },
   },
-},
 
-{
-  name: 'Mount Seir',
-  description:
-    "The rugged highland range southeast of the Dead Sea; Esau settled here and it became the territory of Edom; the Horites originally lived in these mountains before Esau's descendants displaced them (Genesis 32:3; 33:14; 36:8–9)",
-  type: 'valley',
-  books: ['Genesis'],
-  color: '#a0522d',
-  fillOpacity: 0.30,
-  geometry: {
-    type: 'Polygon',
-    coordinates: [[
-      // === NORTHERN EDGE ===
-      // Southern end of Dead Sea / Wadi Zered (Zered River) — traditional northern boundary of Edom
-      // Wadi el-Hasa enters the Dead Sea at ~31.25°N, 35.48°E
-      [35.48, 31.25],
-      [35.58, 31.20],
-      [35.68, 31.14],
-      [35.78, 31.06],
+  {
+    name: 'Mount Seir',
+    description:
+      "The rugged highland range southeast of the Dead Sea; Esau settled here and it became the territory of Edom; the Horites originally lived in these mountains before Esau's descendants displaced them (Genesis 32:3; 33:14; 36:8–9)",
+    type: 'valley',
+    books: ['Genesis'],
+    color: '#a0522d',
+    fillOpacity: 0.30,
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // === NORTHERN EDGE ===
+        // Southern end of Dead Sea / Wadi Zered (Zered River) — traditional northern boundary of Edom
+        // Wadi el-Hasa enters the Dead Sea at ~31.25°N, 35.48°E
+        [35.48, 31.25],
+        [35.58, 31.20],
+        [35.68, 31.14],
+        [35.78, 31.06],
 
-      // === EASTERN PLATEAU EDGE ===
-      // The highland scarp drops to the Jordanian desert (Hisma/Wadi Rum plateau)
-      // Bozrah (Buseirah) at ~30.75°N, 35.62°E — the ancient Edomite capital
-      [35.85, 30.98],
-      [35.90, 30.88],
-      [35.92, 30.78],
-      [35.90, 30.68],   // Bozrah / Buseirah area
-      [35.85, 30.55],
+        // === EASTERN PLATEAU EDGE ===
+        // The highland scarp drops to the Jordanian desert (Hisma/Wadi Rum plateau)
+        // Bozrah (Buseirah) at ~30.75°N, 35.62°E — the ancient Edomite capital
+        [35.85, 30.98],
+        [35.90, 30.88],
+        [35.92, 30.78],
+        [35.90, 30.68],   // Bozrah / Buseirah area
+        [35.85, 30.55],
 
-      // Approaching Petra latitude (~30.33°N, 35.44°E) — highland narrows here
-      [35.78, 30.44],
-      [35.70, 30.35],
+        // Approaching Petra latitude (~30.33°N, 35.44°E) — highland narrows here
+        [35.78, 30.44],
+        [35.70, 30.35],
 
-      // === SOUTHEASTERN CORNER ===
-      // Range tapers south toward Gulf of Aqaba / Elath
-      // Eastern edge near 35.60°E descending south
-      [35.60, 30.18],
-      [35.50, 30.02],
-      [35.40, 29.82],
-      [35.28, 29.68],
+        // === SOUTHEASTERN CORNER ===
+        // Range tapers south toward Gulf of Aqaba / Elath
+        // Eastern edge near 35.60°E descending south
+        [35.60, 30.18],
+        [35.50, 30.02],
+        [35.40, 29.82],
+        [35.28, 29.68],
 
-      // === SOUTHERN TIP ===
-      // Range ends near Aqaba / Gulf of Elath (~29.55°N)
-      [35.18, 29.58],
-      [35.08, 29.55],
-      [34.98, 29.55],   // Gulf of Aqaba shoreline vicinity
+        // === SOUTHERN TIP ===
+        // Range ends near Aqaba / Gulf of Elath (~29.55°N)
+        [35.18, 29.58],
+        [35.08, 29.55],
+        [34.98, 29.55],   // Gulf of Aqaba shoreline vicinity
 
-      // === WESTERN EDGE (Arabah escarpment) ===
-      // The western boundary is the abrupt Arabah scarp — Arabah floor at ~35.50°E in north,
-      // narrowing to ~35.00°E near Aqaba. This is the sharpest boundary of the region.
-      [34.90, 29.60],
-      [34.85, 29.72],
-      [34.82, 29.88],
-      [34.85, 30.05],   // Wadi Dana area
-      [34.88, 30.20],
-      [34.92, 30.35],   // Arabah west of Petra
-      [35.00, 30.50],
-      [35.08, 30.65],
-      [35.18, 30.80],
-      [35.28, 30.95],
-      [35.38, 31.08],
-      [35.48, 31.18],
-      [35.48, 31.25],  // close polygon
-    ]],
+        // === WESTERN EDGE (Arabah escarpment) ===
+        // The western boundary is the abrupt Arabah scarp — Arabah floor at ~35.50°E in north,
+        // narrowing to ~35.00°E near Aqaba. This is the sharpest boundary of the region.
+        [34.90, 29.60],
+        [34.85, 29.72],
+        [34.82, 29.88],
+        [34.85, 30.05],   // Wadi Dana area
+        [34.88, 30.20],
+        [34.92, 30.35],   // Arabah west of Petra
+        [35.00, 30.50],
+        [35.08, 30.65],
+        [35.18, 30.80],
+        [35.28, 30.95],
+        [35.38, 31.08],
+        [35.48, 31.18],
+        [35.48, 31.25],  // close polygon
+      ]],
+    },
   },
-},
 
   {
     name: 'Valley of Siddim',
@@ -507,6 +507,91 @@ export const naturalFeatures: NaturalFeature[] = [
         [35.214, 31.789],
         [35.222, 31.793],
         [35.230, 31.800],
+      ]],
+    },
+  },
+
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // EXODUS — Natural Features
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Marah',
+    speakAs: 'MAY-rah',
+    description: 'The first water source after the Red Sea crossing — bitter and undrinkable. The people complained; God showed Moses a piece of wood to throw in, and the water became sweet. God declared: "I am the LORD your healer" (Exodus 15:23–26)',
+    type: 'desert',
+    books: ['Exodus'],
+    color: '#b7950b',
+    fillOpacity: 0.35,
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [32.88, 29.85],
+        [32.96, 29.85],
+        [32.96, 29.78],
+        [32.88, 29.78],
+        [32.88, 29.85],
+      ]],
+    },
+  },
+  {
+    name: 'Elim',
+    speakAs: 'EE-lim',
+    description: 'A beautiful oasis with twelve springs and seventy palm trees where Israel camped after the bitterness of Marah; a rare moment of rest in the wilderness journey (Exodus 15:27)',
+    type: 'desert',
+    books: ['Exodus'],
+    color: '#1e8449',
+    fillOpacity: 0.35,
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [33.10, 29.52],
+        [33.18, 29.52],
+        [33.18, 29.45],
+        [33.10, 29.45],
+        [33.10, 29.52],
+      ]],
+    },
+  },
+  {
+    name: 'Red Sea (Gulf of Suez)',
+    description: 'Traditional view: Israel crossed a northern extension of the Red Sea (Gulf of Suez).',
+    type: 'sea',
+    books: ['Exodus', 'Numbers'],
+    color: '#2e86c1',
+    fillOpacity: 0.30,
+    path: [
+      [30.05, 32.55], // Suez
+      [29.70, 32.60],
+      [29.30, 32.70],
+      [28.90, 32.82],
+      [28.50, 32.95],
+      [28.10, 33.05],
+      [27.70, 33.15],
+      [27.30, 33.25],
+      [26.90, 33.35],
+    ],
+  },
+  {
+    name: 'Wilderness of Sin',
+    speakAs: 'Wilderness of SIN',
+    description: 'The desert between Elim and Sinai where Israel complained of hunger; God sent quail in the evening and manna every morning — bread from heaven — for the entire 40 years of wilderness wandering (Exodus 16:1–36)',
+    type: 'desert',
+    books: ['Exodus', 'Numbers'],
+    color: '#e8c165',
+    fillOpacity: 0.28,
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [32.80, 29.50],
+        [33.50, 29.50],
+        [33.80, 29.00],
+        [33.50, 28.50],
+        [32.80, 28.50],
+        [32.40, 28.80],
+        [32.40, 29.20],
+        [32.80, 29.50],
       ]],
     },
   },

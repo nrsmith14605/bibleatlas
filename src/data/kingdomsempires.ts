@@ -1587,6 +1587,5 @@ export const kingdomsEmpires: KingdomEmpire[] = [
       },
 
     ],
-  }
-  ,
+  },
 ];

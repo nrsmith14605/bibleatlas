@@ -490,7 +490,63 @@ export const cities: City[] = [
   },
 
   // ── EXODUS ────────────────────────────────────────────────────────────────
-
+  // ── EXODUS — Cities / Settlements ────────────────────────────────────────────
+  {
+    name: 'Pithom',
+    speakAs: 'PY-thom',
+    coords: [30.55, 32.55],
+    description: 'One of the store-cities the Israelites were forced to build for Pharaoh under cruel taskmasters (Exodus 1:11)',
+    location: 'probable',
+    books: ['Exodus'],
+  },
+  {
+    name: 'Migdol',
+    speakAs: 'MIG-dol',
+    coords: [30.87, 32.57],
+    description: 'Israel encamped near Migdol before the Red Sea crossing; the LORD told Moses to "turn back and encamp before Pi-hahiroth, between Migdol and the sea" (Exodus 14:2)',
+    location: 'unknown',
+    books: ['Exodus'],
+  },
+  {
+    name: 'Etham',
+    speakAs: 'EE-tham',
+    coords: [30.55, 32.35],
+    description: 'Israel camped at Etham on the edge of the wilderness after leaving Succoth; the LORD went before them in a pillar of cloud by day and fire by night (Exodus 13:20)',
+    location: 'unknown',
+    books: ['Exodus'],
+  },
+  {
+    name: 'Rephidim',
+    speakAs: 'REF-ih-dim',
+    coords: [28.66, 33.62],
+    description: 'Israel camped here and found no water; the people quarreled with Moses; God told Moses to strike the rock at Horeb and water gushed out. Amalek attacked Israel here and was defeated while Moses held up his staff (Exodus 17:1–16)',
+    location: 'probable',
+    books: ['Exodus'],
+  },
+  {
+    name: 'Pi-hahiroth',
+    speakAs: 'py-hah-HY-roth',
+    coords: [30.72, 32.35],
+    description: 'Israel encamped here before the Red Sea crossing, between Migdol and the sea, opposite Baal-zephon. Pharaoh thought Israel was trapped; God parted the sea here (Exodus 14:2–9)',
+    location: 'unknown',
+    books: ['Exodus'],
+  },
+  {
+    name: 'Midian',
+    speakAs: 'MID-ee-an',
+    coords: [28.50, 34.80],
+    description: 'The region where Moses fled after killing the Egyptian. He met Jethro\'s daughters at the well, married Zipporah, and encountered the burning bush while tending Jethro\'s flocks (Exodus 2:15–3:1)',
+    location: 'probable',
+    books: ['Exodus'],
+  },
+  {
+    name: 'Baal-zephon',
+    speakAs: 'BAY-al ZEE-fon',
+    coords: [30.78, 32.30],
+    description: 'A place opposite which Israel encamped before crossing the Red Sea; likely a cultic site or landmark used to identify the crossing location (Exodus 14:2, 9)',
+    location: 'unknown',
+    books: ['Exodus'],
+  },
 
 
 

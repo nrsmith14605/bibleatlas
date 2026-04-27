@@ -972,4 +972,156 @@ export const journeys: Journey[] = [
       },
     ],
   },
+
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // EXODUS JOURNEYS
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: "Moses Flees to Midian",
+    color: '#7f8c8d',
+    people: ['Moses'],
+    books: ['Exodus'],
+    path: [
+      [30.05, 31.25],  // Memphis / Egypt
+      [29.50, 32.50],  // Sinai crossing
+      [28.50, 34.80],  // Midian
+    ],
+    locations: [
+      {
+        name: 'Egypt',
+        coords: [30.05, 31.25],
+        description: 'Moses killed an Egyptian taskmaster who was beating a Hebrew slave. When Pharaoh heard of it he sought to kill Moses, and Moses fled (Exodus 2:12–15)',
+      },
+      {
+        name: 'Midian',
+        coords: [28.50, 34.80],
+        description: 'Moses sat by a well, defended Jethro\'s daughters from aggressive shepherds, was invited to stay, and married Zipporah. He tended Jethro\'s flocks for 40 years (Exodus 2:15–21)',
+      },
+    ],
+  },
+
+  {
+    name: "Moses at Horeb — The Burning Bush",
+    color: '#e67e22',
+    people: ['Moses'],
+    books: ['Exodus'],
+    path: [
+      [28.50, 34.80],  // Midian
+      [28.54, 33.97],  // Horeb / Sinai
+    ],
+    locations: [
+      {
+        name: 'Midian — Jethro\'s Camp',
+        coords: [28.50, 34.80],
+        description: 'Moses was keeping the flock of his father-in-law Jethro, priest of Midian; he led the flock to the far side of the wilderness (Exodus 3:1)',
+      },
+      {
+        name: 'Horeb — Mountain of God',
+        coords: [28.54, 33.97],
+        description: 'The angel of the LORD appeared in a blazing fire from within a bush. God commissioned Moses to return to Egypt, revealed His name "I AM WHO I AM," and promised to bring Israel out with great signs (Exodus 3:2–4:17)',
+      },
+    ],
+  },
+
+  {
+    name: "Moses Returns to Egypt",
+    color: '#c0392b',
+    people: ['Moses'],
+    books: ['Exodus'],
+    path: [
+      [28.54, 33.97],  // Horeb
+      [29.40, 34.10],  // lodging place
+      [30.79, 31.82],  // Egypt / Avaris region
+    ],
+    locations: [
+      {
+        name: 'Horeb — Mountain of God',
+        coords: [28.54, 33.97],
+        description: 'God sent Moses back to Egypt; Moses took his wife Zipporah and sons and set out. God told him Aaron was already coming to meet him (Exodus 4:18–20, 27)',
+      },
+      {
+        name: 'Lodging Place on the Road',
+        coords: [29.40, 34.10],
+        description: 'At a lodging place the LORD sought to kill Moses; Zipporah circumcised their son with a flint and touched his feet with the foreskin, and God relented (Exodus 4:24–26)',
+      },
+      {
+        name: 'Egypt — Goshen',
+        coords: [30.79, 31.82],
+        description: 'Aaron met Moses at the mountain of God; together they gathered the Israelite elders, performed signs, and the people believed and bowed in worship (Exodus 4:27–31)',
+      },
+    ],
+  },
+
+  {
+    name: "The Exodus from Egypt",
+    color: '#27ae60',
+    people: ['Moses'],
+    books: ['Exodus'],
+    path: [
+      [30.80, 32.00],  // Rameses
+      [30.55, 32.35],  // Succoth
+      [30.55, 32.35],  // Etham (close to Succoth)
+      [30.72, 32.35],  // Pi-hahiroth
+      [30.50, 32.54],  // Red Sea crossing (Suez area)
+      [30.65, 32.88],  // Wilderness of Shur / Marah
+      [29.50, 33.10],  // Elim
+      [29.00, 33.38],  // Wilderness of Sin
+      [28.68, 33.62],  // Rephidim
+      [28.56, 33.97],  // Mount Sinai
+    ],
+    locations: [
+      {
+        name: 'Rameses',
+        coords: [30.80, 32.00],
+        description: 'About 600,000 men on foot, plus women and children, set out from Rameses; they had lived in Egypt 430 years to the day. The Israelites left in haste — so fast their dough had no time to rise (Exodus 12:37–41)',
+      },
+      {
+        name: 'Succoth',
+        coords: [30.55, 32.35],
+        description: 'First campsite after leaving Rameses. Israel baked unleavened cakes from the dough they brought out of Egypt. Mixed multitudes joined them with vast flocks and herds (Exodus 12:37–39; 13:20)',
+      },
+      {
+        name: 'Etham — Edge of the Wilderness',
+        coords: [30.50, 32.30],
+        description: 'Israel encamped at Etham on the edge of the wilderness. The LORD went before them in a pillar of cloud by day and a pillar of fire by night to give them light (Exodus 13:20–22)',
+      },
+      {
+        name: 'Pi-hahiroth — Before the Sea',
+        coords: [30.72, 32.35],
+        description: 'God told Moses to turn back and encamp before Pi-hahiroth, between Migdol and the sea. Pharaoh saw Israel "wandering in confusion" and pursued with 600 chariots. Israel was terrified (Exodus 14:2–14)',
+      },
+      {
+        name: 'Red Sea Crossing',
+        coords: [30.50, 32.54],
+        description: 'Moses stretched out his hand; the LORD drove the sea back with a strong east wind all night. Israel crossed on dry ground with walls of water on their right and left. When Pharaoh\'s army followed, Moses stretched his hand again and the sea returned — every chariot and horseman was destroyed (Exodus 14:21–28)',
+      },
+      {
+        name: 'Marah — Bitter Waters',
+        coords: [30.65, 32.88],
+        description: 'Three days into the Wilderness of Shur with no water; Marah\'s water was too bitter to drink. God showed Moses a piece of wood to throw in; the water became sweet. "I am the LORD your healer" (Exodus 15:22–26)',
+      },
+      {
+        name: 'Elim',
+        coords: [29.50, 33.10],
+        description: 'An oasis with twelve springs and seventy palm trees; the whole congregation camped beside the waters (Exodus 15:27)',
+      },
+      {
+        name: 'Wilderness of Sin',
+        coords: [29.00, 33.38],
+        description: 'The congregation grumbled: "If only we had died in Egypt where we sat by pots of meat!" God promised to rain bread from heaven and sent quail that evening; each morning manna appeared like frost on the ground (Exodus 16:1–21)',
+      },
+      {
+        name: 'Rephidim',
+        coords: [28.68, 33.62],
+        description: 'No water again; the people quarreled violently with Moses. God told Moses to strike the rock at Horeb; water gushed out. Then Amalek attacked; Joshua fought while Moses held his staff high — when his arms fell, Amalek prevailed; Aaron and Hur held his arms until sunset and Israel won (Exodus 17:1–16)',
+      },
+      {
+        name: 'Mount Sinai — Wilderness of Sinai',
+        coords: [28.56, 33.97],
+        description: 'Israel camped before the mountain. On the third day the LORD descended in fire, thunder, lightning, and thick cloud; the mountain shook violently. God gave the Ten Commandments and the covenant law. Moses went up into the cloud for 40 days and received detailed instructions for the Tabernacle (Exodus 19–31)',
+      },
+    ],
+  },
 ];
