@@ -2233,4 +2233,80 @@ export const tribes: Tribe[] = [
       ]],
     },
   },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // NUMBERS — Peoples encountered during the Wilderness Period
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Anakites',
+    speakAs: 'AN-ah-kites',
+    description: "The giant descendants of Anak son of Arba who lived in Hebron and the hill country of Canaan. The ten fearful spies reported: 'We seemed like grasshoppers in our own eyes, and we looked the same to them.' Their presence caused Israel's 40-year delay. Caleb later drove them out of Hebron (Numbers 13:22, 28, 33; Joshua 15:14)",
+    color: '#2c3e50',
+    fillOpacity: 0.28,
+    books: ['Numbers', 'Deuteronomy', 'Joshua'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Hebron highland region — Anakite heartland
+        [34.95, 31.70],
+        [35.20, 31.75],
+        [35.45, 31.65],
+        [35.50, 31.40],
+        [35.35, 31.20],
+        [35.05, 31.20],
+        [34.90, 31.38],
+        [34.88, 31.58],
+        [34.95, 31.70],
+      ]],
+    },
+  },
+  {
+    name: 'Kingdom of Bashan (Og)',
+    speakAs: 'BAY-shan Og',
+    description: "The kingdom of Og, last of the Rephaim giants; his iron bed was nine cubits long. God told Moses: 'Do not be afraid of him.' Israel defeated Og, his sons, and his whole army at Edrei. Israel took all 60 of his fortified cities in Bashan including Edrei and Ashtaroth (Numbers 21:33–35; Deuteronomy 3:1–13)",
+    color: '#1a5276',
+    fillOpacity: 0.28,
+    books: ['Numbers', 'Deuteronomy', 'Joshua'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [35.68, 32.88],
+        [36.10, 33.40],
+        [36.60, 33.20],
+        [37.20, 32.80],
+        [37.00, 32.20],
+        [36.60, 32.10],
+        [36.00, 32.20],
+        [35.75, 32.50],
+        [35.68, 32.88],
+      ]],
+    },
+  },
+  {
+    name: 'Kingdom of Sihon (Amorites)',
+    speakAs: 'SY-hon',
+    description: "The Amorite kingdom of Sihon king of Heshbon stretching from the Arnon River to the Jabbok; Sihon himself had taken this land from Moab. He refused Israel passage and attacked at Jahaz; Israel destroyed his army and occupied all his cities from the Arnon to the Jabbok (Numbers 21:21–32; Deuteronomy 2:26–37)",
+    color: '#c0392b',
+    fillOpacity: 0.25,
+    books: ['Numbers', 'Deuteronomy', 'Joshua'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // North: Jabbok River
+        [35.62, 32.18],
+        [36.20, 32.22],
+        [36.50, 32.10],
+        // East: Ammonite border
+        [36.65, 31.75],
+        // South: Arnon River
+        [36.10, 31.70],
+        [35.65, 31.70],
+        // West: Jordan valley
+        [35.55, 31.90],
+        [35.60, 32.10],
+        [35.62, 32.18],
+      ]],
+    },
+  },
 ];

@@ -129,14 +129,29 @@ export const people: Person[] = [
   // ── Exodus / Numbers ──────────────────────────────────────────────────────
   {
     name: 'Moses',
-    description: 'Led Israel out of Egypt; received the Law at Mount Sinai; prophet who spoke with God face to face',
+    description: 'Led Israel out of Egypt; received the Law at Mount Sinai; prophet who spoke with God face to face; died on Mount Nebo in sight of the Promised Land',
     journeys: [
       "Moses Flees to Midian",
       "Moses at Horeb — The Burning Bush",
       "Moses Returns to Egypt",
       "The Exodus from Egypt",
+      "Sinai to Kadesh — The 42 Wilderness Stages",
+      "The Twelve Spies Mission",
+      "Detour Around Edom and Final Approach to Canaan",
     ],
     books: ['Exodus', 'Leviticus', 'Numbers', 'Deuteronomy'],
+  },
+  {
+    name: 'Aaron',
+    speakAs: 'EH-ron',
+    description: "Moses's brother and first high priest of Israel; spoke for Moses before Pharaoh; made the golden calf at Sinai; his sons Nadab and Abihu died offering strange fire; died on Mount Hor at age 123, never entering the Promised Land",
+    journeys: [
+      "Moses Returns to Egypt",
+      "The Exodus from Egypt",
+      "Sinai to Kadesh — The 42 Wilderness Stages",
+      "Detour Around Edom and Final Approach to Canaan",
+    ],
+    books: ['Exodus', 'Leviticus', 'Numbers'],
   },
 
   // ── Joshua ────────────────────────────────────────────────────────────────

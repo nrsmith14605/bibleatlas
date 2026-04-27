@@ -305,4 +305,72 @@ export const landmarks: Landmark[] = [
     location: 'probable',
     books: ['Jonah'],
   },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // NUMBERS
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Tent of Meeting',
+    coords: [28.56, 33.97],
+    description: "The sacred tent outside the camp where God spoke with Moses face to face as a man speaks with his friend; the congregation inquired of the LORD here; it was a forerunner of the Tabernacle (Exodus 33:7–11; Numbers 11:16; 12:4)",
+    location: 'unknown',
+    books: ['Exodus', 'Numbers', 'Deuteronomy'],
+  },
+  {
+    name: 'Tabernacle at Sinai',
+    speakAs: 'Tabernacle at SY-ny',
+    coords: [28.55, 33.96],
+    description: "The portable sanctuary built by Bezalel according to God's exact instructions on Sinai; the cloud of God's glory filled it at its dedication; it traveled with Israel through all 40 years of wilderness wandering (Exodus 40; Numbers 9:15–23)",
+    location: 'unknown',
+    books: ['Exodus', 'Leviticus', 'Numbers'],
+  },
+  {
+    name: 'Bronze Serpent (Nehushtan)',
+    speakAs: 'neh-HUSH-tan',
+    coords: [30.00, 35.10],
+    description: "God told Moses to make a bronze snake and lift it on a pole; anyone bitten by the fiery serpents who looked at it lived. Jesus cited this as a foreshadowing of his own crucifixion: 'As Moses lifted up the serpent in the wilderness, so must the Son of Man be lifted up' (Numbers 21:4–9; John 3:14)",
+    location: 'unknown',
+    books: ['Numbers', '2 Kings', 'John'],
+  },
+  {
+    name: "Graves of Craving (Kibroth-hattaavah)",
+    speakAs: "Graves of Craving KIB-roth hat-TAH-ah-vah",
+    coords: [28.62, 34.02],
+    description: "The site where the people wept for meat; God sent an overwhelming wind of quail, but struck the people with a severe plague while the meat was still between their teeth. They buried those who had craved meat there, calling the place Kibroth-hattaavah (Numbers 11:31–35)",
+    location: 'unknown',
+    books: ['Numbers'],
+  },
+  {
+    name: 'Valley of Eshcol',
+    speakAs: 'Valley of ESH-kol',
+    coords: [31.57, 35.08],
+    description: "The valley near Hebron where the twelve spies cut a cluster of grapes so large it required two men to carry on a pole; they also brought pomegranates and figs; named Eshcol ('cluster') after that grape cluster (Numbers 13:23–24)",
+    location: 'probable',
+    books: ['Numbers'],
+  },
+  {
+    name: 'Mount Hor',
+    speakAs: 'Mount HOR',
+    coords: [30.32, 35.42],
+    description: "On the boundary of Edom; God told Moses that Aaron would die here; Moses, Aaron, and Eleazar went up the mountain, Moses stripped Aaron of his priestly garments and put them on Eleazar, and Aaron died at the top at age 123 (Numbers 20:22–29; 33:37–39)",
+    location: 'probable',
+    books: ['Numbers'],
+  },
+  {
+    name: "Meribah at Kadesh",
+    speakAs: "MER-ih-bah at KAY-desh",
+    coords: [30.64, 34.76],
+    description: "The 'waters of strife' at Kadesh in the Wilderness of Zin; the people quarreled again for water; God told Moses to speak to the rock but Moses struck it twice in anger; water came out abundantly but God said Moses and Aaron would not enter the Promised Land because they did not honor him as holy (Numbers 20:1–13)",
+    location: 'probable',
+    books: ['Numbers'],
+  },
+  {
+    name: "Aaron's Tomb (Mount Hor)",
+    speakAs: "Aaron's Tomb Mount HOR",
+    coords: [30.32, 35.43],
+    description: "Aaron the high priest died and was buried on Mount Hor at the age of 123 years, on the first day of the fifth month in the fortieth year after the Exodus; all Israel mourned for thirty days (Numbers 20:28–29; 33:38–39)",
+    location: 'probable',
+    books: ['Numbers'],
+  },
 ];

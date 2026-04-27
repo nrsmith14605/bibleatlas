@@ -1124,4 +1124,218 @@ export const journeys: Journey[] = [
       },
     ],
   },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // NUMBERS JOURNEYS
+  // ══════════════════════════════════════════════════════════════════════════
+
+  // ── The 42 Stages: Sinai to Kadesh ────────────────────────────────────────
+  {
+    name: "Sinai to Kadesh — The 42 Wilderness Stages",
+    color: '#8e44ad',
+    people: ['Moses'],
+    books: ['Numbers'],
+    path: [
+      [28.56, 33.97],  // Mount Sinai
+      [28.60, 34.00],  // Kibroth-hattaavah
+      [29.30, 34.40],  // Hazeroth
+      [30.40, 34.50],  // Rithmah (Kadesh-barnea region)
+      [30.20, 34.40],  // Rimmon-perez
+      [30.00, 34.30],  // Libnah
+      [29.80, 34.20],  // Rissah
+      [29.60, 34.10],  // Kehelathah
+      [29.40, 33.90],  // Mount Shepher
+      [29.20, 33.80],  // Haradah
+      [29.00, 33.70],  // Makheloth
+      [28.80, 33.60],  // Tahath
+      [28.60, 33.55],  // Terah
+      [28.40, 33.50],  // Mithkah
+      [28.20, 33.60],  // Hashmonah
+      [29.30, 34.60],  // Moseroth
+      [29.50, 34.70],  // Bene-jaakan
+      [29.70, 34.80],  // Hor-haggidgad
+      [29.55, 34.90],  // Jotbathah
+      [29.48, 34.95],  // Abronah
+      [29.55, 34.95],  // Ezion-geber
+      [30.65, 34.77],  // Kadesh (Wilderness of Zin)
+    ],
+    locations: [
+      {
+        name: 'Mount Sinai',
+        coords: [28.56, 33.97],
+        description: "Israel departed from Sinai in the second year, second month, twentieth day; the cloud lifted from the Tabernacle and they set out in order of their tribal standards. The ark of the covenant went before them (Numbers 10:11–13)",
+      },
+      {
+        name: 'Kibroth-hattaavah — Graves of Craving',
+        coords: [28.60, 34.00],
+        description: "The people wept for meat; Moses cried out to God in exhaustion; God appointed 70 elders to share the burden of leadership and sent an overwhelming wind of quail. He struck the people with a plague while the meat was still in their mouths (Numbers 11:1–35)",
+      },
+      {
+        name: 'Hazeroth',
+        coords: [29.30, 34.40],
+        description: "Miriam and Aaron spoke against Moses because of his Cushite wife and because of his unique authority. God struck Miriam with leprosy; she was shut outside the camp seven days and Israel did not move on until she was brought back (Numbers 12:1–16)",
+      },
+      {
+        name: 'Rithmah — Kadesh-barnea Region',
+        coords: [30.40, 34.50],
+        description: "The twelve spies were sent from here into Canaan. They returned after 40 days. Ten brought a fearful report; only Caleb and Joshua believed God could give them the land. The people wept and rebelled; God condemned that generation to 40 years of wandering (Numbers 13–14)",
+      },
+      {
+        name: 'Wilderness Wandering Stages',
+        coords: [29.20, 33.80],
+        description: "The 38 years of wandering through 28 more campsites — Rimmon-perez, Libnah, Rissah, Kehelathah, Mount Shepher, Haradah, Makheloth, Tahath, Terah, Mithkah, Hashmonah, Moseroth, Bene-jaakan, Hor-haggidgad, Jotbathah, Abronah — as the condemned generation died out (Numbers 33:19–34)",
+      },
+      {
+        name: 'Ezion-geber',
+        coords: [29.55, 34.95],
+        description: "Israel camped at the head of the Gulf of Aqaba, at the edge of the wilderness; from here they turned north back toward Kadesh on the way of the Red Sea (Numbers 33:35–36)",
+      },
+      {
+        name: 'Kadesh — Wilderness of Zin',
+        coords: [30.65, 34.77],
+        description: "The second arrival at Kadesh, in the first month of the 40th year. Miriam died and was buried here. The people quarreled again for water at Meribah; Moses struck the rock rather than speaking to it, and God told him he would not enter the Promised Land (Numbers 20:1–13)",
+      },
+    ],
+  },
+
+  // ── The Spy Mission ───────────────────────────────────────────────────────
+  {
+    name: "The Twelve Spies Mission",
+    color: '#2e86c1',
+    people: ['Moses'],
+    books: ['Numbers'],
+    path: [
+      [30.65, 34.77],  // Kadesh-barnea
+      [31.53, 35.10],  // Hebron
+      [31.57, 35.08],  // Valley of Eshcol
+      [33.40, 35.67],  // Rehob
+      [34.40, 36.38],  // Lebo-hamath (northern extreme)
+      [30.65, 34.77],  // Return to Kadesh
+    ],
+    locations: [
+      {
+        name: 'Kadesh-barnea',
+        coords: [30.65, 34.77],
+        description: "Moses sent twelve men — one leader from each tribe — to spy out the land of Canaan. 'Go up through the Negev and into the hill country and see what the land is like and whether the people who live there are strong or weak, few or many' (Numbers 13:1–20)",
+      },
+      {
+        name: 'Hebron — Valley of Eshcol',
+        coords: [31.57, 35.08],
+        description: "The spies reached Hebron where Ahiman, Sheshai, and Talmai — descendants of Anak — lived. In the Valley of Eshcol they cut a single cluster of grapes so large two men carried it on a pole, along with pomegranates and figs (Numbers 13:22–24)",
+      },
+      {
+        name: 'Rehob',
+        coords: [33.40, 35.67],
+        description: "The spies explored the land as far north as Rehob near Lebo-hamath — the entire length of the Promised Land from south to north (Numbers 13:21)",
+      },
+      {
+        name: 'Lebo-hamath — Northern Limit',
+        coords: [34.40, 36.38],
+        description: "The northernmost extent of the spy mission; the entrance of Hamath marked the ideal northern boundary of the Promised Land (Numbers 13:21; 34:8)",
+      },
+      {
+        name: 'Kadesh-barnea — The Report',
+        coords: [30.65, 34.77],
+        description: "After 40 days the spies returned. Ten said: 'We seemed like grasshoppers in our own eyes and we looked the same to them.' Only Caleb and Joshua said: 'We should go up and take possession of the land, for we can certainly do it.' The people wept all night and rebelled (Numbers 13:25–14:10)",
+      },
+    ],
+  },
+
+  // ── The Detour Around Edom and Final Approach ─────────────────────────────
+  {
+    name: "Detour Around Edom and Final Approach to Canaan",
+    color: '#e67e22',
+    people: ['Moses'],
+    books: ['Numbers'],
+    path: [
+      [30.65, 34.77],  // Kadesh
+      [30.32, 35.42],  // Mount Hor (Aaron dies)
+      [30.00, 35.10],  // Zalmonah / bronze serpent route
+      [29.80, 35.30],  // Punon
+      [30.70, 35.60],  // Oboth
+      [31.10, 35.60],  // Iye-abarim
+      [31.47, 35.82],  // Arnon crossing / Aroer
+      [31.55, 35.88],  // Mattanah / Nahaliel / Bamoth
+      [31.79, 35.85],  // Heshbon
+      [31.88, 35.82],  // Jazer
+      [32.62, 36.61],  // Edrei (battle with Og)
+      [31.85, 35.62],  // Plains of Moab / Abel-shittim
+    ],
+    locations: [
+      {
+        name: 'Kadesh',
+        coords: [30.65, 34.77],
+        description: "Moses sent messengers to the king of Edom requesting passage through his territory on the king's highway. Edom refused and came out with a large army. Israel turned away (Numbers 20:14–21)",
+      },
+      {
+        name: 'Mount Hor',
+        coords: [30.32, 35.42],
+        description: "On the boundary of Edom, God told Moses that Aaron would die here and not enter the Promised Land. Moses, Aaron, and Eleazar climbed the mountain; Moses stripped Aaron of his priestly garments and put them on Eleazar; Aaron died there at age 123. All Israel mourned 30 days (Numbers 20:22–29)",
+      },
+      {
+        name: 'Zalmonah to Punon — Bronze Serpent',
+        coords: [30.00, 35.10],
+        description: "Traveling the Way of the Red Sea around Edom, the people grew impatient and spoke against God and Moses. God sent fiery serpents among them; many died. Moses made a bronze serpent and lifted it on a pole — all who looked at it lived (Numbers 21:4–9)",
+      },
+      {
+        name: 'Oboth',
+        coords: [30.70, 35.60],
+        description: "Israel camped here after skirting Edom, now traveling north through the Transjordan toward Moab (Numbers 21:10; 33:43)",
+      },
+      {
+        name: 'Iye-abarim — Border of Moab',
+        coords: [31.10, 35.60],
+        description: "'In the ruins across from Moab, toward the sunrise' — Israel crossed the Zered Valley here, marking the end of 38 years of wandering. The entire generation condemned at Kadesh had died (Numbers 21:11–12; Deuteronomy 2:13–15)",
+      },
+      {
+        name: 'Arnon Canyon — Into Amorite Territory',
+        coords: [31.47, 35.82],
+        description: "Israel crossed the Arnon, the border of Moab and the Amorites. God told Moses not to fear Sihon — He had given Sihon and his land to Israel. Israel sent messengers requesting peaceful passage; Sihon refused and attacked at Jahaz (Numbers 21:13–24)",
+      },
+      {
+        name: 'Heshbon — Sihon Defeated',
+        coords: [31.79, 35.85],
+        description: "Israel struck Sihon and his sons with the edge of the sword and took possession of his land from the Arnon to the Jabbok. Israel occupied all the Amorite cities including Heshbon. The people sang a victory song: 'Come to Heshbon!' (Numbers 21:21–31)",
+      },
+      {
+        name: 'Jazer — Expansion',
+        coords: [31.88, 35.82],
+        description: "Israel sent scouts to Jazer and captured it and the surrounding villages, driving out the Amorites who were there (Numbers 21:32)",
+      },
+      {
+        name: 'Edrei — Og of Bashan Defeated',
+        coords: [32.62, 36.61],
+        description: "Israel turned and went up toward Bashan. Og came out to fight with his whole army. God said: 'Do not be afraid of him.' Israel defeated Og, his sons, and his whole army — not one survivor remained. Israel occupied 60 cities in Bashan (Numbers 21:33–35)",
+      },
+      {
+        name: 'Plains of Moab — Abel-shittim',
+        coords: [31.85, 35.62],
+        description: "Israel camped in the plains of Moab across the Jordan from Jericho; Balak sent for Balaam to curse Israel; Balaam blessed Israel four times instead. Israel committed idolatry at Baal-peor; a second census was taken; Joshua was commissioned as Moses's successor; the boundaries of the Promised Land were announced (Numbers 22–36)",
+      },
+    ],
+  },
+
+  // ── Balaam's Journey ──────────────────────────────────────────────────────
+  {
+    name: "Balaam's Journey from Pethor to Moab",
+    color: '#c0392b',
+    people: [],
+    books: ['Numbers'],
+    path: [
+      [36.00, 36.50],  // Pethor on the Euphrates (Aram-naharaim)
+      [31.82, 35.72],  // Moab / Plains of Moab
+    ],
+    locations: [
+      {
+        name: 'Pethor — on the Euphrates',
+        coords: [36.00, 36.50],
+        description: "Balaam son of Beor lived at Pethor near the Euphrates in his native land of Aram. Balak king of Moab sent elders of Moab and Midian with fees for divination to summon him: 'Come and put a curse on this people for me' (Numbers 22:5–7)",
+      },
+      {
+        name: 'Plains of Moab — Balaam Blesses Israel',
+        coords: [31.82, 35.72],
+        description: "God turned every curse into a blessing. Balaam gave four oracles: 'How can I curse those whom God has not cursed?' and 'A star will come out of Jacob; a scepter will rise out of Israel.' Balak was furious; Balaam returned home (Numbers 22–24)",
+      },
+    ],
+  },
 ];

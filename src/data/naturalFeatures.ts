@@ -596,4 +596,102 @@ export const naturalFeatures: NaturalFeature[] = [
     },
   },
 
+  // ══════════════════════════════════════════════════════════════════════════
+  // NUMBERS — Natural Features
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Arnon River',
+    speakAs: 'AR-non',
+    description: "The deep canyon river flowing west into the Dead Sea; the northern boundary of Moab and the southern boundary of Sihon the Amorite's territory; Israel crossed it heading north (Numbers 21:13–14; Deuteronomy 2:24)",
+    type: 'river',
+    books: ['Numbers', 'Deuteronomy', 'Joshua', 'Judges'],
+    color: '#7d6b4f',
+    path: [
+      // Source east in the Jordanian plateau
+      [31.48, 38.20],
+      [31.50, 37.80],
+      [31.50, 37.40],
+      [31.50, 37.00],
+      [31.50, 36.60],
+      [31.49, 36.20],
+      [31.49, 35.90],
+      // Canyon narrows dramatically — Wadi Mujib
+      [31.48, 35.60],
+      // Mouth at the Dead Sea
+      [31.47, 35.55],
+    ],
+  },
+  {
+    name: 'Valley of Zered',
+    speakAs: 'Valley of ZEE-red',
+    description: "The Wadi Hasa; the border between Moab and Edom; Israel crossed it after 38 years of wandering — crossing it marked the end of the generation condemned at Kadesh (Numbers 21:12; Deuteronomy 2:13–14)",
+    type: 'valley',
+    books: ['Numbers', 'Deuteronomy'],
+    color: '#a0522d',
+    fillOpacity: 0.30,
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [35.48, 31.10],
+        [35.60, 31.08],
+        [35.80, 31.00],
+        [36.00, 30.94],
+        [36.20, 30.88],
+        [36.20, 30.80],
+        [36.00, 30.86],
+        [35.80, 30.92],
+        [35.60, 31.00],
+        [35.48, 31.02],
+        [35.48, 31.10],
+      ]],
+    },
+  },
+  {
+    name: 'Abarim Mountains',
+    speakAs: 'AB-ah-rim',
+    description: "The mountain range in Moab east of the northern Dead Sea including Mount Nebo and Pisgah; the Israelites camped here in their final stages before entering Canaan; Moses climbed these heights and died on Mount Nebo in sight of the Promised Land (Numbers 27:12; 33:47–48; Deuteronomy 32:49)",
+    type: 'valley',
+    books: ['Numbers', 'Deuteronomy', 'Jeremiah'],
+    color: '#7d6b4f',
+    fillOpacity: 0.28,
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [35.58, 31.95],
+        [35.80, 31.90],
+        [35.92, 31.80],
+        [35.90, 31.65],
+        [35.80, 31.55],
+        [35.65, 31.50],
+        [35.50, 31.55],
+        [35.45, 31.68],
+        [35.48, 31.82],
+        [35.58, 31.95],
+      ]],
+    },
+  },
+  {
+    name: 'Wilderness of Moab',
+    description: "The desert region east of the Dead Sea through which Israel traveled; Balak king of Moab saw Israel camped there and sent for Balaam to curse them; Moses gave his final speeches to Israel here (Numbers 21:11; Deuteronomy 2:8)",
+    type: 'desert',
+    books: ['Numbers', 'Deuteronomy'],
+    color: '#c9a030',
+    fillOpacity: 0.22,
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [35.55, 31.70],
+        [36.00, 31.65],
+        [36.30, 31.45],
+        [36.40, 31.20],
+        [36.20, 31.00],
+        [35.80, 30.96],
+        [35.50, 31.05],
+        [35.45, 31.30],
+        [35.50, 31.55],
+        [35.55, 31.70],
+      ]],
+    },
+  },
 ];

@@ -600,4 +600,110 @@ export const regions: Region[] = [
       ]],
     },
   },
+
+  // ── NUMBERS ───────────────────────────────────────────────────────────────
+
+  {
+    name: 'Plains of Moab',
+    description:
+      "The flat lowlands east of the Jordan River and northern Dead Sea opposite Jericho; Israel's final campsite before crossing into Canaan; here Moses gave his final speeches, Joshua was commissioned, the second census was taken, and the land boundaries were defined (Numbers 22:1; 33:48–50; 35:1)",
+    color: '#8e44ad',
+    fillOpacity: 0.22,
+    location: 'confirmed',
+    books: ['Numbers', 'Deuteronomy'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // West: Jordan River east bank opposite Jericho
+        [35.60, 32.00],
+        // North: Wadi Nimrin / Beth-nimrah area
+        [35.70, 31.95],
+        // East: plateau edge
+        [35.90, 31.88],
+        [36.00, 31.75],
+        // Southeast: toward Dibon
+        [35.90, 31.55],
+        // South: northern Dead Sea shore
+        [35.70, 31.42],
+        [35.58, 31.50],
+        // West: Jordan mouth / Dead Sea N tip
+        [35.55, 31.75],
+        [35.58, 31.90],
+        [35.60, 32.00],
+      ]],
+    },
+  },
+  {
+    name: 'Bashan',
+    description:
+      "The fertile highlands of the northern Transjordan east of the Sea of Galilee; kingdom of Og the last of the Rephaim; famous for its fat cattle and strong oaks; Israel conquered it under Moses and it was allotted to the half-tribe of Manasseh (Numbers 21:33–35; 32:33; Deuteronomy 3:1–13)",
+    color: '#1e8449',
+    fillOpacity: 0.22,
+    location: 'confirmed',
+    books: ['Numbers', 'Deuteronomy', 'Joshua', 'Psalms', 'Amos'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // West: eastern shore of Sea of Galilee
+        [35.68, 32.88],
+        // Northwest: Golan / Hermon foothills
+        [35.80, 33.25],
+        [36.10, 33.40],
+        // North: Hauran plain border
+        [36.60, 33.20],
+        [37.00, 33.00],
+        // East: Syrian desert margin
+        [37.30, 32.80],
+        [37.20, 32.40],
+        // Southeast: Yarmuk River
+        [36.80, 32.20],
+        [36.50, 32.30],
+        // South: Yarmuk valley
+        [35.85, 32.60],
+        [35.68, 32.88],
+      ]],
+    },
+  },
+  {
+    name: 'Canaan (Promised Land Borders)',
+    speakAs: 'Canaan',
+    description:
+      "The full extent of the land God instructed Moses to allot to the nine and a half tribes west of the Jordan; bounded from the Wilderness of Zin in the south to Lebo-hamath in the north, and from the Mediterranean in the west to the Jordan River in the east (Numbers 34:1–12)",
+    color: '#27ae60',
+    fillOpacity: 0.14,
+    location: 'confirmed',
+    books: ['Numbers', 'Joshua'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // South: Wilderness of Zin / Akrabbim ascent / Brook of Egypt
+        [34.25, 31.00],
+        [34.90, 30.80],
+        [35.20, 30.65],
+        [35.50, 30.50],
+        // Southeast: Hazar-addar / Azmon / Brook of Egypt
+        [34.50, 30.00],
+        // West: Mediterranean coast
+        [34.25, 31.00],
+        [34.55, 31.70],
+        [34.75, 32.05],
+        // North coast: to the entrance of Hamath
+        [35.10, 33.10],
+        [35.45, 33.50],
+        // Northeast: Zedad / Ziphron / Hazar-enan
+        [36.00, 34.50],
+        [36.60, 34.20],
+        [37.10, 33.50],
+        // East: descends to Sea of Chinnereth
+        [35.85, 32.88],
+        // Along Jordan River south to Dead Sea
+        [35.60, 32.20],
+        [35.52, 31.80],
+        [35.50, 31.10],
+        // South: Brook of Egypt / back to start
+        [34.80, 31.00],
+        [34.25, 31.00],
+      ]],
+    },
+  },
 ];
