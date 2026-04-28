@@ -1052,4 +1052,103 @@ export const regions: Region[] = [
       ]],
     },
   },
+
+  // ── GOSPELS ───────────────────────────────────────────────────────────────
+
+  {
+    name: 'Perea',
+    speakAs: 'peh-REE-ah',
+    description: "The region 'beyond the Jordan' — the eastern bank of the Jordan River south of the Decapolis; Jesus withdrew here after controversy in Jerusalem; the Pharisees tested him about divorce here; many came to him and he healed them; it was the route of his final journey to Jerusalem (Matthew 19:1; Mark 10:1; John 10:40)",
+    color: '#2e86c1',
+    fillOpacity: 0.20,
+    location: 'confirmed',
+    books: ['Matthew', 'Mark', 'Luke', 'John'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Perea — east bank of Jordan, between Jabbok and Arnon
+        [35.58, 32.20],
+        [36.20, 32.15],
+        [36.50, 31.90],
+        [36.40, 31.55],
+        [36.10, 31.40],
+        [35.65, 31.42],
+        [35.55, 31.65],
+        [35.58, 32.00],
+        [35.58, 32.20],
+      ]],
+    },
+  },
+  {
+    name: 'The Decapolis',
+    speakAs: 'deh-KAP-oh-lis',
+    description: "The 'Ten Cities' — a league of Hellenistic cities east and south of the Sea of Galilee; large crowds from the Decapolis followed Jesus; the man freed from a legion of demons became a witness throughout the Decapolis; Jesus traveled through it healing a deaf man (Matthew 4:25; Mark 5:20; 7:31)",
+    color: '#8e44ad',
+    fillOpacity: 0.18,
+    location: 'confirmed',
+    books: ['Matthew', 'Mark'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Decapolis — east of the Sea of Galilee and Jordan
+        [35.65, 33.00],
+        [36.80, 33.00],
+        [37.20, 32.50],
+        [37.00, 31.80],
+        [36.40, 31.40],
+        [35.70, 31.42],
+        [35.62, 31.80],
+        [35.65, 32.50],
+        [35.65, 33.00],
+      ]],
+    },
+  },
+  {
+    name: 'Iturea and Trachonitis',
+    speakAs: 'ih-TYOOR-ee-ah and trak-oh-NY-tis',
+    description: "The northern tetrarchies ruled by Philip son of Herod the Great; Luke situates John the Baptist's ministry precisely: 'in the fifteenth year of the reign of Tiberius Caesar, Philip being tetrarch of Iturea and Trachonitis'; the region lay northeast of Galilee toward Damascus (Luke 3:1)",
+    color: '#7f8c8d',
+    fillOpacity: 0.18,
+    location: 'confirmed',
+    books: ['Luke'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Iturea and Trachonitis — northeast of Galilee
+        [35.70, 33.25],
+        [36.20, 33.55],
+        [36.80, 33.40],
+        [37.00, 33.00],
+        [36.80, 32.60],
+        [36.20, 32.60],
+        [35.80, 32.88],
+        [35.70, 33.25],
+      ]],
+    },
+  },
+  {
+    name: 'Idumea',
+    speakAs: 'id-yoo-MEE-ah',
+    description: "The Greco-Roman name for Edom; the territory south of Judea; Mark notes that great crowds followed Jesus 'from Galilee, Judea, Jerusalem, Idumea, and from beyond the Jordan'; Herod the Great was Idumean by ancestry (Mark 3:8)",
+    color: '#922b21',
+    fillOpacity: 0.18,
+    location: 'confirmed',
+    books: ['Mark'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Idumea — south of Judea, former Edomite territory
+        [34.50, 31.25],
+        [35.15, 31.20],
+        [35.45, 31.00],
+        [35.40, 30.60],
+        [35.10, 30.30],
+        [34.70, 30.10],
+        [34.30, 30.30],
+        [34.20, 30.70],
+        [34.40, 31.10],
+        [34.50, 31.25],
+      ]],
+    },
+  },
 ];

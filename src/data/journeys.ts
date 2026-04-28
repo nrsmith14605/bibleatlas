@@ -1765,4 +1765,280 @@ export const journeys: Journey[] = [
       },
     ],
   },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // GOSPELS JOURNEYS
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: "Flight to Egypt",
+    color: '#c0392b',
+    people: ['Jesus'],
+    books: ['Matthew'],
+    path: [
+      [31.70, 35.21],  // Bethlehem
+      [30.06, 31.25],  // Egypt (Memphis/Nile Delta region)
+    ],
+    locations: [
+      {
+        name: 'Bethlehem',
+        coords: [31.70, 35.21],
+        description: "An angel appeared to Joseph in a dream: 'Rise, take the child and his mother and flee to Egypt, and remain there until I tell you, for Herod is about to search for the child to destroy him.' He rose and departed that night (Matthew 2:13–14)",
+      },
+      {
+        name: 'Egypt',
+        coords: [30.06, 31.25],
+        description: "The holy family remained in Egypt until Herod's death, fulfilling the prophecy: 'Out of Egypt I called my son.' Then the angel appeared again: 'Rise, take the child and his mother and go to the land of Israel, for those who sought the child's life are dead' (Matthew 2:15–21)",
+      },
+    ],
+  },
+
+  {
+    name: "Return from Egypt to Nazareth",
+    color: '#e67e22',
+    people: ['Jesus'],
+    books: ['Matthew'],
+    path: [
+      [30.06, 31.25],  // Egypt
+      [32.70, 35.30],  // Nazareth
+    ],
+    locations: [
+      {
+        name: 'Egypt',
+        coords: [30.06, 31.25],
+        description: "On hearing that Herod had died, Joseph rose and returned to Israel. But when he heard that Archelaus was reigning in Judea in place of his father, he was afraid to go there (Matthew 2:19–22)",
+      },
+      {
+        name: 'Nazareth — Settled',
+        coords: [32.70, 35.30],
+        description: "Warned in a dream, Joseph withdrew to Galilee and settled in a town called Nazareth, fulfilling the prophecy that Jesus would be called a Nazarene. Jesus grew in wisdom, stature, and favor with God and man (Matthew 2:22–23; Luke 2:51–52)",
+      },
+    ],
+  },
+
+  {
+    name: "The Passover Journey — Age Twelve",
+    color: '#8e44ad',
+    people: ['Jesus'],
+    books: ['Luke'],
+    path: [
+      [32.70, 35.30],  // Nazareth
+      [31.78, 35.23],  // Jerusalem
+      [32.70, 35.30],  // Return to Nazareth
+    ],
+    locations: [
+      {
+        name: 'Nazareth — Departure',
+        coords: [32.70, 35.30],
+        description: "Every year Jesus's parents went to Jerusalem for the Feast of the Passover; when he was twelve years old they went as usual (Luke 2:41–42)",
+      },
+      {
+        name: 'Jerusalem — Lost and Found',
+        coords: [31.78, 35.23],
+        description: "After the feast the family departed but Jesus stayed behind in Jerusalem without his parents knowing. After three days of searching they found him in the Temple sitting among the teachers, listening and asking questions. Everyone was amazed at his understanding. 'Did you not know I must be about my Father's business?' (Luke 2:43–49)",
+      },
+      {
+        name: 'Nazareth — Return',
+        coords: [32.70, 35.30],
+        description: "Jesus went down with them to Nazareth and was obedient to them. His mother treasured all these things in her heart. Jesus grew in wisdom and stature and in favor with God and man (Luke 2:51–52)",
+      },
+    ],
+  },
+
+  {
+    name: "Jesus's Baptism and Temptation",
+    color: '#2e86c1',
+    people: ['Jesus'],
+    books: ['Matthew', 'Mark', 'Luke'],
+    path: [
+      [32.70, 35.30],  // Nazareth
+      [31.83, 35.55],  // Jordan River — Baptism site (Bethany beyond the Jordan)
+      [31.50, 35.35],  // Judean Wilderness — Temptation
+    ],
+    locations: [
+      {
+        name: 'Nazareth — Departure to Galilee',
+        coords: [32.70, 35.30],
+        description: "Jesus came from Galilee to the Jordan to be baptized by John. Though John protested — 'I need to be baptized by you, and do you come to me?' — Jesus insisted: 'Let it be so now; it is proper to fulfill all righteousness' (Matthew 3:13–15)",
+      },
+      {
+        name: "Jordan River — Jesus's Baptism",
+        coords: [31.83, 35.55],
+        description: "As Jesus came up from the water, heaven opened and he saw the Spirit of God descending like a dove landing on him. A voice from heaven said: 'This is my Son, whom I love; with him I am well pleased.' John testified: 'I saw the Spirit come down as a dove and remain on him' (Matthew 3:16–17; John 1:32–34)",
+      },
+      {
+        name: 'Judean Wilderness — The Temptation',
+        coords: [31.50, 35.35],
+        description: "Jesus was led by the Spirit into the wilderness to be tempted by the devil; he fasted forty days and forty nights; the devil tempted him with bread, with the Temple pinnacle, and with all the kingdoms of the world. Jesus answered each with Scripture. Angels came and attended him (Matthew 4:1–11; Luke 4:1–13)",
+      },
+    ],
+  },
+
+  {
+    name: "The Galilean Ministry Circuit",
+    color: '#27ae60',
+    people: ['Jesus'],
+    books: ['Matthew', 'Mark', 'Luke'],
+    path: [
+      [32.88, 35.57],  // Capernaum — base
+      [32.90, 35.62],  // Bethsaida
+      [32.92, 35.55],  // Chorazin
+      [32.83, 35.51],  // Magdala
+      [32.80, 35.53],  // Tiberias area
+      [32.75, 35.35],  // Cana
+      [32.60, 35.32],  // Nain
+      [32.88, 35.57],  // Return to Capernaum
+    ],
+    locations: [
+      {
+        name: 'Capernaum — Base of Operations',
+        coords: [32.88, 35.57],
+        description: "Jesus left Nazareth and settled in Capernaum by the sea; from here he called Peter, Andrew, James, and John from their fishing boats; he taught in the synagogue, healed many, and performed some of his greatest miracles (Matthew 4:13; Mark 1:21)",
+      },
+      {
+        name: 'Bethsaida — Home of the Apostles',
+        coords: [32.90, 35.62],
+        description: "Hometown of Peter, Andrew, and Philip; Jesus healed a blind man here in two stages — first the man saw people like trees walking, then clearly; Jesus rebuked Bethsaida for its unbelief despite seeing his miracles (Mark 8:22–26; John 1:44)",
+      },
+      {
+        name: 'Nain — Widow\'s Son Raised',
+        coords: [32.60, 35.32],
+        description: "Jesus encountered a funeral procession coming out of the city gate — a widow's only son; moved with compassion he touched the bier and said 'Young man, I say to you, arise.' The young man sat up and began to speak. 'A great prophet has appeared among us. God has come to help his people' (Luke 7:11–17)",
+      },
+      {
+        name: 'Cana — Water into Wine',
+        coords: [32.75, 35.35],
+        description: "Jesus attended a wedding where the wine ran out; his mother told the servants 'Do whatever he tells you'; he commanded them to fill six stone water jars — 120 gallons — with water; it became the finest wine. This was the first of his signs that revealed his glory (John 2:1–11)",
+      },
+      {
+        name: 'Capernaum — Return',
+        coords: [32.88, 35.57],
+        description: "Jesus returned to his ministry base after circuits through the towns and villages of Galilee, proclaiming the good news of the kingdom and healing every disease and sickness (Matthew 4:23; 9:35)",
+      },
+    ],
+  },
+
+  {
+    name: "The Northern Excursion — Tyre, Sidon, Caesarea Philippi",
+    color: '#8e44ad',
+    people: ['Jesus'],
+    books: ['Matthew', 'Mark'],
+    path: [
+      [32.88, 35.57],  // Capernaum
+      [33.27, 35.20],  // Tyre
+      [33.56, 35.37],  // Sidon
+      [33.25, 35.69],  // Caesarea Philippi
+      [32.88, 35.57],  // Return
+    ],
+    locations: [
+      {
+        name: 'Capernaum — Departure',
+        coords: [32.88, 35.57],
+        description: "Jesus withdrew from the controversies with the Pharisees and traveled north to the region of Tyre and Sidon (Matthew 15:21; Mark 7:24)",
+      },
+      {
+        name: 'Region of Tyre — The Syrophoenician Woman',
+        coords: [33.27, 35.20],
+        description: "Jesus entered a house and wanted no one to know, but a Syrophoenician woman found him and begged him to drive a demon from her daughter. He tested her faith: 'First let the children eat.' She replied: 'Even the dogs under the table eat the children's crumbs.' He commended her great faith and her daughter was healed (Mark 7:24–30; Matthew 15:21–28)",
+      },
+      {
+        name: 'Caesarea Philippi — The Great Confession',
+        coords: [33.25, 35.69],
+        description: "Jesus asked: 'Who do people say the Son of Man is?' Then: 'But who do you say I am?' Peter answered: 'You are the Messiah, the Son of the living God.' Jesus declared he would build his church on this rock, gave Peter the keys of the kingdom, and first announced his coming death and resurrection (Matthew 16:13–28; Mark 8:27–9:1)",
+      },
+    ],
+  },
+
+  {
+    name: "The Final Journey to Jerusalem",
+    color: '#c0392b',
+    people: ['Jesus'],
+    books: ['Matthew', 'Mark', 'Luke', 'John'],
+    path: [
+      [32.88, 35.57],  // Capernaum / Galilee
+      [32.18, 35.72],  // Perea — beyond the Jordan
+      [31.87, 35.46],  // Jericho
+      [31.77, 35.26],  // Bethany
+      [31.78, 35.24],  // Bethphage
+      [31.78, 35.23],  // Jerusalem
+    ],
+    locations: [
+      {
+        name: 'Galilee — Departure',
+        coords: [32.88, 35.57],
+        description: "Jesus resolutely set his face toward Jerusalem. He traveled through Samaria and Galilee, then crossed the Jordan into Perea; large crowds followed him and he taught and healed them (Luke 9:51; Matthew 19:1)",
+      },
+      {
+        name: 'Perea — Beyond the Jordan',
+        coords: [32.18, 35.72],
+        description: "In Perea the Pharisees tested Jesus about divorce; he blessed the children; the rich young ruler came and went away sad; Jesus predicted his death and resurrection for the third time; James and John asked for seats of honor; Jesus taught that the greatest must be servant of all (Matthew 19–20; Mark 10)",
+      },
+      {
+        name: 'Jericho — Bartimaeus and Zacchaeus',
+        coords: [31.87, 35.46],
+        description: "Passing through Jericho, blind Bartimaeus cried out: 'Jesus, Son of David, have mercy on me!' Jesus healed him. Zacchaeus the tax collector climbed a sycamore tree to see Jesus; Jesus called him down and declared: 'Today salvation has come to this house' (Mark 10:46–52; Luke 19:1–10)",
+      },
+      {
+        name: 'Bethany — Lazarus Raised',
+        coords: [31.77, 35.26],
+        description: "Jesus raised Lazarus from the dead after four days in the tomb; he wept at the grave; he commanded the stone removed and called: 'Lazarus, come out!' The dead man came out still bound in grave clothes. This was the climactic sign that sealed the Sanhedrin's decision to kill Jesus (John 11:1–44)",
+      },
+      {
+        name: 'Bethphage — The Triumphal Entry Begins',
+        coords: [31.78, 35.24],
+        description: "Jesus sent two disciples to fetch a colt on which no one had ever sat; he rode into Jerusalem as crowds spread their cloaks and palm branches on the road, crying: 'Hosanna to the Son of David! Blessed is he who comes in the name of the Lord!' The whole city was stirred (Matthew 21:1–11; John 12:12–19)",
+      },
+      {
+        name: 'Jerusalem — The Passion',
+        coords: [31.78, 35.23],
+        description: "Jesus cleansed the Temple, taught in its courts, ate the Last Supper, prayed in Gethsemane, was arrested, tried before Pilate, crucified at Golgotha, and buried in Joseph's tomb. On the third day he rose. He appeared to many disciples over forty days before ascending from the Mount of Olives (Matthew 21–28; Mark 11–16; Luke 19–24; John 12–21)",
+      },
+    ],
+  },
+
+  {
+    name: "The Road to Emmaus",
+    color: '#d35400',
+    people: ['Jesus'],
+    books: ['Luke'],
+    path: [
+      [31.78, 35.23],  // Jerusalem
+      [31.84, 35.08],  // Emmaus
+    ],
+    locations: [
+      {
+        name: 'Jerusalem — The Risen Jesus',
+        coords: [31.78, 35.23],
+        description: "Two disciples left Jerusalem on the day of resurrection, deeply discouraged. A stranger joined them on the road — it was Jesus, but they were kept from recognizing him (Luke 24:13–16)",
+      },
+      {
+        name: 'Emmaus — He Was Made Known',
+        coords: [31.84, 35.08],
+        description: "As they urged the stranger to stay and he reclined at table, he took bread, blessed it, broke it, and gave it to them — their eyes were opened and they recognized him, and he vanished. 'Did not our hearts burn within us while he talked with us on the road, while he opened to us the Scriptures?' They returned at once to Jerusalem (Luke 24:30–35)",
+      },
+    ],
+  },
+
+  {
+    name: "The Resurrection Appearance at the Sea of Galilee",
+    color: '#1e8449',
+    people: ['Jesus'],
+    books: ['John'],
+    path: [
+      [31.78, 35.23],  // Jerusalem
+      [32.83, 35.55],  // Sea of Galilee
+    ],
+    locations: [
+      {
+        name: 'Jerusalem — Ascension Commission',
+        coords: [31.78, 35.23],
+        description: "The risen Jesus instructed his disciples to meet him in Galilee; he appeared to Mary Magdalene and the disciples in the upper room; he breathed on them: 'Receive the Holy Spirit' (Matthew 28:7; John 20:19–22)",
+      },
+      {
+        name: 'Sea of Galilee — The Breakfast on the Shore',
+        coords: [32.83, 35.55],
+        description: "Jesus appeared to seven disciples on the shore after a night of fruitless fishing; he told them to cast the net on the right side — 153 large fish. He had bread and fish ready on a charcoal fire. Three times he asked Peter: 'Do you love me?' Three times he commissioned him: 'Feed my sheep' (John 21:1–19)",
+      },
+    ],
+  },
 ];

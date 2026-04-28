@@ -180,13 +180,17 @@ export const people: Person[] = [
   // ── New Testament ─────────────────────────────────────────────────────────
   {
     name: 'Jesus',
-    description: 'Son of God; born in Bethlehem; raised in Nazareth; ministry in Galilee and Judea; crucified and risen in Jerusalem',
+    description: "Son of God and Son of Man; born in Bethlehem; raised in Nazareth; baptized by John in the Jordan; ministered throughout Galilee and Judea; crucified under Pontius Pilate, buried, and raised on the third day; appeared to many witnesses before ascending from the Mount of Olives",
     journeys: [
       "Flight to Egypt",
-      "Jesus' Baptism and Temptation",
-      "Galilean Ministry",
-      "Journey to Jerusalem",
-      "Passion Week",
+      "Return from Egypt to Nazareth",
+      "The Passover Journey — Age Twelve",
+      "Jesus's Baptism and Temptation",
+      "The Galilean Ministry Circuit",
+      "The Northern Excursion — Tyre, Sidon, Caesarea Philippi",
+      "The Final Journey to Jerusalem",
+      "The Road to Emmaus",
+      "The Resurrection Appearance at the Sea of Galilee",
     ],
     books: ['Matthew', 'Mark', 'Luke', 'John'],
   },

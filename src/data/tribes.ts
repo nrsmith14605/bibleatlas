@@ -2499,4 +2499,52 @@ export const tribes: Tribe[] = [
       ]],
     },
   },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // GOSPELS — Peoples
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Samaritans',
+    speakAs: 'sah-MARE-ih-tans',
+    description: "The people of Samaria descended from the mixed population settled there after the Assyrian conquest of 722 BC; they worshiped at Mount Gerizim rather than Jerusalem and were despised by most Jews; Jesus deliberately crossed through Samaria, spoke with a Samaritan woman at Jacob's Well, and made a Samaritan the hero of a famous parable (John 4:1–42; Luke 10:25–37)",
+    color: '#e67e22',
+    fillOpacity: 0.22,
+    books: ['Matthew', 'Mark', 'Luke', 'John', 'Acts'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Samaria — central region between Galilee and Judea
+        [34.90, 32.50],
+        [35.10, 32.50],
+        [35.52, 32.50],
+        [35.57, 32.20],
+        [35.57, 31.90],
+        [35.22, 31.88],
+        [34.76, 32.05],
+        [34.90, 32.50],
+      ]],
+    },
+  },
+  {
+    name: 'Syrophoenicians',
+    speakAs: 'sy-roh-fih-NEE-shans',
+    description: "The Gentile inhabitants of the Phoenician coastal cities of Tyre and Sidon; a Syrophoenician woman (Matthew calls her Canaanite) crossed cultural barriers to beg Jesus to heal her demon-possessed daughter; her persistent faith moved Jesus to grant her request even beyond his immediate mission to Israel (Mark 7:26; Matthew 15:22)",
+    color: '#9b59b6',
+    fillOpacity: 0.22,
+    books: ['Matthew', 'Mark'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Phoenician coast — Tyre to Sidon
+        [35.20, 33.20],
+        [35.50, 33.65],
+        [35.72, 33.58],
+        [35.78, 33.35],
+        [35.60, 33.10],
+        [35.28, 33.12],
+        [35.20, 33.20],
+      ]],
+    },
+  },
 ];
