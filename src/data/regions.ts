@@ -1151,4 +1151,386 @@ export const regions: Region[] = [
       ]],
     },
   },
+
+  // ── TITUS ────────────────────────────────────────────────────────────────
+  {
+    name: 'Crete',
+    description:
+      "The large Mediterranean island south of Greece; Paul left Titus here to 'straighten out what was left unfinished and appoint elders in every town'; Paul had apparently evangelized the island, possibly during his voyage to Rome (Acts 27) or a later journey; the Cretans are quoted from their own poet as 'always liars, evil beasts, lazy gluttons' (Titus 1:5, 12)",
+    color: '#2471a3',
+    fillOpacity: 0.22,
+    location: 'confirmed',
+    books: ['Titus'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Western tip — Gramvousa / Kissamos
+        [23.55, 35.60],
+        // Northwest coast — Chania
+        [24.02, 35.52],
+        // North central — Rethymno
+        [24.50, 35.38],
+        // North coast — Heraklion
+        [25.14, 35.34],
+        // Northeast — Sitia / Zakros
+        [26.20, 35.20],
+        [26.32, 35.05],
+        // South coast — Libyan Sea
+        [25.85, 34.92],
+        [24.80, 34.95],
+        [23.85, 35.15],
+        // Southwest — Paleochora coast
+        [23.70, 35.22],
+        [23.55, 35.60],
+      ]],
+    },
+  },
+ 
+  // ── GALATIANS ────────────────────────────────────────────────────────────
+  {
+    name: 'Galatia',
+    description:
+      "The Roman province in central Asia Minor encompassing the cities of Antioch in Pisidia, Iconium, Lystra, and Derbe visited by Paul on his first missionary journey; Paul's letter to the Galatians defends justification by faith alone against Judaizers who insisted on circumcision; he had preached the gospel 'because of an illness' on his first visit (Galatians 1:2; 3:1; 4:13–14; Acts 13–14)",
+    color: '#c0392b',
+    fillOpacity: 0.20,
+    location: 'confirmed',
+    books: ['Galatians', '1 Peter', '2 Timothy'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // West — Phrygian border / Afyon area
+        [30.50, 39.00],
+        // Northwest — Eskişehir fringe
+        [31.00, 39.80],
+        // North — Ankara / Ancyra (Galatian capital)
+        [32.50, 40.00],
+        [33.50, 40.00],
+        // Northeast — Pontus border / Çorum area
+        [34.80, 39.50],
+        // East — Cappadocian border / Kayseri approach
+        [35.50, 38.80],
+        // Southeast — Taurus approaches / Konya–Karaman area
+        [33.80, 37.50],
+        // South — Lykaonian plain / Derbe & Laranda
+        [33.40, 37.30],
+        // Southwest — Pisidia / Antioch in Pisidia
+        [31.20, 37.80],
+        // West — back north via Phrygia
+        [30.50, 38.20],
+        [30.50, 39.00],
+      ]],
+    },
+  },
+ 
+  // ── EPHESIANS ────────────────────────────────────────────────────────────
+  {
+    name: 'Province of Asia',
+    description:
+      "The Roman province of Asia covering the western coast of modern Turkey (ancient Lydia, Ionia, and Caria); its capital was Ephesus; Paul spent three years here on his third missionary journey; the letter to the Ephesians was likely a circular letter intended for all the churches of the province; it encompasses cities like Ephesus, Smyrna, Pergamum, Thyatira, Sardis, Philadelphia, and Laodicea — the seven churches of Revelation (Ephesians 1:1; Acts 19; Revelation 1:4)",
+    color: '#8e44ad',
+    fillOpacity: 0.18,
+    location: 'confirmed',
+    books: ['Ephesians', '1 Peter', 'Revelation'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Northwest — Bosphorus / Bithynian border near Bandırma
+        [27.90, 40.35],
+        // North — Mysian coast / Troas area
+        [26.20, 39.80],
+        // West — Aegean coast, Lesbos opposite
+        [26.20, 38.90],
+        // West coast — Izmir (Smyrna) bay
+        [26.90, 38.45],
+        // Southwest — Ionian coast / Miletus
+        [27.32, 37.30],
+        // South — Carian border / Maeander valley
+        [28.50, 37.00],
+        // Southeast — Lydia / Phrygian highlands
+        [29.80, 37.50],
+        // East — Inner Aegean / Hermus valley
+        [29.20, 38.50],
+        // Northeast — Phrygian plateau / Uşak area
+        [29.00, 39.00],
+        [28.50, 39.50],
+        [27.90, 40.35],
+      ]],
+    },
+  },
+ 
+  // ── PHILIPPIANS ──────────────────────────────────────────────────────────
+  {
+    name: 'Macedonia',
+    description:
+      "The Roman province of northern Greece; Paul crossed into Macedonia in response to his vision of 'a man of Macedonia' calling him to 'come over and help us'; he founded churches at Philippi, Thessalonica, and Beroea; the Macedonian churches gave generously to the Jerusalem collection despite their own poverty (Acts 16:9–10; Philippians 4:15; 1 Thessalonians 1:7–8; 2 Corinthians 8:1–5)",
+    color: '#2874a6',
+    fillOpacity: 0.20,
+    location: 'confirmed',
+    books: ['Philippians', '1 Thessalonians', '2 Thessalonians', '1 Timothy', '2 Timothy'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // West — Epirus border / Ohrid Lake area
+        [20.80, 41.20],
+        // Northwest — Albanian border
+        [21.00, 41.60],
+        // North — Serbian / FYROM border ridge
+        [22.50, 42.20],
+        [24.00, 41.80],
+        // Northeast — Thrace / Kavala approach
+        [26.00, 41.50],
+        // East — Nestos River / Thrace border
+        [24.60, 41.00],
+        // Southeast — Thessaloniki coast / Thermaic Gulf
+        [23.00, 40.55],
+        // South — Olympus foothills / Thessaly border
+        [22.50, 40.00],
+        [21.60, 40.20],
+        // Southwest — Pindos mountains
+        [20.80, 40.60],
+        [20.80, 41.20],
+      ]],
+    },
+  },
+ 
+  // ── 1 & 2 THESSALONIANS ──────────────────────────────────────────────────
+  {
+    name: 'Achaia',
+    speakAs: 'ah-KAY-ah',
+    description:
+      "The Roman province of southern Greece encompassing Athens, Corinth, and the Peloponnese; Paul spent 18 months in Corinth (the provincial capital) on his second missionary journey writing 1 and 2 Thessalonians; he tells the Thessalonians that their faith 'has become known everywhere — not only in Macedonia and Achaia' (1 Thessalonians 1:7–8; Acts 18:1–18)",
+    color: '#27ae60',
+    fillOpacity: 0.18,
+    location: 'confirmed',
+    books: ['1 Thessalonians', '2 Thessalonians'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // North — Corinthian isthmus / border with Macedonia at Thermopylae
+        [21.60, 40.00],
+        [22.50, 40.00],
+        [23.20, 40.10],
+        // Northeast — Attica / Athens
+        [24.00, 38.00],
+        // Southeast — Cape Sunion / Aegean
+        [24.00, 37.65],
+        // South — Peloponnese southern tips
+        [22.50, 36.40],
+        [21.40, 36.70],
+        // West — Ionian coast / Patras area
+        [21.70, 38.25],
+        [21.30, 38.90],
+        // Northwest — Epirus border
+        [20.80, 39.20],
+        [21.20, 39.70],
+        [21.60, 40.00],
+      ]],
+    },
+  },
+ 
+  // ── 2 TIMOTHY ────────────────────────────────────────────────────────────
+  {
+    name: 'Dalmatia',
+    speakAs: 'dal-MAY-shuh',
+    description:
+      "The Roman province along the eastern Adriatic coast (modern Croatia and Bosnia); Paul's co-worker Titus had gone to Dalmatia by the time Paul wrote his final letter from Rome; earlier Paul mentions having 'fully proclaimed the gospel from Jerusalem all the way around to Illyricum' (Romans 15:19; 2 Timothy 4:10)",
+    color: '#7f8c8d',
+    fillOpacity: 0.20,
+    location: 'confirmed',
+    books: ['2 Timothy'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // North — Sava River / Slovenia border / Pannonia
+        [14.50, 45.80],
+        [17.00, 45.80],
+        [18.50, 45.20],
+        // East — Dinaric Alps inner range / Bosnia highlands
+        [19.00, 44.80],
+        [18.50, 43.50],
+        [18.00, 42.80],
+        // South — Montenegro / Albania border
+        [19.50, 41.85],
+        // Southeast — Lake Shkodra area
+        [19.60, 42.05],
+        // Adriatic coast south limit
+        [18.50, 42.45],
+        // Adriatic coast north
+        [17.50, 43.00],
+        [16.50, 43.50],
+        [15.50, 44.00],
+        [14.50, 45.10],
+        [14.50, 45.80],
+      ]],
+    },
+  },
+ 
+  // ── HEBREWS ──────────────────────────────────────────────────────────────
+  {
+    name: 'Judea (Hebrews Context)',
+    speakAs: 'joo-DEE-ah',
+    description:
+      "The land of the Jewish people and the physical center of the Old Covenant sacrificial system; the letter to the Hebrews was written to Jewish believers (likely in Judea or Rome) tempted to revert to Judaism; it argues that Jesus is the great High Priest whose once-for-all sacrifice supersedes the entire Levitical system, the Temple, and the Mosaic covenant (Hebrews 1:1–4; 7:1–10:18; 13:24)",
+    color: '#7d3c98',
+    fillOpacity: 0.18,
+    location: 'confirmed',
+    books: ['Hebrews'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [34.76, 32.05],
+        [35.22, 31.88],
+        [35.57, 31.90],
+        [35.57, 31.55],
+        [35.40, 31.10],
+        [34.80, 31.25],
+        [34.47, 31.25],
+        [34.55, 31.67],
+        [34.76, 32.05],
+      ]],
+    },
+  },
+ 
+  // ── 1 PETER ──────────────────────────────────────────────────────────────
+  {
+    name: 'Pontus',
+    speakAs: 'PON-tus',
+    description:
+      "A Roman province along the southern Black Sea coast of Asia Minor (modern northern Turkey); Peter addressed his first letter to the 'exiles scattered throughout Pontus'; Aquila, a Jewish Christian expelled from Rome, was a native of Pontus (1 Peter 1:1; Acts 18:2)",
+    color: '#1a5276',
+    fillOpacity: 0.20,
+    location: 'confirmed',
+    books: ['1 Peter'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // West — Bithynian border / Bolu/Sakarya area
+        [31.00, 41.50],
+        // North coast — Black Sea / Amasra to Trabzon
+        [32.00, 41.90],
+        [34.50, 42.00],
+        [36.50, 41.80],
+        [38.50, 40.80],
+        // East — Rize / Artvin / Armenian border area
+        [40.50, 40.50],
+        // Southeast — Pontus-Galatia highland border
+        [40.00, 39.50],
+        [38.00, 39.80],
+        [36.00, 39.80],
+        // South — inner plateau / Galatian border
+        [34.00, 40.00],
+        [32.00, 40.20],
+        // West — back to Bithynian border
+        [31.00, 40.50],
+        [31.00, 41.50],
+      ]],
+    },
+  },
+  {
+    name: 'Cappadocia',
+    speakAs: 'kap-ah-DOH-shee-ah',
+    description:
+      "A Roman province in central Asia Minor (modern central Turkey) renowned for its volcanic landscape and cave dwellings; Peter addresses his letter to exiles in Cappadocia; Cappadocians were present at Pentecost and heard Peter's sermon; the region later produced major Christian theologians (1 Peter 1:1; Acts 2:9)",
+    color: '#e74c3c',
+    fillOpacity: 0.20,
+    location: 'confirmed',
+    books: ['1 Peter'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // West — Phrygian border / Aksaray area
+        [33.50, 38.80],
+        // Northwest — Galatian border / Kırşehir
+        [34.20, 39.50],
+        [35.00, 39.80],
+        // North — Pontus border / Sivas area
+        [36.50, 39.80],
+        [37.50, 39.50],
+        // East — Armenian border / Erzincan approach
+        [38.50, 39.20],
+        [39.00, 38.50],
+        // Southeast — Taurus range / Adana highland
+        [37.00, 37.50],
+        [36.00, 37.50],
+        // South — Taurus / Cilician gate approach
+        [34.80, 37.80],
+        // Southwest — Konya plain / Lykaonian border
+        [33.50, 37.80],
+        [33.00, 38.20],
+        [33.50, 38.80],
+      ]],
+    },
+  },
+  {
+    name: 'Bithynia',
+    speakAs: 'bih-THIN-ee-ah',
+    description:
+      "A Roman province in northwestern Asia Minor along the Propontis (Sea of Marmara) and Black Sea coast; Peter addresses exiles in Bithynia; the Holy Spirit prevented Paul from entering Bithynia on his second missionary journey; Pliny the Younger wrote to Emperor Trajan from Bithynia c. AD 112 describing Christians filling the province (1 Peter 1:1; Acts 16:7)",
+    color: '#148f77',
+    fillOpacity: 0.20,
+    location: 'confirmed',
+    books: ['1 Peter'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // West — Bosphorus / Istanbul area
+        [28.80, 41.10],
+        [29.00, 41.00],
+        // Northwest — Black Sea coast / Karadeniz Ereğli
+        [31.50, 41.65],
+        // North coast — Black Sea to Zonguldak
+        [32.00, 41.80],
+        // East — Paphlagonian border / Kastamonu
+        [33.80, 41.50],
+        [34.00, 40.80],
+        // South — Galatian border / Bolu–Ankara highlands
+        [32.50, 40.00],
+        [30.50, 39.80],
+        // Southwest — Phrygian approach / Bursa / Nicaea area
+        [29.00, 39.90],
+        [28.30, 40.40],
+        // Propontis coast back west
+        [28.50, 40.80],
+        [28.80, 41.10],
+      ]],
+    },
+  },
+ 
+  // ── 2 PETER ──────────────────────────────────────────────────────────────
+  {
+    name: 'Asia Minor (Peter\'s Audience)',
+    speakAs: 'AY-zhah MY-ner',
+    description:
+      "The broad peninsula of western and central Asia Minor (modern Turkey) to which both of Peter's letters were addressed; the recipients are described as 'God's elect, exiles scattered' throughout Pontus, Galatia, Cappadocia, Asia, and Bithynia — covering the whole of Asia Minor; 2 Peter continues to the same audience (1 Peter 1:1; 2 Peter 3:1)",
+    color: '#d35400',
+    fillOpacity: 0.14,
+    location: 'confirmed',
+    books: ['2 Peter'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // West — Aegean coast
+        [26.20, 38.90],
+        [26.00, 39.80],
+        // Northwest — Bosphorus / Istanbul
+        [29.00, 41.00],
+        [31.00, 41.50],
+        // North — Black Sea coast
+        [36.50, 41.80],
+        [40.50, 40.50],
+        // East — Armenian border
+        [42.00, 39.50],
+        // Southeast — Taurus / Cilicia
+        [37.00, 36.80],
+        [35.00, 36.50],
+        // South — Mediterranean coast back west
+        [32.00, 36.50],
+        [28.80, 36.60],
+        // Southwest — coast to Aegean
+        [27.20, 37.00],
+        [26.20, 38.00],
+        [26.20, 38.90],
+      ]],
+    },
+  },
 ];

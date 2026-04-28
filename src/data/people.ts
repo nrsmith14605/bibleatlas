@@ -198,12 +198,10 @@ export const people: Person[] = [
     name: 'Paul',
     description: 'Apostle to the Gentiles; formerly Saul the persecutor; missionary journeys throughout the Mediterranean',
     journeys: [
-      "Paul's First Missionary Journey",
-      "Paul's Second Missionary Journey",
-      "Paul's Third Missionary Journey",
-      "Paul's Journey to Rome",
+      "Paul: Damascus – Arabia – Damascus – Jerusalem – Syria/Cilicia",
+      "Paul's Departure from Ephesus to Macedonia",
     ],
-    books: ['Acts', 'Romans', '1 Corinthians', '2 Corinthians', 'Galatians', 'Ephesians', 'Philippians'],
+    books: ['Acts', 'Romans', '1 Corinthians', '2 Corinthians', 'Galatians', 'Ephesians', 'Philippians', 'Colossians'],
   },
   // ── Judges ────────────────────────────────────────────────────────────────
 

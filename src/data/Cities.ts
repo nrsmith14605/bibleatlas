@@ -141,7 +141,7 @@ export const cities: City[] = [
     coords: [31.78, 35.23],
     description: "Melchizedek, king and priest, met Abraham here and blessed him after the battle of the kings",
     location: 'confirmed',
-    books: ['Genesis', '2 Samuel', '1 Kings', 'Psalms', 'Isaiah', 'Jeremiah', 'Matthew', 'Luke', 'John', 'Acts'],
+    books: ['Genesis', '2 Samuel', '1 Kings', 'Psalms', 'Isaiah', 'Jeremiah', 'Matthew', 'Luke', 'John', 'Acts', 'Galatians', 'James', 'Hebrews', 'Jude', 'Revelation'],
   },
   {
     name: 'Dan (Laish)',
@@ -155,7 +155,7 @@ export const cities: City[] = [
     coords: [33.51, 36.31],
     description: "Abraham pursued the kings beyond Damascus; Eliezer, his chief servant, was from here",
     location: 'confirmed',
-    books: ['Genesis', 'Isaiah', 'Acts'],
+    books: ['Genesis', 'Isaiah', 'Acts', 'Galatians'],
   },
   {
     name: 'Dothan',
@@ -209,14 +209,14 @@ export const cities: City[] = [
     coords: [31.07, 35.49],
     description: "Lot chose to settle here; God destroyed it with fire and sulfur for its wickedness",
     location: 'unknown',
-    books: ['Genesis'],
+    books: ['Genesis', 'Jude'],
   },
   {
     name: 'Gomorrah',
     coords: [31.00, 35.47],
     description: 'Destroyed alongside Sodom; a byword for divine judgment',
     location: 'unknown',
-    books: ['Genesis'],
+    books: ['Genesis', 'Jude'],
   },
   {
     name: 'Admah',
@@ -563,14 +563,14 @@ export const cities: City[] = [
     coords: [37.91, 22.88],
     description: 'Paul planted a church here and stayed 18 months; recipient of two of his epistles',
     location: 'confirmed',
-    books: ['Acts', '1 Corinthians', '2 Corinthians'],
+    books: ['Acts', '1 Corinthians', '2 Corinthians', '1 Thessalonians', '2 Thessalonians', '2 Timothy'],
   },
   {
     name: 'Ephesus',
     coords: [37.94, 27.34],
     description: "Paul ministered here for three years; one of the seven churches addressed in Revelation",
     location: 'confirmed',
-    books: ['Acts', 'Ephesians', 'Revelation'],
+    books: ['Acts', 'Ephesians', '1 Timothy', '2 Timothy', '1 Corinthians', '1 John', '2 John', '3 John', 'Revelation'],
   },
   {
     name: 'Philippi',
@@ -584,7 +584,7 @@ export const cities: City[] = [
     coords: [41.90, 12.49],
     description: "Capital of the Roman Empire; Paul appealed to Caesar and was imprisoned and martyred here",
     location: 'confirmed',
-    books: ['Acts', 'Romans'],
+    books: ['Acts', 'Romans', 'Philippians', 'Colossians', '2 Timothy', '1 Peter'],
   },
 
   // ── NUMBERS — Cities / Settlements ──────────────────────────────────────
@@ -1510,5 +1510,134 @@ export const cities: City[] = [
     description: "Ancient Phoenician port city; Jesus withdrew here to the region of Tyre and Sidon where a Syrophoenician woman begged him to heal her daughter; he commended her great faith and healed her child (Matthew 15:21; Mark 7:24–30)",
     location: 'confirmed',
     books: ['Matthew', 'Mark', 'Luke'],
+  },
+
+  // ── PHILEMON ─────────────────────────────────────────────────────────────
+  {
+    name: 'Colossae',
+    speakAs: 'koh-LOS-ee',
+    coords: [37.78, 29.12],
+    description: "A city in the Lycus Valley of Asia Minor (modern Turkey); Paul wrote to the church here while imprisoned, also sending the letter to Philemon regarding the runaway slave Onesimus. The church met in Philemon's house (Philemon 1:1–2; Colossians 1:2; 4:9)",
+    location: 'confirmed',
+    books: ['Philemon', 'Colossians'],
+  },
+
+  // ── 1 JOHN, 2 JOHN, 3 JOHN ───────────────────────────────────────────────
+  {
+    name: 'Patmos',
+    speakAs: 'PAT-mos',
+    coords: [37.30, 26.55],
+    description: "A small rocky island in the Aegean Sea off the coast of Asia Minor; the apostle John was exiled here by the Roman Emperor Domitian; he received and recorded the visions of the Book of Revelation here (Revelation 1:9)",
+    location: 'confirmed',
+    books: ['1 John', '2 John', '3 John', 'Revelation'],
+  },
+  // ── TITUS ────────────────────────────────────────────────────────────────
+  {
+    name: 'Nicopolis (Epirus)',
+    speakAs: 'nih-KOP-oh-lis EH-pih-rus',
+    coords: [39.00, 20.73],
+    description: "A Roman city in Epirus on the western coast of Greece (modern Preveza area); Paul told Titus to meet him here for the winter; the most likely of several cities named Nicopolis for Paul's intended destination (Titus 3:12)",
+    location: 'probable',
+    books: ['Titus'],
+  },
+  {
+    name: 'Fair Havens',
+    coords: [34.93, 24.80],
+    description: "A harbor on the southern coast of Crete near the city of Lasea; Paul's ship put in here on the voyage to Rome; Paul warned against sailing on but was overruled; the ship later ran into a catastrophic storm (Acts 27:8–12; Titus context — ministry on Crete)",
+    location: 'confirmed',
+    books: ['Titus'],
+  },
+  {
+    name: 'Lasea',
+    speakAs: 'LAY-see-ah',
+    coords: [34.92, 24.88],
+    description: "A city on the southern coast of Crete near Fair Havens; mentioned in Acts during Paul's voyage to Rome; in the context of Titus it represents Paul's Cretan mission field (Acts 27:8; Titus 1:5)",
+    location: 'confirmed',
+    books: ['Titus'],
+  },
+  // ── GALATIANS ────────────────────────────────────────────────────────────
+  {
+    name: 'Antioch in Pisidia',
+    speakAs: 'AN-tee-ok in pih-SID-ee-ah',
+    coords: [38.30, 31.21],
+    description: "A Roman colony in the province of Galatia in central Asia Minor; Paul and Barnabas preached here on the first missionary journey; Paul's synagogue sermon here is one of the longest recorded in Acts; Jews stirred up persecution and expelled them from the region (Acts 13:14–52; Galatians 4:13–14)",
+    location: 'confirmed',
+    books: ['Galatians'],
+  },
+  {
+    name: 'Iconium',
+    speakAs: 'eye-KOH-nee-um',
+    coords: [37.87, 32.48],
+    description: "A city in the province of Galatia (modern Konya, Turkey); Paul and Barnabas preached here with great effect on the first missionary journey; a plot to stone them forced them to flee to Lystra and Derbe (Acts 13:51–14:6; Galatians 4:13–14)",
+    location: 'confirmed',
+    books: ['Galatians'],
+  },
+  {
+    name: 'Lystra',
+    speakAs: 'LIS-trah',
+    coords: [37.57, 32.23],
+    description: "A city in the province of Galatia; Paul healed a man lame from birth here; the crowd thought he and Barnabas were gods; Paul was stoned and dragged out of the city; Timothy was from Lystra (Acts 14:8–20; 16:1; Galatians 4:13–14)",
+    location: 'confirmed',
+    books: ['Galatians'],
+  },
+  {
+    name: 'Derbe',
+    speakAs: 'DER-bee',
+    coords: [37.36, 33.38],
+    description: "The easternmost city visited on Paul's first missionary journey in the province of Galatia; Paul and Barnabas made many disciples here before retracing their route back through Lystra, Iconium, and Antioch in Pisidia to strengthen the new churches (Acts 14:20–21; Galatians 4:13–14)",
+    location: 'probable',
+    books: ['Galatians'],
+  },
+  {
+    name: 'Arabia (Nabatean)',
+    speakAs: 'ah-RAY-bee-ah nah-buh-TEE-an',
+    coords: [29.52, 35.48],
+    description: "The Nabatean Kingdom southeast of Damascus; after his Damascus road conversion Paul went away into Arabia before returning to Damascus; scholars debate whether he preached there or withdrew for reflection and revelation (Galatians 1:17)",
+    location: 'probable',
+    books: ['Galatians'],
+  },
+  // ── COLOSSIANS ───────────────────────────────────────────────────────────
+  {
+    name: 'Laodicea',
+    speakAs: 'lay-oh-dih-SEE-ah',
+    coords: [37.83, 29.10],
+    description: "A wealthy city in the Lycus Valley near Colossae; Paul's letter to the Colossians was to be exchanged with a letter to Laodicea; later Jesus addressed the church here as 'lukewarm' in the book of Revelation (Colossians 2:1; 4:13–16; Revelation 3:14–22)",
+    location: 'confirmed',
+    books: ['Colossians', 'Revelation'],
+  },
+  {
+    name: 'Hierapolis',
+    speakAs: 'hee-er-AP-oh-lis',
+    coords: [37.92, 29.13],
+    description: "A city in the Lycus Valley just north of Laodicea and near Colossae; Epaphras, who founded the church at Colossae, labored hard for the believers in Hierapolis, Laodicea, and Colossae (Colossians 4:13)",
+    location: 'confirmed',
+    books: ['Colossians'],
+  },
+  // ── 1 & 2 THESSALONIANS ──────────────────────────────────────────────────
+  {
+    name: 'Thessalonica',
+    speakAs: 'thes-ah-loh-NY-kah',
+    coords: [40.64, 22.94],
+    description: "The capital of the Roman province of Macedonia (modern Thessaloniki, Greece); Paul planted a church here on his second missionary journey after preaching in the synagogue for three Sabbaths; a mob drove him out but the church flourished; he later wrote two epistles to encourage them amid persecution (Acts 17:1–9; 1 Thessalonians 1:1; 2 Thessalonians 1:1)",
+    location: 'confirmed',
+    books: ['1 Thessalonians', '2 Thessalonians'],
+  },
+
+  // ── 2 TIMOTHY ────────────────────────────────────────────────────────────
+  {
+    name: 'Troas',
+    speakAs: 'TROH-as',
+    coords: [39.75, 26.15],
+    description: "A port city in northwest Asia Minor near ancient Troy; Paul had a vision here calling him to Macedonia; he also raised Eutychus from the dead here; Paul left his cloak and scrolls here and asked Timothy to bring them to Rome (Acts 16:8–11; 20:6–12; 2 Timothy 4:13)",
+    location: 'confirmed',
+    books: ['2 Timothy'],
+  },
+  {
+    name: 'Miletus',
+    speakAs: 'my-LEE-tus',
+    coords: [37.52, 27.28],
+    description: "A port city on the western coast of Asia Minor south of Ephesus; Paul called the Ephesian elders to meet him here for his farewell address on his third missionary journey; in his final letter Paul mentions leaving Trophimus sick here (Acts 20:15–38; 2 Timothy 4:20)",
+    location: 'confirmed',
+    books: ['2 Timothy'],
   },
 ];

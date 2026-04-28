@@ -2041,4 +2041,367 @@ export const journeys: Journey[] = [
       },
     ],
   },
+  // ── PHILEMON ─────────────────────────────────────────────────────────────
+  {
+    name: "The Return of Onesimus",
+    color: '#8e44ad',
+    people: [],
+    books: ['Philemon', 'Colossians'],
+    path: [
+      [41.90, 12.49],  // Rome — where Paul was imprisoned
+      [37.78, 29.12],  // Colossae — Onesimus's destination
+    ],
+    locations: [
+      {
+        name: 'Rome',
+        coords: [41.90, 12.49],
+        description: "Paul wrote the letter to Philemon from his Roman imprisonment, appealing for him to receive back Onesimus 'no longer as a slave, but better than a slave, as a dear brother.' He offered to repay any debt Onesimus owed (Philemon 1:10–19)",
+      },
+      {
+        name: 'Colossae',
+        coords: [37.78, 29.12],
+        description: "Onesimus, the runaway slave of Philemon, was converted through Paul in Rome and sent back with the letter; Paul sent him alongside Tychicus who carried the letter to the Colossians at the same time (Philemon 1:10–12; Colossians 4:7–9)",
+      },
+    ],
+  },
+ 
+  // ── GALATIANS ────────────────────────────────────────────────────────────
+  {
+    name: "Paul: Damascus – Arabia – Damascus – Jerusalem – Syria/Cilicia",
+    color: '#c0392b',
+    people: ['Paul'],
+    books: ['Galatians'],
+    path: [
+      [33.51, 36.31],  // Damascus
+      [29.52, 35.48],  // Arabia (Nabatean region)
+      [33.51, 36.31],  // Damascus again
+      [31.78, 35.23],  // Jerusalem
+      [36.20, 36.15],  // Antioch (Syria) / Syria-Cilicia region
+    ],
+    locations: [
+      {
+        name: 'Damascus',
+        coords: [33.51, 36.31],
+        description: "After his conversion on the road to Damascus, Paul did not go immediately to Jerusalem or consult human authorities; he went away into Arabia and later returned to Damascus (Galatians 1:17)",
+      },
+      {
+        name: 'Arabia (Nabatean Kingdom)',
+        coords: [29.52, 35.48],
+        description: "Paul went to Arabia — likely the Nabatean kingdom southeast of Damascus — for an unspecified period; scholars debate whether he preached or withdrew for prayer and revelation; the Nabatean governor later sought to arrest him in Damascus (Galatians 1:17; 2 Corinthians 11:32–33)",
+      },
+      {
+        name: 'Damascus — Return',
+        coords: [33.51, 36.31],
+        description: "Paul returned to Damascus after Arabia; he spent three years in total from his conversion before going up to Jerusalem; he escaped Damascus by being lowered in a basket through a window in the wall (Galatians 1:17–18; Acts 9:23–25)",
+      },
+      {
+        name: 'Jerusalem — First Post-Conversion Visit',
+        coords: [31.78, 35.23],
+        description: "Three years after his conversion Paul went to Jerusalem to get acquainted with Peter and stayed with him fifteen days; he saw no other apostle except James the Lord's brother; this brief visit was kept private to avoid those who sought to kill him (Galatians 1:18–20; Acts 9:26–29)",
+      },
+      {
+        name: 'Antioch (Syria) and the Syria-Cilicia Region',
+        coords: [36.20, 36.15],
+        description: "After Jerusalem, Paul went into the regions of Syria and Cilicia; he was personally unknown to the Judean churches who only heard: 'The man who formerly persecuted us is now preaching the faith he once tried to destroy' (Galatians 1:21–24; Acts 9:30)",
+      },
+    ],
+  },
+ 
+  // ── EPHESIANS ────────────────────────────────────────────────────────────
+  {
+    name: "Tychicus Delivers the Letter to the Ephesians",
+    color: '#8e44ad',
+    people: [],
+    books: ['Ephesians', 'Colossians'],
+    path: [
+      [41.90, 12.49],  // Rome
+      [37.94, 27.34],  // Ephesus
+    ],
+    locations: [
+      {
+        name: 'Rome',
+        coords: [41.90, 12.49],
+        description: "Paul wrote Ephesians from his Roman imprisonment (the first, c. AD 60–62); Tychicus, 'a dear brother and faithful servant in the Lord,' was sent to deliver the letter and to tell the recipients all the news of Paul's situation (Ephesians 6:21–22)",
+      },
+      {
+        name: 'Ephesus',
+        coords: [37.94, 27.34],
+        description: "Tychicus delivered Paul's circular letter to the churches of Asia, with Ephesus as the primary (and possibly only named) recipient; some manuscripts lack 'in Ephesus' in Ephesians 1:1, suggesting the letter circulated among multiple churches in the province (Ephesians 1:1; 6:21–22)",
+      },
+    ],
+  },
+ 
+  // ── PHILIPPIANS ──────────────────────────────────────────────────────────
+  {
+    name: "Epaphroditus: Philippi to Rome and Back",
+    color: '#27ae60',
+    people: [],
+    books: ['Philippians'],
+    path: [
+      [41.01, 24.29],  // Philippi
+      [41.90, 12.49],  // Rome
+      [41.01, 24.29],  // Philippi (return)
+    ],
+    locations: [
+      {
+        name: 'Philippi — Departure',
+        coords: [41.01, 24.29],
+        description: "The Philippian church sent Epaphroditus to Rome as their messenger and 'your messenger, whom you sent to take care of my needs'; he carried their financial gift to Paul and was to minister to Paul on their behalf (Philippians 2:25; 4:18)",
+      },
+      {
+        name: 'Rome',
+        coords: [41.90, 12.49],
+        description: "Epaphroditus arrived in Rome and served Paul, but nearly died of an illness; when the Philippians heard he was ill they were distressed; God had mercy on him; Paul sent him back carrying the letter to the Philippians with commendations for his service (Philippians 2:26–30; 4:18)",
+      },
+      {
+        name: 'Philippi — Return',
+        coords: [41.01, 24.29],
+        description: "Epaphroditus returned to Philippi bearing Paul's joyful letter; Paul instructed the church to 'welcome him in the Lord with great joy and honor people like him, because he almost died for the work of Christ' (Philippians 2:29–30; 4:1)",
+      },
+    ],
+  },
+ 
+  // ── COLOSSIANS ───────────────────────────────────────────────────────────
+  {
+    name: "Tychicus and Onesimus: Rome to Colossae",
+    color: '#d35400',
+    people: [],
+    books: ['Colossians', 'Philemon'],
+    path: [
+      [41.90, 12.49],  // Rome
+      [37.78, 29.12],  // Colossae
+    ],
+    locations: [
+      {
+        name: 'Rome',
+        coords: [41.90, 12.49],
+        description: "Paul wrote Colossians from his Roman imprisonment; Tychicus, 'a dear brother, a faithful minister, and fellow servant in the Lord,' was commissioned to carry the letter and deliver all the news; Onesimus, the converted runaway slave of Philemon, traveled with him (Colossians 4:7–9)",
+      },
+      {
+        name: 'Colossae',
+        coords: [37.78, 29.12],
+        description: "Tychicus and Onesimus arrived at Colossae bearing the letter to the Colossians, the letter to Philemon, and probably the circular letter to the Laodiceans; Paul instructed the Colossians to exchange letters with Laodicea and to give Archippus his personal encouragement (Colossians 4:9–17)",
+      },
+    ],
+  },
+ 
+  // ── 1 THESSALONIANS ──────────────────────────────────────────────────────
+  {
+    name: "Timothy's Mission: Corinth to Thessalonica and Back",
+    color: '#2874a6',
+    people: [],
+    books: ['1 Thessalonians'],
+    path: [
+      [37.91, 22.88],  // Corinth
+      [40.64, 22.94],  // Thessalonica
+      [37.91, 22.88],  // Corinth (return)
+    ],
+    locations: [
+      {
+        name: 'Corinth — Departure',
+        coords: [37.91, 22.88],
+        description: "Paul sent Timothy from Corinth (or possibly Athens) to Thessalonica to strengthen and encourage the young church; Paul could bear the uncertainty no longer — 'when I could stand it no longer, I sent to find out about your faith' (1 Thessalonians 3:1–5)",
+      },
+      {
+        name: 'Thessalonica',
+        coords: [40.64, 22.94],
+        description: "Timothy visited the young church at Thessalonica, strengthening them in the faith amid persecution and reporting back on their condition and love (1 Thessalonians 3:2–6)",
+      },
+      {
+        name: 'Corinth — Return',
+        coords: [37.91, 22.88],
+        description: "Timothy brought back to Paul in Corinth 'the good news about your faith and love'; his encouraging report prompted Paul to write 1 Thessalonians with joy and thanksgiving; the letter addresses their questions about those who had died before Christ's return (1 Thessalonians 3:6–4:18)",
+      },
+    ],
+  },
+ 
+  // ── 2 THESSALONIANS ──────────────────────────────────────────────────────
+  {
+    name: "Messenger: Corinth to Thessalonica (2 Thessalonians)",
+    color: '#1a5276',
+    people: [],
+    books: ['2 Thessalonians'],
+    path: [
+      [37.91, 22.88],  // Corinth
+      [40.64, 22.94],  // Thessalonica
+    ],
+    locations: [
+      {
+        name: 'Corinth',
+        coords: [37.91, 22.88],
+        description: "Shortly after sending 1 Thessalonians, Paul wrote a second letter from Corinth; he had received word that the church was troubled — some falsely claiming the Day of the Lord had already come, and others who had stopped working while waiting for Christ's return (2 Thessalonians 1:1; 2:1–3; 3:6–12)",
+      },
+      {
+        name: 'Thessalonica',
+        coords: [40.64, 22.94],
+        description: "The second letter arrived to correct the theological confusion about Christ's return (the 'man of lawlessness' must come first) and to address the problem of idle believers; 'The one who is unwilling to work shall not eat.' Paul greeted the church in his own hand as a mark of authenticity (2 Thessalonians 2:1–12; 3:6–15; 3:17)",
+      },
+    ],
+  },
+ 
+  // ── 1 TIMOTHY ────────────────────────────────────────────────────────────
+  {
+    name: "Paul's Departure from Ephesus to Macedonia",
+    color: '#8e44ad',
+    people: ['Paul'],
+    books: ['1 Timothy'],
+    path: [
+      [37.94, 27.34],  // Ephesus
+      [40.64, 22.94],  // Thessalonica / Macedonia
+    ],
+    locations: [
+      {
+        name: 'Ephesus',
+        coords: [37.94, 27.34],
+        description: "Paul urged Timothy to stay on in Ephesus when he himself went to Macedonia; he left Timothy with the urgent task of commanding certain people not to teach false doctrines and to stop giving attention to myths and endless genealogies (1 Timothy 1:3–7)",
+      },
+      {
+        name: 'Macedonia (Philippi/Thessalonica area)',
+        coords: [40.64, 22.94],
+        description: "Paul traveled to Macedonia, likely visiting the churches at Philippi and Thessalonica; he hoped to return to Ephesus soon but was uncertain of the timing, writing the letter so Timothy would know how to conduct himself in the church 'the pillar and foundation of the truth' if Paul was delayed (1 Timothy 3:14–15)",
+      },
+    ],
+  },
+  {
+    name: "Timothy's Mission: Macedonia to Ephesus",
+    color: '#6c3483',
+    people: [],
+    books: ['1 Timothy'],
+    path: [
+      [40.64, 22.94],  // Macedonia
+      [37.94, 27.34],  // Ephesus
+    ],
+    locations: [
+      {
+        name: 'Macedonia',
+        coords: [40.64, 22.94],
+        description: "Timothy had been traveling with Paul in Macedonia; Paul sent him ahead or left him stationed in Ephesus at the time of writing 1 Timothy from Macedonia (1 Timothy 1:3)",
+      },
+      {
+        name: 'Ephesus',
+        coords: [37.94, 27.34],
+        description: "Timothy remained in Ephesus as Paul's representative — charged with protecting sound doctrine, overseeing church order (elders, deacons, widows), instructing the wealthy, and guarding 'what has been entrusted to your care' against the false teachers (1 Timothy 1:3–7; 6:20)",
+      },
+    ],
+  },
+ 
+  // ── 2 TIMOTHY ────────────────────────────────────────────────────────────
+  {
+    name: "Timothy's Urgent Journey: Ephesus – Troas – Rome",
+    color: '#c0392b',
+    people: [],
+    books: ['2 Timothy'],
+    path: [
+      [37.94, 27.34],  // Ephesus
+      [39.75, 26.15],  // Troas
+      [41.90, 12.49],  // Rome
+    ],
+    locations: [
+      {
+        name: 'Ephesus',
+        coords: [37.94, 27.34],
+        description: "Paul's final letter urges Timothy to leave Ephesus and come to Rome quickly before winter; Paul warns him about Alexander the metalworker who did Paul great harm, and about Demas who deserted him 'because he loved this world' (2 Timothy 4:9–14; 4:21)",
+      },
+      {
+        name: 'Troas',
+        coords: [39.75, 26.15],
+        description: "Paul asks Timothy to come via Troas and pick up the cloak and scrolls — especially the parchments — he left with Carpus there; the route to Rome would naturally pass through Troas for the sea crossing (2 Timothy 4:13)",
+      },
+      {
+        name: 'Rome — Paul\'s Final Imprisonment',
+        coords: [41.90, 12.49],
+        description: "Paul is chained in Rome awaiting execution — 'I am already being poured out like a drink offering, and the time for my departure is near.' He has fought the good fight, finished the race, kept the faith. He longs for Timothy to come before winter; only Luke is with him (2 Timothy 4:6–8; 4:21)",
+      },
+    ],
+  },
+ 
+  // ── HEBREWS ──────────────────────────────────────────────────────────────
+  {
+    name: "Hebrews: Letter from Italy to Judea",
+    color: '#7d6608',
+    people: [],
+    books: ['Hebrews'],
+    path: [
+      [41.90, 12.49],  // Rome / Italy
+      [31.78, 35.23],  // Jerusalem / Judea
+    ],
+    locations: [
+      {
+        name: 'Italy (likely Rome)',
+        coords: [41.90, 12.49],
+        description: "'Those from Italy send you their greetings' (Hebrews 13:24) suggests the letter was written from Italy — most likely Rome; the author mentions Timothy's release and hopes to visit the recipients with him soon (Hebrews 13:23–24)",
+      },
+      {
+        name: 'Jerusalem / Judea',
+        coords: [31.78, 35.23],
+        description: "The letter was addressed to Jewish believers familiar with the Levitical system, likely in Judea or possibly Rome; it warns against 'drifting away' and 'going back' to the old covenant; it exhorts them to hold fast through persecution and suffering (Hebrews 2:1; 10:32–39; 13:13)",
+      },
+    ],
+  },
+ 
+  // ── 1 PETER ──────────────────────────────────────────────────────────────
+  {
+    name: "Silvanus Delivers 1 Peter: Rome to Asia Minor",
+    color: '#2874a6',
+    people: [],
+    books: ['1 Peter'],
+    path: [
+      [41.90, 12.49],   // Rome ('Babylon')
+      [40.50, 40.50],   // Pontus (NE Asia Minor)
+      [38.80, 34.50],   // Galatia / Cappadocia (central)
+      [37.94, 27.34],   // Province of Asia (Ephesus region)
+      [28.80, 41.10],   // Bithynia (NW Asia Minor)
+    ],
+    locations: [
+      {
+        name: "Rome ('Babylon')",
+        coords: [41.90, 12.49],
+        description: "'She who is in Babylon, chosen together with you, sends you her greetings' (1 Peter 5:13) — Babylon is widely understood as a cryptic reference to Rome; Peter wrote from Rome with Silvanus (Silas) as scribe and Mark his spiritual son (1 Peter 5:12–13)",
+      },
+      {
+        name: 'Pontus',
+        coords: [40.50, 40.50],
+        description: "The first of the five provinces listed in Peter's address — 'exiles scattered throughout Pontus'; Aquila the tentmaker was a native of Pontus (1 Peter 1:1; Acts 18:2)",
+      },
+      {
+        name: 'Galatia and Cappadocia',
+        coords: [38.80, 34.50],
+        description: "Two of the five provinces addressed: Galatia in central-north Anatolia and Cappadocia in the central-east highlands; believers here faced 'fiery trials' and were called to stand firm against the devil 'because you know that the family of believers throughout the world is undergoing the same kind of sufferings' (1 Peter 1:1; 4:12; 5:9)",
+      },
+      {
+        name: 'Province of Asia',
+        coords: [37.94, 27.34],
+        description: "The western coastal province — Ephesus, Smyrna, Pergamum, and others; Silvanus carried the letter along the major Roman roads connecting all five provinces (1 Peter 1:1; 5:12)",
+      },
+      {
+        name: 'Bithynia',
+        coords: [28.80, 41.10],
+        description: "The fifth province addressed; Pliny the Younger, governor of Bithynia c. AD 112, famously wrote to Trajan that Christians 'of every age' and 'every social rank' filled the province; Peter's letter helped strengthen them for this later persecution (1 Peter 1:1; Pliny, Ep. 10.96)",
+      },
+    ],
+  },
+ 
+  // ── 2 PETER ──────────────────────────────────────────────────────────────
+  {
+    name: "2 Peter: Letter Delivery Rome to Asia Minor",
+    color: '#1a5276',
+    people: [],
+    books: ['2 Peter'],
+    path: [
+      [41.90, 12.49],  // Rome
+      [37.94, 27.34],  // Asia Minor (same audience as 1 Peter)
+    ],
+    locations: [
+      {
+        name: 'Rome (likely origin)',
+        coords: [41.90, 12.49],
+        description: "'This is now my second letter to you' (2 Peter 3:1) — written to the same recipients as 1 Peter; Peter knows his death is imminent ('I will soon put it aside, as our Lord Jesus Christ has made clear to me') and writes urgently to warn against false teachers and scoffers who deny the return of Christ (2 Peter 1:13–15; 3:1–4)",
+      },
+      {
+        name: 'Asia Minor — Same Audience',
+        coords: [37.94, 27.34],
+        description: "The same scattered communities across Pontus, Galatia, Cappadocia, Asia, and Bithynia received Peter's second letter; he urges them to 'grow in the grace and knowledge of our Lord and Savior Jesus Christ' and warns that false teachers will secretly introduce destructive heresies (2 Peter 1:1; 3:1; 3:18)",
+      },
+    ],
+  },
 ];
