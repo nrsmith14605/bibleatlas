@@ -663,4 +663,126 @@ export const landmarks: Landmark[] = [
     location: 'probable',
     books: ['Matthew', 'Luke'],
   },
+  // ══════════════════════════════════════════════════════════════════════════
+  // RUTH
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'City Gate of Bethlehem',
+    coords: [31.703, 35.207],
+    description: "The gate of Bethlehem where Boaz conducted the legal transaction to redeem Ruth; he gathered ten elders of the city as witnesses; the nearest kinsman-redeemer removed his sandal and handed it to Boaz, transferring the right of redemption — a custom in Israel to confirm any transaction (Ruth 4:1–12)",
+    location: 'probable',
+    books: ['Ruth'],
+  },
+  {
+    name: 'Threshing Floor of Boaz',
+    coords: [31.698, 35.212],
+    description: "The threshing floor outside Bethlehem where Ruth came at night following Naomi's instructions; she uncovered Boaz's feet and lay down; he acknowledged her as a 'woman of noble character' and promised to act as kinsman-redeemer; she stayed until before dawn and returned to Naomi (Ruth 3:1–18)",
+    location: 'unknown',
+    books: ['Ruth'],
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // 1 SAMUEL
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Ebenezer (Stone of Help)',
+    speakAs: 'eb-en-EE-zer',
+    coords: [32.00, 34.97],
+    description: "Samuel set up a stone between Mizpah and Shen after God thundered against the Philistines and routed them; he named it Ebenezer — 'Thus far the LORD has helped us.' The site was also where the Ark had been captured twenty years earlier (1 Samuel 7:12; 4:1)",
+    location: 'probable',
+    books: ['1 Samuel'],
+  },
+  {
+    name: "Dagon's Temple (Ashdod)",
+    speakAs: "DAY-gon's Temple",
+    coords: [31.802, 34.650],
+    description: "The temple of the Philistine god Dagon in Ashdod where the captured Ark of the Covenant was placed; the next morning Dagon had fallen face down before the Ark; the second morning his head and hands were broken off on the threshold; the Philistines never stepped on Dagon's threshold from that day (1 Samuel 5:1–7)",
+    location: 'probable',
+    books: ['1 Samuel'],
+  },
+  {
+    name: 'Oak of Tabor',
+    speakAs: 'Oak of TAY-bor',
+    coords: [31.90, 35.22],
+    description: "The great tree at Tabor between Bethel and Gibeah where Samuel told Saul he would meet three men going up to Bethel; they would give him two loaves of bread; this would be a sign that God had anointed him (1 Samuel 10:3)",
+    location: 'unknown',
+    books: ['1 Samuel'],
+  },
+  {
+    name: 'Cave of Adullam',
+    speakAs: 'Cave of ah-DUL-am',
+    coords: [31.57, 34.97],
+    description: "The cave in the Shephelah where David fled from Saul after leaving Gath; his family and about 400 distressed, indebted, and discontented men gathered to him and he became their leader; Gad the prophet told David to leave and go to Judah (1 Samuel 22:1–5)",
+    location: 'probable',
+    books: ['1 Samuel', '2 Samuel'],
+  },
+  {
+    name: 'Valley of Elah',
+    speakAs: 'Valley of EE-lah',
+    coords: [31.70, 34.97],
+    description: "The valley where the Philistine army faced Israel and Goliath of Gath issued his daily challenge for forty days; David took five smooth stones from the stream in the valley; he ran to meet Goliath and struck him with a single stone from his sling (1 Samuel 17:1–54)",
+    location: 'confirmed',
+    books: ['1 Samuel'],
+  },
+  {
+    name: 'Rock of Sela-hammahlekoth',
+    speakAs: 'SEE-lah ham-mah-LEE-koth',
+    coords: [31.43, 35.38],
+    description: "The rock in the wilderness of Maon called 'Rock of Parting' or 'Slippery Rock'; where Saul and his army were on one side and David on the other; a messenger arrived calling Saul away to fight the Philistines — and David escaped (1 Samuel 23:26–28)",
+    location: 'unknown',
+    books: ['1 Samuel'],
+  },
+  {
+    name: 'Mount Gilboa',
+    speakAs: 'Mount gil-BOH-ah',
+    coords: [32.50, 35.40],
+    description: "The mountain where Saul and his sons fell in battle against the Philistines; Saul was badly wounded and fell on his own sword; Jonathan, Abinadab, and Malki-shua died there; David later cursed the mountain in his lament: 'O mountains of Gilboa, may you have neither dew nor rain' (1 Samuel 31:1–6; 2 Samuel 1:21)",
+    location: 'confirmed',
+    books: ['1 Samuel', '2 Samuel'],
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // 2 SAMUEL
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Pool of Gibeon',
+    coords: [31.843, 35.178],
+    description: "The large circular pool at Gibeon where Abner son of Ner and Joab son of Zeruiah met with their men; twelve men from each side fought and all twenty-four died together; a fierce battle followed in which Joab's brother Asahel was killed by Abner (2 Samuel 2:12–17)",
+    location: 'confirmed',
+    books: ['2 Samuel'],
+  },
+  {
+    name: 'Threshing Floor of Nacon',
+    speakAs: 'Threshing Floor of NAY-kon',
+    coords: [31.82, 35.14],
+    description: "Where the oxen stumbled as they were carrying the Ark on a cart; Uzzah reached out to steady the Ark and God struck him dead; David was angry and afraid and left the Ark at the house of Obed-edom for three months (2 Samuel 6:6–8)",
+    location: 'unknown',
+    books: ['2 Samuel'],
+  },
+  {
+    name: 'House of Obed-edom',
+    speakAs: 'OH-bed EE-dom',
+    coords: [31.80, 35.12],
+    description: "The house of Obed-edom the Gittite where the Ark of the LORD remained for three months; God blessed the household of Obed-edom and all that belonged to him; when David heard this he went and brought the Ark up to Jerusalem with dancing and celebration (2 Samuel 6:10–12)",
+    location: 'unknown',
+    books: ['2 Samuel'],
+  },
+  {
+    name: 'The City of David (Zion)',
+    coords: [31.775, 35.232],
+    description: "The Jebusite stronghold of Zion captured by David; he called it the City of David and built up the area around it from the Millo inward; it became the political and spiritual heart of Israel; the Ark was eventually brought here (2 Samuel 5:7–9; 6:12–19)",
+    location: 'confirmed',
+    books: ['2 Samuel'],
+  },
+  {
+    name: "Threshing Floor of Araunah the Jebusite",
+    speakAs: "Threshing Floor of ah-RAW-nah",
+    coords: [31.778, 35.235],
+    description: "The threshing floor on Mount Moriah purchased by David from Araunah the Jebusite for fifty shekels of silver; David built an altar here and offered burnt offerings after the angel of the LORD stopped the plague that killed 70,000 Israelites; this site later became the foundation of Solomon's Temple (2 Samuel 24:18–25; 2 Chronicles 3:1)",
+    location: 'confirmed',
+    books: ['2 Samuel'],
+  },
 ];

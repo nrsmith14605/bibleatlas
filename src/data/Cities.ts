@@ -1640,4 +1640,106 @@ export const cities: City[] = [
     location: 'confirmed',
     books: ['2 Timothy'],
   },
+
+  // ── 1 SAMUEL — Cities / Settlements ──────────────────────────────────────
+
+  {
+    name: 'Ramah',
+    speakAs: 'RAY-mah',
+    coords: [31.92, 35.18],
+    description: "Samuel's hometown and burial place; he judged Israel here and built an altar to the LORD; Saul came here to seek counsel; the voice of weeping in Ramah is cited by Jeremiah and Matthew at the slaughter of the innocents (1 Samuel 1:19; 7:17; 8:4; 25:1; Jeremiah 31:15; Matthew 2:18)",
+    location: 'confirmed',
+    books: ['1 Samuel', 'Jeremiah'],
+  },
+  {
+    name: 'Kiriath-jearim',
+    speakAs: 'KEER-ee-ath JAY-ah-rim',
+    coords: [31.80, 35.10],
+    description: "The Ark of the Covenant rested here in the house of Abinadab for twenty years after being returned by the Philistines until David brought it to Jerusalem (1 Samuel 7:1–2; 2 Samuel 6:2–4)",
+    location: 'confirmed',
+    books: ['1 Samuel', '2 Samuel'],
+  },
+  {
+    name: 'Mizpah (Benjamin)',
+    speakAs: 'MIZ-pah',
+    coords: [31.88, 35.18],
+    description: "A major assembly site for all Israel in the hill country of Benjamin; Samuel called Israel here to renew the covenant and anoint Saul as king; the Philistines attacked while Israel was gathered here (1 Samuel 7:5–12; 10:17–25)",
+    location: 'confirmed',
+    books: ['Judges', '1 Samuel'],
+  },
+  {
+    name: 'Nob',
+    coords: [31.80, 35.24],
+    description: "The city of priests north of Jerusalem; David fled here from Saul and received the showbread and Goliath's sword from the priest Ahimelech; when Saul learned of this he massacred the entire priestly city — 85 priests and their families (1 Samuel 21:1–9; 22:9–19)",
+    location: 'probable',
+    books: ['1 Samuel'],
+  },
+  {
+    name: 'Keilah',
+    speakAs: 'KEE-lah',
+    coords: [31.52, 34.96],
+    description: "A fortified city in the Shephelah; David rescued it from a Philistine raid but the LORD told him its inhabitants would hand him over to Saul; David and his men — about 600 — escaped before Saul arrived (1 Samuel 23:1–13)",
+    location: 'confirmed',
+    books: ['1 Samuel'],
+  },
+  {
+    name: 'Ziklag',
+    speakAs: 'ZIK-lag',
+    coords: [31.13, 34.65],
+    description: "The city given to David by Achish king of Gath as a base during his exile; the Amalekites raided and burned it while David was away; David recovered his family and all the plunder by pursuing the raiders to the Besor Ravine (1 Samuel 27:6; 30:1–20; 2 Samuel 1:1)",
+    location: 'probable',
+    books: ['1 Samuel', '2 Samuel'],
+  },
+  {
+    name: 'Endor',
+    speakAs: 'EN-dor',
+    coords: [32.65, 35.38],
+    description: "The village where Saul, disguised, visited a medium on the eve of his final battle; she conjured the spirit of Samuel who announced Saul's doom: 'Tomorrow you and your sons will be with me' (1 Samuel 28:7–19)",
+    location: 'probable',
+    books: ['1 Samuel'],
+  },
+
+  // ── 2 SAMUEL — Cities / Settlements ──────────────────────────────────────
+
+  {
+    name: 'Mahanaim',
+    speakAs: 'mah-hah-NAY-im',
+    coords: [32.30, 35.75],
+    description: "The city east of the Jordan where Ish-bosheth son of Saul was briefly made king; later David fled here when Absalom seized Jerusalem; the city supplied David with provisions; David received news of Absalom's death here (2 Samuel 2:8–9; 17:24–27; 18:24–33)",
+    location: 'probable',
+    books: ['Genesis', '2 Samuel'],
+  },
+  {
+    name: 'Rabbah',
+    speakAs: 'RAB-ah',
+    coords: [31.95, 35.93],
+    description: "The royal city of Ammon (modern Amman, Jordan); Joab besieged it while David remained in Jerusalem; it was here that Uriah the Hittite was placed in the forefront of battle and killed at David's command; David later came and captured the city (2 Samuel 11:1; 12:26–31)",
+    location: 'confirmed',
+    books: ['2 Samuel'],
+  },
+  {
+    name: 'Bahurim',
+    speakAs: 'bah-HYOO-rim',
+    coords: [31.79, 35.28],
+    description: "A village on the road east from Jerusalem; Shimei son of Gera came out here cursing David as he fled from Absalom; he threw stones and hurled abuse; David restrained his men from killing Shimei; on David's return Shimei came here to meet him and plead for mercy (2 Samuel 16:5–13; 19:16–23)",
+    location: 'probable',
+    books: ['2 Samuel'],
+  },
+  {
+    name: 'Abel Beth-maakah',
+    speakAs: 'AY-bel Beth MAY-ah-kah',
+    coords: [33.25, 35.57],
+    description: "A fortified city in the far north of Israel; Sheba son of Bichri fled here after his failed revolt against David; Joab besieged the city and a wise woman negotiated the throwing over of Sheba's head, ending the siege (2 Samuel 20:14–22)",
+    location: 'confirmed',
+    books: ['2 Samuel'],
+  },
+  {
+    name: 'Gath',
+    speakAs: 'GATH',
+    coords: [31.70, 34.84],
+    description: "One of the five major Philistine cities and hometown of Goliath; David fled here and lived under King Achish of Gath during his time of refuge from Saul; later served as a Philistine stronghold during repeated conflicts with Israel (1 Samuel 17:4; 21:10–15; 27:2–4; 2 Samuel 1:20)",
+    location: 'confirmed',
+    books: ['1 Samuel', '2 Samuel'],
+  },
+
 ];

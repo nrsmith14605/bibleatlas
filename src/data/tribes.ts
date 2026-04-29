@@ -83,7 +83,7 @@ export const tribes: Tribe[] = [
     description: "Descendants of Lot's son Moab, born of incest after the destruction of Sodom (Gen 19:37). They settled east of the Dead Sea on the plateau above the Arnon. Ruth was a Moabite. Balak king of Moab hired Balaam to curse Israel.",
     color: '#8e44ad',
     fillOpacity: 0.3,
-    books: ['Genesis', 'Numbers', 'Deuteronomy', 'Judges', 'Ruth', '1 Samuel', '2 Kings', 'Isaiah'],
+    books: ['Genesis', 'Numbers', 'Deuteronomy', 'Judges', 'Ruth', '1 Samuel', '2 Samuel', '2 Kings', 'Isaiah'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -793,7 +793,7 @@ export const tribes: Tribe[] = [
     description: "Fierce desert nomads of the Sinai and Negev; descendants of Esau's grandson Amalek (Gen 36:12, 16). Though they appear in Genesis 14:7, they are formally introduced as Amalek son of Eliphaz in Gen 36. First to attack Israel in the wilderness. Saul's failure to destroy them led to his downfall. (Exod 17:8; 1 Sam 15)",
     color: '#c0392b',
     fillOpacity: 0.28,
-    books: ['Genesis', 'Exodus', 'Numbers', 'Deuteronomy', 'Judges', '1 Samuel'],
+    books: ['Genesis', 'Exodus', 'Numbers', 'Deuteronomy', 'Judges', '1 Samuel', '2 Samuel'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -2544,6 +2544,30 @@ export const tribes: Tribe[] = [
         [35.60, 33.10],
         [35.28, 33.12],
         [35.20, 33.20],
+      ]],
+    },
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // 2 SAMUEL — Peoples
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Cherethites and Pelethites',
+    speakAs: 'KEHR-eh-thites and PEL-eh-thites',
+    description: "David's elite personal bodyguard commanded by Benaiah son of Jehoiada; likely Aegean mercenaries — the Cherethites possibly from Crete and the Pelethites related to the Philistines; they remained loyal to David through Absalom's revolt and Adonijah's attempted coup; they escorted Solomon to his coronation (2 Samuel 8:18; 15:18; 20:7; 1 Kings 1:38)",
+    color: '#2c3e50',
+    fillOpacity: 0.25,
+    books: ['2 Samuel', '1 Kings'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Mercenary guard — stationed in Jerusalem / City of David
+        [35.22, 31.82],
+        [35.26, 31.82],
+        [35.26, 31.76],
+        [35.22, 31.76],
+        [35.22, 31.82],
       ]],
     },
   },

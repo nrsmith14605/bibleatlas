@@ -245,7 +245,21 @@ export const people: Person[] = [
     name: 'Samson',
     speakAs: 'SAM-son',
     description: "A Nazirite from birth from the tribe of Dan; possessed supernatural strength; killed a lion with his bare hands; slew 1,000 Philistines with a donkey's jawbone; carried Gaza's gate to a hilltop; was betrayed by Delilah who discovered his strength lay in his uncut hair; blinded and imprisoned; died destroying the Temple of Dagon, killing more at his death than in his life",
-    journeys: [],
+    journeys: [
+      "Samson's Movements in Philistine Territory",
+    ],
     books: ['Judges'],
   },
+  {
+    name: 'David',
+    speakAs: 'David',
+    description: "King of Israel; son of Jesse from the tribe of Judah; anointed by Samuel; defeated Goliath with a sling and stone; became king in Hebron and later in Jerusalem; established the Davidic dynasty; wrote many psalms",
+    journeys: [
+      "David's Early Life in Bethlehem",
+      "David's Rise to Power",
+      "David's Reign as King",
+      "David's Later Years and Legacy"
+    ],
+    books: ['1 Samuel', '2 Samuel', '1 Kings', '2 Kings', 'Psalms'],
+  }
 ];

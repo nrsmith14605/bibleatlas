@@ -33,7 +33,7 @@ export const naturalFeatures: NaturalFeature[] = [
     name: 'Jordan River',
     description: 'Central river of Canaan; Israel crossed here entering the Promised Land; Jesus baptized here',
     type: 'river',
-    books: ['Genesis', 'Numbers', 'Deuteronomy', 'Joshua', 'Judges', '2 Kings', 'Matthew', 'Mark', 'Luke', 'John'],
+    books: ['Genesis', 'Numbers', 'Deuteronomy', 'Joshua', 'Judges', '2 Samuel', '2 Kings', 'Matthew', 'Mark', 'Luke', 'John'],
     color: '#1e8449',
     geoJsonName: 'Jordan',
   },

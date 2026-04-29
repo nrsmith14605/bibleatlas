@@ -1738,6 +1738,48 @@ export const journeys: Journey[] = [
   },
 
   {
+    name: "Samson's Movements in Philistine Territory",
+    color: '#8e44ad',
+    people: ['Samson'],
+    books: ['Judges'],
+    path: [
+      [31.75, 34.97],  // Zorah (home region)
+      [31.73, 34.94],  // Timnah (first Philistine conflict + marriage)
+      [31.70, 34.95],  // Valley of Sorek (Delilah)
+      [31.52, 34.47],  // Gaza (captivity and gate incident)
+      [31.60, 34.98],  // Lehi (Jawbone victory site)
+    ],
+    locations: [
+      {
+        name: 'Zorah — Samson’s Birthplace',
+        coords: [31.75, 34.97],
+        description: "Samson was born in Zorah in the hill country of Dan. The angel of the LORD appeared here announcing his birth and Nazirite calling (Judges 13:2–25).",
+      },
+      {
+        name: 'Timnah — Philistine Marriage Conflict',
+        coords: [31.73, 34.94],
+        description: "Samson went down to Timnah and fell in love with a Philistine woman, beginning his repeated conflicts with the Philistines (Judges 14:1–20).",
+      },
+      {
+        name: 'Valley of Sorek — Delilah',
+        coords: [31.70, 34.95],
+        description: "Samson loved Delilah here. She was bribed by the Philistine rulers to discover the secret of his strength, leading to his capture (Judges 16:4–20).",
+      },
+      {
+        name: 'Gaza — Capture and Temple of Dagon',
+        coords: [31.52, 34.47],
+        description: "Samson was captured in Gaza after Delilah betrayed him. His final act destroyed the temple of Dagon, killing many Philistines and himself (Judges 16:21–30).",
+      },
+      {
+        name: 'Lehi — Jawbone Victory',
+        coords: [31.60, 34.98],
+        description: "At Lehi, Samson defeated a thousand Philistines using the jawbone of a donkey; God miraculously provided water afterward (Judges 15:14–19).",
+      },
+    ],
+  },
+
+
+  {
     name: "The Levite's Journey and the Outrage at Gibeah",
     color: '#c0392b',
     people: [],
@@ -2064,7 +2106,7 @@ export const journeys: Journey[] = [
       },
     ],
   },
- 
+
   // ── GALATIANS ────────────────────────────────────────────────────────────
   {
     name: "Paul: Damascus – Arabia – Damascus – Jerusalem – Syria/Cilicia",
@@ -2106,7 +2148,7 @@ export const journeys: Journey[] = [
       },
     ],
   },
- 
+
   // ── EPHESIANS ────────────────────────────────────────────────────────────
   {
     name: "Tychicus Delivers the Letter to the Ephesians",
@@ -2130,7 +2172,7 @@ export const journeys: Journey[] = [
       },
     ],
   },
- 
+
   // ── PHILIPPIANS ──────────────────────────────────────────────────────────
   {
     name: "Epaphroditus: Philippi to Rome and Back",
@@ -2160,7 +2202,7 @@ export const journeys: Journey[] = [
       },
     ],
   },
- 
+
   // ── COLOSSIANS ───────────────────────────────────────────────────────────
   {
     name: "Tychicus and Onesimus: Rome to Colossae",
@@ -2184,7 +2226,7 @@ export const journeys: Journey[] = [
       },
     ],
   },
- 
+
   // ── 1 THESSALONIANS ──────────────────────────────────────────────────────
   {
     name: "Timothy's Mission: Corinth to Thessalonica and Back",
@@ -2214,7 +2256,7 @@ export const journeys: Journey[] = [
       },
     ],
   },
- 
+
   // ── 2 THESSALONIANS ──────────────────────────────────────────────────────
   {
     name: "Messenger: Corinth to Thessalonica (2 Thessalonians)",
@@ -2238,7 +2280,7 @@ export const journeys: Journey[] = [
       },
     ],
   },
- 
+
   // ── 1 TIMOTHY ────────────────────────────────────────────────────────────
   {
     name: "Paul's Departure from Ephesus to Macedonia",
@@ -2284,7 +2326,7 @@ export const journeys: Journey[] = [
       },
     ],
   },
- 
+
   // ── 2 TIMOTHY ────────────────────────────────────────────────────────────
   {
     name: "Timothy's Urgent Journey: Ephesus – Troas – Rome",
@@ -2314,7 +2356,7 @@ export const journeys: Journey[] = [
       },
     ],
   },
- 
+
   // ── HEBREWS ──────────────────────────────────────────────────────────────
   {
     name: "Hebrews: Letter from Italy to Judea",
@@ -2338,7 +2380,7 @@ export const journeys: Journey[] = [
       },
     ],
   },
- 
+
   // ── 1 PETER ──────────────────────────────────────────────────────────────
   {
     name: "Silvanus Delivers 1 Peter: Rome to Asia Minor",
@@ -2380,7 +2422,7 @@ export const journeys: Journey[] = [
       },
     ],
   },
- 
+
   // ── 2 PETER ──────────────────────────────────────────────────────────────
   {
     name: "2 Peter: Letter Delivery Rome to Asia Minor",
@@ -2401,6 +2443,327 @@ export const journeys: Journey[] = [
         name: 'Asia Minor — Same Audience',
         coords: [37.94, 27.34],
         description: "The same scattered communities across Pontus, Galatia, Cappadocia, Asia, and Bithynia received Peter's second letter; he urges them to 'grow in the grace and knowledge of our Lord and Savior Jesus Christ' and warns that false teachers will secretly introduce destructive heresies (2 Peter 1:1; 3:1; 3:18)",
+      },
+    ],
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // RUTH JOURNEYS
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: "Elimelech's Family Moves to Moab",
+    color: '#7f8c8d',
+    people: [],
+    books: ['Ruth'],
+    path: [
+      [31.70, 35.21],  // Bethlehem
+      [31.50, 35.70],  // Moab — countryside east of Dead Sea
+    ],
+    locations: [
+      {
+        name: 'Bethlehem',
+        coords: [31.70, 35.21],
+        description: "There was a famine in the land; Elimelech of Bethlehem took his wife Naomi and his two sons Mahlon and Kilion and went to live in Moab for a while (Ruth 1:1–2)",
+      },
+      {
+        name: 'Moab — Countryside',
+        coords: [31.50, 35.70],
+        description: "They arrived in Moab and lived there; Elimelech died; the two sons married Moabite women — Orpah and Ruth; then after about ten years both sons also died; Naomi was left without her husband or her two sons (Ruth 1:3–5)",
+      },
+    ],
+  },
+
+  {
+    name: "Naomi and Ruth Return to Bethlehem",
+    color: '#e67e22',
+    people: [],
+    books: ['Ruth'],
+    path: [
+      [31.50, 35.70],  // Moab
+      [31.70, 35.21],  // Bethlehem
+    ],
+    locations: [
+      {
+        name: 'Moab — Departure',
+        coords: [31.50, 35.70],
+        description: "Naomi set out from Moab with her daughters-in-law; she urged them to return to their mothers' homes; Orpah kissed Naomi goodbye but Ruth clung to her: 'Where you go I will go, and where you stay I will stay. Your people will be my people and your God my God' (Ruth 1:6–18)",
+      },
+      {
+        name: 'Bethlehem — The Return',
+        coords: [31.70, 35.21],
+        description: "Naomi arrived in Bethlehem at the beginning of the barley harvest; the whole town was stirred and the women said 'Can this be Naomi?' She told them to call her Mara — 'bitter' — because the Almighty had made her life very bitter (Ruth 1:19–22)",
+      },
+    ],
+  },
+
+  {
+    name: "Ruth Gleans in the Fields of Boaz",
+    color: '#27ae60',
+    people: [],
+    books: ['Ruth'],
+    path: [
+      [31.702, 35.210],  // Naomi's house in Bethlehem
+      [31.698, 35.215],  // Fields of Boaz
+    ],
+    locations: [
+      {
+        name: "Naomi's House — Bethlehem",
+        coords: [31.702, 35.210],
+        description: "Ruth said to Naomi: 'Let me go to the fields and pick up the leftover grain behind anyone in whose eyes I find favor.' Naomi said: 'Go ahead, my daughter.' The law of Moses required landowners to leave grain for the poor and the foreigner (Ruth 2:2; Leviticus 19:9–10)",
+      },
+      {
+        name: "Fields of Boaz",
+        coords: [31.698, 35.215],
+        description: "As it turned out, Ruth found herself working in the field belonging to Boaz, a man of standing from the clan of Elimelech. Boaz noticed her, ordered his men to leave extra grain for her, and invited her to eat with his workers. He was moved by her loyalty to Naomi (Ruth 2:3–23)",
+      },
+    ],
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // 1 SAMUEL JOURNEYS
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: "The Ark Captured and Returned",
+    color: '#c0392b',
+    people: [],
+    books: ['1 Samuel'],
+    path: [
+      [32.00, 34.97],  // Ebenezer / Aphek area
+      [31.80, 34.65],  // Ashdod
+      [31.60, 34.55],  // Gath
+      [31.77, 34.83],  // Ekron
+      [31.74, 34.99],  // Beth-shemesh
+      [31.80, 35.10],  // Kiriath-jearim
+    ],
+    locations: [
+      {
+        name: 'Ebenezer — The Ark Captured',
+        coords: [32.00, 34.97],
+        description: "Israel brought the Ark from Shiloh to their camp, hoping it would save them; the Philistines fought and Israel was defeated; 30,000 foot soldiers fell and the Ark of God was captured; Eli's sons Hophni and Phinehas died; Eli fell backwards off his chair and died on hearing the news (1 Samuel 4:1–18)",
+      },
+      {
+        name: 'Ashdod — Dagon Falls',
+        coords: [31.80, 34.65],
+        description: "The Philistines brought the Ark to Ashdod and set it in Dagon's temple; next morning Dagon lay face down before it; the following morning his head and hands were broken off on the threshold; God afflicted the people of Ashdod with tumors (1 Samuel 5:1–7)",
+      },
+      {
+        name: 'Gath — Tumors Spread',
+        coords: [31.60, 34.55],
+        description: "The Ark was sent to Gath; the LORD's hand was against the city and he afflicted its people with a great panic and tumors; the city was thrown into a great commotion (1 Samuel 5:8–9)",
+      },
+      {
+        name: 'Ekron — The Philistines Relent',
+        coords: [31.77, 34.83],
+        description: "When the Ark arrived in Ekron a great cry went up: 'They have brought the Ark of the God of Israel to us to kill us and our people.' The Philistine rulers were summoned; the priests advised sending the Ark back with a guilt offering of five gold tumors and five gold rats (1 Samuel 5:10–6:9)",
+      },
+      {
+        name: 'Beth-shemesh — The Ark Returns',
+        coords: [31.74, 34.99],
+        description: "Two cows lowing as they went pulled the cart straight to Beth-shemesh; the people rejoiced; they split the wood of the cart and offered the cows as a burnt offering to the LORD; but 70 men were struck down for looking into the Ark and the people sent to Kiriath-jearim (1 Samuel 6:12–19)",
+      },
+      {
+        name: 'Kiriath-jearim — Twenty Years',
+        coords: [31.80, 35.10],
+        description: "The men of Kiriath-jearim came and took up the Ark; they brought it to the house of Abinadab on the hill and consecrated Eleazar his son to guard it; the Ark remained there twenty years until David brought it to Jerusalem (1 Samuel 7:1–2)",
+      },
+    ],
+  },
+
+  {
+    name: "David Flees from Saul",
+    color: '#8e44ad',
+    people: ['David'],
+    books: ['1 Samuel'],
+    path: [
+      [31.84, 35.22],  // Gibeah
+      [31.80, 35.24],  // Nob
+      [31.60, 34.55],  // Gath
+      [31.57, 34.97],  // Cave of Adullam
+      [31.92, 35.18],  // Mizpah (briefly — parents)
+      [31.52, 34.96],  // Keilah
+    ],
+    locations: [
+      {
+        name: 'Gibeah — The Break',
+        coords: [31.84, 35.22],
+        description: "Saul hurled his spear at David twice; Jonathan confirmed his father intended to kill David; David and Jonathan wept together and parted; David fled (1 Samuel 19:10; 20:41–42)",
+      },
+      {
+        name: 'Nob — The Priests',
+        coords: [31.80, 35.24],
+        description: "David went to the priest Ahimelech trembling; he requested food and Goliath's sword; Ahimelech gave him the showbread and the sword; Doeg the Edomite saw him and later reported to Saul, who had all 85 priests of Nob killed (1 Samuel 21:1–9; 22:9–19)",
+      },
+      {
+        name: 'Gath — Feigned Madness',
+        coords: [31.60, 34.55],
+        description: "David fled to Achish king of Gath with Goliath's sword; the servants of Achish recognized him; David was afraid and feigned madness — scratching on the doors and letting saliva run down his beard; Achish dismissed him (1 Samuel 21:10–15)",
+      },
+      {
+        name: 'Cave of Adullam — Gathering',
+        coords: [31.57, 34.97],
+        description: "David escaped to the cave of Adullam; his family and about 400 men who were in distress, debt, or discontented gathered to him; he became their leader (1 Samuel 22:1–2)",
+      },
+      {
+        name: 'Keilah — Rescue and Escape',
+        coords: [31.52, 34.96],
+        description: "David rescued Keilah from a Philistine raid; but God told David through the ephod that the men of Keilah would hand him over to Saul; David and his now 600 men escaped before Saul arrived (1 Samuel 23:1–13)",
+      },
+    ],
+  },
+
+  {
+    name: "Saul's Final March to Mount Gilboa",
+    color: '#2c3e50',
+    people: [],
+    books: ['1 Samuel'],
+    path: [
+      [31.84, 35.22],  // Gibeah
+      [32.65, 35.38],  // Endor (night before)
+      [32.50, 35.40],  // Mount Gilboa
+    ],
+    locations: [
+      {
+        name: 'Gibeah — Departure',
+        coords: [31.84, 35.22],
+        description: "The Philistines assembled their forces at Shunem; when Saul saw their army he was terrified; he inquired of the LORD but received no answer by dreams, Urim, or prophets; he then sought out a medium (1 Samuel 28:4–6)",
+      },
+      {
+        name: 'Endor — The Medium',
+        coords: [32.65, 35.38],
+        description: "Disguised, Saul went at night to the medium at Endor; she conjured Samuel who said: 'The LORD has torn the kingdom out of your hands and given it to your neighbor David. Tomorrow you and your sons will be with me and the LORD will give the army of Israel into the hands of the Philistines' (1 Samuel 28:7–19)",
+      },
+      {
+        name: 'Mount Gilboa — The Last Battle',
+        coords: [32.50, 35.40],
+        description: "The Philistines fought against Israel; Israel fled; Jonathan, Abinadab, and Malki-shua fell; Saul was critically wounded by archers; he fell on his own sword rather than be abused by the uncircumcised; his body was hung on the wall of Beth-shan until the men of Jabesh-gilead removed it (1 Samuel 31:1–13)",
+      },
+    ],
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // 2 SAMUEL JOURNEYS
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: "David Moves from Ziklag to Hebron",
+    color: '#27ae60',
+    people: ['David'],
+    books: ['2 Samuel'],
+    path: [
+      [31.13, 34.65],  // Ziklag
+      [31.53, 35.10],  // Hebron
+    ],
+    locations: [
+      {
+        name: 'Ziklag',
+        coords: [31.13, 34.65],
+        description: "David received word of Saul and Jonathan's deaths from an Amalekite messenger; he tore his clothes and mourned; he composed his famous lament: 'How the mighty have fallen!' God told David to go up to Judah (2 Samuel 1:1–2:1)",
+      },
+      {
+        name: 'Hebron — Anointed King',
+        coords: [31.53, 35.10],
+        description: "David went up to Hebron with his two wives and his men and their families; the men of Judah anointed David king over the house of Judah. He was 30 years old and reigned in Hebron seven and a half years before becoming king over all Israel (2 Samuel 2:1–4; 5:4–5)",
+      },
+    ],
+  },
+
+  {
+    name: "The Ark Comes to Jerusalem",
+    color: '#d4ac0d',
+    people: [],
+    books: ['2 Samuel'],
+    path: [
+      [31.80, 35.10],  // Kiriath-jearim
+      [31.80, 35.12],  // House of Obed-edom (3 months)
+      [31.778, 35.235], // Jerusalem / City of David
+    ],
+    locations: [
+      {
+        name: 'Kiriath-jearim — Departure',
+        coords: [31.80, 35.10],
+        description: "David assembled 30,000 chosen men to bring up the Ark from Kiriath-jearim; they set it on a new cart driven by Uzzah and Ahio; amid great celebration they set out (2 Samuel 6:1–4)",
+      },
+      {
+        name: 'House of Obed-edom — Three Months',
+        coords: [31.80, 35.12],
+        description: "When Uzzah was struck dead for touching the Ark, David was afraid and left the Ark at the house of Obed-edom the Gittite for three months; the LORD blessed Obed-edom and all his household (2 Samuel 6:10–12)",
+      },
+      {
+        name: 'Jerusalem — The Ark Arrives',
+        coords: [31.778, 35.235],
+        description: "David brought the Ark to Jerusalem with great joy; he danced before the LORD with all his might wearing a linen ephod; burnt offerings and fellowship offerings were made; David distributed food to all the people; Michal daughter of Saul despised him in her heart for his undignified dancing (2 Samuel 6:12–23)",
+      },
+    ],
+  },
+
+  {
+    name: "David Flees from Absalom",
+    color: '#922b21',
+    people: ['David'],
+    books: ['2 Samuel'],
+    path: [
+      [31.778, 35.235], // Jerusalem
+      [31.779, 35.240], // Kidron Valley
+      [31.777, 35.246], // Mount of Olives
+      [31.87, 35.46],   // Jordan River crossing
+      [32.30, 35.75],   // Mahanaim
+    ],
+    locations: [
+      {
+        name: 'Jerusalem — The Betrayal',
+        coords: [31.778, 35.235],
+        description: "Absalom stole the hearts of the men of Israel; when he declared himself king in Hebron the conspiracy became strong. A messenger told David; he said to all his officials: 'Come, we must flee or none of us will escape from Absalom.' He left with all his household, weeping (2 Samuel 15:13–16)",
+      },
+      {
+        name: 'Kidron Valley',
+        coords: [31.779, 35.240],
+        description: "The king crossed the Kidron Valley with all his people; the whole countryside wept aloud; the Levites brought the Ark but David sent it back: 'Take the Ark back into the city. If I find favor in the LORD's eyes he will bring me back' (2 Samuel 15:23–29)",
+      },
+      {
+        name: 'Mount of Olives — Weeping',
+        coords: [31.777, 35.246],
+        description: "David went up the Mount of Olives weeping, his head covered, walking barefoot; all the people with him covered their heads and wept; Shimei cursed David and threw stones at him from the hillside; Hushai the Arkite became David's spy inside Absalom's court (2 Samuel 15:30–16:14)",
+      },
+      {
+        name: 'Jordan River — The Crossing',
+        coords: [31.87, 35.46],
+        description: "David and all his people crossed the Jordan before Absalom's pursuing army could catch them; Hushai's counsel to Absalom to delay bought them time; the crossing was completed safely (2 Samuel 17:22–24)",
+      },
+      {
+        name: 'Mahanaim — The Base',
+        coords: [32.30, 35.75],
+        description: "David came to Mahanaim where Shobi, Makir, and Barzillai brought beds, basins, earthen vessels, wheat, barley, flour, roasted grain, beans, lentils, honey, curds, sheep, and cheese for David and his people to eat; here David organized the army and sent it out against Absalom (2 Samuel 17:24–18:5)",
+      },
+    ],
+  },
+
+  {
+    name: "David Returns to Jerusalem",
+    color: '#2874a6',
+    people: ['David'],
+    books: ['2 Samuel'],
+    path: [
+      [32.30, 35.75],   // Mahanaim
+      [31.87, 35.46],   // Jordan River crossing
+      [31.778, 35.235], // Jerusalem
+    ],
+    locations: [
+      {
+        name: 'Mahanaim — After Absalom',
+        coords: [32.30, 35.75],
+        description: "Joab killed Absalom caught in an oak tree; when David heard he was shaken and went up to the room over the gateway and wept: 'O my son Absalom! If only I had died instead of you!' Joab rebuked David for mourning instead of honoring his men (2 Samuel 18:14–19:8)",
+      },
+      {
+        name: 'Jordan River — The Return Crossing',
+        coords: [31.87, 35.46],
+        description: "The men of Judah came to Gilgal to meet the king and bring him across the Jordan; Shimei came down with 1,000 Benjamites and threw himself before the king; David pardoned him. Barzillai the aged Gileadite came to escort the king across the Jordan (2 Samuel 19:15–39)",
+      },
+      {
+        name: 'Jerusalem — Restoration',
+        coords: [31.778, 35.235],
+        description: "David came back to his palace; he took the ten concubines he had left to keep the palace and put them in a house under guard; the kingdom was restored; David reigned in Jerusalem for 33 more years (2 Samuel 19:40–20:3; 5:5)",
       },
     ],
   },

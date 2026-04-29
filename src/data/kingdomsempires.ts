@@ -1588,4 +1588,197 @@ export const kingdomsEmpires: KingdomEmpire[] = [
 
     ],
   },
+
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // UNITED MONARCHY OF ISRAEL  (-1050 → -930)
+  // Note: This overlaps with the existing 'United Kingdom of Israel' entry.
+  // Add 'Ruth', '1 Samuel', '2 Samuel' to that entry's books array instead:
+  // books: ['Ruth', '1 Samuel', '2 Samuel', '1 Kings'],
+  // ══════════════════════════════════════════════════════════════════════════
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // PHILISTIA  (-1200 → -604)
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    name: 'Philistia',
+    description: "The coastal kingdom of the Philistines — the five-city league of Gaza, Ashkelon, Ashdod, Ekron, and Gath. The dominant military and political rival of Israel throughout the period of the judges and the early monarchy. Defeated by David but never fully absorbed.",
+    color: '#2c3e50',
+    fillOpacity: 0.28,
+    books: ['Judges', '1 Samuel', '2 Samuel', 'Amos', 'Zephaniah', 'Jeremiah'],
+    yearStart: -1200,
+    yearEnd: -604,
+    snapshots: [
+      {
+        year: -1200,
+        note: 'Early Philistine settlement of the coastal plain after the Bronze Age collapse',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[
+            [34.20, 31.80],
+            [34.60, 31.82],
+            [34.82, 31.58],
+            [34.85, 31.32],
+            [34.75, 31.05],
+            [34.40, 31.00],
+            [34.16, 31.22],
+            [34.16, 31.60],
+            [34.20, 31.80],
+          ]],
+        },
+      },
+      {
+        year: -1050,
+        note: 'Height of Philistine power — Ark captured, Israel dominated',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[
+            [34.20, 31.85],
+            [34.65, 31.85],
+            [34.90, 31.65],
+            [35.00, 31.38],
+            [34.90, 31.05],
+            [34.42, 31.00],
+            [34.15, 31.22],
+            [34.15, 31.62],
+            [34.20, 31.85],
+          ]],
+        },
+      },
+      {
+        year: -1000,
+        note: 'David subjugates Philistia — territory reduced to core coastal plain',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[
+            [34.20, 31.80],
+            [34.58, 31.82],
+            [34.78, 31.58],
+            [34.80, 31.32],
+            [34.72, 31.08],
+            [34.40, 31.00],
+            [34.18, 31.20],
+            [34.18, 31.58],
+            [34.20, 31.80],
+          ]],
+        },
+      },
+      {
+        year: -700,
+        note: 'Neo-Assyrian era — Philistia tributary states under Tiglath-pileser III and Sargon II',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[
+            [34.20, 31.80],
+            [34.56, 31.80],
+            [34.75, 31.55],
+            [34.72, 31.28],
+            [34.55, 31.08],
+            [34.28, 31.08],
+            [34.10, 31.28],
+            [34.15, 31.58],
+            [34.20, 31.80],
+          ]],
+        },
+      },
+      {
+        year: -604,
+        note: 'Nebuchadnezzar destroys Ashkelon — Philistia absorbed into Babylon',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[[34.37, 31.40], [34.40, 31.40], [34.40, 31.38], [34.37, 31.38], [34.37, 31.40]]],
+        },
+      },
+    ],
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // KINGDOM OF ISRAEL (after split)  (-930 → -722)
+  // Note: Already exists as 'Northern Kingdom of Israel' — add '2 Samuel'
+  // to that entry's books array. No new entry needed.
+  //
+  // KINGDOM OF JUDAH (after split)  (-930 → -586)
+  // Note: Already exists as 'Southern Kingdom of Judah' — add '2 Samuel'
+  // to that entry's books array. No new entry needed.
+  //
+  // AMMON, EDOM, MOAB  — already added as kingdoms in Numbers section.
+  //
+  // SYRIA (Aramean Kingdom of Damascus)  (-950 → -732)
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    name: 'Aram (Damascus)',
+    speakAs: 'Aram Damascus',
+    description: "The Aramean kingdom centered on Damascus; Israel's most persistent northern rival through the period of the divided monarchy. David subjugated it briefly. Rezon founded an independent dynasty. Ben-hadad I and II repeatedly clashed with Israel. Hazael carried out God's judgment on Israel. Destroyed by Tiglath-pileser III in 732 BC.",
+    color: '#1a5276',
+    fillOpacity: 0.28,
+    books: ['2 Samuel', '1 Kings', '2 Kings', 'Isaiah', 'Amos'],
+    yearStart: -950,
+    yearEnd: -732,
+    snapshots: [
+      {
+        year: -950,
+        note: 'Rezon establishes the Aramean kingdom of Damascus after breaking free from Solomon',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[
+            [35.90, 33.50],
+            [36.50, 34.00],
+            [37.20, 33.80],
+            [37.50, 33.20],
+            [37.30, 32.80],
+            [36.60, 32.70],
+            [36.00, 32.60],
+            [35.80, 33.10],
+            [35.90, 33.50],
+          ]],
+        },
+      },
+      {
+        year: -860,
+        note: "Ben-hadad I and II — Aram at its height, controlling northern Transjordan and threatening Israel",
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[
+            [35.80, 34.20],
+            [36.60, 34.50],
+            [37.80, 34.00],
+            [38.20, 33.20],
+            [37.80, 32.40],
+            [36.80, 32.20],
+            [36.00, 32.30],
+            [35.65, 32.70],
+            [35.70, 33.20],
+            [35.80, 34.20],
+          ]],
+        },
+      },
+      {
+        year: -800,
+        note: "Hazael devastates Israel — controls most of Transjordan and the coastal plain",
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[
+            [35.70, 34.30],
+            [36.80, 34.60],
+            [38.20, 34.00],
+            [38.50, 33.00],
+            [38.00, 32.00],
+            [37.00, 31.50],
+            [36.00, 31.80],
+            [35.50, 32.50],
+            [35.60, 33.50],
+            [35.70, 34.30],
+          ]],
+        },
+      },
+      {
+        year: -732,
+        note: 'Tiglath-pileser III captures Damascus — kingdom destroyed',
+        geometry: {
+          type: 'Polygon',
+          coordinates: [[[36.28, 33.50], [36.32, 33.50], [36.32, 33.48], [36.28, 33.48], [36.28, 33.50]]],
+        },
+      },
+    ],
+  },
 ];

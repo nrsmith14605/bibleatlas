@@ -1533,4 +1533,149 @@ export const regions: Region[] = [
       ]],
     },
   },
+  // ── RUTH ─────────────────────────────────────────────────────────────────
+
+  // (Moab already has 'Ruth' from earlier; Judea/Transjordan already tagged)
+
+  // ── 1 SAMUEL ─────────────────────────────────────────────────────────────
+
+  {
+    name: 'Wilderness of Ziph',
+    speakAs: 'ZIFF',
+    description: "The arid hill country south of Hebron where David hid from Saul; the Ziphites twice betrayed David's location to Saul; Jonathan came here to strengthen David's hand in God; David came twice within reach of Saul and spared his life (1 Samuel 23:14–24; 26:1–5)",
+    color: '#d4a56a',
+    fillOpacity: 0.28,
+    location: 'confirmed',
+    books: ['1 Samuel'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Wilderness of Ziph — south of Hebron
+        [35.00, 31.52],
+        [35.22, 31.52],
+        [35.35, 31.42],
+        [35.32, 31.28],
+        [35.15, 31.22],
+        [34.98, 31.28],
+        [34.90, 31.40],
+        [35.00, 31.52],
+      ]],
+    },
+  },
+  {
+    name: 'Wilderness of Maon',
+    speakAs: 'MAY-on',
+    description: "The rocky wilderness south of Ziph where David hid while Saul pursued him; Saul almost trapped David at the Rock of Sela-hammahlekoth before a messenger called him away to fight the Philistines; Nabal the Carmelite had his flocks in this region (1 Samuel 23:24–28; 25:2)",
+    color: '#c9a030',
+    fillOpacity: 0.25,
+    location: 'confirmed',
+    books: ['1 Samuel'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Wilderness of Maon — southeast of Hebron
+        [35.08, 31.40],
+        [35.30, 31.40],
+        [35.45, 31.28],
+        [35.42, 31.12],
+        [35.22, 31.05],
+        [35.02, 31.10],
+        [34.92, 31.25],
+        [35.00, 31.38],
+        [35.08, 31.40],
+      ]],
+    },
+  },
+  {
+    name: 'Wilderness of En Gedi',
+    speakAs: 'en GEH-dee',
+    description: "The dramatic cliffs and oases above the Dead Sea where David hid in the strongholds; Saul took 3,000 men to search; David crept close enough to cut off the corner of Saul's robe in a cave; David revealed himself and pleaded his innocence; Saul wept and acknowledged David would be king (1 Samuel 23:29–24:22)",
+    color: '#1e8449',
+    fillOpacity: 0.25,
+    location: 'confirmed',
+    books: ['1 Samuel'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // En Gedi — oasis cliffs above the Dead Sea
+        [35.38, 31.48],
+        [35.50, 31.48],
+        [35.55, 31.38],
+        [35.52, 31.28],
+        [35.40, 31.25],
+        [35.32, 31.30],
+        [35.32, 31.42],
+        [35.38, 31.48],
+      ]],
+    },
+  },
+  {
+    name: 'Pass of Michmash',
+    speakAs: 'MIK-mash',
+    description: "The narrow rocky pass where Jonathan and his armor-bearer secretly crossed to attack the Philistine garrison; Jonathan said 'Perhaps the LORD will act on our behalf — nothing can hinder the LORD from saving, whether by many or by few'; they killed about twenty men and God threw the Philistines into confusion (1 Samuel 13:23–14:23)",
+    color: '#7d6b4f',
+    fillOpacity: 0.28,
+    location: 'confirmed',
+    books: ['1 Samuel'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Michmash pass — narrow valley northeast of Jerusalem
+        [35.22, 31.88],
+        [35.35, 31.90],
+        [35.42, 31.84],
+        [35.40, 31.78],
+        [35.28, 31.76],
+        [35.18, 31.80],
+        [35.22, 31.88],
+      ]],
+    },
+  },
+
+  // ── 2 SAMUEL ─────────────────────────────────────────────────────────────
+
+  {
+    name: 'Forest of Ephraim',
+    description: "The dense forest east of the Jordan in Gilead where the decisive battle between David's forces and Absalom's rebel army took place; the forest devoured more men than the sword that day — Absalom himself was caught by his hair in the branches of an oak and killed by Joab (2 Samuel 18:6–17)",
+    color: '#1e8449',
+    fillOpacity: 0.22,
+    location: 'probable',
+    books: ['2 Samuel'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Forest of Ephraim — east of Jordan in Gilead near Mahanaim
+        [35.72, 32.32],
+        [36.10, 32.38],
+        [36.30, 32.20],
+        [36.22, 32.00],
+        [35.95, 31.92],
+        [35.72, 32.00],
+        [35.65, 32.18],
+        [35.72, 32.32],
+      ]],
+    },
+  },
+  {
+    name: 'Valley of Rephaim',
+    speakAs: 'REF-ay-im',
+    description: "The broad valley southwest of Jerusalem; the Philistines twice deployed in this valley to attack David after he became king; God told David to circle behind them and attack from the direction of the balsam trees; David defeated them and their idols were burned (2 Samuel 5:17–25; 23:13–14)",
+    color: '#7d6b4f',
+    fillOpacity: 0.25,
+    location: 'confirmed',
+    books: ['2 Samuel'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Valley of Rephaim — southwest of Jerusalem
+        [35.15, 31.74],
+        [35.25, 31.76],
+        [35.28, 31.68],
+        [35.20, 31.62],
+        [35.10, 31.62],
+        [35.05, 31.70],
+        [35.15, 31.74],
+      ]],
+    },
+  },
 ];
