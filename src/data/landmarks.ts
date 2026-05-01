@@ -231,7 +231,7 @@ export const landmarks: Landmark[] = [
     coords: [32.74, 35.06],
     description: "Elijah challenged the 450 prophets of Baal; fire fell from heaven and consumed his sacrifice",
     location: 'confirmed',
-    books: ['1 Kings'],
+    books: ['1 Kings', '2 Kings'],
   },
   {
     name: 'Mount Nebo',
@@ -784,5 +784,88 @@ export const landmarks: Landmark[] = [
     description: "The threshing floor on Mount Moriah purchased by David from Araunah the Jebusite for fifty shekels of silver; David built an altar here and offered burnt offerings after the angel of the LORD stopped the plague that killed 70,000 Israelites; this site later became the foundation of Solomon's Temple (2 Samuel 24:18–25; 2 Chronicles 3:1)",
     location: 'confirmed',
     books: ['2 Samuel'],
+  },
+    // ══════════════════════════════════════════════════════════════════════════
+  // 1 KINGS
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: "Gihon Spring",
+    speakAs: 'GY-hon Spring',
+    coords: [31.774, 35.234],
+    description: "The main water source of ancient Jerusalem on the eastern slope of the City of David; Solomon was taken here on a mule and anointed king by Zadok the priest and Nathan the prophet; the crowd shouted 'Long live King Solomon!' while Adonijah's feast shook at the sound (1 Kings 1:33–45)",
+    location: 'confirmed',
+    books: ['1 Kings', '2 Kings', '2 Chronicles'],
+  },
+  {
+    name: "Solomon's Temple",
+    coords: [31.778, 35.235],
+    description: "The First Temple built by Solomon on Mount Moriah in Jerusalem; took seven years to build; the Ark of the Covenant was brought in and the glory cloud of the LORD filled the Temple; destroyed by Nebuchadnezzar in 586 BC (1 Kings 6–8; 2 Kings 25:9)",
+    location: 'confirmed',
+    books: ['1 Kings', '2 Kings', '2 Chronicles', 'Psalms', 'Isaiah', 'Jeremiah'],
+  },
+  {
+    name: "Altar at Bethel",
+    coords: [31.93, 35.22],
+    description: "One of the two golden calves erected by Jeroboam at Bethel and Dan after the kingdom split; he said 'Here are your gods, Israel, who brought you up out of Egypt'; a man of God from Judah came and prophesied against the altar; the altar split apart and the ashes poured out (1 Kings 12:28–33; 13:1–10)",
+    location: 'probable',
+    books: ['1 Kings', '2 Kings'],
+  },
+  {
+    name: "Altar at Dan",
+    coords: [33.25, 35.65],
+    description: "The second of Jeroboam's golden calf shrines, set at the northern extremity of his kingdom; making Bethel and Dan the two rival worship centers to draw Israel away from Jerusalem; the sin of Jeroboam became a refrain throughout Kings (1 Kings 12:28–30)",
+    location: 'probable',
+    books: ['1 Kings'],
+  },
+  {
+    name: "Brook Cherith",
+    speakAs: 'Brook KEER-ith',
+    coords: [32.10, 35.60],
+    description: "The wadi east of the Jordan where God sent Elijah to hide after prophesying the drought to Ahab; ravens brought him bread and meat morning and evening; he drank from the brook until it dried up because there was no rain in the land (1 Kings 17:2–7)",
+    location: 'unknown',
+    books: ['1 Kings'],
+  },
+  {
+    name: "Widow's House at Zarephath",
+    coords: [33.48, 35.28],
+    description: "The house of the destitute widow God directed Elijah to after the Brook Cherith dried up; she gave him her last handful of flour and drops of oil; from that day the jar of flour did not run out and the jug of oil did not run dry until the rain came; Elijah also raised her dead son to life here (1 Kings 17:8–24)",
+    location: 'unknown',
+    books: ['1 Kings'],
+  },
+  {
+    name: "Broom Tree in the Wilderness",
+    coords: [30.35, 34.90],
+    description: "A solitary broom tree in the wilderness south of Beersheba where Elijah collapsed in exhaustion and despair after fleeing Jezebel; he prayed: 'I have had enough, LORD — take my life.' An angel touched him twice, providing fresh bread and a jar of water; strengthened by that food he traveled forty days to Horeb (1 Kings 19:4–8)",
+    location: 'unknown',
+    books: ['1 Kings'],
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // 2 KINGS
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: "Rooftop Chamber in Shunem",
+    coords: [32.62, 35.33],
+    description: "The small upper room a wealthy Shunammite woman and her husband built on their roof wall for Elisha; they furnished it with a bed, table, chair, and lamp; it became his regular resting place; Elisha repaid her by promising she would conceive a son and later raising that son from the dead (2 Kings 4:8–37)",
+    location: 'unknown',
+    books: ['2 Kings'],
+  },
+  {
+    name: "Hezekiah's Tunnel",
+    speakAs: "heh-ZEK-ee-ah's Tunnel",
+    coords: [31.773, 35.233],
+    description: "The water tunnel cut through 533 meters of solid rock by Hezekiah's engineers to channel water from the Gihon Spring into the Pool of Siloam inside Jerusalem's walls before the Assyrian siege; the Siloam Inscription commemorating its completion was discovered in 1880 (2 Kings 20:20; 2 Chronicles 32:30)",
+    location: 'confirmed',
+    books: ['2 Kings', '2 Chronicles'],
+  },
+  {
+    name: "House of Naaman",
+    speakAs: 'NAY-ah-man',
+    coords: [33.52, 36.30],
+    description: "The house in Damascus of Naaman, commander of the Aramean army; after being healed of leprosy in the Jordan River, Naaman returned to Elisha and declared: 'Now I know there is no God in all the world except in Israel.' He requested two mule-loads of Israelite soil to worship on back home (2 Kings 5:1–19)",
+    location: 'unknown',
+    books: ['2 Kings'],
   },
 ];

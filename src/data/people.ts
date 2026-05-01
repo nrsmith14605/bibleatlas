@@ -261,5 +261,39 @@ export const people: Person[] = [
       "David's Later Years and Legacy"
     ],
     books: ['1 Samuel', '2 Samuel', '1 Kings', '2 Kings', 'Psalms'],
-  }
+  },
+  // ── 1 Kings ────────────────────────────────────────────────────────────────
+
+  {
+    name: 'Solomon',
+    speakAs: 'SOL-oh-mon',
+    description: "Son of David and Bathsheba; Israel's third king and wisest ruler; built the Temple in Jerusalem; his wealth and wisdom were unparalleled; his 700 wives and 300 concubines led his heart after other gods in old age; after his death the kingdom split",
+    journeys: [],
+    books: ['1 Kings', '2 Samuel', 'Psalms', 'Proverbs', 'Ecclesiastes', 'Song of Solomon'],
+  },
+  {
+    name: 'Elijah',
+    speakAs: 'ee-LY-jah',
+    description: "The Tishbite prophet from Gilead; called down a three-year drought; defeated the prophets of Baal on Mount Carmel; fled to Horeb in despair; was taken to heaven in a chariot of fire without dying; appeared with Moses at the Transfiguration of Jesus",
+    journeys: [
+      "Elijah at the Brook and Zarephath",
+      "Elijah on Mount Carmel",
+      "Elijah Flees to Horeb",
+      "Elijah Calls Elisha",
+      "Elijah's Translation — The Fiery Chariot",
+    ],
+    books: ['1 Kings', '2 Kings', 'Matthew', 'Mark', 'Luke'],
+  },
+  {
+    name: 'Elisha',
+    speakAs: 'ee-LY-shah',
+    description: "The successor of Elijah; performed twice as many miracles; raised the Shunammite's son; healed Naaman of leprosy; multiplied loaves; made an axe head float; blinded the Aramean army; anointed Jehu; his bones even raised a dead man after his death",
+    journeys: [
+      "Elijah Calls Elisha",
+      "Elijah's Translation — The Fiery Chariot",
+      "Naaman's Healing",
+      "Jehu's Coup at Jezreel",
+    ],
+    books: ['1 Kings', '2 Kings'],
+  },
 ];

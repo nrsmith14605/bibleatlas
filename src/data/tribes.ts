@@ -83,7 +83,7 @@ export const tribes: Tribe[] = [
     description: "Descendants of Lot's son Moab, born of incest after the destruction of Sodom (Gen 19:37). They settled east of the Dead Sea on the plateau above the Arnon. Ruth was a Moabite. Balak king of Moab hired Balaam to curse Israel.",
     color: '#8e44ad',
     fillOpacity: 0.3,
-    books: ['Genesis', 'Numbers', 'Deuteronomy', 'Judges', 'Ruth', '1 Samuel', '2 Samuel', '2 Kings', 'Isaiah'],
+    books: ['Genesis', 'Numbers', 'Deuteronomy', 'Judges', 'Ruth', '1 Samuel', '2 Samuel', '1 Kings', '2 Kings', 'Isaiah'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -2568,6 +2568,59 @@ export const tribes: Tribe[] = [
         [35.26, 31.76],
         [35.22, 31.76],
         [35.22, 31.82],
+      ]],
+    },
+  },
+  // ══════════════════════════════════════════════════════════════════════════
+  // 2 KINGS — Peoples
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Assyrians',
+    speakAs: 'ah-SIR-ee-ans',
+    description: "The people of the Neo-Assyrian Empire; conquered the Northern Kingdom in 722 BC under Sargon II, deporting its population to Halah, Habor, and the cities of the Medes; Sennacherib besieged Jerusalem in 701 BC but was turned back when an angel struck down 185,000 of his troops overnight (2 Kings 17:6; 18–19)",
+    color: '#c0392b',
+    fillOpacity: 0.22,
+    books: ['2 Kings', 'Isaiah', 'Jonah', 'Nahum'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [37.0, 37.5],
+        [40.5, 38.5],
+        [44.0, 38.0],
+        [46.5, 37.5],
+        [48.5, 35.0],
+        [48.0, 32.5],
+        [46.5, 30.0],
+        [43.0, 29.0],
+        [40.0, 30.5],
+        [38.0, 31.5],
+        [36.5, 33.0],
+        [37.0, 37.5],
+      ]],
+    },
+  },
+  {
+    name: 'Babylonians (Chaldeans)',
+    speakAs: 'bab-ih-LOH-nee-ans KAL-dee-ans',
+    description: "The Neo-Babylonian Empire under Nebuchadnezzar II; besieged Jerusalem three times; destroyed Solomon's Temple in 586 BC; carried Judah into exile to Babylon for 70 years; the Chaldeans were the ruling Babylonian dynasty (2 Kings 24–25; Jeremiah; Daniel)",
+    color: '#d68910',
+    fillOpacity: 0.22,
+    books: ['2 Kings', 'Isaiah', 'Jeremiah', 'Daniel'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [39.5, 35.0],
+        [43.5, 36.0],
+        [46.0, 37.0],
+        [48.5, 36.0],
+        [50.0, 33.0],
+        [48.0, 30.0],
+        [46.0, 29.0],
+        [43.0, 28.5],
+        [40.5, 30.0],
+        [40.0, 32.0],
+        [39.5, 35.0],
       ]],
     },
   },

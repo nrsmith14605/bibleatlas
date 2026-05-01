@@ -2767,4 +2767,285 @@ export const journeys: Journey[] = [
       },
     ],
   },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // 1 KINGS JOURNEYS
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: "Elijah at the Brook and Zarephath",
+    color: '#8e44ad',
+    people: ['Elijah'],
+    books: ['1 Kings'],
+    path: [
+      [32.27, 35.20],  // Samaria — Elijah's confrontation with Ahab
+      [32.10, 35.60],  // Brook Cherith — east of the Jordan
+      [33.48, 35.29],  // Zarephath — Phoenician coast
+    ],
+    locations: [
+      {
+        name: 'Samaria — The Confrontation',
+        coords: [32.27, 35.20],
+        description: "Elijah the Tishbite stood before Ahab and declared: 'As the LORD, the God of Israel, lives, whom I serve, there will be neither dew nor rain in the next few years except at my word.' God then commanded him to hide (1 Kings 17:1–3)",
+      },
+      {
+        name: 'Brook Cherith — Forty Days',
+        coords: [32.10, 35.60],
+        description: "Elijah hid by the Brook Cherith east of the Jordan; ravens brought him bread and meat every morning and evening; he drank from the brook until it dried up due to the drought he had proclaimed (1 Kings 17:3–7)",
+      },
+      {
+        name: 'Zarephath — The Widow',
+        coords: [33.48, 35.29],
+        description: "God sent Elijah to a Phoenician widow who was gathering sticks to cook her last meal before she and her son died; Elijah promised the flour and oil would not run out; she fed him for many days; when her son died Elijah raised him to life — the first resurrection recorded in Scripture (1 Kings 17:8–24)",
+      },
+    ],
+  },
+
+  {
+    name: "Elijah on Mount Carmel",
+    color: '#e67e22',
+    people: ['Elijah'],
+    books: ['1 Kings'],
+    path: [
+      [33.48, 35.29],  // Zarephath
+      [32.27, 35.20],  // Samaria — Obadiah and Ahab
+      [32.74, 35.06],  // Mount Carmel
+      [32.57, 35.32],  // Jezreel
+    ],
+    locations: [
+      {
+        name: 'Zarephath — Departure',
+        coords: [33.48, 35.29],
+        description: "In the third year of the drought God told Elijah to go and present himself to Ahab; he set out from Zarephath (1 Kings 18:1)",
+      },
+      {
+        name: 'Samaria — Meeting Ahab',
+        coords: [32.27, 35.20],
+        description: "Elijah met Obadiah and then Ahab; Ahab called him 'the troubler of Israel'; Elijah replied: 'I have not troubled Israel — you have.' He summoned Ahab, all Israel, and the 450 prophets of Baal and 400 prophets of Asherah to Mount Carmel (1 Kings 18:17–19)",
+      },
+      {
+        name: 'Mount Carmel — Fire from Heaven',
+        coords: [32.74, 35.06],
+        description: "Elijah challenged the 450 prophets of Baal; their god did not answer; Elijah repaired the altar with twelve stones, drenched it with water, and prayed; fire from the LORD fell and consumed the sacrifice, wood, stones, soil, and water in the trench; all the people fell down and cried 'The LORD — he is God!' Elijah had the prophets of Baal seized and slaughtered at the Brook Kishon (1 Kings 18:20–40)",
+      },
+      {
+        name: 'Jezreel — The Rain Returns',
+        coords: [32.57, 35.32],
+        description: "Heavy rain came; Elijah outran Ahab's chariot all the way to Jezreel; when Jezebel heard what Elijah had done to her prophets she sent a messenger: 'May the gods deal with me severely if I do not kill you by this time tomorrow' (1 Kings 18:41–19:2)",
+      },
+    ],
+  },
+
+  {
+    name: "Elijah Flees to Horeb",
+    color: '#2c3e50',
+    people: ['Elijah'],
+    books: ['1 Kings'],
+    path: [
+      [32.57, 35.32],  // Jezreel
+      [31.25, 34.80],  // Beersheba
+      [30.35, 34.90],  // Wilderness — the broom tree
+      [28.56, 33.97],  // Mount Horeb
+    ],
+    locations: [
+      {
+        name: 'Jezreel — Fleeing Jezebel',
+        coords: [32.57, 35.32],
+        description: "Elijah was afraid and ran for his life after Jezebel's death threat; he left his servant at Beersheba and continued alone into the wilderness (1 Kings 19:3)",
+      },
+      {
+        name: 'Beersheba — Elijah Leaves his Servant',
+        coords: [31.25, 34.80],
+        description: "Elijah came to Beersheba in Judah and left his servant there; he went a day's journey into the wilderness alone, sat under a broom tree, and prayed that he might die: 'I have had enough, LORD. Take my life; I am no better than my ancestors' (1 Kings 19:3–4)",
+      },
+      {
+        name: 'Wilderness — The Broom Tree',
+        coords: [30.35, 34.90],
+        description: "An angel touched him and said 'Get up and eat.' He looked and saw bread baked over hot coals and a jar of water. After sleeping again the angel touched him a second time: 'Get up and eat, for the journey is too much for you' (1 Kings 19:5–7)",
+      },
+      {
+        name: 'Mount Horeb — Still Small Voice',
+        coords: [28.56, 33.97],
+        description: "Strengthened by the food, Elijah traveled forty days and forty nights to Horeb. In a cave God asked: 'What are you doing here, Elijah?' A great wind tore the mountains, then earthquake, then fire — but the LORD was not in these. After the fire came a gentle whisper. God recommissioned Elijah: anoint Hazael, Jehu, and Elisha (1 Kings 19:8–18)",
+      },
+    ],
+  },
+
+  {
+    name: "Elijah Calls Elisha",
+    color: '#1e8449',
+    people: ['Elijah', 'Elisha'],
+    books: ['1 Kings'],
+    path: [
+      [28.56, 33.97],  // Horeb
+      [32.45, 35.50],  // Abel-meholah — Elisha's home
+    ],
+    locations: [
+      {
+        name: 'Horeb — The Commission',
+        coords: [28.56, 33.97],
+        description: "God told Elijah to return to the wilderness of Damascus, anoint Hazael king of Aram, Jehu king of Israel, and Elisha son of Shaphat as prophet in his place; God said: 'I reserve seven thousand in Israel who have not bowed to Baal' (1 Kings 19:15–18)",
+      },
+      {
+        name: 'Abel-meholah — The Call of Elisha',
+        coords: [32.45, 35.50],
+        description: "Elijah found Elisha plowing with twelve yoke of oxen; he threw his cloak across Elisha's shoulders; Elisha burned his plowing equipment, cooked the oxen, and said farewell to his family; then he set out to follow Elijah and became his servant (1 Kings 19:19–21)",
+      },
+    ],
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // 2 KINGS JOURNEYS
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: "Elijah's Translation — The Fiery Chariot",
+    color: '#f39c12',
+    people: ['Elijah', 'Elisha'],
+    books: ['2 Kings'],
+    path: [
+      [31.88, 35.50],  // Gilgal
+      [31.93, 35.22],  // Bethel
+      [31.87, 35.46],  // Jericho
+      [31.85, 35.55],  // Jordan River — the crossing
+    ],
+    locations: [
+      {
+        name: 'Gilgal — Departure',
+        coords: [31.88, 35.50],
+        description: "Elijah and Elisha set out from Gilgal; Elijah told Elisha to stay but Elisha swore: 'As surely as the LORD lives and as you live, I will not leave you.' The company of prophets at Bethel asked Elisha: 'Do you know that the LORD is going to take your master from you today?' (2 Kings 2:1–3)",
+      },
+      {
+        name: 'Bethel',
+        coords: [31.93, 35.22],
+        description: "The company of prophets at Bethel asked Elisha if he knew Elijah would be taken; he replied: 'Yes, I know — but do not speak of it.' Elijah again urged Elisha to stay; again Elisha refused (2 Kings 2:2–3)",
+      },
+      {
+        name: 'Jericho',
+        coords: [31.87, 35.46],
+        description: "The company of prophets at Jericho repeated the question about Elijah's departure; fifty prophets watched from a distance as the two walked on to the Jordan (2 Kings 2:4–7)",
+      },
+      {
+        name: 'Jordan River — The Translation',
+        coords: [31.85, 35.55],
+        description: "Elijah struck the water with his cloak and the Jordan divided; they crossed on dry ground. Elijah asked Elisha for a last request; he asked for a double portion of Elijah's spirit. As they walked and talked, a chariot of fire with horses of fire appeared and Elijah went up to heaven in a whirlwind. Elisha tore his garments and took up Elijah's cloak (2 Kings 2:8–14)",
+      },
+    ],
+  },
+
+  {
+    name: "Naaman's Healing",
+    color: '#2874a6',
+    people: ['Elisha'],
+    books: ['2 Kings'],
+    path: [
+      [33.51, 36.31],  // Damascus
+      [32.27, 35.20],  // Samaria
+      [31.85, 35.55],  // Jordan River
+    ],
+    locations: [
+      {
+        name: 'Damascus — Naaman Departs',
+        coords: [33.51, 36.31],
+        description: "Naaman, commander of the Aramean army, had leprosy; an Israelite slave girl told his wife about the prophet in Samaria; the king of Aram sent Naaman with silver, gold, and clothing and a letter to the king of Israel (2 Kings 5:1–6)",
+      },
+      {
+        name: 'Samaria — Elisha Sends Instructions',
+        coords: [32.27, 35.20],
+        description: "The king of Israel tore his robes thinking the Aramean king was seeking a quarrel; Elisha sent word: 'Have the man come to me and he will know that there is a prophet in Israel.' Naaman came to Elisha's door but Elisha only sent a messenger: 'Go wash yourself seven times in the Jordan' (2 Kings 5:7–12)",
+      },
+      {
+        name: 'Jordan River — Seven Dips',
+        coords: [31.85, 35.55],
+        description: "Naaman was furious at such a simple command; his servants persuaded him to try it; he dipped in the Jordan seven times and his flesh was restored like a young boy's. He returned to Elisha and declared: 'Now I know that there is no God in all the world except in Israel.' Gehazi secretly pursued Naaman for silver and garments and was struck with Naaman's leprosy (2 Kings 5:14–27)",
+      },
+    ],
+  },
+
+  {
+    name: "Jehu's Coup at Jezreel",
+    color: '#c0392b',
+    people: ['Elisha'],
+    books: ['2 Kings'],
+    path: [
+      [32.35, 35.95],  // Ramoth-gilead — the anointing
+      [32.57, 35.32],  // Jezreel — the coup
+    ],
+    locations: [
+      {
+        name: "Ramoth-gilead — Jehu Anointed",
+        coords: [32.35, 35.95],
+        description: "Elisha sent one of the company of prophets to Ramoth-gilead; he took Jehu aside and anointed him king over Israel, commanding him to destroy the house of Ahab and avenge the blood of the prophets; when Jehu came out the commanders asked 'Is everything all right?' He told them what had happened and they blew the trumpet: 'Jehu is king!' (2 Kings 9:1–13)",
+      },
+      {
+        name: "Jezreel — The Reckoning",
+        coords: [32.57, 35.32],
+        description: "Jehu drove his chariot furiously toward Jezreel; he shot Joram king of Israel with an arrow through the heart in Naboth's field; Ahaziah king of Judah was also struck and died; Jezebel painted her eyes and arranged her hair and looked down from the window; Jehu ordered her thrown down; she was trampled and eaten by dogs, fulfilling Elijah's prophecy (2 Kings 9:14–37)",
+      },
+    ],
+  },
+
+  {
+    name: "Sennacherib's Invasion and Jerusalem's Deliverance",
+    color: '#922b21',
+    people: ['Elisha'],
+    books: ['2 Kings'],
+    path: [
+      [36.36, 43.15],  // Nineveh / Assyria
+      [31.56, 34.85],  // Lachish
+      [31.62, 34.86],  // Libnah
+      [31.78, 35.23],  // Jerusalem
+    ],
+    locations: [
+      {
+        name: 'Assyria — The Campaign Launches',
+        coords: [36.36, 43.15],
+        description: "Sennacherib king of Assyria came up against all the fortified cities of Judah and captured them; he sent his field commander from Lachish to Jerusalem with a large army; the Rabshakeh stood at the aqueduct of the Upper Pool and shouted in Hebrew to undermine the people's confidence (2 Kings 18:13, 17–19:4)",
+      },
+      {
+        name: 'Lachish — Sennacherib\'s Base',
+        coords: [31.56, 34.85],
+        description: "Sennacherib besieged and captured Lachish as his primary base of operations; Hezekiah sent tribute here — 300 talents of silver and 30 of gold; Sennacherib's palace reliefs in Nineveh extensively depicted this siege (2 Kings 18:14–16)",
+      },
+      {
+        name: 'Libnah',
+        coords: [31.62, 34.86],
+        description: "After Lachish, Sennacherib heard that Tirhakah of Cush was marching against him and sent another threatening letter to Hezekiah, which Hezekiah spread before the LORD in the Temple (2 Kings 19:8–9)",
+      },
+      {
+        name: 'Jerusalem — The Angel Strikes',
+        coords: [31.78, 35.23],
+        description: "Hezekiah prayed: 'LORD, open your eyes and see. Listen to all the words Sennacherib has sent to ridicule the living God.' Isaiah sent word: 'He will not enter this city or shoot an arrow here.' That night the angel of the LORD struck down 185,000 in the Assyrian camp; Sennacherib withdrew and was later killed by his own sons (2 Kings 19:14–37)",
+      },
+    ],
+  },
+
+  {
+    name: "The Babylonian Exile",
+    color: '#7d6608',
+    people: [],
+    books: ['2 Kings'],
+    path: [
+      [31.78, 35.23],  // Jerusalem
+      [34.40, 36.55],  // Riblah — judgment
+      [32.54, 44.42],  // Babylon
+    ],
+    locations: [
+      {
+        name: 'Jerusalem — The Fall',
+        coords: [31.78, 35.23],
+        description: "Nebuchadnezzar king of Babylon besieged Jerusalem; Zedekiah tried to flee but was captured in the plains of Jericho; Nebuzaradan burned the Temple, the palace, and every important building in Jerusalem; the bronze pillars, the Sea, and all the bronze articles were broken up and carried to Babylon (2 Kings 25:1–17)",
+      },
+      {
+        name: 'Riblah — The Judgment',
+        coords: [34.40, 36.55],
+        description: "Zedekiah was brought to Nebuchadnezzar at Riblah; his sons were slaughtered before his eyes; then his eyes were gouged out; he was bound with bronze shackles and taken to Babylon; the chief priests and officers of the army were also executed at Riblah (2 Kings 25:6–7, 18–21)",
+      },
+      {
+        name: 'Babylon — The Exile',
+        coords: [32.54, 44.42],
+        description: "Nebuzaradan carried into exile the people remaining in the city and those who had deserted to the king of Babylon, along with the rest of the craftsmen; only the poorest were left to work the vineyards and fields; Gedaliah was appointed governor but was soon assassinated (2 Kings 25:11–26)",
+      },
+    ],
+  },
 ];

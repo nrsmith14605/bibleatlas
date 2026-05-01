@@ -14,7 +14,7 @@ export const kingdomsEmpires: KingdomEmpire[] = [
     description: 'One of the great ancient civilizations of the Nile. Enslaved Israel, then became a refuge. Conquered by Persia 525 BC, then Alexander 332 BC, then Rome 30 BC.',
     color: '#c9a84c',
     fillOpacity: 0.35,
-    books: ['Genesis', 'Exodus', 'Numbers', 'Isaiah', 'Jeremiah', 'Ezekiel', 'Hosea', 'Matthew'],
+    books: ['Genesis', 'Exodus', 'Numbers', '1 Kings', '2 Kings', 'Isaiah', 'Jeremiah', 'Ezekiel', 'Hosea', 'Matthew'],
     yearStart: -3100,
     yearEnd: -30,
     snapshots: [
@@ -581,7 +581,7 @@ export const kingdomsEmpires: KingdomEmpire[] = [
     description: "The first world empire. Centered on Nineveh. Conquered Israel 722 BC, besieged Jerusalem, occupied Egypt briefly. Destroyed by Babylon and Medes 609 BC.",
     color: '#c0392b',
     fillOpacity: 0.25,
-    books: ['2 Kings', 'Isaiah', 'Jonah', 'Nahum', 'Micah', 'Zephaniah'],
+    books: ['1 Kings', '2 Kings', 'Isaiah', 'Jonah', 'Nahum', 'Micah', 'Zephaniah'],
     yearStart: -911,
     yearEnd: -609,
     snapshots: [
