@@ -2,8 +2,9 @@
 
 An interactive Biblical geography atlas for exploring ancient landscapes, character journeys, kingdoms, and historical events across the entire Bible — from Genesis to Revelation.
 
-## Live
-[![Deploy with Vercel](https://vercel.com/button)](https://bibleatlas-three.vercel.app)
+## Live Demo
+
+[View BibleAtlas on Vercel](https://bibleatlas-three.vercel.app)
 
 ## Features
 
