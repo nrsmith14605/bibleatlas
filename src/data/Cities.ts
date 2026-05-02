@@ -119,7 +119,7 @@ export const cities: City[] = [
     coords: [31.53, 35.09],
     description: "Abraham's main home; he bought the Cave of Machpelah here to bury Sarah",
     location: 'confirmed',
-    books: ['Genesis', 'Numbers', 'Joshua', '2 Samuel'],
+    books: ['Genesis', 'Numbers', 'Joshua', '2 Samuel', '1 Chronicles', '2 Chronicles'],
   },
   {
     name: 'Beersheba',
@@ -127,7 +127,7 @@ export const cities: City[] = [
     coords: [31.25, 34.80],
     description: "Abraham dug a well and made a covenant with Abimelech; God called to Hagar nearby",
     location: 'confirmed',
-    books: ['Genesis', 'Judges', '1 Samuel'],
+    books: ['Genesis', 'Judges', '1 Samuel', '2 Chronicles'],
   },
   {
     name: 'Gerar',
@@ -141,7 +141,7 @@ export const cities: City[] = [
     coords: [31.78, 35.23],
     description: "Melchizedek, king and priest, met Abraham here and blessed him after the battle of the kings",
     location: 'confirmed',
-    books: ['Genesis', '2 Samuel', '1 Kings', 'Psalms', 'Isaiah', 'Jeremiah', 'Matthew', 'Luke', 'John', 'Acts', 'Galatians', 'James', 'Hebrews', 'Jude', 'Revelation'],
+    books: ['Genesis', '2 Samuel', '1 Kings', '2 Kings', '1 Chronicles', '2 Chronicles', 'Psalms', 'Isaiah', 'Jeremiah', 'Matthew', 'Luke', 'John', 'Acts', 'Galatians', 'James', 'Hebrews', 'Jude', 'Revelation'],
   },
   {
     name: 'Dan (Laish)',
@@ -430,7 +430,7 @@ export const cities: City[] = [
     coords: [32.27, 35.20],
     description: 'Capital of the Northern Kingdom built by Omri; later conquered by Assyria in 722 BC',
     location: 'confirmed',
-    books: ['1 Kings', '2 Kings', 'Amos', 'Hosea', 'Luke', 'John', 'Acts'],
+    books: ['1 Kings', '2 Kings', 'Amos', 'Hosea', 'Luke', 'John', 'Acts', '2 Chronicles'],
   },
   {
     name: 'Nazareth',
@@ -765,7 +765,7 @@ export const cities: City[] = [
     coords: [29.55, 34.95],
     description: "Israel camped here at the head of the Gulf of Aqaba; later Solomon built a fleet of ships here; a strategic port on the Red Sea (Numbers 33:35; 1 Kings 9:26)",
     location: 'confirmed',
-    books: ['Numbers', '1 Kings'],
+    books: ['Numbers', '1 Kings', '2 Chronicles'],
   },
   {
     name: 'Arad',
@@ -1146,7 +1146,7 @@ export const cities: City[] = [
     coords: [31.84, 35.17],
     description: "The Hivite city that deceived Israel into a peace treaty; when the southern coalition attacked Gibeon, Joshua marched through the night to rescue it; the sun stood still over Gibeon and the moon over the Valley of Aijalon (Joshua 9–10). Solomon went to Gibeon to sacrifice at the great high place; God appeared to him in a dream and offered him anything he desired; Solomon asked for wisdom and God granted it along with riches and honor (1 Kings 3:4–15)",
     location: 'confirmed',
-    books: ['Joshua', 'Judges', '2 Samuel', '1 Kings', '2 Kings'],
+    books: ['Joshua', 'Judges', '2 Samuel', '1 Kings', '2 Kings', '1 Chronicles', '2 Chronicles'],
   },
   {
     name: 'Makkedah',
@@ -1170,7 +1170,7 @@ export const cities: City[] = [
     coords: [31.56, 34.85],
     description: "The fortified Canaanite royal city taken by Joshua in two days during the southern campaign; Horam king of Gezer came to help Lachish and was also destroyed; later a key Judahite fortress (Joshua 10:31–33; 2 Kings 18:14)",
     location: 'confirmed',
-    books: ['Joshua', '2 Kings', 'Isaiah', 'Jeremiah', 'Micah'],
+    books: ['Joshua', '2 Kings', '2 Chronicles', 'Isaiah', 'Jeremiah', 'Micah'],
   },
   {
     name: 'Eglon',
@@ -1657,7 +1657,7 @@ export const cities: City[] = [
     coords: [31.80, 35.10],
     description: "The Ark of the Covenant rested here in the house of Abinadab for twenty years after being returned by the Philistines until David brought it to Jerusalem (1 Samuel 7:1–2; 2 Samuel 6:2–4)",
     location: 'confirmed',
-    books: ['1 Samuel', '2 Samuel'],
+    books: ['1 Samuel', '2 Samuel', '1 Chronicles'],
   },
   {
     name: 'Mizpah (Benjamin)',
@@ -1739,7 +1739,7 @@ export const cities: City[] = [
     coords: [31.70, 34.84],
     description: "One of the five major Philistine cities and hometown of Goliath; David fled here and lived under King Achish of Gath during his time of refuge from Saul; later served as a Philistine stronghold during repeated conflicts with Israel (1 Samuel 17:4; 21:10–15; 27:2–4; 2 Samuel 1:20)",
     location: 'confirmed',
-    books: ['1 Samuel', '2 Samuel'],
+    books: ['1 Samuel', '2 Samuel', '1 Chronicles'],
   },
 
   // 1 & 2 KINGS
@@ -1781,7 +1781,7 @@ export const cities: City[] = [
     coords: [32.35, 35.95],
     description: "The strategic fortress city where Ahab was fatally wounded by a random arrow; Jehu son of Jehoshaphat was anointed king here while the Israelite army was fighting the Arameans; Jehu then drove furiously to Jezreel to begin his coup (1 Kings 22:1–40; 2 Kings 9:1–16)",
     location: 'probable',
-    books: ['Deuteronomy', '1 Kings', '2 Kings'],
+    books: ['Deuteronomy', '1 Kings', '2 Kings', '2 Chronicles'],
   },
   {
     name: 'Riblah',
@@ -1789,6 +1789,37 @@ export const cities: City[] = [
     coords: [34.40, 36.55],
     description: "An Aramean city on the Orontes River used as a military headquarters; Pharaoh Necho deposed King Jehoahaz here; Nebuchadnezzar executed King Zedekiah's sons here before him, then blinded Zedekiah and took him to Babylon (2 Kings 23:33; 25:6–7, 20–21)",
     location: 'confirmed',
-    books: ['2 Kings', 'Jeremiah'],
+    books: ['2 Kings', 'Jeremiah', '2 Chronicles'],
   },
+  // ── 1 CHRONICLES — Cities / Settlements ──────────────────────────────────
+
+  // (Hebron, Jerusalem, Gath, Kiriath-jearim, Ziklag, Beer-sheba, Gibeon
+  //  all exist — just add '1 Chronicles' to their books arrays above)
+  // Gezer — add new:
+  {
+    name: 'Gezer',
+    speakAs: 'GEE-zer',
+    coords: [31.86, 34.92],
+    description: "A Canaanite royal city on the border of Ephraim; Pharaoh captured and burned it and gave it as a dowry to Solomon's Egyptian wife; Solomon rebuilt it; listed in the account of David's wars with the Philistines (1 Kings 9:16–17; 1 Chronicles 20:4)",
+    location: 'confirmed',
+    books: ['Joshua', '1 Kings', '1 Chronicles'],
+  },
+  // ── 2 CHRONICLES — Cities / Settlements ──────────────────────────────────
+  {
+    name: 'Tekoa',
+    speakAs: 'teh-KOH-ah',
+    coords: [31.62, 35.22],
+    description: "A town in the hill country of Judah fortified by Rehoboam; home of the prophet Amos; Jehoshaphat assembled Judah here before the miraculous victory over Moab and Ammon in the wilderness (2 Chronicles 11:6; 20:20; Amos 1:1)",
+    location: 'confirmed',
+    books: ['2 Chronicles', 'Amos'],
+  },
+  {
+    name: 'Carchemish',
+    speakAs: 'KAR-keh-mish',
+    coords: [36.83, 38.01],
+    description: "The strategic city on the Euphrates where Pharaoh Necho marched to fight; Josiah intercepted him at Megiddo and was fatally wounded; Necho was later defeated here by Nebuchadnezzar — a turning point that transferred power in the ancient Near East from Egypt to Babylon (2 Chronicles 35:20; Jeremiah 46:2)",
+    location: 'confirmed',
+    books: ['2 Chronicles', 'Jeremiah'],
+  },
+
 ];

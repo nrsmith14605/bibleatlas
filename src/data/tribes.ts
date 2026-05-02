@@ -271,7 +271,7 @@ export const tribes: Tribe[] = [
     description: "Largest tribe; allotted southern Canaan including Hebron, Bethlehem, and eventually Jerusalem. David and the royal line came from Judah. Jacob's blessing: 'The scepter shall not depart from Judah.' (Gen 49:10; Josh 15)",
     color: '#6c3483',
     fillOpacity: 0.3,
-    books: ['Joshua', 'Judges', '1 Samuel', '2 Samuel', '1 Kings'],
+    books: ['Joshua', 'Judges', '1 Samuel', '2 Samuel', '1 Kings', '2 Kings', '1 Chronicles', '2 Chronicles'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -299,7 +299,7 @@ export const tribes: Tribe[] = [
     description: "Small but strategically located tribe between Judah and Ephraim; Jerusalem fell within its border. Saul the first king was a Benjaminite; Paul was also of this tribe. Jacob's blessing: 'Benjamin is a ravenous wolf.' (Gen 49:27; Josh 18)",
     color: '#7d6608',
     fillOpacity: 0.3,
-    books: ['Joshua', 'Judges', '1 Samuel'],
+    books: ['Joshua', 'Judges', '1 Samuel', '2 Samuel', '1 Chronicles', '2 Chronicles'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -324,7 +324,7 @@ export const tribes: Tribe[] = [
     description: "Joseph's younger son; received a large fertile central hill-country allotment. Shiloh and Bethel were in Ephraim. Jacob deliberately blessed Ephraim over Manasseh with his right hand, foretelling Ephraim's greater prominence. (Gen 48:17–20; Josh 16)",
     color: '#1e8449',
     fillOpacity: 0.28,
-    books: ['Joshua', 'Judges', '1 Samuel', '1 Kings'],
+    books: ['Joshua', 'Judges', '1 Samuel', '2 Samuel', '1 Kings', '2 Kings', '1 Chronicles', '2 Chronicles'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -349,7 +349,7 @@ export const tribes: Tribe[] = [
     description: "Joseph's firstborn; received the largest allotment split across both sides of the Jordan. Jacob crossed his hands and blessed Ephraim over Manasseh. (Gen 48:13–20; Josh 17)",
     color: '#117a65',
     fillOpacity: 0.25,
-    books: ['Numbers', 'Joshua', 'Judges'],
+    books: ['Numbers', 'Joshua', 'Judges', '1 Chronicles', '2 Chronicles'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -380,7 +380,7 @@ export const tribes: Tribe[] = [
     description: "Settled in the fertile Jezreel Valley and southern Galilee. Known for wisdom and understanding of the times. Jacob's blessing: 'Issachar is a strong donkey, crouching between the sheepfolds.' (Gen 49:14; Josh 19)",
     color: '#2e86c1',
     fillOpacity: 0.3,
-    books: ['Joshua', 'Judges', '1 Chronicles'],
+    books: ['Joshua', 'Judges', '1 Chronicles', '2 Chronicles'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -407,7 +407,7 @@ export const tribes: Tribe[] = [
     description: "Settled in lower Galilee between the Sea of Galilee and the Mediterranean. Nazareth was in their territory. Jesus fulfilled Isaiah's prophecy about Zebulun and Naphtali. Jacob's blessing: 'Zebulun shall dwell at the shore of the sea.' (Gen 49:13; Josh 19)",
     color: '#1a6fa8',
     fillOpacity: 0.3,
-    books: ['Joshua', 'Judges', 'Isaiah', 'Matthew'],
+    books: ['Joshua', 'Judges', 'Isaiah', 'Matthew', '1 Chronicles', '2 Chronicles'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -433,7 +433,7 @@ export const tribes: Tribe[] = [
     description: "Settled in upper Galilee and the western shore of the Sea of Galilee. Capernaum was in their territory; Jesus began his Galilean ministry here. Jacob's blessing: 'Naphtali is a doe let loose that gives beautiful fawns.' (Gen 49:21; Josh 19)",
     color: '#148f77',
     fillOpacity: 0.28,
-    books: ['Joshua', 'Judges', 'Isaiah', 'Matthew'],
+    books: ['Joshua', 'Judges', 'Isaiah', 'Matthew', '1 Chronicles', '2 Chronicles'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -462,7 +462,7 @@ export const tribes: Tribe[] = [
     description: "Settled along the northern Mediterranean coast from Carmel to Phoenicia. Blessed with olive oil and rich food. Jacob's blessing: 'Asher's food shall be rich, and he shall yield royal delicacies.' (Gen 49:20; Josh 19)",
     color: '#6d4c8b',
     fillOpacity: 0.28,
-    books: ['Joshua', 'Judges', 'Luke'],
+    books: ['Joshua', 'Judges', 'Luke', '1 Chronicles', '2 Chronicles'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -489,7 +489,7 @@ export const tribes: Tribe[] = [
     description: "Originally allotted territory in the southwest but unable to displace the Philistines. Most migrated north and captured Laish, renaming it Dan. Samson was a Danite. Jacob's blessing: 'Dan shall judge his people as one of the tribes of Israel.' (Gen 49:16; Josh 19)",
     color: '#ba4a00',
     fillOpacity: 0.3,
-    books: ['Joshua', 'Judges'],
+    books: ['Joshua', 'Judges', '1 Chronicles', '2 Chronicles'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -514,7 +514,7 @@ export const tribes: Tribe[] = [
     description: "Allotted territory within Judah's portion in the Negev. Eventually absorbed into Judah. Beersheba was a key Simeonite city. Jacob's blessing for Simeon and Levi: 'I will divide them in Jacob and scatter them in Israel,' because of their violent revenge at Shechem. (Gen 49:5–7; Josh 19)",
     color: '#7b241c',
     fillOpacity: 0.3,
-    books: ['Joshua', '1 Chronicles'],
+    books: ['Joshua', '1 Chronicles', '2 Chronicles'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -540,7 +540,7 @@ export const tribes: Tribe[] = [
     description: "Settled east of the Jordan in Gilead. Skilled warriors. They and Reuben requested this territory before crossing into Canaan, promising to fight alongside the other tribes first. Jacob's blessing: 'Raiders shall raid Gad, but he shall raid at their heels.' (Gen 49:19; Num 32)",
     color: '#2e86c1',
     fillOpacity: 0.28,
-    books: ['Numbers', 'Joshua', 'Judges'],
+    books: ['Numbers', 'Joshua', 'Judges', '1 Chronicles', '2 Chronicles'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -567,7 +567,7 @@ export const tribes: Tribe[] = [
     description: "Firstborn of Jacob; settled east of the Dead Sea on the Moabite plateau. Lost the birthright blessing because Reuben slept with his father's concubine Bilhah. Jacob's blessing: 'Unstable as water, you shall not have preeminence.' (Gen 35:22; 49:3–4; Num 32)",
     color: '#935116',
     fillOpacity: 0.28,
-    books: ['Numbers', 'Joshua', 'Judges'],
+    books: ['Numbers', 'Joshua', 'Judges', '1 Chronicles', '2 Chronicles'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -688,7 +688,7 @@ export const tribes: Tribe[] = [
     description: "Descendants of Jebus, son of Canaan (Gen 10:16). They inhabited the city of Jebus (Jerusalem) and held it until David captured it around 1000 BC. The Jebusite Araunah's threshing floor became the site of Solomon's Temple. (Gen 10:16; 2 Sam 5:6–7)",
     color: '#1f618d',
     fillOpacity: 0.3,
-    books: ['Genesis', 'Exodus', 'Deuteronomy', 'Joshua', 'Judges', '2 Samuel'],
+    books: ['Genesis', 'Exodus', 'Deuteronomy', 'Joshua', 'Judges', '2 Samuel', '1 Chronicles'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -2558,7 +2558,7 @@ export const tribes: Tribe[] = [
     description: "David's elite personal bodyguard commanded by Benaiah son of Jehoiada; likely Aegean mercenaries — the Cherethites possibly from Crete and the Pelethites related to the Philistines; they remained loyal to David through Absalom's revolt and Adonijah's attempted coup; they escorted Solomon to his coronation (2 Samuel 8:18; 15:18; 20:7; 1 Kings 1:38)",
     color: '#2c3e50',
     fillOpacity: 0.25,
-    books: ['2 Samuel', '1 Kings'],
+    books: ['2 Samuel', '1 Kings', '1 Chronicles'],
     geometry: {
       type: 'Polygon',
       coordinates: [[
@@ -2621,6 +2621,101 @@ export const tribes: Tribe[] = [
         [40.5, 30.0],
         [40.0, 32.0],
         [39.5, 35.0],
+      ]],
+    },
+  },
+  // ══════════════════════════════════════════════════════════════════════════
+  // 1 CHRONICLES — Peoples
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Hagrites',
+    speakAs: 'HAG-rites',
+    description: "A nomadic people living east of Gilead in the desert; likely descendants of Hagar; the Reubenites waged war against them and defeated them in the days of Saul, taking 50,000 camels, 250,000 sheep, and 2,000 donkeys, settling in their territory (1 Chronicles 5:10, 18–22)",
+    color: '#7f8c8d',
+    fillOpacity: 0.22,
+    books: ['1 Chronicles'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [36.80, 32.50],
+        [37.80, 32.50],
+        [38.20, 31.80],
+        [37.80, 31.20],
+        [36.80, 31.20],
+        [36.20, 31.60],
+        [36.50, 32.20],
+        [36.80, 32.50],
+      ]],
+    },
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // 2 CHRONICLES — Peoples
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Cushites (2 Chronicles)',
+    speakAs: 'KUSH-ites',
+    description: "A vast African army of Cushites under Zerah attacked Judah during Asa's reign with a million men and 300 chariots; Asa cried out: 'LORD, there is no one besides you to help'; God struck the Cushites and Asa's army pursued them as far as Gerar; enormous plunder was taken (2 Chronicles 14:9–15)",
+    color: '#5c2500',
+    fillOpacity: 0.22,
+    books: ['2 Chronicles'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Cushite approach — southwest of Judah / Negev-Gerar region
+        [34.20, 31.20],
+        [34.70, 31.20],
+        [34.90, 30.90],
+        [34.60, 30.50],
+        [34.10, 30.50],
+        [33.80, 30.80],
+        [34.00, 31.10],
+        [34.20, 31.20],
+      ]],
+    },
+  },
+  {
+    name: 'Libyans (2 Chronicles)',
+    speakAs: 'LIB-ee-ans',
+    description: "The Libyans (Lubim) formed part of Shishak's army that invaded Jerusalem under Rehoboam and took the treasures of the Temple; they also joined Zerah the Cushite's coalition against Asa; and supported the massive army of Ramah that threatened Jehoshaphat (2 Chronicles 12:3; 16:8)",
+    color: '#2980b9',
+    fillOpacity: 0.20,
+    books: ['2 Chronicles'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Libya — North African approach
+        [20.00, 32.00],
+        [25.00, 32.50],
+        [25.00, 29.00],
+        [20.00, 29.00],
+        [18.00, 30.00],
+        [18.00, 31.50],
+        [20.00, 32.00],
+      ]],
+    },
+  },
+  {
+    name: 'Arabians (2 Chronicles)',
+    speakAs: 'AIR-ah-bee-ans',
+    description: "The Arabians who lived near the Cushites brought Jehoshaphat gifts of 7,700 rams and 7,700 male goats annually; later the Arabians and Philistines raided Judah during Jehoram's reign, breaking into the palace and carrying off his sons and wives; only Jehoahaz his youngest was left (2 Chronicles 17:11; 21:16–17)",
+    color: '#d4ac0d',
+    fillOpacity: 0.20,
+    books: ['2 Chronicles'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Arabia — south and east of Judah
+        [35.00, 30.50],
+        [37.50, 30.50],
+        [39.00, 28.00],
+        [37.00, 25.00],
+        [34.00, 27.00],
+        [33.50, 29.00],
+        [34.50, 30.20],
+        [35.00, 30.50],
       ]],
     },
   },

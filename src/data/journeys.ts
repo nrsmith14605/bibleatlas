@@ -3048,4 +3048,163 @@ export const journeys: Journey[] = [
       },
     ],
   },
+  // ══════════════════════════════════════════════════════════════════════════
+  // 1 CHRONICLES JOURNEYS
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: "David's Mighty Men Gather at Adullam",
+    color: '#7f8c8d',
+    people: ['David'],
+    books: ['1 Chronicles'],
+    path: [
+      [31.57, 34.97],  // Cave of Adullam
+      [31.53, 35.10],  // Hebron — David anointed
+      [31.778, 35.235], // Jerusalem — kingdom established
+    ],
+    locations: [
+      {
+        name: 'Cave of Adullam',
+        coords: [31.57, 34.97],
+        description: "David's mighty men came to him at the cave of Adullam; three of them broke through the Philistine lines to bring David water from the well at Bethlehem; David refused to drink it and poured it out as an offering to the LORD (1 Chronicles 11:15–19)",
+      },
+      {
+        name: 'Hebron — All Israel Anoints David',
+        coords: [31.53, 35.10],
+        description: "All Israel gathered to David at Hebron: 'We are your own flesh and blood... the LORD your God said to you, You will shepherd my people Israel, and you will become their ruler.' David made a covenant with them and they anointed him king over Israel (1 Chronicles 11:1–3)",
+      },
+      {
+        name: 'Jerusalem — The Capital Established',
+        coords: [31.778, 35.235],
+        description: "David and all Israel marched to Jerusalem — that is, Jebus; the Jebusites said 'You will not get in here.' But David captured the fortress of Zion — the City of David; Joab led the assault and became commander-in-chief (1 Chronicles 11:4–9)",
+      },
+    ],
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // 2 CHRONICLES JOURNEYS
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: "Solomon Goes to Gibeon",
+    color: '#d4ac0d',
+    people: ['Solomon'],
+    books: ['2 Chronicles'],
+    path: [
+      [31.778, 35.235],  // Jerusalem
+      [31.843, 35.175],  // Gibeon
+    ],
+    locations: [
+      {
+        name: 'Jerusalem — Departure',
+        coords: [31.778, 35.235],
+        description: "Solomon spoke to all Israel — the commanders, judges, leaders, and heads of families — and went with the whole assembly to the high place at Gibeon (2 Chronicles 1:2–3)",
+      },
+      {
+        name: 'Gibeon — The Dream',
+        coords: [31.843, 35.175],
+        description: "God appeared to Solomon at Gibeon in a dream: 'Ask for whatever you want me to give you.' Solomon asked for wisdom and knowledge to govern the people; God was pleased and gave him also wealth, riches, and honor beyond any king before or after him (2 Chronicles 1:7–12)",
+      },
+    ],
+  },
+
+  {
+    name: "Jehoshaphat's Reform Tour",
+    color: '#2874a6',
+    people: [],
+    books: ['2 Chronicles'],
+    path: [
+      [31.778, 35.235],  // Jerusalem
+      [31.25, 34.80],    // Beer-sheba — southern limit
+      [32.06, 35.29],    // Hill Country of Ephraim — northern limit
+      [31.778, 35.235],  // Return to Jerusalem
+    ],
+    locations: [
+      {
+        name: 'Jerusalem — Departure',
+        coords: [31.778, 35.235],
+        description: "Jehoshaphat went out again among the people from Beer-sheba to the hill country of Ephraim and turned them back to the LORD God of their fathers (2 Chronicles 19:4)",
+      },
+      {
+        name: 'Beer-sheba — Southern Limit',
+        coords: [31.25, 34.80],
+        description: "The southernmost extent of Jehoshaphat's reform tour; Beer-sheba marked the traditional southern boundary of Judah; he appointed judges throughout the fortified cities of Judah (2 Chronicles 19:5)",
+      },
+      {
+        name: 'Hill Country of Ephraim — Northern Limit',
+        coords: [32.06, 35.29],
+        description: "The northernmost extent of Jehoshaphat's reform; he pressed into the territory of the Northern Kingdom to call the people back to the LORD; his son Jehoram later undid all this reform (2 Chronicles 19:4)",
+      },
+    ],
+  },
+
+  {
+    name: "Jehoshaphat's Victory in the Wilderness",
+    color: '#27ae60',
+    people: [],
+    books: ['2 Chronicles'],
+    path: [
+      [31.778, 35.235],  // Jerusalem
+      [31.62, 35.22],    // Tekoa — the assembly
+      [35.38, 31.55],    // Wilderness of Jeruel — the ambush
+      [35.18, 31.55],    // Valley of Berakah — the blessing
+      [31.778, 35.235],  // Jerusalem — triumphant return
+    ],
+    locations: [
+      {
+        name: 'Jerusalem — The Alarm',
+        coords: [31.778, 35.235],
+        description: "A great army from Moab, Ammon, and Meun came against Jehoshaphat; he proclaimed a fast and all Judah gathered to seek the LORD; Jahaziel prophesied: 'The battle is not yours but God's. You will not need to fight this battle' (2 Chronicles 20:1–17)",
+      },
+      {
+        name: 'Tekoa — The Assembly',
+        coords: [31.62, 35.22],
+        description: "Jehoshaphat appointed men to sing to the LORD and praise him as they went out at the head of the army: 'Give thanks to the LORD, for his love endures forever.' As they began to sing, the LORD set ambushes against the enemy (2 Chronicles 20:20–22)",
+      },
+      {
+        name: 'Wilderness of Jeruel — The Rout',
+        coords: [35.38, 31.55],
+        description: "When Judah arrived at the overlook to the wilderness they saw only dead bodies; no one had escaped. It took three days to collect the plunder — so much they could not carry it all (2 Chronicles 20:23–25)",
+      },
+      {
+        name: 'Valley of Berakah — The Blessing',
+        coords: [35.18, 31.55],
+        description: "On the fourth day they assembled in the Valley of Berakah and praised the LORD; they named it the Valley of Berakah ('Blessing') as it is called to this day; then they returned to Jerusalem with Jehoshaphat at their head, playing harps, lyres, and trumpets (2 Chronicles 20:26–28)",
+      },
+      {
+        name: 'Jerusalem — Triumphant Return',
+        coords: [31.778, 35.235],
+        description: "They entered Jerusalem and went to the Temple; the fear of God fell on all the surrounding kingdoms when they heard that the LORD had fought against Israel's enemies; the kingdom of Jehoshaphat was at peace (2 Chronicles 20:28–30)",
+      },
+    ],
+  },
+
+  {
+    name: "Necho's March and Josiah's Death",
+    color: '#c0392b',
+    people: [],
+    books: ['2 Chronicles'],
+    path: [
+      [30.06, 31.25],    // Egypt
+      [32.58, 35.18],    // Megiddo — Josiah intercepted
+      [36.83, 38.01],    // Carchemish — Necho's destination
+    ],
+    locations: [
+      {
+        name: 'Egypt — Necho Marches',
+        coords: [30.06, 31.25],
+        description: "Pharaoh Necho king of Egypt went up to make war at Carchemish on the Euphrates; God told Necho to hurry and warned against opposing him; but Josiah came out to fight and Necho sent messengers saying 'God commanded me to hurry — stop opposing God, who is with me' (2 Chronicles 35:20–21)",
+      },
+      {
+        name: 'Megiddo — Josiah Killed',
+        coords: [32.58, 35.18],
+        description: "Josiah disguised himself and went into battle at Megiddo; archers shot King Josiah and he was hit; he said: 'Take me away, for I am badly wounded.' His servants took him from the chariot, put him in his second chariot, and brought him to Jerusalem where he died. All Judah and Jerusalem mourned for Josiah (2 Chronicles 35:22–25)",
+      },
+      {
+        name: 'Carchemish — The Destination',
+        coords: [36.83, 38.01],
+        description: "Necho's military objective was the strategic Euphrates crossing at Carchemish; Nebuchadnezzar later defeated Necho here in 605 BC, ending Egyptian power in the ancient Near East and beginning the Babylonian era that would seal Judah's fate (2 Chronicles 35:20; Jeremiah 46:2)",
+      },
+    ],
+  },
 ];

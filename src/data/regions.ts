@@ -1765,4 +1765,100 @@ export const regions: Region[] = [
       ]],
     },
   },
+  // ── 1 CHRONICLES ─────────────────────────────────────────────────────────
+
+  {
+    name: 'Hagrite Territory',
+    speakAs: 'HAG-rite',
+    description: "The territory of the Hagrites, a pastoral people east of Gilead; the Reubenites waged war against them in the days of Saul and defeated them, taking their livestock and living in their tents throughout the region east of Gilead (1 Chronicles 5:10, 18–22)",
+    color: '#7f8c8d',
+    fillOpacity: 0.20,
+    location: 'probable',
+    books: ['1 Chronicles'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // East of Gilead — Hagrite pastoral territory
+        [36.80, 32.50],
+        [37.80, 32.50],
+        [38.20, 31.80],
+        [37.80, 31.20],
+        [36.80, 31.20],
+        [36.20, 31.60],
+        [36.50, 32.20],
+        [36.80, 32.50],
+      ]],
+    },
+  },
+
+  // ── 2 CHRONICLES ─────────────────────────────────────────────────────────
+
+  {
+    name: 'Wilderness of Judah',
+    description: "The barren terrain between the Judean highlands and the Dead Sea; armies of Moab and Ammon invaded through this wilderness toward Judah; Jehoshaphat went out to meet them and God destroyed the enemy forces miraculously; the Valley of Berakah and the Wilderness of Jeruel lay within this region (2 Chronicles 20:2, 16, 20)",
+    color: '#c9a030',
+    fillOpacity: 0.20,
+    location: 'confirmed',
+    books: ['2 Chronicles'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Judean wilderness — between highlands and Dead Sea
+        [35.20, 31.90],
+        [35.50, 31.88],
+        [35.60, 31.60],
+        [35.55, 31.20],
+        [35.40, 31.00],
+        [35.10, 31.10],
+        [34.98, 31.35],
+        [35.00, 31.65],
+        [35.20, 31.90],
+      ]],
+    },
+  },
+  {
+    name: 'Ophel',
+    speakAs: 'OH-fel',
+    description: "The ridge of the City of David south of the Temple Mount; Jotham built extensively on the Ophel wall; Manasseh enclosed the Ophel with a wall and extended Jerusalem's defenses; the Nethinim (Temple servants) lived here after the exile (2 Chronicles 27:3; 33:14; Nehemiah 3:26–27; 11:21)",
+    color: '#8b6914',
+    fillOpacity: 0.28,
+    location: 'confirmed',
+    books: ['2 Chronicles', 'Nehemiah'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Ophel — ridge between City of David and Temple Mount
+        [35.233, 31.776],
+        [35.238, 31.774],
+        [35.240, 31.769],
+        [35.237, 31.764],
+        [35.230, 31.762],
+        [35.224, 31.764],
+        [35.222, 31.769],
+        [35.225, 31.774],
+        [35.233, 31.776],
+      ]],
+    },
+  },
+  {
+    name: 'Hill Country of Ephraim',
+    description: "The central highlands; referenced in 2 Chronicles in the context of Jehoshaphat's reforms — he went from Beer-sheba to the hill country of Ephraim turning the people back to the LORD; northern Israelites from Ephraim, Manasseh, and Simeon came to Jerusalem to celebrate Hezekiah's Passover (2 Chronicles 19:4; 30:10–11)",
+    color: '#1e8449',
+    fillOpacity: 0.18,
+    location: 'confirmed',
+    books: ['Joshua', 'Judges', '1 Samuel', '2 Chronicles'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [34.90, 32.10],
+        [35.10, 32.10],
+        [35.45, 32.28],
+        [35.58, 32.18],
+        [35.55, 31.90],
+        [35.22, 31.88],
+        [34.95, 31.92],
+        [34.90, 32.10],
+      ]],
+    },
+  },
 ];

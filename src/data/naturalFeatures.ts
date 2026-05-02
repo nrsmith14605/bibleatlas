@@ -33,7 +33,7 @@ export const naturalFeatures: NaturalFeature[] = [
     name: 'Jordan River',
     description: 'Central river of Canaan; Israel crossed here entering the Promised Land; Jesus baptized here',
     type: 'river',
-    books: ['Genesis', 'Numbers', 'Deuteronomy', 'Joshua', 'Judges', '2 Samuel', '1 Kings', '2 Kings', 'Matthew', 'Mark', 'Luke', 'John'],
+    books: ['Genesis', 'Numbers', 'Deuteronomy', 'Joshua', 'Judges', '2 Samuel', '1 Kings', '2 Kings', '1 Chronicles', '2 Chronicles', 'Matthew', 'Mark', 'Luke', 'John'],
     color: '#1e8449',
     geoJsonName: 'Jordan',
   },
@@ -287,7 +287,7 @@ export const naturalFeatures: NaturalFeature[] = [
     name: 'Dead Sea',
     description: "The Salt Sea; lowest point on earth; Lot chose its well-watered plain; Sodom and Gomorrah stood on its southern shores (Genesis 13:10; 14:3)",
     type: 'sea',
-    books: ['Genesis', 'Numbers', 'Joshua', 'Ezekiel'],
+    books: ['Genesis', 'Numbers', 'Joshua', '2 Chronicles', 'Ezekiel'],
     lakeGeoJsonName: 'Dead Sea',  // ← confirm exact string from console log
     color: '#2e86c1',
     fillOpacity: 0.50,

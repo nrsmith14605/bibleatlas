@@ -250,17 +250,19 @@ export const people: Person[] = [
     ],
     books: ['Judges'],
   },
-  {
+    {
     name: 'David',
-    speakAs: 'David',
-    description: "King of Israel; son of Jesse from the tribe of Judah; anointed by Samuel; defeated Goliath with a sling and stone; became king in Hebron and later in Jerusalem; established the Davidic dynasty; wrote many psalms",
+    speakAs: 'DAY-vid',
+    description: "King of Israel; son of Jesse from the tribe of Judah; anointed by Samuel; defeated Goliath; became king first in Hebron then all Israel; brought the Ark to Jerusalem; established the Davidic dynasty; wrote many psalms; his detailed preparations made Solomon's Temple possible",
     journeys: [
-      "David's Early Life in Bethlehem",
-      "David's Rise to Power",
-      "David's Reign as King",
-      "David's Later Years and Legacy"
+      "David Flees from Saul",
+      "David Moves from Ziklag to Hebron",
+      "The Ark Comes to Jerusalem",
+      "David Flees from Absalom",
+      "David Returns to Jerusalem",
+      "David's Mighty Men Gather at Adullam",
     ],
-    books: ['1 Samuel', '2 Samuel', '1 Kings', '2 Kings', 'Psalms'],
+    books: ['1 Samuel', '2 Samuel', '1 Kings', '1 Chronicles', '2 Chronicles', 'Psalms'],
   },
   // ── 1 Kings ────────────────────────────────────────────────────────────────
 
@@ -269,7 +271,7 @@ export const people: Person[] = [
     speakAs: 'SOL-oh-mon',
     description: "Son of David and Bathsheba; Israel's third king and wisest ruler; built the Temple in Jerusalem; his wealth and wisdom were unparalleled; his 700 wives and 300 concubines led his heart after other gods in old age; after his death the kingdom split",
     journeys: [],
-    books: ['1 Kings', '2 Samuel', 'Psalms', 'Proverbs', 'Ecclesiastes', 'Song of Solomon'],
+    books: ['1 Kings', '2 Samuel', '1 Chronicles', '2 Chronicles', 'Psalms', 'Proverbs', 'Ecclesiastes', 'Song of Solomon'],
   },
   {
     name: 'Elijah',

@@ -245,7 +245,7 @@ export const landmarks: Landmark[] = [
     coords: [33.41, 35.86],
     description: "Northern boundary of the Promised Land; possible site of Jesus' transfiguration",
     location: 'confirmed',
-    books: ['Deuteronomy', 'Matthew', 'Mark', 'Luke'],
+    books: ['Deuteronomy', '1 Chronicles', 'Matthew', 'Mark', 'Luke'],
   },
   {
     name: 'Mount of Olives',
@@ -768,14 +768,14 @@ export const landmarks: Landmark[] = [
     coords: [31.80, 35.12],
     description: "The house of Obed-edom the Gittite where the Ark of the LORD remained for three months; God blessed the household of Obed-edom and all that belonged to him; when David heard this he went and brought the Ark up to Jerusalem with dancing and celebration (2 Samuel 6:10–12)",
     location: 'unknown',
-    books: ['2 Samuel'],
+    books: ['2 Samuel', '1 Chronicles'],
   },
   {
     name: 'The City of David (Zion)',
     coords: [31.775, 35.232],
     description: "The Jebusite stronghold of Zion captured by David; he called it the City of David and built up the area around it from the Millo inward; it became the political and spiritual heart of Israel; the Ark was eventually brought here (2 Samuel 5:7–9; 6:12–19)",
     location: 'confirmed',
-    books: ['2 Samuel'],
+    books: ['2 Samuel', '1 Chronicles', '2 Chronicles'],
   },
   {
     name: "Threshing Floor of Araunah the Jebusite",
@@ -783,7 +783,7 @@ export const landmarks: Landmark[] = [
     coords: [31.778, 35.235],
     description: "The threshing floor on Mount Moriah purchased by David from Araunah the Jebusite for fifty shekels of silver; David built an altar here and offered burnt offerings after the angel of the LORD stopped the plague that killed 70,000 Israelites; this site later became the foundation of Solomon's Temple (2 Samuel 24:18–25; 2 Chronicles 3:1)",
     location: 'confirmed',
-    books: ['2 Samuel'],
+    books: ['2 Samuel', '1 Chronicles', '2 Chronicles'],
   },
     // ══════════════════════════════════════════════════════════════════════════
   // 1 KINGS
@@ -867,5 +867,60 @@ export const landmarks: Landmark[] = [
     description: "The house in Damascus of Naaman, commander of the Aramean army; after being healed of leprosy in the Jordan River, Naaman returned to Elisha and declared: 'Now I know there is no God in all the world except in Israel.' He requested two mule-loads of Israelite soil to worship on back home (2 Kings 5:1–19)",
     location: 'unknown',
     books: ['2 Kings'],
+  },
+  // ══════════════════════════════════════════════════════════════════════════
+  // 1 CHRONICLES
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Tabernacle of the Lord at Gibeon',
+    speakAs: 'Tabernacle at GIB-ee-on',
+    coords: [31.843, 35.175],
+    description: "The Tabernacle of Moses and the original bronze altar were housed at Gibeon during David's reign; David brought the Ark to Jerusalem but the Tabernacle remained at Gibeon; Solomon went there to offer a thousand burnt offerings before his dream about wisdom (1 Chronicles 16:39–40; 21:29; 1 Kings 3:4)",
+    location: 'confirmed',
+    books: ['1 Chronicles', '2 Chronicles', '1 Kings'],
+  },
+  {
+    name: 'Gates of the Sanctuary',
+    coords: [31.778, 35.235],
+    description: "David organized the Levites into divisions and assigned gatekeepers to the four sides of the sanctuary — east, west, north, and south; he gave detailed plans to Solomon for the Temple courts and the storerooms and the gates (1 Chronicles 26:13–19; 28:11–12)",
+    location: 'confirmed',
+    books: ['1 Chronicles'],
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // 2 CHRONICLES
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'The Molten Sea (Bronze Basin)',
+    speakAs: 'MOL-ten Sea',
+    coords: [31.778, 35.234],
+    description: "The enormous bronze basin cast by Huram-abi for Solomon's Temple; it held 3,000 baths of water; it rested on twelve bronze bulls facing outward in groups of three; it served for the ritual washing of the priests; Ahaz later removed it from the bronze bulls (2 Chronicles 4:2–6; 2 Kings 16:17)",
+    location: 'confirmed',
+    books: ['2 Chronicles', '1 Kings', '2 Kings'],
+  },
+  {
+    name: 'High Places (Bamot)',
+    speakAs: 'BAH-moth',
+    coords: [31.75, 35.18],
+    description: "The local hilltop shrines where Israel repeatedly worshiped; removing them was the standard of judgment for Judah's kings — good kings removed them, evil kings restored them; Hezekiah and Josiah were the most thorough in demolishing them across the land (2 Chronicles 14:3; 17:6; 31:1; 34:3)",
+    location: 'probable',
+    books: ['1 Kings', '2 Kings', '2 Chronicles'],
+  },
+  {
+    name: 'Valley of Hinnom',
+    speakAs: 'HIN-om',
+    coords: [31.772, 35.227],
+    description: "The valley south of Jerusalem; Ahaz burned incense here and sacrificed his sons in the fire; Manasseh also made his sons pass through the fire here; Josiah desecrated the Topheth in this valley; later called Gehenna, a symbol of judgment (2 Chronicles 28:3; 33:6; 2 Kings 23:10)",
+    location: 'confirmed',
+    books: ['2 Chronicles', '2 Kings', 'Jeremiah'],
+  },
+  {
+    name: 'East Gate (Jerusalem)',
+    coords: [31.778, 35.238],
+    description: "The eastern gate of the Temple complex facing the Mount of Olives; Nehemiah later supervised its repair; the rising sun shone directly through it at the equinoxes; Ezekiel saw the glory of the LORD entering the Temple through the east gate (2 Chronicles 29:4; Nehemiah 3:29; Ezekiel 43:1–4)",
+    location: 'confirmed',
+    books: ['2 Chronicles', 'Nehemiah', 'Ezekiel'],
   },
 ];
