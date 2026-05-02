@@ -1,164 +1,103 @@
 # BibleAtlas
 
-An interactive web application for exploring Biblical geography, character journeys, and historical kingdoms/empires.
+An interactive Biblical geography atlas for exploring ancient landscapes, character journeys, kingdoms, and historical events across the entire Bible — from Genesis to Revelation.
+
+## Live
+[![Deploy with Vercel](https://vercel.com/button)](https://bibleatlas-three.vercel.app)
 
 ## Features
 
-- 📍 **Interactive Map** - Pan and zoom to explore Biblical regions
-- 🗺️ **Character Journeys** - View paths of Abraham, Paul, Moses and more
-- 👑 **Kingdoms & Empires** - See historical territories (Persian Empire, Roman Empire, Kingdom of Israel, etc.)
-- 📖 **Bible Book Integration** - Select books to automatically load relevant journeys and kingdoms
-- 🌍 **Modern Borders Toggle** - Switch between historical and modern map views
-- 🎨 **Beautiful Design** - Distinctive parchment-inspired aesthetic with scholarly typography
+### 🗺️ Map Tab
+- **Filter by Book** — Select any of the 66 Bible books to load relevant content
+- **Cities & Settlements** — 100+ cities with confirmed/probable/uncertain location indicators and pronunciation guides
+- **Landmarks** — Mountains, wells, altars, tombs, caves, gates, and sacred sites
+- **Natural Features** — Rivers (Euphrates, Tigris, Jordan, Nile, Jabbok, and more), seas, lakes, deserts, and valleys rendered from Natural Earth GeoJSON data
+- **Journeys** — 60+ multi-segment character journeys with per-segment distances; filter by person
+- **Regions** — Biblical geographic regions (Negev, Galilee, Judea, Goshen, Eden, etc.)
+- **Ethnic / Tribal Peoples** — All Table of Nations peoples (Gen 10), twelve tribes of Israel with allotment boundaries, Philistines, Arameans, and more
 
-## Setup Instructions
+### 📅 Timeline Tab
+- Scrollable timeline from 2000 BC to 100 AD
+- Click to select a year; drag to scroll; click the year label to type a specific year
+- **Jump to year** input field
+- **Search by Book** — autocomplete search jumps to the start of any book's events
+- **Books This Period** — lists which Bible books correspond to the selected year, with event and writing date ranges
+- **Kingdoms & Empires** — 10+ kingdoms with time-accurate territory snapshots: Egypt (9 snapshots), United/Northern/Southern Kingdoms of Israel, Neo-Assyrian Empire, Neo-Babylonian Empire, Achaemenid Persia, Macedonian Empire (Alexander), Philistia, Aram-Damascus, and Rome; filter by era using the timeline
 
-### Prerequisites
-- Node.js (v14 or higher)
-- npm or yarn
+### 📏 Wayfinder Tab
+- **Cursor mode** — normal map interaction
+- **Place Points mode** — click the map or search for cities/landmarks to drop up to 5 waypoints; shows total distance in km and miles
+- **Draw Line mode** — freehand path drawing with live distance measurement
 
-### Installation
+### 🌍 Global Controls
+- **8 Map Styles** — Physical, Terrain Base, National Geographic, Topographic, Street, OpenStreetMap, Satellite, Ocean Base
+- **Modern Borders toggle** — overlays current country borders with name labels
+- **Clear All** — resets all selections
+- **Collapsible sidebar** with smooth animation
+- **Pronounciation (🔊)** — text-to-speech button on city, landmark, and journey popups
+- **Location certainty** — all cities and landmarks marked as confirmed, probable, or uncertain
 
-1. **Install dependencies:**
-```bash
-npm install
-```
+## Data Coverage
 
-2. **Start the development server:**
-```bash
-npm start
-```
+### Books
+All 66 books of the Bible, with event date ranges, written date ranges, and prophetic flags.
 
-3. **Open your browser:**
-Navigate to `http://localhost:3000`
+### Journeys (60+)
+Includes multi-stop, segmented journeys for:
+- **Patriarchs** — Terah, Abraham, Lot, Hagar, Ishmael, Isaac, Rebekah, Jacob, Esau, Joseph, Judah, Benjamin
+- **Exodus** — Moses (10 journeys from Midian through Mount Nebo), Aaron, Joshua
+- **Conquest & Judges** — Joshua's campaigns, Deborah & Barak, Gideon, Jephthah, Samson, the Danite migration
+- **Ruth** — Naomi's family to Moab and back
+- **Samuel / Kings** — David's flight from Saul, the Ark's journey, David's flight from Absalom
+- **Gospels** — Jesus (9 journeys: flight to Egypt, baptism, Galilean ministry, northern excursion, final journey to Jerusalem, resurrection appearances), Road to Emmaus
+- **Epistles** — Paul's Damascus–Arabia circuit; Tychicus, Epaphroditus, Onesimus, Timothy letter deliveries; 1–2 Peter letter routing
+
+### Kingdoms & Empires
+Territory snapshots with historically accurate boundaries at multiple points in time for Egypt, United/Northern/Southern Israel, Assyria, Babylon, Persia, Macedonia, Philistia, Aram-Damascus, and Rome.
+
+### Peoples / Tribes
+Full Table of Nations (Genesis 10) with all descendants of Japheth, Ham, and Shem; twelve tribes with allotment polygons; Canaanite sub-groups; Iron Age peoples (Philistines, Ammonites, Moabites, Edomites, etc.); New Testament peoples (Samaritans, Syrophoenicians, etc.).
+
+## Tech Stack
+
+- **React + TypeScript** — UI and type safety
+- **Leaflet / React-Leaflet** — interactive map
+- **Natural Earth GeoJSON** (CDN) — rivers and lakes
+- **ArcGIS / ESRI tile layers** — multiple map styles
+- **Web Speech API** — pronunciation audio
+- **Vite** — build tooling
 
 ## Project Structure
 
 ```
-bibleatlas/
-├── src/
-│   ├── App.tsx          # Main application component
-│   ├── App.css          # Styling
-│   ├── index.tsx        # Entry point
-│   └── index.css        # Global styles
-├── public/
-│   └── index.html       # HTML template
-└── package.json         # Dependencies
+src/
+├── App.tsx                  # Main application component
+├── App.css                  # All styling
+├── data/
+│   ├── books.ts             # All 66 Bible books with date ranges
+│   ├── Cities.ts            # 200+ cities and settlements
+│   ├── landmarks.ts         # Mountains, wells, altars, tombs, etc.
+│   ├── naturalFeatures.ts   # Rivers, seas, deserts, valleys
+│   ├── journeys.ts          # 60+ character journeys
+│   ├── regions.ts           # Geographic and political regions
+│   ├── tribes.ts            # Peoples, tribes, Table of Nations
+│   ├── kingdomsempires.ts   # Kingdoms with territory snapshots
+│   └── people.ts            # Biblical persons linked to journeys
+└── types.ts                 # TypeScript interfaces
 ```
 
-## How to Use
+## Setup
 
-1. **Select a Bible Book** - Choose from the dropdown to auto-load relevant content
-2. **Toggle Journeys** - Check/uncheck to show different character paths
-3. **Toggle Kingdoms** - Display historical territories and empires
-4. **Modern Borders** - Switch to see current country boundaries
-5. **Explore the Map** - Click and drag to pan, scroll to zoom
-
-## Technologies Used
-
-- **React** - UI framework
-- **TypeScript** - Type safety
-- **Leaflet** - Interactive mapping library
-- **React-Leaflet** - React components for Leaflet
-- **OpenStreetMap** - Map tiles
-
-## Current Data
-
-### Journeys
-- Abraham's Journey (Ur → Canaan)
-- Paul's First Missionary Journey
-- Exodus Route (Egypt → Canaan)
-
-### Kingdoms & Empires
-- Kingdom of Israel (United)
-- Northern Kingdom (Israel)
-- Southern Kingdom (Judah)
-- Persian Empire
-- Roman Empire
-
-### Bible Books
-- Genesis
-- Exodus
-- 1 Kings
-- 2 Kings
-- Acts
-- Ezra
-
-## Extending the Project
-
-### Adding New Journeys
-
-In `App.tsx`, add to the `journeys` object:
-
-```typescript
-"Journey Name": {
-  name: "Journey Name",
-  path: [
-    [lat1, lng1],
-    [lat2, lng2],
-    // ... more coordinates
-  ],
-  color: '#hexcolor',
-  locations: [
-    { name: 'Location Name', coords: [lat, lng] },
-    // ... more locations
-  ],
-}
-```
-
-### Adding New Kingdoms
-
-In `App.tsx`, add to the `kingdoms` object:
-
-```typescript
-"Kingdom Name": {
-  name: "Kingdom Name",
-  color: '#hexcolor',
-  fillOpacity: 0.3,
-  geometry: {
-    type: 'Polygon',
-    coordinates: [[
-      [lng1, lat1],
-      [lng2, lat2],
-      // ... more coordinates (note: lng, lat order for GeoJSON)
-    ]],
-  },
-}
-```
-
-### Adding New Books
-
-In `App.tsx`, add to the `books` array:
-
-```typescript
-{ 
-  name: 'Book Name', 
-  journeys: ['Journey Name 1', 'Journey Name 2'], 
-  kingdoms: ['Kingdom Name 1'] 
-}
-```
-
-## Future Enhancements
-
-- Add more biblical journeys (Jesus' ministry, Joshua's conquest, etc.)
-- Include more empires (Assyrian, Babylonian, Greek)
-- Add city markers for important biblical locations
-- Timeline slider to see how territories changed over time
-- Search functionality for specific locations
-- Export/share functionality
-- Mobile-responsive improvements
-
-## Resources for Biblical Geography
-
-- **Coordinates** - Use Google Maps to find lat/lng for locations
-- **Historical Maps** - Reference Bible atlases for accurate territories
-- **GeoJSON Tools** - Use [geojson.io](http://geojson.io) to draw polygons
+```bash
+npm install
+npm run dev
 
 ## License
 
 Educational project - free to use and modify
+```
 
-## Credits
+## Map Data Credits
 
-- Map data © [OpenStreetMap](https://www.openstreetmap.org/) contributors
-- Physical map tiles from [ArcGIS](https://www.arcgis.com/)
+- Map tiles © [Esri / ArcGIS](https://www.arcgis.com/) and [OpenStreetMap](https://www.openstreetmap.org/) contributors
+- River and lake geometry from [Natural Earth](https://www.naturalearthdata.com/) via [martynafford/natural-earth-geojson](https://github.com/martynafford/natural-earth-geojson)
