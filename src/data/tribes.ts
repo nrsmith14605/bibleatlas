@@ -2719,4 +2719,96 @@ export const tribes: Tribe[] = [
       ]],
     },
   },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // EZRA / NEHEMIAH — Peoples
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Samaritans (Adversaries of Judah)',
+    speakAs: 'sah-MARE-ih-tans',
+    description: "The mixed population of the former Northern Kingdom who offered to help rebuild the Temple but were refused; they then became bitter opponents — writing letters to Persian kings to stop the work, hiring counselors against the Jews, and discouraging the builders; Sanballat and his Samaritan allies actively opposed Nehemiah's wall-building (Ezra 4:1–24; Nehemiah 2:10; 4:1–8)",
+    color: '#c0392b',
+    fillOpacity: 0.20,
+    books: ['Ezra', 'Nehemiah'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [34.80, 32.50],
+        [35.10, 32.50],
+        [35.60, 32.50],
+        [35.68, 32.15],
+        [35.55, 31.90],
+        [35.22, 31.90],
+        [34.80, 32.05],
+        [34.80, 32.50],
+      ]],
+    },
+  },
+  {
+    name: 'Ammonites (Nehemiah Era)',
+    speakAs: 'AM-on-ites',
+    description: "Represented by Tobiah the Ammonite official who allied with Sanballat to oppose Nehemiah; he mocked the builders ('If a fox climbs on it, it will break down'); he had relatives and allies inside Jerusalem; Nehemiah expelled him from a room in the Temple courts that the priest Eliashib had given him (Nehemiah 2:10, 19; 4:3; 6:12–19; 13:4–9)",
+    color: '#d35400',
+    fillOpacity: 0.22,
+    books: ['Nehemiah'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [35.58, 32.20],
+        [36.20, 32.15],
+        [36.50, 31.90],
+        [36.40, 31.55],
+        [36.10, 31.40],
+        [35.65, 31.42],
+        [35.55, 31.65],
+        [35.58, 32.00],
+        [35.58, 32.20],
+      ]],
+    },
+  },
+  {
+    name: 'Arabs (Nehemiah Era)',
+    speakAs: 'AIR-abs',
+    description: "Represented by Geshem the Arab (also called Gashmu), one of the three principal opponents of Nehemiah alongside Sanballat and Tobiah; he scoffed at the builders and joined the accusation that Jerusalem was being rebuilt for revolt against the Persian king; he was part of the scheme to lure Nehemiah to Ono (Nehemiah 2:19; 6:1–6)",
+    color: '#d4ac0d',
+    fillOpacity: 0.20,
+    books: ['Nehemiah'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Northwest Arabia / Negev border area — Geshem's sphere
+        [34.50, 30.50],
+        [36.00, 30.50],
+        [37.50, 29.00],
+        [36.00, 27.00],
+        [34.00, 27.00],
+        [33.00, 29.00],
+        [34.00, 30.50],
+        [34.50, 30.50],
+      ]],
+    },
+  },
+  {
+    name: 'Ashdodites',
+    speakAs: 'ASH-doh-dites',
+    description: "The inhabitants of Ashdod who joined Sanballat, Tobiah, and Geshem in plotting against the Jerusalem wall-builders; they conspired to come and fight against Jerusalem and stir up trouble; Nehemiah also found that Jewish men had married women of Ashdod and their children could not speak the language of Judah (Nehemiah 4:7–8; 13:23–24)",
+    color: '#2c3e50',
+    fillOpacity: 0.22,
+    books: ['Nehemiah'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Ashdod region — southern coastal plain
+        [34.40, 31.85],
+        [34.70, 31.85],
+        [34.82, 31.58],
+        [34.78, 31.30],
+        [34.50, 31.25],
+        [34.28, 31.38],
+        [34.30, 31.65],
+        [34.40, 31.85],
+      ]],
+    },
+  },
 ];

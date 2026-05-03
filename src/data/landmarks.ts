@@ -914,7 +914,7 @@ export const landmarks: Landmark[] = [
     coords: [31.772, 35.227],
     description: "The valley south of Jerusalem; Ahaz burned incense here and sacrificed his sons in the fire; Manasseh also made his sons pass through the fire here; Josiah desecrated the Topheth in this valley; later called Gehenna, a symbol of judgment (2 Chronicles 28:3; 33:6; 2 Kings 23:10)",
     location: 'confirmed',
-    books: ['2 Chronicles', '2 Kings', 'Jeremiah'],
+    books: ['2 Chronicles', '2 Kings', 'Jeremiah', 'Nehemiah'],
   },
   {
     name: 'East Gate (Jerusalem)',
@@ -922,5 +922,103 @@ export const landmarks: Landmark[] = [
     description: "The eastern gate of the Temple complex facing the Mount of Olives; Nehemiah later supervised its repair; the rising sun shone directly through it at the equinoxes; Ezekiel saw the glory of the LORD entering the Temple through the east gate (2 Chronicles 29:4; Nehemiah 3:29; Ezekiel 43:1–4)",
     location: 'confirmed',
     books: ['2 Chronicles', 'Nehemiah', 'Ezekiel'],
+  },
+  // ══════════════════════════════════════════════════════════════════════════
+  // EZRA
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Altar of the God of Israel (Second Temple)',
+    speakAs: 'Altar of the God of Israel',
+    coords: [31.778, 35.236],
+    description: "The altar Jeshua and Zerubbabel built even before the Temple foundations were laid; they were fearful of the surrounding peoples but built it on its original site and began offering burnt offerings morning and evening; they celebrated the Feast of Tabernacles on it (Ezra 3:1–6)",
+    location: 'confirmed',
+    books: ['Ezra'],
+  },
+  {
+    name: 'Foundation of the Second Temple',
+    coords: [31.778, 35.235],
+    description: "When the builders laid the foundation of the Temple of the LORD, the priests and Levites celebrated with trumpets and cymbals; the people gave a great shout of praise; but many older priests who had seen the first Temple wept aloud — the sound was heard far away (Ezra 3:10–13)",
+    location: 'confirmed',
+    books: ['Ezra'],
+  },
+  {
+    name: 'Temple Treasury (Jerusalem)',
+    coords: [31.778, 35.234],
+    description: "The storerooms where the Temple vessels, silver, and gold were kept; Cyrus brought out the vessels Nebuchadnezzar had taken from Jerusalem and counted them out to Sheshbazzar the prince of Judah — 5,400 gold and silver articles in total (Ezra 1:7–11; Nehemiah 13:4–9)",
+    location: 'confirmed',
+    books: ['Ezra', 'Nehemiah'],
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // NEHEMIAH
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Sheep Gate (Jerusalem)',
+    speakAs: 'Sheep Gate',
+    coords: [31.783, 35.236],
+    description: "The gate in the northeastern wall of Jerusalem rebuilt first by Eliashib the high priest and his fellow priests; it was consecrated before construction of the rest; Jesus later declared 'I am the gate for the sheep' near this gate; the Pool of Bethesda lay nearby (Nehemiah 3:1–2; John 5:2; 10:7)",
+    location: 'probable',
+    books: ['Nehemiah', 'John'],
+  },
+  {
+    name: 'Valley Gate (Jerusalem)',
+    speakAs: 'Valley Gate',
+    coords: [31.771, 35.226],
+    description: "The gate on the western wall of Jerusalem facing the Hinnom Valley; Nehemiah went out through this gate on his night inspection of the walls; Hanun and the people of Zanoah rebuilt it, setting its doors, bolts, and bars (Nehemiah 2:13; 3:13)",
+    location: 'probable',
+    books: ['Nehemiah'],
+  },
+  {
+    name: 'Dung Gate (Jerusalem)',
+    coords: [31.770, 35.228],
+    description: "The gate at the southern tip of Jerusalem near the refuse dump of the city; Malchijah son of Rechab repaired it; Nehemiah passed through it on his night inspection; a section of the wall was too ruined for his donkey to pass (Nehemiah 2:13; 3:14)",
+    location: 'probable',
+    books: ['Nehemiah'],
+  },
+  {
+    name: 'Fountain Gate (Jerusalem)',
+    coords: [31.772, 35.232],
+    description: "A gate on the southeastern wall near the Pool of Siloam and the King's Garden; Shallum son of Col-hozeh rebuilt it with a roof, doors, bolts, and bars; Nehemiah turned from here during his night inspection and went back through the Valley Gate (Nehemiah 2:14; 3:15)",
+    location: 'probable',
+    books: ['Nehemiah'],
+  },
+  {
+    name: 'Water Gate (Jerusalem)',
+    coords: [31.778, 35.238],
+    description: "A gate on the eastern wall of Jerusalem near the Gihon Spring and the Ophel; Ezra read the Law to all the assembled people in the open square before the Water Gate from morning to midday — men, women, and all who could understand; it was a pivotal scene of covenant renewal (Nehemiah 3:26; 8:1–3)",
+    location: 'probable',
+    books: ['Nehemiah'],
+  },
+  {
+    name: 'Broad Wall (Jerusalem)',
+    coords: [31.776, 35.228],
+    description: "A section of the western wall of Jerusalem rebuilt by Uzziel son of Harhaiah and Hananiah; 'broad' suggests it was an especially thick fortification, possibly dating to Hezekiah's expansion of the city; its archaeological remains have been excavated in the Jewish Quarter (Nehemiah 3:8; 12:38)",
+    location: 'confirmed',
+    books: ['Nehemiah'],
+  },
+  {
+    name: "Stairs of the City of David",
+    coords: [31.774, 35.233],
+    description: "The steps leading up from the lower City of David to the upper parts of Jerusalem; the Levites conducted the great thanksgiving procession at the dedication of the wall along these stairs; two great choirs processed in opposite directions along the wall (Nehemiah 3:15; 12:37)",
+    location: 'probable',
+    books: ['Nehemiah'],
+  },
+  {
+    name: "Tower of Hananel",
+    speakAs: 'Tower of HAN-ah-nel',
+    coords: [31.784, 35.234],
+    description: "A tower in the northern wall of Jerusalem between the Sheep Gate and the Fish Gate; rebuilt as part of Nehemiah's wall restoration; mentioned as a boundary marker in Zechariah's prophecy about the future restoration of Jerusalem (Nehemiah 3:1; 12:39; Zechariah 14:10)",
+    location: 'probable',
+    books: ['Nehemiah', 'Jeremiah', 'Zechariah'],
+  },
+  {
+    name: "Dragon's Spring",
+    speakAs: "Dragon's Spring",
+    coords: [31.770, 35.229],
+    description: "A spring in or near the valley south of Jerusalem that Nehemiah passed on his night inspection; he went out toward the Dragon's Spring and the Dung Gate examining the broken-down walls; the exact location is uncertain but placed in the Hinnom/Tyropoeon valley area (Nehemiah 2:13)",
+    location: 'unknown',
+    books: ['Nehemiah'],
   },
 ];

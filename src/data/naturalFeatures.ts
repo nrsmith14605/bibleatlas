@@ -474,7 +474,7 @@ export const naturalFeatures: NaturalFeature[] = [
     description:
       "The King's Valley near Salem (Jerusalem) where Melchizedek, king of Salem and priest of God Most High, went out to meet Abraham returning from his victory over the four kings; Abraham received bread, wine and a blessing here (Genesis 14:17–18)",
     type: 'valley',
-    books: ['Genesis'],
+    books: ['Genesis', 'Nehemiah'],
     color: '#5d8a3c',
     fillOpacity: 0.30,
     geometry: {
@@ -968,5 +968,24 @@ export const naturalFeatures: NaturalFeature[] = [
         [34.90, 32.10],
       ]],
     },
+  },
+    // ══════════════════════════════════════════════════════════════════════════
+  // EZRA — Natural Features
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'River Ahava',
+    speakAs: 'AH-hah-vah',
+    description: "A canal or river in Babylonia where Ezra assembled the returning exiles; he declared a fast here so that they might humble themselves before God and ask him for a safe journey; they were carrying enormous wealth and were afraid to ask the king for an armed escort (Ezra 8:15–23, 31)",
+    type: 'river',
+    books: ['Ezra'],
+    color: '#2471a3',
+    path: [
+      // Approximate location — a canal east of Babylon, flowing into the Euphrates
+      [32.85, 44.75],
+      [32.70, 44.60],
+      [32.55, 44.45],
+      [32.40, 44.30],
+    ],
   },
 ];

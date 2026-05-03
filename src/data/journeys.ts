@@ -3207,4 +3207,152 @@ export const journeys: Journey[] = [
       },
     ],
   },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // EZRA JOURNEYS
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: "First Return under Zerubbabel",
+    color: '#d4ac0d',
+    people: [],
+    books: ['Ezra'],
+    path: [
+      [32.54, 44.42],  // Babylon
+      [31.78, 35.23],  // Jerusalem
+    ],
+    locations: [
+      {
+        name: 'Babylon — The Decree of Cyrus',
+        coords: [32.54, 44.42],
+        description: "In the first year of Cyrus king of Persia, he issued a proclamation: 'The LORD, the God of heaven, has given me all the kingdoms of the earth and he has appointed me to build a temple for him at Jerusalem in Judah. Any of his people among you may go up to Jerusalem and build the Temple.' About 42,360 exiles set out under Zerubbabel and Jeshua (Ezra 1:1–4; 2:64–65)",
+      },
+      {
+        name: 'Jerusalem — The Return',
+        coords: [31.78, 35.23],
+        description: "The exiles arrived in Jerusalem and the surrounding towns; they settled in their own cities; in the seventh month they gathered in Jerusalem and Jeshua and Zerubbabel built the altar and offered burnt offerings; in the second year they began the Temple foundation — and both weeping and shouting filled the air (Ezra 2:70; 3:1–13)",
+      },
+    ],
+  },
+
+  {
+    name: "Sheshbazzar Brings the Temple Vessels",
+    color: '#c9a030',
+    people: [],
+    books: ['Ezra'],
+    path: [
+      [32.54, 44.42],  // Babylon
+      [31.78, 35.23],  // Jerusalem
+    ],
+    locations: [
+      {
+        name: 'Babylon — The Vessels Returned',
+        coords: [32.54, 44.42],
+        description: "Cyrus king of Persia brought out the articles belonging to the Temple of the LORD that Nebuchadnezzar had carried away; he had them listed and handed to Sheshbazzar the prince of Judah: 5,400 gold and silver articles in total (Ezra 1:7–11)",
+      },
+      {
+        name: 'Jerusalem — Vessels Deposited in the Temple',
+        coords: [31.78, 35.23],
+        description: "Sheshbazzar brought the Temple vessels from Babylon to Jerusalem; he laid the foundations of the house of God in Jerusalem; the vessels were placed in the rebuilt Temple (Ezra 1:11; 5:14–16)",
+      },
+    ],
+  },
+
+  {
+    name: "Ezra's Journey from Babylon to Jerusalem",
+    color: '#8e44ad',
+    people: ['Ezra'],
+    books: ['Ezra'],
+    path: [
+      [32.54, 44.42],  // Babylon
+      [32.80, 44.80],  // Ahava — assembly point
+      [31.78, 35.23],  // Jerusalem
+    ],
+    locations: [
+      {
+        name: 'Babylon — The Departure',
+        coords: [32.54, 44.42],
+        description: "Ezra set out from Babylon on the first day of the first month; the good hand of his God was on him; he was a skilled teacher of the Law of Moses; Artaxerxes had given him a letter authorizing the mission and granting whatever he requested (Ezra 7:6–10)",
+      },
+      {
+        name: 'River Ahava — The Assembly and Fast',
+        coords: [32.80, 44.80],
+        description: "Ezra assembled the exiles at the canal that flows toward Ahava; he found no Levites and sent for them; then he proclaimed a fast: 'I was ashamed to ask the king for soldiers and horsemen to protect us — we had told him the hand of our God is gracious on everyone who looks to him.' After fasting and praying God answered them (Ezra 8:15–23, 31)",
+      },
+      {
+        name: 'Jerusalem — Arrival and Reform',
+        coords: [31.78, 35.23],
+        description: "They arrived in Jerusalem and rested three days; the Temple vessels were weighed in and recorded; burnt offerings were offered. Ezra then discovered that the people, including priests and Levites, had intermarried with surrounding peoples; he tore his robe and pulled hair from his head and beard and sat appalled until the evening sacrifice (Ezra 8:32–9:4)",
+      },
+    ],
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // NEHEMIAH JOURNEYS
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: "Nehemiah's Journey from Susa to Jerusalem",
+    color: '#2874a6',
+    people: ['Nehemiah'],
+    books: ['Nehemiah'],
+    path: [
+      [32.19, 48.25],  // Susa
+      [31.78, 35.23],  // Jerusalem
+    ],
+    locations: [
+      {
+        name: 'Susa — The Prayer and the Request',
+        coords: [32.19, 48.25],
+        description: "Nehemiah received the news: 'The wall of Jerusalem is broken down and its gates have been burned.' He sat down and wept and mourned for days, fasting and praying. When the king asked why he was sad, Nehemiah prayed silently and then asked: 'Send me to Judah to rebuild it.' The king granted the request (Nehemiah 1:1–2:8)",
+      },
+      {
+        name: 'Jerusalem — The Mission Begins',
+        coords: [31.78, 35.23],
+        description: "Nehemiah arrived in Jerusalem; after three days he went out at night to inspect the broken walls; he had told no one what God had put in his heart to do; after the night inspection he declared to the leaders: 'Come, let us rebuild the wall of Jerusalem, and we will no longer be in disgrace.' They replied: 'Let us start rebuilding' (Nehemiah 2:11–18)",
+      },
+    ],
+  },
+
+  {
+    name: "Nehemiah's Night Inspection of the Walls",
+    color: '#7d6608',
+    people: ['Nehemiah'],
+    books: ['Nehemiah'],
+    path: [
+      [31.771, 35.226],  // Valley Gate — start
+      [31.770, 35.229],  // Dragon's Spring
+      [31.770, 35.228],  // Dung Gate
+      [31.772, 35.232],  // Fountain Gate
+      [31.773, 35.233],  // King's Pool (Pool of Siloam area)
+      [31.771, 35.226],  // Valley Gate — return
+    ],
+    locations: [
+      {
+        name: 'Valley Gate — Departure',
+        coords: [31.771, 35.226],
+        description: "Nehemiah set out at night with a few men; he had not told anyone what God had put in his heart to do for Jerusalem; he went out through the Valley Gate toward the Dragon's Spring and the Dung Gate (Nehemiah 2:12–13)",
+      },
+      {
+        name: "Dragon's Spring",
+        coords: [31.770, 35.229],
+        description: "Nehemiah passed the Dragon's Spring — an unidentified water source in the valley south of Jerusalem — as he examined the ruined walls by night (Nehemiah 2:13)",
+      },
+      {
+        name: 'Dung Gate',
+        coords: [31.770, 35.228],
+        description: "Nehemiah turned toward the Dung Gate at the southern tip of the city; the walls were in ruins and the gates had been destroyed by fire (Nehemiah 2:13)",
+      },
+      {
+        name: "Fountain Gate and King's Pool",
+        coords: [31.772, 35.232],
+        description: "Nehemiah continued to the Fountain Gate and the King's Pool; the ruins were so bad there was no room for his donkey to pass; he went into the valley at night and examined the wall before returning (Nehemiah 2:14–15)",
+      },
+      {
+        name: 'Valley Gate — Return',
+        coords: [31.771, 35.226],
+        description: "Nehemiah turned back and re-entered through the Valley Gate; the officials did not know where he had gone or what he was doing; he had not yet told the Jews, priests, nobles, or officials anything (Nehemiah 2:15–16)",
+      },
+    ],
+  },
 ];

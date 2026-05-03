@@ -298,4 +298,26 @@ export const people: Person[] = [
     ],
     books: ['1 Kings', '2 Kings'],
   },
+
+  // ── Ezra / Nehemiah ────────────────────────────────────────────────────────
+
+  {
+    name: 'Ezra',
+    speakAs: 'EZ-rah',
+    description: "Priest and scribe skilled in the Law of Moses; led the second return from Babylon to Jerusalem around 458 BC; carried the Temple vessels and silver and gold as a freewill offering; discovered and addressed the crisis of intermarriage; assembled all Israel to hear the Law read and explained; led the great covenant renewal ceremony",
+    journeys: [
+      "Ezra's Journey from Babylon to Jerusalem",
+    ],
+    books: ['Ezra', 'Nehemiah'],
+  },
+  {
+    name: 'Nehemiah',
+    speakAs: 'nee-heh-MY-ah',
+    description: "Cupbearer to Artaxerxes king of Persia; received news of Jerusalem's ruined walls while in Susa; prayed and fasted then requested permission to rebuild; appointed governor of Judah; organized and completed Jerusalem's wall in just 52 days despite fierce opposition from Sanballat, Tobiah, and Geshem; led social and religious reforms",
+    journeys: [
+      "Nehemiah's Journey from Susa to Jerusalem",
+      "Nehemiah's Night Inspection of the Walls",
+    ],
+    books: ['Nehemiah'],
+  },
 ];

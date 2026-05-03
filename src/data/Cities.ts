@@ -141,7 +141,7 @@ export const cities: City[] = [
     coords: [31.78, 35.23],
     description: "Melchizedek, king and priest, met Abraham here and blessed him after the battle of the kings",
     location: 'confirmed',
-    books: ['Genesis', '2 Samuel', '1 Kings', '2 Kings', '1 Chronicles', '2 Chronicles', 'Psalms', 'Isaiah', 'Jeremiah', 'Matthew', 'Luke', 'John', 'Acts', 'Galatians', 'James', 'Hebrews', 'Jude', 'Revelation'],
+    books: ['Genesis', '2 Samuel', '1 Kings', '2 Kings', '1 Chronicles', '2 Chronicles', 'Ezra', 'Nehemiah', 'Psalms', 'Isaiah', 'Jeremiah', 'Matthew', 'Luke', 'John', 'Acts', 'Galatians', 'James', 'Hebrews', 'Jude', 'Revelation'],
   },
   {
     name: 'Dan (Laish)',
@@ -169,7 +169,7 @@ export const cities: City[] = [
     coords: [31.70, 35.21],
     description: "Rachel died giving birth to Benjamin on the road to Ephrath and was buried there",
     location: 'confirmed',
-    books: ['Genesis', 'Ruth', '1 Samuel', 'Matthew', 'Luke'],
+    books: ['Genesis', 'Ruth', '1 Samuel', 'Ezra', 'Nehemiah', 'Matthew', 'Luke'],
   },
   {
     name: 'Penuel (Peniel)',
@@ -406,7 +406,7 @@ export const cities: City[] = [
     coords: [31.87, 35.46],
     description: "First city conquered in Canaan; its walls collapsed at the sound of trumpets and a shout",
     location: 'confirmed',
-    books: ['Numbers', 'Joshua', '2 Kings', 'Matthew', 'Mark', 'Luke', 'Hebrews'],
+    books: ['Numbers', 'Joshua', '2 Kings', 'Ezra', 'Nehemiah', 'Matthew', 'Mark', 'Luke', 'Hebrews'],
   },
   {
     name: 'Shiloh',
@@ -469,7 +469,7 @@ export const cities: City[] = [
     coords: [32.54, 44.42],
     description: 'Greatest city of antiquity; Israel exiled here; Daniel served in its royal court',
     location: 'confirmed',
-    books: ['Genesis', '2 Kings', 'Isaiah', 'Jeremiah', 'Daniel', 'Revelation'],
+    books: ['Genesis', '2 Kings', 'Ezra', 'Nehemiah', 'Isaiah', 'Jeremiah', 'Daniel', 'Revelation'],
   },
 
   // ── Edom / Sinai ─────────────────────────────────────────────────────────
@@ -1146,7 +1146,7 @@ export const cities: City[] = [
     coords: [31.84, 35.17],
     description: "The Hivite city that deceived Israel into a peace treaty; when the southern coalition attacked Gibeon, Joshua marched through the night to rescue it; the sun stood still over Gibeon and the moon over the Valley of Aijalon (Joshua 9–10). Solomon went to Gibeon to sacrifice at the great high place; God appeared to him in a dream and offered him anything he desired; Solomon asked for wisdom and God granted it along with riches and honor (1 Kings 3:4–15)",
     location: 'confirmed',
-    books: ['Joshua', 'Judges', '2 Samuel', '1 Kings', '2 Kings', '1 Chronicles', '2 Chronicles'],
+    books: ['Joshua', 'Judges', '2 Samuel', '1 Kings', '2 Kings', '1 Chronicles', '2 Chronicles', 'Nehemiah'],
   },
   {
     name: 'Makkedah',
@@ -1170,7 +1170,7 @@ export const cities: City[] = [
     coords: [31.56, 34.85],
     description: "The fortified Canaanite royal city taken by Joshua in two days during the southern campaign; Horam king of Gezer came to help Lachish and was also destroyed; later a key Judahite fortress (Joshua 10:31–33; 2 Kings 18:14)",
     location: 'confirmed',
-    books: ['Joshua', '2 Kings', '2 Chronicles', 'Isaiah', 'Jeremiah', 'Micah'],
+    books: ['Joshua', '2 Kings', '2 Chronicles', 'Nehemiah', 'Isaiah', 'Jeremiah', 'Micah'],
   },
   {
     name: 'Eglon',
@@ -1316,7 +1316,7 @@ export const cities: City[] = [
     coords: [32.18, 35.72],
     description: "The assembly point in Gilead; Israel gathered here before the battle against Ammon; Jephthah made his vow to the LORD here before the battle; his daughter came out to meet him on his return (Judges 10:17; 11:11, 29–34)",
     location: 'probable',
-    books: ['Judges', '1 Samuel'],
+    books: ['Judges', '1 Samuel', 'Nehemiah'],
   },
   {
     name: 'Timnah',
@@ -1649,7 +1649,7 @@ export const cities: City[] = [
     coords: [31.92, 35.18],
     description: "Samuel's hometown and burial place; he judged Israel here and built an altar to the LORD; Saul came here to seek counsel; the voice of weeping in Ramah is cited by Jeremiah and Matthew at the slaughter of the innocents (1 Samuel 1:19; 7:17; 8:4; 25:1; Jeremiah 31:15; Matthew 2:18)",
     location: 'confirmed',
-    books: ['1 Samuel', 'Jeremiah'],
+    books: ['1 Samuel', 'Jeremiah', 'Nehemiah'],
   },
   {
     name: 'Kiriath-jearim',
@@ -1680,7 +1680,7 @@ export const cities: City[] = [
     coords: [31.52, 34.96],
     description: "A fortified city in the Shephelah; David rescued it from a Philistine raid but the LORD told him its inhabitants would hand him over to Saul; David and his men — about 600 — escaped before Saul arrived (1 Samuel 23:1–13)",
     location: 'confirmed',
-    books: ['1 Samuel'],
+    books: ['1 Samuel', 'Nehemiah'],
   },
   {
     name: 'Ziklag',
@@ -1811,7 +1811,7 @@ export const cities: City[] = [
     coords: [31.62, 35.22],
     description: "A town in the hill country of Judah fortified by Rehoboam; home of the prophet Amos; Jehoshaphat assembled Judah here before the miraculous victory over Moab and Ammon in the wilderness (2 Chronicles 11:6; 20:20; Amos 1:1)",
     location: 'confirmed',
-    books: ['2 Chronicles', 'Amos'],
+    books: ['2 Chronicles', 'Amos', 'Nehemiah'],
   },
   {
     name: 'Carchemish',
@@ -1821,5 +1821,107 @@ export const cities: City[] = [
     location: 'confirmed',
     books: ['2 Chronicles', 'Jeremiah'],
   },
+    // ── EZRA — Cities / Settlements ──────────────────────────────────────────
+
+  {
+    name: 'Casiphia',
+    speakAs: 'kah-SIF-ee-ah',
+    coords: [32.50, 45.80],
+    description: "A place in Babylonia where Iddo the leader was stationed; Ezra sent messengers there to request ministers for the Temple; Iddo sent Sherebiah, Hashabiah, and other Levites to join the return journey (Ezra 8:17–20)",
+    location: 'unknown',
+    books: ['Ezra'],
+  },
+  {
+    name: 'Ahava',
+    speakAs: 'ah-HAH-vah',
+    coords: [32.80, 44.80],
+    description: "The canal or town in Babylonia where Ezra assembled the returning exiles for three days; he discovered no Levites in the company and sent for them; the caravan fasted and prayed here before the dangerous journey to Jerusalem (Ezra 8:15–23, 31)",
+    location: 'unknown',
+    books: ['Ezra'],
+  },
+  {
+    name: 'Ecbatana',
+    speakAs: 'ek-BAT-ah-nah',
+    coords: [34.80, 48.50],
+    description: "The Median capital where Cyrus's decree authorizing the rebuilding of the Temple was found in the archives; Darius I used this discovery to confirm the Jews' right to rebuild and ordered the Persian authorities to assist them (Ezra 6:2–12)",
+    location: 'confirmed',
+    books: ['Ezra'],
+  },
+  {
+    name: 'Lod',
+    speakAs: 'LOD',
+    coords: [31.95, 34.90],
+    description: "A town in the plain of Sharon; among the returnees in Zerubbabel's list were the descendants of Lod, Hadid, and Ono — 725 men; Lod was later settled by Benjamites after the exile (Ezra 2:33; Nehemiah 7:37; 1 Chronicles 8:12)",
+    location: 'confirmed',
+    books: ['Ezra', 'Nehemiah'],
+  },
+  {
+    name: 'Hadid',
+    speakAs: 'HAY-did',
+    coords: [31.97, 34.97],
+    description: "A town near Lod in the Shephelah; listed among the towns whose inhabitants returned from exile under Zerubbabel; the same group of returnees is listed for Lod, Hadid, and Ono (Ezra 2:33; Nehemiah 7:37)",
+    location: 'probable',
+    books: ['Ezra', 'Nehemiah'],
+  },
+  {
+    name: 'Ono',
+    speakAs: 'OH-no',
+    coords: [32.05, 34.90],
+    description: "A town in the plain of Sharon; its Valley of Ono was where Sanballat, Tobiah, and Geshem attempted to lure Nehemiah to a meeting in order to harm him; Nehemiah responded five times: 'I am doing a great work and cannot come down' (Ezra 2:33; Nehemiah 6:2–4)",
+    location: 'probable',
+    books: ['Ezra', 'Nehemiah'],
+  },
+  {
+    name: 'Netophah',
+    speakAs: 'neh-TOH-fah',
+    coords: [31.65, 35.17],
+    description: "A village near Bethlehem in Judah; listed among the returnees in both Ezra and Nehemiah; the Netophathites provided singers and gatekeepers who settled in villages around Jerusalem; Seraiah son of Tanhumeth was a Netophathite commander (Ezra 2:22; Nehemiah 7:26; 12:28)",
+    location: 'probable',
+    books: ['Ezra', 'Nehemiah'],
+  },
+  {
+    name: 'Anathoth',
+    speakAs: 'AN-ah-thoth',
+    coords: [31.83, 35.27],
+    description: "A Levitical city in Benjamin; birthplace of the prophet Jeremiah; listed among the towns resettled by returnees from the exile; 128 men of Anathoth returned in Zerubbabel's group (Ezra 2:23; Nehemiah 7:27; Jeremiah 1:1)",
+    location: 'confirmed',
+    books: ['Ezra', 'Nehemiah', 'Jeremiah'],
+  },
+
+  // ── NEHEMIAH — Cities / Settlements ──────────────────────────────────────
+
+  {
+    name: 'Susa (Shushan)',
+    speakAs: 'SOO-sah SHOO-shan',
+    coords: [32.19, 48.25],
+    description: "The Persian royal capital where Nehemiah served as cupbearer to King Artaxerxes; Nehemiah received the devastating news about Jerusalem's walls here; he wept and fasted and prayed for days before requesting permission to go and rebuild (Nehemiah 1:1–2:8; also the setting of Esther and Daniel's visions)",
+    location: 'confirmed',
+    books: ['Nehemiah', 'Esther', 'Daniel'],
+  },
+  {
+    name: 'Zanoah',
+    speakAs: 'zah-NOH-ah',
+    coords: [31.73, 34.99],
+    description: "A town in the Shephelah of Judah; the men of Zanoah repaired the Valley Gate and 500 cubits of wall under Hanun their ruler during Nehemiah's reconstruction; it was also resettled by Judahites after the exile (Nehemiah 3:13; 11:30)",
+    location: 'confirmed',
+    books: ['Nehemiah'],
+  },
+  {
+    name: 'Beth-haccherem',
+    speakAs: 'beth-HAK-eh-rem',
+    coords: [31.72, 35.13],
+    description: "A district of Judah administered by Malchijah son of Rechab; he repaired the Dung Gate of Jerusalem during Nehemiah's wall-building project; later cited in Jeremiah as a signal-fire post in times of invasion (Nehemiah 3:14; Jeremiah 6:1)",
+    location: 'probable',
+    books: ['Nehemiah'],
+  },
+  {
+    name: 'Beth-zur',
+    speakAs: 'Beth-ZUR',
+    coords: [31.58, 35.08],
+    description: "A fortified town in the hill country of Judah south of Bethlehem; Nehemiah son of Azbuk, ruler of half the district of Beth-zur, worked on the wall opposite the tombs of David; it was an important administrative center in Persian-era Judah (Nehemiah 3:16)",
+    location: 'confirmed',
+    books: ['Nehemiah'],
+  },
+
 
 ];

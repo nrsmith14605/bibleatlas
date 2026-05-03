@@ -794,7 +794,7 @@ export const kingdomsEmpires: KingdomEmpire[] = [
     description: "Destroyed Jerusalem 586 BC. Nebuchadnezzar II its greatest king. Daniel served here. Fell to Cyrus 539 BC.",
     color: '#d68910',
     fillOpacity: 0.25,
-    books: ['2 Kings', 'Isaiah', 'Jeremiah', 'Ezekiel', 'Daniel', '2 Chronicles'],
+    books: ['2 Kings', 'Ezra', 'Nehemiah', 'Isaiah', 'Jeremiah', 'Ezekiel', 'Daniel', '2 Chronicles'],
     yearStart: -626,
     yearEnd: -539,
     snapshots: [
