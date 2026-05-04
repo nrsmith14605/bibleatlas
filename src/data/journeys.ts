@@ -3355,4 +3355,88 @@ export const journeys: Journey[] = [
       },
     ],
   },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // ESTHER JOURNEYS
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: "The Jewish Exile to Susa",
+    color: '#7f8c8d',
+    people: [],
+    books: ['Esther'],
+    path: [
+      [31.78, 35.23],  // Jerusalem
+      [32.54, 44.42],  // Babylon
+      [32.19, 48.25],  // Susa
+    ],
+    locations: [
+      {
+        name: 'Jerusalem — The Deportation',
+        coords: [31.78, 35.23],
+        description: "Mordecai had been carried into exile from Jerusalem among the captives taken with Jeconiah king of Judah by Nebuchadnezzar king of Babylon; his young cousin Hadassah (Esther) came with him (Esther 2:5–7)",
+      },
+      {
+        name: 'Babylon',
+        coords: [32.54, 44.42],
+        description: "The Jews were exiled to Babylon by Nebuchadnezzar; the community later spread throughout the Persian Empire; Mordecai's family had passed through Babylon before reaching the Persian capital (Esther 2:6)",
+      },
+      {
+        name: 'Susa — The Setting',
+        coords: [32.19, 48.25],
+        description: "The Persian royal citadel of Susa where Mordecai served at the King's Gate and Esther was raised; the entire drama of Haman's plot against the Jews, Esther's courageous approach to the king, and the deliverance of the Jewish people unfolded here (Esther 1:2; 2:5–8)",
+      },
+    ],
+  },
+
+  {
+    name: "Haman's Decree Sent Throughout the Empire",
+    color: '#c0392b',
+    people: [],
+    books: ['Esther'],
+    path: [
+      [32.19, 48.25],   // Susa — origin
+      [32.54, 44.42],   // Babylon / Mesopotamia
+      [31.78, 35.23],   // Jerusalem / Judah
+      [30.06, 31.25],   // Egypt
+      [35.68, 33.25],   // Syria/Levant north
+    ],
+    locations: [
+      {
+        name: 'Susa — The Decree Issued',
+        coords: [32.19, 48.25],
+        description: "Haman approached King Ahasuerus and obtained permission to destroy all the Jews throughout the empire; the king's scribes wrote the decree in the name of the king — to destroy, kill, and annihilate all the Jews, young and old, women and children, on a single day; couriers went out with the order (Esther 3:8–15)",
+      },
+      {
+        name: 'Throughout All the Provinces',
+        coords: [32.54, 44.42],
+        description: "Dispatches were sent to all the king's provinces — to destroy, kill, and annihilate all the Jews on the thirteenth day of the twelfth month; the city of Susa was bewildered but Mordecai and the Jews mourned with great weeping and fasting (Esther 3:12–4:3)",
+      },
+    ],
+  },
+
+  {
+    name: "Mordecai's Counter-Decree Throughout the Empire",
+    color: '#27ae60',
+    people: [],
+    books: ['Esther'],
+    path: [
+      [32.19, 48.25],   // Susa — origin
+      [32.54, 44.42],   // Mesopotamia
+      [31.78, 35.23],   // Judah
+      [30.06, 31.25],   // Egypt
+    ],
+    locations: [
+      {
+        name: 'Susa — The Counter-Decree',
+        coords: [32.19, 48.25],
+        description: "After Esther exposed Haman and he was hanged, Mordecai and Esther wrote a second decree in the king's name — sealed with the king's ring; the Jews were granted the right to assemble and protect themselves and destroy any armed force that attacked them; couriers riding royal horses went out in great haste (Esther 8:8–14)",
+      },
+      {
+        name: 'Throughout All the Provinces',
+        coords: [31.78, 35.23],
+        description: "The decree reached every province; in every city wherever the king's command reached there was joy and gladness among the Jews, with feasting and celebrating; many peoples became Jews because fear of the Jews had seized them (Esther 8:16–17)",
+      },
+    ],
+  },
 ];

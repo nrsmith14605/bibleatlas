@@ -224,7 +224,7 @@ export const landmarks: Landmark[] = [
     coords: [28.56, 33.97],
     description: 'God gave the Ten Commandments to Moses here; Elijah fled here and heard the still small voice',
     location: 'probable',
-    books: ['Exodus', 'Leviticus', 'Numbers', 'Deuteronomy', '1 Kings'],
+    books: ['Exodus', 'Leviticus', 'Numbers', 'Deuteronomy', '1 Kings', 'Psalms'],
   },
   {
     name: 'Mount Carmel',
@@ -245,7 +245,7 @@ export const landmarks: Landmark[] = [
     coords: [33.41, 35.86],
     description: "Northern boundary of the Promised Land; possible site of Jesus' transfiguration",
     location: 'confirmed',
-    books: ['Deuteronomy', '1 Chronicles', 'Matthew', 'Mark', 'Luke'],
+    books: ['Deuteronomy', '1 Chronicles', 'Psalms', 'Matthew', 'Mark', 'Luke'],
   },
   {
     name: 'Mount of Olives',
@@ -1020,5 +1020,51 @@ export const landmarks: Landmark[] = [
     description: "A spring in or near the valley south of Jerusalem that Nehemiah passed on his night inspection; he went out toward the Dragon's Spring and the Dung Gate examining the broken-down walls; the exact location is uncertain but placed in the Hinnom/Tyropoeon valley area (Nehemiah 2:13)",
     location: 'unknown',
     books: ['Nehemiah'],
+  },
+   // ══════════════════════════════════════════════════════════════════════════
+  // ESTHER
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Palace of Ahasuerus (Susa)',
+    speakAs: 'Palace of ah-HAZ-yoo-er-us',
+    coords: [32.192, 48.258],
+    description: "The royal palace of King Ahasuerus (Xerxes) in Susa; the 180-day feast and 7-day banquet were held here; Vashti refused to appear and was deposed; Esther was chosen as queen here; Mordecai overheard the assassination plot at the King's Gate; Esther made her courageous approach to the king in the inner court (Esther 1:2–9; 2:19–23; 4:11–5:2)",
+    location: 'confirmed',
+    books: ['Esther'],
+  },
+  {
+    name: "King's Gate (Susa)",
+    coords: [32.190, 48.255],
+    description: "The main gate of the royal citadel of Susa where Mordecai sat and learned of Haman's plot; he refused to bow before Haman here and this triggered Haman's rage against all Jews; Mordecai sat in sackcloth and ashes before the gate when the decree was issued (Esther 2:19–21; 3:2–5; 4:1–2)",
+    location: 'probable',
+    books: ['Esther'],
+  },
+  {
+    name: "Haman's Gallows",
+    speakAs: "HAY-man's Gallows",
+    coords: [32.191, 48.256],
+    description: "The gallows fifty cubits high (about 23 meters) that Haman built at his house to hang Mordecai; when Esther exposed Haman's plot the king ordered Haman hanged on the very gallows he had prepared; his ten sons were later hanged there as well (Esther 5:14; 7:9–10; 9:13–14)",
+    location: 'unknown',
+    books: ['Esther'],
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // PSALMS
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Gates of Zion',
+    coords: [31.776, 35.232],
+    description: "'The LORD loves the gates of Zion more than all the dwellings of Jacob'; the gates of the Temple and city of Jerusalem symbolize the community of faith — 'All my springs are in you'; pilgrims gathered at these gates to worship and process to the altar (Psalm 87:2; 118:19–20; 122:2)",
+    location: 'probable',
+    books: ['Psalms', 'Nehemiah'],
+  },
+  {
+    name: "Valley of the Shadow of Death",
+    coords: [31.76, 35.24],
+    description: "'Even though I walk through the darkest valley, I will fear no evil, for you are with me' — Psalm 23:4; traditionally identified with the deep Wadi Qelt ravine running from Jerusalem down to Jericho through the Judean wilderness; a hauntingly dark gorge used by pilgrims and shepherds",
+    location: 'probable',
+    books: ['Psalms'],
   },
 ];

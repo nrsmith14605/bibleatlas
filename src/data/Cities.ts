@@ -141,7 +141,7 @@ export const cities: City[] = [
     coords: [31.78, 35.23],
     description: "Melchizedek, king and priest, met Abraham here and blessed him after the battle of the kings",
     location: 'confirmed',
-    books: ['Genesis', '2 Samuel', '1 Kings', '2 Kings', '1 Chronicles', '2 Chronicles', 'Ezra', 'Nehemiah', 'Psalms', 'Isaiah', 'Jeremiah', 'Matthew', 'Luke', 'John', 'Acts', 'Galatians', 'James', 'Hebrews', 'Jude', 'Revelation'],
+    books: ['Genesis', '2 Samuel', '1 Kings', '2 Kings', '1 Chronicles', '2 Chronicles', 'Ezra', 'Nehemiah', 'Ester', 'Psalms', 'Proverbs', 'Isaiah', 'Jeremiah', 'Matthew', 'Luke', 'John', 'Acts', 'Galatians', 'James', 'Hebrews', 'Jude', 'Revelation'],
   },
   {
     name: 'Dan (Laish)',
@@ -469,7 +469,7 @@ export const cities: City[] = [
     coords: [32.54, 44.42],
     description: 'Greatest city of antiquity; Israel exiled here; Daniel served in its royal court',
     location: 'confirmed',
-    books: ['Genesis', '2 Kings', 'Ezra', 'Nehemiah', 'Isaiah', 'Jeremiah', 'Daniel', 'Revelation'],
+    books: ['Genesis', '2 Kings', 'Ezra', 'Nehemiah', 'Ester', 'Psalms', 'Isaiah', 'Jeremiah', 'Daniel', 'Revelation'],
   },
 
   // ── Edom / Sinai ─────────────────────────────────────────────────────────
@@ -1923,5 +1923,34 @@ export const cities: City[] = [
     books: ['Nehemiah'],
   },
 
+  // ── ESTHER — Cities / Settlements ────────────────────────────────────────
 
+  // (Susa already exists from Nehemiah additions — add 'Esther' to its books)
+
+  // ── PSALMS — Cities / Settlements ────────────────────────────────────────
+
+  {
+    name: 'Zion (City)',
+    speakAs: 'ZY-on',
+    coords: [31.775, 35.232],
+    description: "The hill of the Lord's dwelling; used in the Psalms as the sacred name for Jerusalem and the Temple Mount; 'Great is the LORD, and greatly to be praised, in the city of our God, in his holy mountain' — Zion became the supreme symbol of God's presence among his people (Psalm 48:1–2; 87; 132:13–14)",
+    location: 'confirmed',
+    books: ['Psalms', '2 Samuel', 'Isaiah', 'Micah', 'Zechariah', 'Revelation'],
+  },
+  {
+    name: 'Tarshish',
+    speakAs: 'TAR-shish',
+    coords: [-5.98, 37.38],
+    description: "A distant maritime trading port in the far west, possibly Tartessus in Spain; the Psalms cite 'the kings of Tarshish and of the isles' bringing tribute to the Messiah; ships of Tarshish are a symbol of worldly power and distant trade (Psalm 72:10; Isaiah 2:16; Jonah 1:3)",
+    location: 'probable',
+    books: ['Psalms', 'Isaiah', 'Jonah', '1 Kings', 'Genesis'],
+  },
+  {
+    name: 'Ephrathah',
+    speakAs: 'EF-rah-thah',
+    coords: [31.70, 35.21],
+    description: "The ancient name for Bethlehem and its region; 'We heard of it in Ephrathah; we found it in the fields of Jaar' — the Psalmist seeking the dwelling place of God; also the birthplace of David and the predicted birthplace of the Messiah (Psalm 132:6; Micah 5:2; Genesis 35:19)",
+    location: 'confirmed',
+    books: ['Psalms', 'Genesis', 'Micah'],
+  },
 ];

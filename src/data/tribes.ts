@@ -2811,4 +2811,124 @@ export const tribes: Tribe[] = [
       ]],
     },
   },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // ESTHER — Peoples
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Persians and Medes',
+    speakAs: 'PER-zhans and MEEDZ',
+    description: "The ruling peoples of the Achaemenid Empire; the laws of the Persians and Medes could not be altered — this was used against both Vashti (Esther 1:19) and later Mordecai and the Jews (Esther 3:12); the joint empire's edicts went out to all 127 provinces; Haman was a Persian court official who used this legal system against the Jews (Esther 1:3, 14, 19; 10:2)",
+    color: '#1a5276',
+    fillOpacity: 0.18,
+    books: ['Esther', 'Daniel', 'Ezra', 'Nehemiah'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [44.00, 38.50],
+        [48.00, 39.00],
+        [52.00, 37.00],
+        [56.00, 34.00],
+        [54.00, 29.00],
+        [50.00, 26.00],
+        [47.00, 25.00],
+        [45.00, 27.00],
+        [44.00, 30.00],
+        [43.00, 34.00],
+        [44.00, 38.50],
+      ]],
+    },
+  },
+  {
+    name: 'Agagites',
+    speakAs: 'AY-gah-gites',
+    description: "Haman the Agagite was descended from Agag the Amalekite king whom Saul failed to kill; this makes him an enemy of Israel by lineage going back to the Amalekites' attack on Israel in the wilderness; Mordecai the Benjamite's refusal to bow recalled Saul's lineage — the ancient enmity between Benjamin and Amalek (Esther 3:1; 1 Samuel 15:8–9; Exodus 17:14–16)",
+    color: '#922b21',
+    fillOpacity: 0.22,
+    books: ['Esther'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Agagite — Amalekite region, Sinai/Negev/Arabian border
+        [33.50, 30.50],
+        [35.50, 30.50],
+        [35.50, 29.00],
+        [33.50, 29.00],
+        [33.00, 29.80],
+        [33.50, 30.50],
+      ]],
+    },
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // JOB — Peoples
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Sabeans (Job Era)',
+    speakAs: 'SAY-bee-ans',
+    description: "Raiders from the south who fell upon Job's oxen and donkeys and killed his servants; 'The Sabeans attacked and made off with them' — likely the nomadic Sabean people of northern Arabia who conducted caravan raids; distinct from the later kingdom of Sheba in Yemen (Job 1:15)",
+    color: '#ba4a00',
+    fillOpacity: 0.25,
+    books: ['Job'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [36.00, 30.00],
+        [39.00, 30.00],
+        [40.00, 27.00],
+        [37.00, 25.00],
+        [35.00, 26.00],
+        [34.80, 28.00],
+        [36.00, 30.00],
+      ]],
+    },
+  },
+  {
+    name: 'Chaldeans (Job Era)',
+    speakAs: 'kal-DEE-ans',
+    description: "Raiders who formed three bands and swept off Job's camels and killed his servants with the sword; at this early period the Chaldeans were a nomadic people of the northern Arabian/Mesopotamian fringe before their later rise to empire under Nebuchadnezzar (Job 1:17)",
+    color: '#7d6608',
+    fillOpacity: 0.22,
+    books: ['Job'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [39.50, 33.50],
+        [42.50, 33.50],
+        [43.50, 31.50],
+        [42.00, 29.50],
+        [39.50, 29.50],
+        [38.00, 31.00],
+        [39.50, 33.50],
+      ]],
+    },
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // PROVERBS — Peoples
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Massa',
+    speakAs: 'MAS-ah',
+    description: "An Arabian tribe descended from Ishmael (Genesis 25:14); the words of Agur son of Jakeh the Massaite and Lemuel king of Massa appear in Proverbs 30–31; Massa likely refers to a tribal territory in northern Arabia; these non-Israelite wise men contributed to the inspired wisdom literature of Scripture (Proverbs 30:1; 31:1; Genesis 25:14)",
+    color: '#d4ac0d',
+    fillOpacity: 0.22,
+    books: ['Proverbs', 'Genesis'],
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Northern Arabia — Massa tribal territory
+        [37.00, 28.50],
+        [40.00, 28.50],
+        [41.00, 26.50],
+        [39.00, 25.00],
+        [37.00, 25.50],
+        [36.00, 27.00],
+        [37.00, 28.50],
+      ]],
+    },
+  },
 ];

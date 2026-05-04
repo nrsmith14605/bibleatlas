@@ -33,7 +33,7 @@ export const naturalFeatures: NaturalFeature[] = [
     name: 'Jordan River',
     description: 'Central river of Canaan; Israel crossed here entering the Promised Land; Jesus baptized here',
     type: 'river',
-    books: ['Genesis', 'Numbers', 'Deuteronomy', 'Joshua', 'Judges', '2 Samuel', '1 Kings', '2 Kings', '1 Chronicles', '2 Chronicles', 'Matthew', 'Mark', 'Luke', 'John'],
+    books: ['Genesis', 'Numbers', 'Deuteronomy', 'Joshua', 'Judges', '2 Samuel', '1 Kings', '2 Kings', '1 Chronicles', '2 Chronicles', 'Psalms', 'Matthew', 'Mark', 'Luke', 'John'],
     color: '#1e8449',
     geoJsonName: 'Jordan',
   },
@@ -287,7 +287,7 @@ export const naturalFeatures: NaturalFeature[] = [
     name: 'Dead Sea',
     description: "The Salt Sea; lowest point on earth; Lot chose its well-watered plain; Sodom and Gomorrah stood on its southern shores (Genesis 13:10; 14:3)",
     type: 'sea',
-    books: ['Genesis', 'Numbers', 'Joshua', '2 Chronicles', 'Ezekiel'],
+    books: ['Genesis', 'Numbers', 'Joshua', '2 Chronicles', 'Psalms', 'Ezekiel'],
     lakeGeoJsonName: 'Dead Sea',  // ← confirm exact string from console log
     color: '#2e86c1',
     fillOpacity: 0.50,
@@ -297,7 +297,7 @@ export const naturalFeatures: NaturalFeature[] = [
     name: 'Sea of Galilee',
     description: 'Freshwater lake in northern Israel; Jesus walked on water here; called Kinnereth in the OT',
     type: 'sea',
-    books: ['Joshua', 'Matthew', 'Mark', 'Luke', 'John'],
+    books: ['Joshua', 'Psalms', 'Matthew', 'Mark', 'Luke', 'John'],
     color: '#5dade2',
     fillOpacity: 0.50,
     lakeGeoJsonName: 'Sea of Galilee',
@@ -986,6 +986,101 @@ export const naturalFeatures: NaturalFeature[] = [
       [32.70, 44.60],
       [32.55, 44.45],
       [32.40, 44.30],
+    ],
+  },
+
+   // ══════════════════════════════════════════════════════════════════════════
+  // PSALMS — Natural Features
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'Valley of Baca',
+    speakAs: 'Valley of BAY-kah',
+    description: "'Blessed are those whose strength is in you, whose hearts are set on pilgrimage. As they pass through the Valley of Baca, they make it a place of springs' — a symbolic valley of weeping on the pilgrim road to Jerusalem; possibly identified with a dry valley route through the Judean hills (Psalm 84:5–6)",
+    type: 'valley',
+    books: ['Psalms'],
+    color: '#8e44ad',
+    fillOpacity: 0.22,
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        // Approximate — a valley on the pilgrim road to Jerusalem
+        [35.10, 31.72],
+        [35.22, 31.74],
+        [35.28, 31.66],
+        [35.22, 31.58],
+        [35.10, 31.58],
+        [35.02, 31.64],
+        [35.10, 31.72],
+      ]],
+    },
+  },
+  {
+    name: 'Desert of Kadesh',
+    speakAs: 'Desert of KAY-desh',
+    description: "'The voice of the LORD shakes the desert; the LORD shakes the Desert of Kadesh' — cited in Psalm 29 as the furthest reaches trembling before the thunder of the LORD; the wilderness region around Kadesh Barnea where Israel wandered (Psalm 29:8)",
+    type: 'desert',
+    books: ['Psalms'],
+    color: '#c9a030',
+    fillOpacity: 0.22,
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [34.00, 31.00],
+        [34.80, 31.25],
+        [35.20, 31.00],
+        [35.30, 30.60],
+        [34.80, 30.40],
+        [34.20, 30.40],
+        [33.80, 30.65],
+        [34.00, 31.00],
+      ]],
+    },
+  },
+  {
+    name: 'Mountains of Lebanon',
+    speakAs: 'Mountains of Lebanon',
+    description: "'Lebanon and Sirion like a young wild ox' leap at the voice of the LORD — Psalm 29 portrays God's power shaking the great cedar forests and peaks of Lebanon; the cedars of Lebanon were symbols of majesty and the bounty of creation (Psalm 29:5–6; 72:16; 104:16)",
+    type: 'valley',
+    books: ['Psalms'],
+    color: '#27ae60',
+    fillOpacity: 0.20,
+    geometry: {
+      type: 'Polygon',
+      coordinates: [[
+        [35.48, 33.60],
+        [35.65, 33.88],
+        [35.82, 34.20],
+        [36.00, 34.50],
+        [36.60, 34.30],
+        [36.55, 33.90],
+        [36.20, 33.60],
+        [35.90, 33.40],
+        [35.60, 33.38],
+        [35.48, 33.60],
+      ]],
+    },
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // JOB — Natural Features
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    name: 'The Sea (Yamm)',
+    speakAs: 'YAHM',
+    description: "'Who shut up the sea behind doors when it burst forth from the womb?' — God's challenge to Job; Yamm (the Sea) in the ancient Near Eastern context represents cosmic chaos that only God can contain; the sea and its depths are described with awe in the divine speeches (Job 38:8–11; 41:1–34)",
+    type: 'sea',
+    books: ['Job'],
+    color: '#2e86c1',
+    fillOpacity: 0.25,
+    path: [
+      // Symbolically the Mediterranean — western horizon
+      [32.00, 33.00],
+      [31.50, 33.50],
+      [31.00, 33.80],
+      [30.50, 33.50],
+      [30.00, 33.00],
     ],
   },
 ];
